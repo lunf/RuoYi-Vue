@@ -84,8 +84,8 @@ public class SysDept extends BaseEntity
         this.ancestors = ancestors;
     }
 
-    @NotBlank(message = "部门名称不能为空")
-    @Size(min = 0, max = 30, message = "部门名称长度不能超过30个字符")
+    @NotBlank(message = "Department name cannot be empty")
+    @Size(min = 0, max = 256, message = "Department name cannot exceed 256 characters")
     public String getDeptName()
     {
         return deptName;
@@ -96,7 +96,7 @@ public class SysDept extends BaseEntity
         this.deptName = deptName;
     }
 
-    @NotBlank(message = "显示顺序不能为空")
+    @NotBlank(message = "Display order cannot be empty")
     public String getOrderNum()
     {
         return orderNum;
@@ -128,8 +128,8 @@ public class SysDept extends BaseEntity
         this.phone = phone;
     }
 
-    @Email(message = "邮箱格式不正确")
-    @Size(min = 0, max = 50, message = "邮箱长度不能超过50个字符")
+    @Email(message = "E-mail format is incorrect")
+    @Size(min = 0, max = 50, message = "The length of the email-address cannot exceed 50 characters")
     public String getEmail()
     {
         return email;

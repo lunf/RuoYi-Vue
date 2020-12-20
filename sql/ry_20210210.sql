@@ -1,290 +1,290 @@
 -- ----------------------------
--- 1、部门表
+-- 1, Department table
 -- ----------------------------
 drop table if exists sys_dept;
 create table sys_dept (
-  dept_id           bigint(20)      not null auto_increment    comment '部门id',
-  parent_id         bigint(20)      default 0                  comment '父部门id',
-  ancestors         varchar(50)     default ''                 comment '祖级列表',
-  dept_name         varchar(30)     default ''                 comment '部门名称',
-  order_num         int(4)          default 0                  comment '显示顺序',
-  leader            varchar(20)     default null               comment '负责人',
-  phone             varchar(11)     default null               comment '联系电话',
-  email             varchar(50)     default null               comment '邮箱',
-  status            char(1)         default '0'                comment '部门状态（0正常 1停用）',
-  del_flag          char(1)         default '0'                comment '删除标志（0代表存在 2代表删除）',
-  create_by         varchar(64)     default ''                 comment '创建者',
-  create_time 	    datetime                                   comment '创建时间',
-  update_by         varchar(64)     default ''                 comment '更新者',
-  update_time       datetime                                   comment '更新时间',
+  dept_id           bigint(20)      not null auto_increment    comment 'Department id',
+  parent_id         bigint(20)      default 0                  comment 'Parent department id',
+  ancestors         varchar(50)     default ''                 comment 'Ancestor list',
+  dept_name         varchar(256)     default ''                 comment 'Department name',
+  order_num         int(4)          default 0                  comment 'Display order',
+  leader            varchar(20)     default null               comment 'Leader',
+  phone             varchar(11)     default null               comment 'Contact number',
+  email             varchar(50)     default null               comment 'Email address',
+  status            char(1)         default '0'                comment 'Department status (0 normal, 1 disabled)',
+  del_flag          char(1)         default '0'                comment 'Delete flag (0 means existence 2 means deletion)',
+  create_by         varchar(64)     default ''                 comment 'Creator',
+  create_time 	    datetime                                   comment 'Created at',
+  update_by         varchar(64)     default ''                 comment 'Updater',
+  update_time       datetime                                   comment 'Updated at',
   primary key (dept_id)
-) engine=innodb auto_increment=200 comment = '部门表';
+) engine=innodb auto_increment=200 comment = 'Department table';
 
 -- ----------------------------
--- 初始化-部门表数据
+-- Initialization department table data
 -- ----------------------------
-insert into sys_dept values(100,  0,   '0',          '若依科技',   0, '若依', '15888888888', 'ry@qq.com', '0', '0', 'admin', sysdate(), '', null);
-insert into sys_dept values(101,  100, '0,100',      '深圳总公司', 1, '若依', '15888888888', 'ry@qq.com', '0', '0', 'admin', sysdate(), '', null);
-insert into sys_dept values(102,  100, '0,100',      '长沙分公司', 2, '若依', '15888888888', 'ry@qq.com', '0', '0', 'admin', sysdate(), '', null);
-insert into sys_dept values(103,  101, '0,100,101',  '研发部门',   1, '若依', '15888888888', 'ry@qq.com', '0', '0', 'admin', sysdate(), '', null);
-insert into sys_dept values(104,  101, '0,100,101',  '市场部门',   2, '若依', '15888888888', 'ry@qq.com', '0', '0', 'admin', sysdate(), '', null);
-insert into sys_dept values(105,  101, '0,100,101',  '测试部门',   3, '若依', '15888888888', 'ry@qq.com', '0', '0', 'admin', sysdate(), '', null);
-insert into sys_dept values(106,  101, '0,100,101',  '财务部门',   4, '若依', '15888888888', 'ry@qq.com', '0', '0', 'admin', sysdate(), '', null);
-insert into sys_dept values(107,  101, '0,100,101',  '运维部门',   5, '若依', '15888888888', 'ry@qq.com', '0', '0', 'admin', sysdate(), '', null);
-insert into sys_dept values(108,  102, '0,100,102',  '市场部门',   1, '若依', '15888888888', 'ry@qq.com', '0', '0', 'admin', sysdate(), '', null);
-insert into sys_dept values(109,  102, '0,100,102',  '财务部门',   2, '若依', '15888888888', 'ry@qq.com', '0', '0', 'admin', sysdate(), '', null);
+insert into sys_dept values(100,  0,   '0',          'Ruoyi Technology',   0, 'John Doe', '15888888888', 'john.doe@domain.com', '0', '0', 'admin', sysdate(), '', null);
+insert into sys_dept values(101,  100, '0,100',      'Shenzhen Headquarter', 1, 'John Doe', '15888888888', 'john.doe@domain.com', '0', '0', 'admin', sysdate(), '', null);
+insert into sys_dept values(102,  100, '0,100',      'Changsha Branch', 2, 'John Doe', '15888888888', 'john.doe@domain.com', '0', '0', 'admin', sysdate(), '', null);
+insert into sys_dept values(103,  101, '0,100,101',  'R&D department',   1, 'John Doe', '15888888888', 'john.doe@domain.com', '0', '0', 'admin', sysdate(), '', null);
+insert into sys_dept values(104,  101, '0,100,101',  'Marketing department',   2, 'John Doe', '15888888888', 'john.doe@domain.com', '0', '0', 'admin', sysdate(), '', null);
+insert into sys_dept values(105,  101, '0,100,101',  'Testing department',   3, 'John Doe', '15888888888', 'john.doe@domain.com', '0', '0', 'admin', sysdate(), '', null);
+insert into sys_dept values(106,  101, '0,100,101',  'Financial department',   4, 'John Doe', '15888888888', 'john.doe@domain.com', '0', '0', 'admin', sysdate(), '', null);
+insert into sys_dept values(107,  101, '0,100,101',  'Operation and maintenance department',   5, 'John Doe', '15888888888', 'john.doe@domain.com', '0', '0', 'admin', sysdate(), '', null);
+insert into sys_dept values(108,  102, '0,100,102',  'Accounting department',   1, 'John Doe', '15888888888', 'john.doe@domain.com', '0', '0', 'admin', sysdate(), '', null);
+insert into sys_dept values(109,  102, '0,100,102',  'Procurement department',   2, 'John Doe', '15888888888', 'john.doe@domain.com', '0', '0', 'admin', sysdate(), '', null);
 
 
 -- ----------------------------
--- 2、用户信息表
+-- 2, User table
 -- ----------------------------
 drop table if exists sys_user;
 create table sys_user (
-  user_id           bigint(20)      not null auto_increment    comment '用户ID',
-  dept_id           bigint(20)      default null               comment '部门ID',
-  user_name         varchar(30)     not null                   comment '用户账号',
-  nick_name         varchar(30)     not null                   comment '用户昵称',
-  user_type         varchar(2)      default '00'               comment '用户类型（00系统用户）',
-  email             varchar(50)     default ''                 comment '用户邮箱',
-  phonenumber       varchar(11)     default ''                 comment '手机号码',
-  sex               char(1)         default '0'                comment '用户性别（0男 1女 2未知）',
-  avatar            varchar(100)    default ''                 comment '头像地址',
-  password          varchar(100)    default ''                 comment '密码',
-  status            char(1)         default '0'                comment '帐号状态（0正常 1停用）',
-  del_flag          char(1)         default '0'                comment '删除标志（0代表存在 2代表删除）',
-  login_ip          varchar(128)    default ''                 comment '最后登录IP',
-  login_date        datetime                                   comment '最后登录时间',
-  create_by         varchar(64)     default ''                 comment '创建者',
-  create_time       datetime                                   comment '创建时间',
-  update_by         varchar(64)     default ''                 comment '更新者',
-  update_time       datetime                                   comment '更新时间',
-  remark            varchar(500)    default null               comment '备注',
+  user_id           bigint(20)      not null auto_increment    comment 'User ID',
+  dept_id           bigint(20)      default null               comment 'Department ID',
+  user_name         varchar(30)     not null                   comment 'User account',
+  nick_name         varchar(30)     not null                   comment 'User`s Nickname',
+  user_type         varchar(2)      default '00'               comment 'User type (00 system user)',
+  email             varchar(50)     default ''                 comment 'Email address',
+  phonenumber       varchar(11)     default ''                 comment 'Phone number',
+  sex               char(1)         default '0'                comment 'User gender (0 male, 1 female, 2 unknown)',
+  avatar            varchar(100)    default ''                 comment 'Avatar address',
+  password          varchar(100)    default ''                 comment 'Password',
+  status            char(1)         default '0'                comment 'Account status (0 normal, 1 disabled)',
+  del_flag          char(1)         default '0'                comment 'Delete flag (0 means existence, 2 means deletion)',
+  login_ip          varchar(128)    default ''                comment 'Last login IP',
+  login_date        datetime                                   comment 'Last login time',
+  create_by         varchar(64)     default ''                 comment 'Creator',
+  create_time       datetime                                   comment 'Created at',
+  update_by         varchar(64)     default ''                 comment 'Updater',
+  update_time       datetime                                   comment 'Updated at',
+  remark            varchar(500)    default null               comment 'Remark',
   primary key (user_id)
-) engine=innodb auto_increment=100 comment = '用户信息表';
+) engine=innodb auto_increment=100 comment = 'User table';
 
 -- ----------------------------
--- 初始化-用户信息表数据
+-- Initialization user table
 -- ----------------------------
-insert into sys_user values(1,  103, 'admin', '若依', '00', 'ry@163.com', '15888888888', '1', '', '$2a$10$7JB720yubVSZvUI0rEqK/.VqGOZTH.ulu33dHOiBE8ByOhJIrdAu2', '0', '0', '127.0.0.1', sysdate(), 'admin', sysdate(), '', null, '管理员');
-insert into sys_user values(2,  105, 'ry',    '若依', '00', 'ry@qq.com',  '15666666666', '1', '', '$2a$10$7JB720yubVSZvUI0rEqK/.VqGOZTH.ulu33dHOiBE8ByOhJIrdAu2', '0', '0', '127.0.0.1', sysdate(), 'admin', sysdate(), '', null, '测试员');
+insert into sys_user values(1,  103, 'admin', 'Admin', '00', 'ry@163.com', '15888888888', '1', '', '$2a$10$7JB720yubVSZvUI0rEqK/.VqGOZTH.ulu33dHOiBE8ByOhJIrdAu2', '0', '0', '127.0.0.1', sysdate(), 'admin', sysdate(), '', null, 'administrator');
+insert into sys_user values(2,  105, 'ry',    'John Doe', '00', 'john.doe@domain.com',  '15666666666', '1', '', '$2a$10$7JB720yubVSZvUI0rEqK/.VqGOZTH.ulu33dHOiBE8ByOhJIrdAu2', '0', '0', '127.0.0.1', sysdate(), 'admin', sysdate(), '', null, 'tester');
 
 
 -- ----------------------------
--- 3、岗位信息表
+-- 3, Job post table
 -- ----------------------------
 drop table if exists sys_post;
 create table sys_post
 (
-  post_id       bigint(20)      not null auto_increment    comment '岗位ID',
-  post_code     varchar(64)     not null                   comment '岗位编码',
-  post_name     varchar(50)     not null                   comment '岗位名称',
-  post_sort     int(4)          not null                   comment '显示顺序',
-  status        char(1)         not null                   comment '状态（0正常 1停用）',
-  create_by     varchar(64)     default ''                 comment '创建者',
-  create_time   datetime                                   comment '创建时间',
-  update_by     varchar(64)     default ''			       comment '更新者',
-  update_time   datetime                                   comment '更新时间',
-  remark        varchar(500)    default null               comment '备注',
+  post_id       bigint(20)      not null auto_increment    comment 'Post ID',
+  post_code     varchar(64)     not null                   comment 'Job post code',
+  post_name     varchar(50)     not null                   comment 'Position name',
+  post_sort     int(4)          not null                   comment 'Display order',
+  status        char(1)         not null                   comment 'Status (0 normal, 1 disabled)',
+  create_by     varchar(64)     default ''                 comment 'Creator',
+  create_time   datetime                                   comment 'Created at',
+  update_by     varchar(64)     default ''			       comment 'Updater',
+  update_time   datetime                                   comment 'Updated at',
+  remark        varchar(500)    default null               comment 'Remark',
   primary key (post_id)
-) engine=innodb comment = '岗位信息表';
+) engine=innodb comment = 'Job post table';
 
 -- ----------------------------
--- 初始化-岗位信息表数据
+-- Initialization-job post table
 -- ----------------------------
-insert into sys_post values(1, 'ceo',  '董事长',    1, '0', 'admin', sysdate(), '', null, '');
-insert into sys_post values(2, 'se',   '项目经理',  2, '0', 'admin', sysdate(), '', null, '');
-insert into sys_post values(3, 'hr',   '人力资源',  3, '0', 'admin', sysdate(), '', null, '');
-insert into sys_post values(4, 'user', '普通员工',  4, '0', 'admin', sysdate(), '', null, '');
+insert into sys_post values(1, 'ceo',  'Chairman',    1, '0', 'admin', sysdate(), '', null, '');
+insert into sys_post values(2, 'se',   'Project manager',  2, '0', 'admin', sysdate(), '', null, '');
+insert into sys_post values(3, 'hr',   'Human resources',  3, '0', 'admin', sysdate(), '', null, '');
+insert into sys_post values(4, 'user', 'General staff',  4, '0', 'admin', sysdate(), '', null, '');
 
 
 -- ----------------------------
--- 4、角色信息表
+-- 4,Role table
 -- ----------------------------
 drop table if exists sys_role;
 create table sys_role (
-  role_id              bigint(20)      not null auto_increment    comment '角色ID',
-  role_name            varchar(30)     not null                   comment '角色名称',
-  role_key             varchar(100)    not null                   comment '角色权限字符串',
-  role_sort            int(4)          not null                   comment '显示顺序',
-  data_scope           char(1)         default '1'                comment '数据范围（1：全部数据权限 2：自定数据权限 3：本部门数据权限 4：本部门及以下数据权限）',
-  menu_check_strictly  tinyint(1)      default 1                  comment '菜单树选择项是否关联显示',
-  dept_check_strictly  tinyint(1)      default 1                  comment '部门树选择项是否关联显示',
-  status               char(1)         not null                   comment '角色状态（0正常 1停用）',
-  del_flag             char(1)         default '0'                comment '删除标志（0代表存在 2代表删除）',
-  create_by            varchar(64)     default ''                 comment '创建者',
-  create_time          datetime                                   comment '创建时间',
-  update_by            varchar(64)     default ''                 comment '更新者',
-  update_time          datetime                                   comment '更新时间',
-  remark               varchar(500)    default null               comment '备注',
+  role_id              bigint(20)      not null auto_increment    comment 'Role ID',
+  role_name            varchar(30)     not null                   comment 'Role name',
+  role_key             varchar(100)    not null                   comment 'Role permission string',
+  role_sort            int(4)          not null                   comment 'Display order',
+  data_scope           char(1)         default '1'                comment 'Data scope (1: All data permissions, 2: Customized data permissions, 3: Data permissions for this department, 4: Data permissions for this department and below)',
+  menu_check_strictly  tinyint(1)      default 1                  comment 'Whether the menu tree selection items are displayed in association',
+  dept_check_strictly  tinyint(1)      default 1                  comment 'Whether the department tree selection items are displayed in association',
+  status               char(1)         not null                   comment 'Role status (0 normal 1 disabled)',
+  del_flag             char(1)         default '0'                comment 'Delete flag (0 means existence, 2 means deletion)',
+  create_by            varchar(64)     default ''                 comment 'Creator',
+  create_time          datetime                                   comment 'Created at',
+  update_by            varchar(64)     default ''                 comment 'Updater',
+  update_time          datetime                                   comment 'Updated at',
+  remark               varchar(500)    default null               comment 'Remark',
   primary key (role_id)
-) engine=innodb auto_increment=100 comment = '角色信息表';
+) engine=innodb auto_increment=100 comment = 'Role table';
 
 -- ----------------------------
--- 初始化-角色信息表数据
+-- Initialization-role table
 -- ----------------------------
-insert into sys_role values('1', '超级管理员',  'admin',  1, 1, 1, 1, '0', '0', 'admin', sysdate(), '', null, '超级管理员');
-insert into sys_role values('2', '普通角色',    'common', 2, 2, 1, 1, '0', '0', 'admin', sysdate(), '', null, '普通角色');
+insert into sys_role values('1', 'Super administrator',  'admin',  1, 1, 1, 1, '0', '0', 'admin', sysdate(), '', null, 'Super administrator');
+insert into sys_role values('2', 'Normal role',    'common', 2, 2, 1, 1, '0', '0', 'admin', sysdate(), '', null, 'Normal role');
 
 
 -- ----------------------------
--- 5、菜单权限表
+-- 5, Menu permission table
 -- ----------------------------
 drop table if exists sys_menu;
 create table sys_menu (
-  menu_id           bigint(20)      not null auto_increment    comment '菜单ID',
-  menu_name         varchar(50)     not null                   comment '菜单名称',
-  parent_id         bigint(20)      default 0                  comment '父菜单ID',
-  order_num         int(4)          default 0                  comment '显示顺序',
-  path              varchar(200)    default ''                 comment '路由地址',
-  component         varchar(255)    default null               comment '组件路径',
-  is_frame          int(1)          default 1                  comment '是否为外链（0是 1否）',
-  is_cache          int(1)          default 0                  comment '是否缓存（0缓存 1不缓存）',
-  menu_type         char(1)         default ''                 comment '菜单类型（M目录 C菜单 F按钮）',
-  visible           char(1)         default 0                  comment '菜单状态（0显示 1隐藏）',
-  status            char(1)         default 0                  comment '菜单状态（0正常 1停用）',
-  perms             varchar(100)    default null               comment '权限标识',
-  icon              varchar(100)    default '#'                comment '菜单图标',
-  create_by         varchar(64)     default ''                 comment '创建者',
-  create_time       datetime                                   comment '创建时间',
-  update_by         varchar(64)     default ''                 comment '更新者',
-  update_time       datetime                                   comment '更新时间',
-  remark            varchar(500)    default ''                 comment '备注',
+  menu_id           bigint(20)      not null auto_increment    comment 'Menu ID',
+  menu_name         varchar(50)     not null                   comment 'Menu name',
+  parent_id         bigint(20)      default 0                  comment 'Parent menu ID',
+  order_num         int(4)          default 0                  comment 'Display order',
+  path              varchar(200)    default ''                 comment 'Routing address',
+  component         varchar(255)    default null               comment 'Component path',
+  is_frame          int(1)          default 1                  comment 'Whether it is an external link (0 yes, 1 no)',
+  is_cache          int(1)          default 0                  comment 'Whether to cache (0 cache, 1 no cache)',
+  menu_type         char(1)         default ''                 comment 'Menu type (M directory, C menu, F button)',
+  visible           char(1)         default 0                  comment 'Menu visibility (0 display, 1 hide)',
+  status            char(1)         default 0                  comment 'Menu status (0 normal, 1 disabled)',
+  perms             varchar(100)    default null               comment 'Authority ID',
+  icon              varchar(100)    default '#'                comment 'Menu icon',
+  create_by         varchar(64)     default ''                 comment 'Creator',
+  create_time       datetime                                   comment 'Created at',
+  update_by         varchar(64)     default ''                 comment 'Updater',
+  update_time       datetime                                   comment 'Updated at',
+  remark            varchar(500)    default ''                 comment 'Remark',
   primary key (menu_id)
-) engine=innodb auto_increment=2000 comment = '菜单权限表';
+) engine=innodb auto_increment=2000 comment = 'Menu permission table';
 
 -- ----------------------------
--- 初始化-菜单信息表数据
+-- Initialization-menu table
 -- ----------------------------
--- 一级菜单
-insert into sys_menu values('1', '系统管理', '0', '1', 'system',           null,   1, 0, 'M', '0', '0', '', 'system',   'admin', sysdate(), '', null, '系统管理目录');
-insert into sys_menu values('2', '系统监控', '0', '2', 'monitor',          null,   1, 0, 'M', '0', '0', '', 'monitor',  'admin', sysdate(), '', null, '系统监控目录');
-insert into sys_menu values('3', '系统工具', '0', '3', 'tool',             null,   1, 0, 'M', '0', '0', '', 'tool',     'admin', sysdate(), '', null, '系统工具目录');
-insert into sys_menu values('4', '若依官网', '0', '4', 'http://ruoyi.vip', null ,  0, 0, 'M', '0', '0', '', 'guide',    'admin', sysdate(), '', null, '若依官网地址');
--- 二级菜单
-insert into sys_menu values('100',  '用户管理', '1',   '1', 'user',       'system/user/index',        1, 0, 'C', '0', '0', 'system:user:list',        'user',          'admin', sysdate(), '', null, '用户管理菜单');
-insert into sys_menu values('101',  '角色管理', '1',   '2', 'role',       'system/role/index',        1, 0, 'C', '0', '0', 'system:role:list',        'peoples',       'admin', sysdate(), '', null, '角色管理菜单');
-insert into sys_menu values('102',  '菜单管理', '1',   '3', 'menu',       'system/menu/index',        1, 0, 'C', '0', '0', 'system:menu:list',        'tree-table',    'admin', sysdate(), '', null, '菜单管理菜单');
-insert into sys_menu values('103',  '部门管理', '1',   '4', 'dept',       'system/dept/index',        1, 0, 'C', '0', '0', 'system:dept:list',        'tree',          'admin', sysdate(), '', null, '部门管理菜单');
-insert into sys_menu values('104',  '岗位管理', '1',   '5', 'post',       'system/post/index',        1, 0, 'C', '0', '0', 'system:post:list',        'post',          'admin', sysdate(), '', null, '岗位管理菜单');
-insert into sys_menu values('105',  '字典管理', '1',   '6', 'dict',       'system/dict/index',        1, 0, 'C', '0', '0', 'system:dict:list',        'dict',          'admin', sysdate(), '', null, '字典管理菜单');
-insert into sys_menu values('106',  '参数设置', '1',   '7', 'config',     'system/config/index',      1, 0, 'C', '0', '0', 'system:config:list',      'edit',          'admin', sysdate(), '', null, '参数设置菜单');
-insert into sys_menu values('107',  '通知公告', '1',   '8', 'notice',     'system/notice/index',      1, 0, 'C', '0', '0', 'system:notice:list',      'message',       'admin', sysdate(), '', null, '通知公告菜单');
-insert into sys_menu values('108',  '日志管理', '1',   '9', 'log',        '',                         1, 0, 'M', '0', '0', '',                        'log',           'admin', sysdate(), '', null, '日志管理菜单');
-insert into sys_menu values('109',  '在线用户', '2',   '1', 'online',     'monitor/online/index',     1, 0, 'C', '0', '0', 'monitor:online:list',     'online',        'admin', sysdate(), '', null, '在线用户菜单');
-insert into sys_menu values('110',  '定时任务', '2',   '2', 'job',        'monitor/job/index',        1, 0, 'C', '0', '0', 'monitor:job:list',        'job',           'admin', sysdate(), '', null, '定时任务菜单');
-insert into sys_menu values('111',  '数据监控', '2',   '3', 'druid',      'monitor/druid/index',      1, 0, 'C', '0', '0', 'monitor:druid:list',      'druid',         'admin', sysdate(), '', null, '数据监控菜单');
-insert into sys_menu values('112',  '服务监控', '2',   '4', 'server',     'monitor/server/index',     1, 0, 'C', '0', '0', 'monitor:server:list',     'server',        'admin', sysdate(), '', null, '服务监控菜单');
-insert into sys_menu values('113',  '缓存监控', '2',   '5', 'cache',      'monitor/cache/index',      1, 0, 'C', '0', '0', 'monitor:cache:list',      'redis',         'admin', sysdate(), '', null, '缓存监控菜单');
-insert into sys_menu values('114',  '表单构建', '3',   '1', 'build',      'tool/build/index',         1, 0, 'C', '0', '0', 'tool:build:list',         'build',         'admin', sysdate(), '', null, '表单构建菜单');
-insert into sys_menu values('115',  '代码生成', '3',   '2', 'gen',        'tool/gen/index',           1, 0, 'C', '0', '0', 'tool:gen:list',           'code',          'admin', sysdate(), '', null, '代码生成菜单');
-insert into sys_menu values('116',  '系统接口', '3',   '3', 'swagger',    'tool/swagger/index',       1, 0, 'C', '0', '0', 'tool:swagger:list',       'swagger',       'admin', sysdate(), '', null, '系统接口菜单');
--- 三级菜单
-insert into sys_menu values('500',  '操作日志', '108', '1', 'operlog',    'monitor/operlog/index',    1, 0, 'C', '0', '0', 'monitor:operlog:list',    'form',          'admin', sysdate(), '', null, '操作日志菜单');
-insert into sys_menu values('501',  '登录日志', '108', '2', 'logininfor', 'monitor/logininfor/index', 1, 0, 'C', '0', '0', 'monitor:logininfor:list', 'logininfor',    'admin', sysdate(), '', null, '登录日志菜单');
--- 用户管理按钮
-insert into sys_menu values('1001', '用户查询', '100', '1',  '', '', 1, 0, 'F', '0', '0', 'system:user:query',          '#', 'admin', sysdate(), '', null, '');
-insert into sys_menu values('1002', '用户新增', '100', '2',  '', '', 1, 0, 'F', '0', '0', 'system:user:add',            '#', 'admin', sysdate(), '', null, '');
-insert into sys_menu values('1003', '用户修改', '100', '3',  '', '', 1, 0, 'F', '0', '0', 'system:user:edit',           '#', 'admin', sysdate(), '', null, '');
-insert into sys_menu values('1004', '用户删除', '100', '4',  '', '', 1, 0, 'F', '0', '0', 'system:user:remove',         '#', 'admin', sysdate(), '', null, '');
-insert into sys_menu values('1005', '用户导出', '100', '5',  '', '', 1, 0, 'F', '0', '0', 'system:user:export',         '#', 'admin', sysdate(), '', null, '');
-insert into sys_menu values('1006', '用户导入', '100', '6',  '', '', 1, 0, 'F', '0', '0', 'system:user:import',         '#', 'admin', sysdate(), '', null, '');
-insert into sys_menu values('1007', '重置密码', '100', '7',  '', '', 1, 0, 'F', '0', '0', 'system:user:resetPwd',       '#', 'admin', sysdate(), '', null, '');
--- 角色管理按钮
-insert into sys_menu values('1008', '角色查询', '101', '1',  '', '', 1, 0, 'F', '0', '0', 'system:role:query',          '#', 'admin', sysdate(), '', null, '');
-insert into sys_menu values('1009', '角色新增', '101', '2',  '', '', 1, 0, 'F', '0', '0', 'system:role:add',            '#', 'admin', sysdate(), '', null, '');
-insert into sys_menu values('1010', '角色修改', '101', '3',  '', '', 1, 0, 'F', '0', '0', 'system:role:edit',           '#', 'admin', sysdate(), '', null, '');
-insert into sys_menu values('1011', '角色删除', '101', '4',  '', '', 1, 0, 'F', '0', '0', 'system:role:remove',         '#', 'admin', sysdate(), '', null, '');
-insert into sys_menu values('1012', '角色导出', '101', '5',  '', '', 1, 0, 'F', '0', '0', 'system:role:export',         '#', 'admin', sysdate(), '', null, '');
--- 菜单管理按钮
-insert into sys_menu values('1013', '菜单查询', '102', '1',  '', '', 1, 0, 'F', '0', '0', 'system:menu:query',          '#', 'admin', sysdate(), '', null, '');
-insert into sys_menu values('1014', '菜单新增', '102', '2',  '', '', 1, 0, 'F', '0', '0', 'system:menu:add',            '#', 'admin', sysdate(), '', null, '');
-insert into sys_menu values('1015', '菜单修改', '102', '3',  '', '', 1, 0, 'F', '0', '0', 'system:menu:edit',           '#', 'admin', sysdate(), '', null, '');
-insert into sys_menu values('1016', '菜单删除', '102', '4',  '', '', 1, 0, 'F', '0', '0', 'system:menu:remove',         '#', 'admin', sysdate(), '', null, '');
--- 部门管理按钮
-insert into sys_menu values('1017', '部门查询', '103', '1',  '', '', 1, 0, 'F', '0', '0', 'system:dept:query',          '#', 'admin', sysdate(), '', null, '');
-insert into sys_menu values('1018', '部门新增', '103', '2',  '', '', 1, 0, 'F', '0', '0', 'system:dept:add',            '#', 'admin', sysdate(), '', null, '');
-insert into sys_menu values('1019', '部门修改', '103', '3',  '', '', 1, 0, 'F', '0', '0', 'system:dept:edit',           '#', 'admin', sysdate(), '', null, '');
-insert into sys_menu values('1020', '部门删除', '103', '4',  '', '', 1, 0, 'F', '0', '0', 'system:dept:remove',         '#', 'admin', sysdate(), '', null, '');
--- 岗位管理按钮
-insert into sys_menu values('1021', '岗位查询', '104', '1',  '', '', 1, 0, 'F', '0', '0', 'system:post:query',          '#', 'admin', sysdate(), '', null, '');
-insert into sys_menu values('1022', '岗位新增', '104', '2',  '', '', 1, 0, 'F', '0', '0', 'system:post:add',            '#', 'admin', sysdate(), '', null, '');
-insert into sys_menu values('1023', '岗位修改', '104', '3',  '', '', 1, 0, 'F', '0', '0', 'system:post:edit',           '#', 'admin', sysdate(), '', null, '');
-insert into sys_menu values('1024', '岗位删除', '104', '4',  '', '', 1, 0, 'F', '0', '0', 'system:post:remove',         '#', 'admin', sysdate(), '', null, '');
-insert into sys_menu values('1025', '岗位导出', '104', '5',  '', '', 1, 0, 'F', '0', '0', 'system:post:export',         '#', 'admin', sysdate(), '', null, '');
--- 字典管理按钮
-insert into sys_menu values('1026', '字典查询', '105', '1', '#', '', 1, 0, 'F', '0', '0', 'system:dict:query',          '#', 'admin', sysdate(), '', null, '');
-insert into sys_menu values('1027', '字典新增', '105', '2', '#', '', 1, 0, 'F', '0', '0', 'system:dict:add',            '#', 'admin', sysdate(), '', null, '');
-insert into sys_menu values('1028', '字典修改', '105', '3', '#', '', 1, 0, 'F', '0', '0', 'system:dict:edit',           '#', 'admin', sysdate(), '', null, '');
-insert into sys_menu values('1029', '字典删除', '105', '4', '#', '', 1, 0, 'F', '0', '0', 'system:dict:remove',         '#', 'admin', sysdate(), '', null, '');
-insert into sys_menu values('1030', '字典导出', '105', '5', '#', '', 1, 0, 'F', '0', '0', 'system:dict:export',         '#', 'admin', sysdate(), '', null, '');
--- 参数设置按钮
-insert into sys_menu values('1031', '参数查询', '106', '1', '#', '', 1, 0, 'F', '0', '0', 'system:config:query',        '#', 'admin', sysdate(), '', null, '');
-insert into sys_menu values('1032', '参数新增', '106', '2', '#', '', 1, 0, 'F', '0', '0', 'system:config:add',          '#', 'admin', sysdate(), '', null, '');
-insert into sys_menu values('1033', '参数修改', '106', '3', '#', '', 1, 0, 'F', '0', '0', 'system:config:edit',         '#', 'admin', sysdate(), '', null, '');
-insert into sys_menu values('1034', '参数删除', '106', '4', '#', '', 1, 0, 'F', '0', '0', 'system:config:remove',       '#', 'admin', sysdate(), '', null, '');
-insert into sys_menu values('1035', '参数导出', '106', '5', '#', '', 1, 0, 'F', '0', '0', 'system:config:export',       '#', 'admin', sysdate(), '', null, '');
--- 通知公告按钮
-insert into sys_menu values('1036', '公告查询', '107', '1', '#', '', 1, 0, 'F', '0', '0', 'system:notice:query',        '#', 'admin', sysdate(), '', null, '');
-insert into sys_menu values('1037', '公告新增', '107', '2', '#', '', 1, 0, 'F', '0', '0', 'system:notice:add',          '#', 'admin', sysdate(), '', null, '');
-insert into sys_menu values('1038', '公告修改', '107', '3', '#', '', 1, 0, 'F', '0', '0', 'system:notice:edit',         '#', 'admin', sysdate(), '', null, '');
-insert into sys_menu values('1039', '公告删除', '107', '4', '#', '', 1, 0, 'F', '0', '0', 'system:notice:remove',       '#', 'admin', sysdate(), '', null, '');
--- 操作日志按钮
-insert into sys_menu values('1040', '操作查询', '500', '1', '#', '', 1, 0, 'F', '0', '0', 'monitor:operlog:query',      '#', 'admin', sysdate(), '', null, '');
-insert into sys_menu values('1041', '操作删除', '500', '2', '#', '', 1, 0, 'F', '0', '0', 'monitor:operlog:remove',     '#', 'admin', sysdate(), '', null, '');
-insert into sys_menu values('1042', '日志导出', '500', '4', '#', '', 1, 0, 'F', '0', '0', 'monitor:operlog:export',     '#', 'admin', sysdate(), '', null, '');
--- 登录日志按钮
-insert into sys_menu values('1043', '登录查询', '501', '1', '#', '', 1, 0, 'F', '0', '0', 'monitor:logininfor:query',   '#', 'admin', sysdate(), '', null, '');
-insert into sys_menu values('1044', '登录删除', '501', '2', '#', '', 1, 0, 'F', '0', '0', 'monitor:logininfor:remove',  '#', 'admin', sysdate(), '', null, '');
-insert into sys_menu values('1045', '日志导出', '501', '3', '#', '', 1, 0, 'F', '0', '0', 'monitor:logininfor:export',  '#', 'admin', sysdate(), '', null, '');
--- 在线用户按钮
-insert into sys_menu values('1046', '在线查询', '109', '1', '#', '', 1, 0, 'F', '0', '0', 'monitor:online:query',       '#', 'admin', sysdate(), '', null, '');
-insert into sys_menu values('1047', '批量强退', '109', '2', '#', '', 1, 0, 'F', '0', '0', 'monitor:online:batchLogout', '#', 'admin', sysdate(), '', null, '');
-insert into sys_menu values('1048', '单条强退', '109', '3', '#', '', 1, 0, 'F', '0', '0', 'monitor:online:forceLogout', '#', 'admin', sysdate(), '', null, '');
--- 定时任务按钮
-insert into sys_menu values('1049', '任务查询', '110', '1', '#', '', 1, 0, 'F', '0', '0', 'monitor:job:query',          '#', 'admin', sysdate(), '', null, '');
-insert into sys_menu values('1050', '任务新增', '110', '2', '#', '', 1, 0, 'F', '0', '0', 'monitor:job:add',            '#', 'admin', sysdate(), '', null, '');
-insert into sys_menu values('1051', '任务修改', '110', '3', '#', '', 1, 0, 'F', '0', '0', 'monitor:job:edit',           '#', 'admin', sysdate(), '', null, '');
-insert into sys_menu values('1052', '任务删除', '110', '4', '#', '', 1, 0, 'F', '0', '0', 'monitor:job:remove',         '#', 'admin', sysdate(), '', null, '');
-insert into sys_menu values('1053', '状态修改', '110', '5', '#', '', 1, 0, 'F', '0', '0', 'monitor:job:changeStatus',   '#', 'admin', sysdate(), '', null, '');
-insert into sys_menu values('1054', '任务导出', '110', '7', '#', '', 1, 0, 'F', '0', '0', 'monitor:job:export',         '#', 'admin', sysdate(), '', null, '');
--- 代码生成按钮
-insert into sys_menu values('1055', '生成查询', '115', '1', '#', '', 1, 0, 'F', '0', '0', 'tool:gen:query',             '#', 'admin', sysdate(), '', null, '');
-insert into sys_menu values('1056', '生成修改', '115', '2', '#', '', 1, 0, 'F', '0', '0', 'tool:gen:edit',              '#', 'admin', sysdate(), '', null, '');
-insert into sys_menu values('1057', '生成删除', '115', '3', '#', '', 1, 0, 'F', '0', '0', 'tool:gen:remove',            '#', 'admin', sysdate(), '', null, '');
-insert into sys_menu values('1058', '导入代码', '115', '2', '#', '', 1, 0, 'F', '0', '0', 'tool:gen:import',            '#', 'admin', sysdate(), '', null, '');
-insert into sys_menu values('1059', '预览代码', '115', '4', '#', '', 1, 0, 'F', '0', '0', 'tool:gen:preview',           '#', 'admin', sysdate(), '', null, '');
-insert into sys_menu values('1060', '生成代码', '115', '5', '#', '', 1, 0, 'F', '0', '0', 'tool:gen:code',              '#', 'admin', sysdate(), '', null, '');
+-- Root menu
+insert into sys_menu values('1', 'System Management', '0', '1', 'system',           null,   1, 0, 'M', '0', '0', '', 'system',   'admin', sysdate(), '', null, 'System management directory');
+insert into sys_menu values('2', 'System Monitoring', '0', '2', 'monitor',          null,   1, 0, 'M', '0', '0', '', 'monitor',  'admin', sysdate(), '', null, 'System monitoring directory');
+insert into sys_menu values('3', 'System Tools', '0', '3', 'tool',             null,   1, 0, 'M', '0', '0', '', 'tool',     'admin', sysdate(), '', null, 'System tool catalog');
+insert into sys_menu values('4', 'Official website', '0', '4', 'http://ruoyi.vip', null ,  0, 0, 'M', '0', '0', '', 'guide',    'admin', sysdate(), '', null, 'Official website address');
+-- Secondary menu
+insert into sys_menu values('100',  'User Management', '1',   '1', 'user',       'system/user/index',        1, 0, 'C', '0', '0', 'system:user:list',        'user',          'admin', sysdate(), '', null, 'User management menu');
+insert into sys_menu values('101',  'Role Management', '1',   '2', 'role',       'system/role/index',        1, 0, 'C', '0', '0', 'system:role:list',        'peoples',       'admin', sysdate(), '', null, 'Role management menu');
+insert into sys_menu values('102',  'Menu Management', '1',   '3', 'menu',       'system/menu/index',        1, 0, 'C', '0', '0', 'system:menu:list',        'tree-table',    'admin', sysdate(), '', null, 'Menu management menu');
+insert into sys_menu values('103',  'Department Management', '1',   '4', 'dept',       'system/dept/index',        1, 0, 'C', '0', '0', 'system:dept:list',        'tree',          'admin', sysdate(), '', null, 'Department management menu');
+insert into sys_menu values('104',  'Job Management', '1',   '5', 'post',       'system/post/index',        1, 0, 'C', '0', '0', 'system:post:list',        'post',          'admin', sysdate(), '', null, 'Post management menu');
+insert into sys_menu values('105',  'Dictionary Management', '1',   '6', 'dict',       'system/dict/index',        1, 0, 'C', '0', '0', 'system:dict:list',        'dict',          'admin', sysdate(), '', null, 'Dictionary management menu');
+insert into sys_menu values('106',  'Parameter Settings', '1',   '7', 'config',     'system/config/index',      1, 0, 'C', '0', '0', 'system:config:list',      'edit',          'admin', sysdate(), '', null, 'Parameter setting menu');
+insert into sys_menu values('107',  'Announcement', '1',   '8', 'notice',     'system/notice/index',      1, 0, 'C', '0', '0', 'system:notice:list',      'message',       'admin', sysdate(), '', null, 'Notification announcement menu');
+insert into sys_menu values('108',  'Log Management', '1',   '9', 'log',        '',                         1, 0, 'M', '0', '0', '',                        'log',           'admin', sysdate(), '', null, 'Log management menu');
+insert into sys_menu values('109',  'Online User', '2',   '1', 'online',     'monitor/online/index',     1, 0, 'C', '0', '0', 'monitor:online:list',     'online',        'admin', sysdate(), '', null, 'Online user menu');
+insert into sys_menu values('110',  'Timed Task', '2',   '2', 'job',        'monitor/job/index',        1, 0, 'C', '0', '0', 'monitor:job:list',        'job',           'admin', sysdate(), '', null, 'Timed task menu');
+insert into sys_menu values('111',  'Data Monitoring', '2',   '3', 'druid',      'monitor/druid/index',      1, 0, 'C', '0', '0', 'monitor:druid:list',      'druid',         'admin', sysdate(), '', null, 'Data monitoring menu');
+insert into sys_menu values('112',  'Service Monitoring', '2',   '4', 'server',     'monitor/server/index',     1, 0, 'C', '0', '0', 'monitor:server:list',     'server',        'admin', sysdate(), '', null, 'Service monitoring menu');
+insert into sys_menu values('113',  'Cache Monitoring', '2',   '5', 'cache',      'monitor/cache/index',      1, 0, 'C', '0', '0', 'monitor:cache:list',      'redis',         'admin', sysdate(), '', null, 'Cache monitoring menu');
+insert into sys_menu values('114',  'Form Construction', '3',   '1', 'build',      'tool/build/index',         1, 0, 'C', '0', '0', 'tool:build:list',         'build',         'admin', sysdate(), '', null, 'Form build menu');
+insert into sys_menu values('115',  'Code Generation', '3',   '2', 'gen',        'tool/gen/index',           1, 0, 'C', '0', '0', 'tool:gen:list',           'code',          'admin', sysdate(), '', null, 'Code generation menu');
+insert into sys_menu values('116',  'System Interface', '3',   '3', 'swagger',    'tool/swagger/index',       1, 0, 'C', '0', '0', 'tool:swagger:list',       'swagger',       'admin', sysdate(), '', null, 'System interface menu');
+-- Third level menu
+insert into sys_menu values('500',  'Operation log', '108', '1', 'operlog',    'monitor/operlog/index',    1, 0, 'C', '0', '0', 'monitor:operlog:list',    'form',          'admin', sysdate(), '', null, 'Operation log menu');
+insert into sys_menu values('501',  'Login log', '108', '2', 'logininfor', 'monitor/logininfor/index', 1, 0, 'C', '0', '0', 'monitor:logininfor:list', 'logininfor',    'admin', sysdate(), '', null, 'Login log menu');
+-- User management button
+insert into sys_menu values('1001', 'User query', '100', '1',  '', '', 1, 0, 'F', '0', '0', 'system:user:query',          '#', 'admin', sysdate(), '', null, '');
+insert into sys_menu values('1002', 'User added', '100', '2',  '', '', 1, 0, 'F', '0', '0', 'system:user:add',            '#', 'admin', sysdate(), '', null, '');
+insert into sys_menu values('1003', 'User modification', '100', '3',  '', '', 1, 0, 'F', '0', '0', 'system:user:edit',           '#', 'admin', sysdate(), '', null, '');
+insert into sys_menu values('1004', 'User delete', '100', '4',  '', '', 1, 0, 'F', '0', '0', 'system:user:remove',         '#', 'admin', sysdate(), '', null, '');
+insert into sys_menu values('1005', 'User export', '100', '5',  '', '', 1, 0, 'F', '0', '0', 'system:user:export',         '#', 'admin', sysdate(), '', null, '');
+insert into sys_menu values('1006', 'User import', '100', '6',  '', '', 1, 0, 'F', '0', '0', 'system:user:import',         '#', 'admin', sysdate(), '', null, '');
+insert into sys_menu values('1007', 'Reset password', '100', '7',  '', '', 1, 0, 'F', '0', '0', 'system:user:resetPwd',       '#', 'admin', sysdate(), '', null, '');
+-- Role management button
+insert into sys_menu values('1008', 'Role query', '101', '1',  '', '', 1, 0, 'F', '0', '0', 'system:role:query',          '#', 'admin', sysdate(), '', null, '');
+insert into sys_menu values('1009', 'New role', '101', '2',  '', '', 1, 0, 'F', '0', '0', 'system:role:add',            '#', 'admin', sysdate(), '', null, '');
+insert into sys_menu values('1010', 'Role modification', '101', '3',  '', '', 1, 0, 'F', '0', '0', 'system:role:edit',           '#', 'admin', sysdate(), '', null, '');
+insert into sys_menu values('1011', 'Role deletion', '101', '4',  '', '', 1, 0, 'F', '0', '0', 'system:role:remove',         '#', 'admin', sysdate(), '', null, '');
+insert into sys_menu values('1012', 'Role export', '101', '5',  '', '', 1, 0, 'F', '0', '0', 'system:role:export',         '#', 'admin', sysdate(), '', null, '');
+-- Menu management button
+insert into sys_menu values('1013', 'Menu query', '102', '1',  '', '', 1, 0, 'F', '0', '0', 'system:menu:query',          '#', 'admin', sysdate(), '', null, '');
+insert into sys_menu values('1014', 'New menu', '102', '2',  '', '', 1, 0, 'F', '0', '0', 'system:menu:add',            '#', 'admin', sysdate(), '', null, '');
+insert into sys_menu values('1015', 'Menu modification', '102', '3',  '', '', 1, 0, 'F', '0', '0', 'system:menu:edit',           '#', 'admin', sysdate(), '', null, '');
+insert into sys_menu values('1016', 'Menu delete', '102', '4',  '', '', 1, 0, 'F', '0', '0', 'system:menu:remove',         '#', 'admin', sysdate(), '', null, '');
+-- Department Management Button
+insert into sys_menu values('1017', 'Department query', '103', '1',  '', '', 1, 0, 'F', '0', '0', 'system:dept:query',          '#', 'admin', sysdate(), '', null, '');
+insert into sys_menu values('1018', 'New department', '103', '2',  '', '', 1, 0, 'F', '0', '0', 'system:dept:add',            '#', 'admin', sysdate(), '', null, '');
+insert into sys_menu values('1019', 'Department modification', '103', '3',  '', '', 1, 0, 'F', '0', '0', 'system:dept:edit',           '#', 'admin', sysdate(), '', null, '');
+insert into sys_menu values('1020', 'Department delete', '103', '4',  '', '', 1, 0, 'F', '0', '0', 'system:dept:remove',         '#', 'admin', sysdate(), '', null, '');
+-- Position management button
+insert into sys_menu values('1021', 'Job inquiry', '104', '1',  '', '', 1, 0, 'F', '0', '0', 'system:post:query',          '#', 'admin', sysdate(), '', null, '');
+insert into sys_menu values('1022', 'New job', '104', '2',  '', '', 1, 0, 'F', '0', '0', 'system:post:add',            '#', 'admin', sysdate(), '', null, '');
+insert into sys_menu values('1023', 'Post modification', '104', '3',  '', '', 1, 0, 'F', '0', '0', 'system:post:edit',           '#', 'admin', sysdate(), '', null, '');
+insert into sys_menu values('1024', 'Post deletion', '104', '4',  '', '', 1, 0, 'F', '0', '0', 'system:post:remove',         '#', 'admin', sysdate(), '', null, '');
+insert into sys_menu values('1025', 'Post export', '104', '5',  '', '', 1, 0, 'F', '0', '0', 'system:post:export',         '#', 'admin', sysdate(), '', null, '');
+-- Dictionary management button
+insert into sys_menu values('1026', 'Dictionary lookup', '105', '1', '#', '', 1, 0, 'F', '0', '0', 'system:dict:query',          '#', 'admin', sysdate(), '', null, '');
+insert into sys_menu values('1027', 'New dictionary', '105', '2', '#', '', 1, 0, 'F', '0', '0', 'system:dict:add',            '#', 'admin', sysdate(), '', null, '');
+insert into sys_menu values('1028', 'Dictionary modification', '105', '3', '#', '', 1, 0, 'F', '0', '0', 'system:dict:edit',           '#', 'admin', sysdate(), '', null, '');
+insert into sys_menu values('1029', 'Dictionary delete', '105', '4', '#', '', 1, 0, 'F', '0', '0', 'system:dict:remove',         '#', 'admin', sysdate(), '', null, '');
+insert into sys_menu values('1030', 'Dictionary export', '105', '5', '#', '', 1, 0, 'F', '0', '0', 'system:dict:export',         '#', 'admin', sysdate(), '', null, '');
+-- Parameter setting button
+insert into sys_menu values('1031', 'Parameter query', '106', '1', '#', '', 1, 0, 'F', '0', '0', 'system:config:query',        '#', 'admin', sysdate(), '', null, '');
+insert into sys_menu values('1032', 'Add parameter', '106', '2', '#', '', 1, 0, 'F', '0', '0', 'system:config:add',          '#', 'admin', sysdate(), '', null, '');
+insert into sys_menu values('1033', 'Parameter modification', '106', '3', '#', '', 1, 0, 'F', '0', '0', 'system:config:edit',         '#', 'admin', sysdate(), '', null, '');
+insert into sys_menu values('1034', 'Parameter deletion', '106', '4', '#', '', 1, 0, 'F', '0', '0', 'system:config:remove',       '#', 'admin', sysdate(), '', null, '');
+insert into sys_menu values('1035', 'Parameter export', '106', '5', '#', '', 1, 0, 'F', '0', '0', 'system:config:export',       '#', 'admin', sysdate(), '', null, '');
+-- Notification announcement button
+insert into sys_menu values('1036', 'Announcement query', '107', '1', '#', '', 1, 0, 'F', '0', '0', 'system:notice:query',        '#', 'admin', sysdate(), '', null, '');
+insert into sys_menu values('1037', 'New announcement', '107', '2', '#', '', 1, 0, 'F', '0', '0', 'system:notice:add',          '#', 'admin', sysdate(), '', null, '');
+insert into sys_menu values('1038', 'Announcement modification', '107', '3', '#', '', 1, 0, 'F', '0', '0', 'system:notice:edit',         '#', 'admin', sysdate(), '', null, '');
+insert into sys_menu values('1039', 'Announcement delete', '107', '4', '#', '', 1, 0, 'F', '0', '0', 'system:notice:remove',       '#', 'admin', sysdate(), '', null, '');
+-- Operation log button
+insert into sys_menu values('1040', 'Operation query', '500', '1', '#', '', 1, 0, 'F', '0', '0', 'monitor:operlog:query',      '#', 'admin', sysdate(), '', null, '');
+insert into sys_menu values('1041', 'Operation delete', '500', '2', '#', '', 1, 0, 'F', '0', '0', 'monitor:operlog:remove',     '#', 'admin', sysdate(), '', null, '');
+insert into sys_menu values('1042', 'Log export', '500', '4', '#', '', 1, 0, 'F', '0', '0', 'monitor:operlog:export',     '#', 'admin', sysdate(), '', null, '');
+-- Login log button
+insert into sys_menu values('1043', 'Login query', '501', '1', '#', '', 1, 0, 'F', '0', '0', 'monitor:logininfor:query',   '#', 'admin', sysdate(), '', null, '');
+insert into sys_menu values('1044', 'Login delete', '501', '2', '#', '', 1, 0, 'F', '0', '0', 'monitor:logininfor:remove',  '#', 'admin', sysdate(), '', null, '');
+insert into sys_menu values('1045', 'Log export', '501', '3', '#', '', 1, 0, 'F', '0', '0', 'monitor:logininfor:export',  '#', 'admin', sysdate(), '', null, '');
+-- Online user button
+insert into sys_menu values('1046', 'Online search', '109', '1', '#', '', 1, 0, 'F', '0', '0', 'monitor:online:query',       '#', 'admin', sysdate(), '', null, '');
+insert into sys_menu values('1047', 'Batch logout', '109', '2', '#', '', 1, 0, 'F', '0', '0', 'monitor:online:batchLogout', '#', 'admin', sysdate(), '', null, '');
+insert into sys_menu values('1048', 'Force logout', '109', '3', '#', '', 1, 0, 'F', '0', '0', 'monitor:online:forceLogout', '#', 'admin', sysdate(), '', null, '');
+-- Time task button
+insert into sys_menu values('1049', 'Task query', '110', '1', '#', '', 1, 0, 'F', '0', '0', 'monitor:job:query',          '#', 'admin', sysdate(), '', null, '');
+insert into sys_menu values('1050', 'New task', '110', '2', '#', '', 1, 0, 'F', '0', '0', 'monitor:job:add',            '#', 'admin', sysdate(), '', null, '');
+insert into sys_menu values('1051', 'Task modification', '110', '3', '#', '', 1, 0, 'F', '0', '0', 'monitor:job:edit',           '#', 'admin', sysdate(), '', null, '');
+insert into sys_menu values('1052', 'Task delete', '110', '4', '#', '', 1, 0, 'F', '0', '0', 'monitor:job:remove',         '#', 'admin', sysdate(), '', null, '');
+insert into sys_menu values('1053', 'State modification', '110', '5', '#', '', 1, 0, 'F', '0', '0', 'monitor:job:changeStatus',   '#', 'admin', sysdate(), '', null, '');
+insert into sys_menu values('1054', 'Task export', '110', '7', '#', '', 1, 0, 'F', '0', '0', 'monitor:job:export',         '#', 'admin', sysdate(), '', null, '');
+-- Code generation button
+insert into sys_menu values('1055', 'Generate query', '115', '1', '#', '', 1, 0, 'F', '0', '0', 'tool:gen:query',             '#', 'admin', sysdate(), '', null, '');
+insert into sys_menu values('1056', 'Generate modification', '115', '2', '#', '', 1, 0, 'F', '0', '0', 'tool:gen:edit',              '#', 'admin', sysdate(), '', null, '');
+insert into sys_menu values('1057', 'Generate delete', '115', '3', '#', '', 1, 0, 'F', '0', '0', 'tool:gen:remove',            '#', 'admin', sysdate(), '', null, '');
+insert into sys_menu values('1058', 'Import code', '115', '2', '#', '', 1, 0, 'F', '0', '0', 'tool:gen:import',            '#', 'admin', sysdate(), '', null, '');
+insert into sys_menu values('1059', 'Preview code', '115', '4', '#', '', 1, 0, 'F', '0', '0', 'tool:gen:preview',           '#', 'admin', sysdate(), '', null, '');
+insert into sys_menu values('1060', 'Generate code', '115', '5', '#', '', 1, 0, 'F', '0', '0', 'tool:gen:code',              '#', 'admin', sysdate(), '', null, '');
 
 
 -- ----------------------------
--- 6、用户和角色关联表  用户N-1角色
+-- 6, User and role association table - Role 1-N User
 -- ----------------------------
 drop table if exists sys_user_role;
 create table sys_user_role (
-  user_id   bigint(20) not null comment '用户ID',
-  role_id   bigint(20) not null comment '角色ID',
+  user_id   bigint(20) not null comment 'User ID',
+  role_id   bigint(20) not null comment 'Role ID',
   primary key(user_id, role_id)
-) engine=innodb comment = '用户和角色关联表';
+) engine=innodb comment = 'User and role association table';
 
 -- ----------------------------
--- 初始化-用户和角色关联表数据
+-- Initialization-user and role association table
 -- ----------------------------
 insert into sys_user_role values ('1', '1');
 insert into sys_user_role values ('2', '2');
 
 
 -- ----------------------------
--- 7、角色和菜单关联表  角色1-N菜单
+-- 7, Role and menu association table - Role 1-N Menu
 -- ----------------------------
 drop table if exists sys_role_menu;
 create table sys_role_menu (
-  role_id   bigint(20) not null comment '角色ID',
-  menu_id   bigint(20) not null comment '菜单ID',
+  role_id   bigint(20) not null comment 'Role ID',
+  menu_id   bigint(20) not null comment 'Menu ID',
   primary key(role_id, menu_id)
-) engine=innodb comment = '角色和菜单关联表';
+) engine=innodb comment = 'Role and menu association table';
 
 -- ----------------------------
--- 初始化-角色和菜单关联表数据
+-- Initialization-role and menu association table
 -- ----------------------------
 insert into sys_role_menu values ('2', '1');
 insert into sys_role_menu values ('2', '2');
@@ -372,17 +372,17 @@ insert into sys_role_menu values ('2', '1059');
 insert into sys_role_menu values ('2', '1060');
 
 -- ----------------------------
--- 8、角色和部门关联表  角色1-N部门
+-- 8、Role and department association table Role 1-N Department
 -- ----------------------------
 drop table if exists sys_role_dept;
 create table sys_role_dept (
-  role_id   bigint(20) not null comment '角色ID',
-  dept_id   bigint(20) not null comment '部门ID',
+  role_id   bigint(20) not null comment 'Role ID',
+  dept_id   bigint(20) not null comment 'Department ID',
   primary key(role_id, dept_id)
-) engine=innodb comment = '角色和部门关联表';
+) engine=innodb comment = 'Role and department association table';
 
 -- ----------------------------
--- 初始化-角色和部门关联表数据
+-- Initialization-role and department association table
 -- ----------------------------
 insert into sys_role_dept values ('2', '100');
 insert into sys_role_dept values ('2', '101');
@@ -390,296 +390,296 @@ insert into sys_role_dept values ('2', '105');
 
 
 -- ----------------------------
--- 9、用户与岗位关联表  用户1-N岗位
+-- 9,User and job post association table User 1-N position
 -- ----------------------------
 drop table if exists sys_user_post;
 create table sys_user_post
 (
-  user_id   bigint(20) not null comment '用户ID',
-  post_id   bigint(20) not null comment '岗位ID',
+  user_id   bigint(20) not null comment 'User ID',
+  post_id   bigint(20) not null comment 'Post ID',
   primary key (user_id, post_id)
-) engine=innodb comment = '用户与岗位关联表';
+) engine=innodb comment = 'User and post association table';
 
 -- ----------------------------
--- 初始化-用户与岗位关联表数据
+-- Initialization-user and job post association table
 -- ----------------------------
 insert into sys_user_post values ('1', '1');
 insert into sys_user_post values ('2', '2');
 
 
 -- ----------------------------
--- 10、操作日志记录
+-- 10, Operation log table
 -- ----------------------------
 drop table if exists sys_oper_log;
 create table sys_oper_log (
-  oper_id           bigint(20)      not null auto_increment    comment '日志主键',
-  title             varchar(50)     default ''                 comment '模块标题',
-  business_type     int(2)          default 0                  comment '业务类型（0其它 1新增 2修改 3删除）',
-  method            varchar(100)    default ''                 comment '方法名称',
-  request_method    varchar(10)     default ''                 comment '请求方式',
-  operator_type     int(1)          default 0                  comment '操作类别（0其它 1后台用户 2手机端用户）',
-  oper_name         varchar(50)     default ''                 comment '操作人员',
-  dept_name         varchar(50)     default ''                 comment '部门名称',
-  oper_url          varchar(255)    default ''                 comment '请求URL',
-  oper_ip           varchar(128)    default ''                 comment '主机地址',
-  oper_location     varchar(255)    default ''                 comment '操作地点',
-  oper_param        varchar(2000)   default ''                 comment '请求参数',
-  json_result       varchar(2000)   default ''                 comment '返回参数',
-  status            int(1)          default 0                  comment '操作状态（0正常 1异常）',
-  error_msg         varchar(2000)   default ''                 comment '错误消息',
-  oper_time         datetime                                   comment '操作时间',
+  oper_id           bigint(20)      not null auto_increment    comment 'Log ID',
+  title             varchar(50)     default ''                 comment 'Module title',
+  business_type     int(2)          default 0                  comment 'Business type (0 other, 1 added, 2 modified, 3 deleted)',
+  method            varchar(100)    default ''                 comment 'Method name',
+  request_method    varchar(10)     default ''                 comment 'Request method',
+  operator_type     int(1)          default 0                  comment 'Operation category (0 other, 1 background user, 2 mobile phone user)',
+  oper_name         varchar(50)     default ''                 comment 'Operator',
+  dept_name         varchar(50)     default ''                 comment 'Department name',
+  oper_url          varchar(255)    default ''                 comment 'Request URL',
+  oper_ip           varchar(128)    default ''                 comment 'Host address',
+  oper_location     varchar(255)    default ''                 comment 'Operating location',
+  oper_param        varchar(2000)   default ''                 comment 'Request parameter',
+  json_result       varchar(2000)   default ''                 comment 'Return parameter',
+  status            int(1)          default 0                  comment 'Operation status (0 normal, 1 abnormal)',
+  error_msg         varchar(2000)   default ''                 comment 'Wrong information',
+  oper_time         datetime                                   comment 'Operating time',
   primary key (oper_id)
-) engine=innodb auto_increment=100 comment = '操作日志记录';
+) engine=innodb auto_increment=100 comment = 'Operation log table';
 
 
 -- ----------------------------
--- 11、字典类型表
+-- 11, Dictionary type table
 -- ----------------------------
 drop table if exists sys_dict_type;
 create table sys_dict_type
 (
-  dict_id          bigint(20)      not null auto_increment    comment '字典主键',
-  dict_name        varchar(100)    default ''                 comment '字典名称',
-  dict_type        varchar(100)    default ''                 comment '字典类型',
-  status           char(1)         default '0'                comment '状态（0正常 1停用）',
-  create_by        varchar(64)     default ''                 comment '创建者',
-  create_time      datetime                                   comment '创建时间',
-  update_by        varchar(64)     default ''                 comment '更新者',
-  update_time      datetime                                   comment '更新时间',
-  remark           varchar(500)    default null               comment '备注',
+  dict_id          bigint(20)      not null auto_increment    comment 'Dictionary ID',
+  dict_name        varchar(100)    default ''                 comment 'Dictionary name',
+  dict_type        varchar(100)    default ''                 comment 'Dictionary type',
+  status           char(1)         default '0'                comment 'Status (0 normal, 1 disabled)',
+  create_by        varchar(64)     default ''                 comment 'Creator',
+  create_time      datetime                                   comment 'Created at',
+  update_by        varchar(64)     default ''                 comment 'Updater',
+  update_time      datetime                                   comment 'Updated at',
+  remark           varchar(500)    default null               comment 'Remark',
   primary key (dict_id),
   unique (dict_type)
-) engine=innodb auto_increment=100 comment = '字典类型表';
+) engine=innodb auto_increment=100 comment = 'Dictionary type table';
 
-insert into sys_dict_type values(1,  '用户性别', 'sys_user_sex',        '0', 'admin', sysdate(), '', null, '用户性别列表');
-insert into sys_dict_type values(2,  '菜单状态', 'sys_show_hide',       '0', 'admin', sysdate(), '', null, '菜单状态列表');
-insert into sys_dict_type values(3,  '系统开关', 'sys_normal_disable',  '0', 'admin', sysdate(), '', null, '系统开关列表');
-insert into sys_dict_type values(4,  '任务状态', 'sys_job_status',      '0', 'admin', sysdate(), '', null, '任务状态列表');
-insert into sys_dict_type values(5,  '任务分组', 'sys_job_group',       '0', 'admin', sysdate(), '', null, '任务分组列表');
-insert into sys_dict_type values(6,  '系统是否', 'sys_yes_no',          '0', 'admin', sysdate(), '', null, '系统是否列表');
-insert into sys_dict_type values(7,  '通知类型', 'sys_notice_type',     '0', 'admin', sysdate(), '', null, '通知类型列表');
-insert into sys_dict_type values(8,  '通知状态', 'sys_notice_status',   '0', 'admin', sysdate(), '', null, '通知状态列表');
-insert into sys_dict_type values(9,  '操作类型', 'sys_oper_type',       '0', 'admin', sysdate(), '', null, '操作类型列表');
-insert into sys_dict_type values(10, '系统状态', 'sys_common_status',   '0', 'admin', sysdate(), '', null, '登录状态列表');
+insert into sys_dict_type values(1,  'User gender', 'sys_user_sex',        '0', 'admin', sysdate(), '', null, 'User gender list');
+insert into sys_dict_type values(2,  'Menu status', 'sys_show_hide',       '0', 'admin', sysdate(), '', null, 'Menu status list');
+insert into sys_dict_type values(3,  'System switch', 'sys_normal_disable',  '0', 'admin', sysdate(), '', null, 'System switch list');
+insert into sys_dict_type values(4,  'Task status', 'sys_job_status',      '0', 'admin', sysdate(), '', null, 'Task status list');
+insert into sys_dict_type values(5,  'Task grouping', 'sys_job_group',       '0', 'admin', sysdate(), '', null, 'Task grouping list');
+insert into sys_dict_type values(6,  'The system condition', 'sys_yes_no',          '0', 'admin', sysdate(), '', null, 'Is the system listed');
+insert into sys_dict_type values(7,  'Notification type', 'sys_notice_type',     '0', 'admin', sysdate(), '', null, 'List of notification types');
+insert into sys_dict_type values(8,  'Notification status', 'sys_notice_status',   '0', 'admin', sysdate(), '', null, 'Notification status list');
+insert into sys_dict_type values(9,  'Operation type', 'sys_oper_type',       '0', 'admin', sysdate(), '', null, 'List of operation types');
+insert into sys_dict_type values(10, 'System status', 'sys_common_status',   '0', 'admin', sysdate(), '', null, 'Login status list');
 
 
 -- ----------------------------
--- 12、字典数据表
+-- 12,Dictionary data table
 -- ----------------------------
 drop table if exists sys_dict_data;
 create table sys_dict_data
 (
-  dict_code        bigint(20)      not null auto_increment    comment '字典编码',
-  dict_sort        int(4)          default 0                  comment '字典排序',
-  dict_label       varchar(100)    default ''                 comment '字典标签',
-  dict_value       varchar(100)    default ''                 comment '字典键值',
-  dict_type        varchar(100)    default ''                 comment '字典类型',
-  css_class        varchar(100)    default null               comment '样式属性（其他样式扩展）',
-  list_class       varchar(100)    default null               comment '表格回显样式',
-  is_default       char(1)         default 'N'                comment '是否默认（Y是 N否）',
-  status           char(1)         default '0'                comment '状态（0正常 1停用）',
-  create_by        varchar(64)     default ''                 comment '创建者',
-  create_time      datetime                                   comment '创建时间',
-  update_by        varchar(64)     default ''                 comment '更新者',
-  update_time      datetime                                   comment '更新时间',
-  remark           varchar(500)    default null               comment '备注',
+  dict_code        bigint(20)      not null auto_increment    comment 'Dictionary code',
+  dict_sort        int(4)          default 0                  comment 'Dictionary sort',
+  dict_label       varchar(100)    default ''                 comment 'Dictionary label',
+  dict_value       varchar(100)    default ''                 comment 'Dictionary key',
+  dict_type        varchar(100)    default ''                 comment 'Dictionary type',
+  css_class        varchar(100)    default null               comment 'Style attributes (other style extensions)',
+  list_class       varchar(100)    default null               comment 'Table style',
+  is_default       char(1)         default 'N'                comment 'Whether the default (Y is, N no)',
+  status           char(1)         default '0'                comment 'Status (0 normal ,1 disabled)',
+  create_by        varchar(64)     default ''                 comment 'Creator',
+  create_time      datetime                                   comment 'Create at',
+  update_by        varchar(64)     default ''                 comment 'Updater',
+  update_time      datetime                                   comment 'Updated at',
+  remark           varchar(500)    default null               comment 'Remark',
   primary key (dict_code)
-) engine=innodb auto_increment=100 comment = '字典数据表';
+) engine=innodb auto_increment=100 comment = 'Dictionary data table';
 
-insert into sys_dict_data values(1,  1,  '男',       '0',       'sys_user_sex',        '',   '',        'Y', '0', 'admin', sysdate(), '', null, '性别男');
-insert into sys_dict_data values(2,  2,  '女',       '1',       'sys_user_sex',        '',   '',        'N', '0', 'admin', sysdate(), '', null, '性别女');
-insert into sys_dict_data values(3,  3,  '未知',     '2',       'sys_user_sex',        '',   '',        'N', '0', 'admin', sysdate(), '', null, '性别未知');
-insert into sys_dict_data values(4,  1,  '显示',     '0',       'sys_show_hide',       '',   'primary', 'Y', '0', 'admin', sysdate(), '', null, '显示菜单');
-insert into sys_dict_data values(5,  2,  '隐藏',     '1',       'sys_show_hide',       '',   'danger',  'N', '0', 'admin', sysdate(), '', null, '隐藏菜单');
-insert into sys_dict_data values(6,  1,  '正常',     '0',       'sys_normal_disable',  '',   'primary', 'Y', '0', 'admin', sysdate(), '', null, '正常状态');
-insert into sys_dict_data values(7,  2,  '停用',     '1',       'sys_normal_disable',  '',   'danger',  'N', '0', 'admin', sysdate(), '', null, '停用状态');
-insert into sys_dict_data values(8,  1,  '正常',     '0',       'sys_job_status',      '',   'primary', 'Y', '0', 'admin', sysdate(), '', null, '正常状态');
-insert into sys_dict_data values(9,  2,  '暂停',     '1',       'sys_job_status',      '',   'danger',  'N', '0', 'admin', sysdate(), '', null, '停用状态');
-insert into sys_dict_data values(10, 1,  '默认',     'DEFAULT', 'sys_job_group',       '',   '',        'Y', '0', 'admin', sysdate(), '', null, '默认分组');
-insert into sys_dict_data values(11, 2,  '系统',     'SYSTEM',  'sys_job_group',       '',   '',        'N', '0', 'admin', sysdate(), '', null, '系统分组');
-insert into sys_dict_data values(12, 1,  '是',       'Y',       'sys_yes_no',          '',   'primary', 'Y', '0', 'admin', sysdate(), '', null, '系统默认是');
-insert into sys_dict_data values(13, 2,  '否',       'N',       'sys_yes_no',          '',   'danger',  'N', '0', 'admin', sysdate(), '', null, '系统默认否');
-insert into sys_dict_data values(14, 1,  '通知',     '1',       'sys_notice_type',     '',   'warning', 'Y', '0', 'admin', sysdate(), '', null, '通知');
-insert into sys_dict_data values(15, 2,  '公告',     '2',       'sys_notice_type',     '',   'success', 'N', '0', 'admin', sysdate(), '', null, '公告');
-insert into sys_dict_data values(16, 1,  '正常',     '0',       'sys_notice_status',   '',   'primary', 'Y', '0', 'admin', sysdate(), '', null, '正常状态');
-insert into sys_dict_data values(17, 2,  '关闭',     '1',       'sys_notice_status',   '',   'danger',  'N', '0', 'admin', sysdate(), '', null, '关闭状态');
-insert into sys_dict_data values(18, 1,  '新增',     '1',       'sys_oper_type',       '',   'info',    'N', '0', 'admin', sysdate(), '', null, '新增操作');
-insert into sys_dict_data values(19, 2,  '修改',     '2',       'sys_oper_type',       '',   'info',    'N', '0', 'admin', sysdate(), '', null, '修改操作');
-insert into sys_dict_data values(20, 3,  '删除',     '3',       'sys_oper_type',       '',   'danger',  'N', '0', 'admin', sysdate(), '', null, '删除操作');
-insert into sys_dict_data values(21, 4,  '授权',     '4',       'sys_oper_type',       '',   'primary', 'N', '0', 'admin', sysdate(), '', null, '授权操作');
-insert into sys_dict_data values(22, 5,  '导出',     '5',       'sys_oper_type',       '',   'warning', 'N', '0', 'admin', sysdate(), '', null, '导出操作');
-insert into sys_dict_data values(23, 6,  '导入',     '6',       'sys_oper_type',       '',   'warning', 'N', '0', 'admin', sysdate(), '', null, '导入操作');
-insert into sys_dict_data values(24, 7,  '强退',     '7',       'sys_oper_type',       '',   'danger',  'N', '0', 'admin', sysdate(), '', null, '强退操作');
-insert into sys_dict_data values(25, 8,  '生成代码', '8',       'sys_oper_type',       '',   'warning', 'N', '0', 'admin', sysdate(), '', null, '生成操作');
-insert into sys_dict_data values(26, 9,  '清空数据', '9',       'sys_oper_type',       '',   'danger',  'N', '0', 'admin', sysdate(), '', null, '清空操作');
-insert into sys_dict_data values(27, 1,  '成功',     '0',       'sys_common_status',   '',   'primary', 'N', '0', 'admin', sysdate(), '', null, '正常状态');
-insert into sys_dict_data values(28, 2,  '失败',     '1',       'sys_common_status',   '',   'danger',  'N', '0', 'admin', sysdate(), '', null, '停用状态');
+insert into sys_dict_data values(1,  1,  'Male',       '0',       'sys_user_sex',        '',   '',        'Y', '0', 'admin', sysdate(), '', null, 'Gender: Male');
+insert into sys_dict_data values(2,  2,  'Female',       '1',       'sys_user_sex',        '',   '',        'N', '0', 'admin', sysdate(), '', null, 'Gender: Female');
+insert into sys_dict_data values(3,  3,  'Unknown',     '2',       'sys_user_sex',        '',   '',        'N', '0', 'admin', sysdate(), '', null, 'Gender: Unknown');
+insert into sys_dict_data values(4,  1,  'Display',     '0',       'sys_show_hide',       '',   'primary', 'Y', '0', 'admin', sysdate(), '', null, 'Show menu');
+insert into sys_dict_data values(5,  2,  'Hide',     '1',       'sys_show_hide',       '',   'danger',  'N', '0', 'admin', sysdate(), '', null, 'Hide menu');
+insert into sys_dict_data values(6,  1,  'Normal',     '0',       'sys_normal_disable',  '',   'primary', 'Y', '0', 'admin', sysdate(), '', null, 'Normal state');
+insert into sys_dict_data values(7,  2,  'Deactivate',     '1',       'sys_normal_disable',  '',   'danger',  'N', '0', 'admin', sysdate(), '', null, 'Disabled state');
+insert into sys_dict_data values(8,  1,  'Normal',     '0',       'sys_job_status',      '',   'primary', 'Y', '0', 'admin', sysdate(), '', null, 'Normal state');
+insert into sys_dict_data values(9,  2,  'Time out',     '1',       'sys_job_status',      '',   'danger',  'N', '0', 'admin', sysdate(), '', null, 'Disabled state');
+insert into sys_dict_data values(10, 1,  'Default',     'DEFAULT', 'sys_job_group',       '',   '',        'Y', '0', 'admin', sysdate(), '', null, 'Default group');
+insert into sys_dict_data values(11, 2,  'System',     'SYSTEM',  'sys_job_group',       '',   '',        'N', '0', 'admin', sysdate(), '', null, 'System group');
+insert into sys_dict_data values(12, 1,  'Yes',       'Y',       'sys_yes_no',          '',   'primary', 'Y', '0', 'admin', sysdate(), '', null, 'System default YES');
+insert into sys_dict_data values(13, 2,  'No',       'N',       'sys_yes_no',          '',   'danger',  'N', '0', 'admin', sysdate(), '', null, 'System default NO');
+insert into sys_dict_data values(14, 1,  'Notice',     '1',       'sys_notice_type',     '',   'warning', 'Y', '0', 'admin', sysdate(), '', null, 'Notice');
+insert into sys_dict_data values(15, 2,  'Announcement',     '2',       'sys_notice_type',     '',   'success', 'N', '0', 'admin', sysdate(), '', null, 'Announcement');
+insert into sys_dict_data values(16, 1,  'Normal',     '0',       'sys_notice_status',   '',   'primary', 'Y', '0', 'admin', sysdate(), '', null, 'Normal status');
+insert into sys_dict_data values(17, 2,  'Shut down',     '1',       'sys_notice_status',   '',   'danger',  'N', '0', 'admin', sysdate(), '', null, 'Disabled');
+insert into sys_dict_data values(18, 1,  'Add',     '1',       'sys_oper_type',       '',   'info',    'N', '0', 'admin', sysdate(), '', null, 'New operation');
+insert into sys_dict_data values(19, 2,  'Modify',     '2',       'sys_oper_type',       '',   'info',    'N', '0', 'admin', sysdate(), '', null, 'Modify operation');
+insert into sys_dict_data values(20, 3,  'Delete',     '3',       'sys_oper_type',       '',   'danger',  'N', '0', 'admin', sysdate(), '', null, 'Delete operation');
+insert into sys_dict_data values(21, 4,  'Authorization',     '4',       'sys_oper_type',       '',   'primary', 'N', '0', 'admin', sysdate(), '', null, 'Authorized operation');
+insert into sys_dict_data values(22, 5,  'Export',     '5',       'sys_oper_type',       '',   'warning', 'N', '0', 'admin', sysdate(), '', null, 'Export operation');
+insert into sys_dict_data values(23, 6,  'Import',     '6',       'sys_oper_type',       '',   'warning', 'N', '0', 'admin', sysdate(), '', null, 'Import operation');
+insert into sys_dict_data values(24, 7,  'Retreat',     '7',       'sys_oper_type',       '',   'danger',  'N', '0', 'admin', sysdate(), '', null, 'Force back operation');
+insert into sys_dict_data values(25, 8,  'Generate code', '8',       'sys_oper_type',       '',   'warning', 'N', '0', 'admin', sysdate(), '', null, 'Generate operation');
+insert into sys_dict_data values(26, 9,  'Clear data', '9',       'sys_oper_type',       '',   'danger',  'N', '0', 'admin', sysdate(), '', null, 'Empty operation');
+insert into sys_dict_data values(27, 1,  'Success',     '0',       'sys_common_status',   '',   'primary', 'N', '0', 'admin', sysdate(), '', null, 'Normal status');
+insert into sys_dict_data values(28, 2,  'Failure',     '1',       'sys_common_status',   '',   'danger',  'N', '0', 'admin', sysdate(), '', null, 'Disabled state');
 
 
 -- ----------------------------
--- 13、参数配置表
+-- 13, Parameter configuration table
 -- ----------------------------
 drop table if exists sys_config;
 create table sys_config (
-  config_id         int(5)          not null auto_increment    comment '参数主键',
-  config_name       varchar(100)    default ''                 comment '参数名称',
-  config_key        varchar(100)    default ''                 comment '参数键名',
-  config_value      varchar(500)    default ''                 comment '参数键值',
-  config_type       char(1)         default 'N'                comment '系统内置（Y是 N否）',
-  create_by         varchar(64)     default ''                 comment '创建者',
-  create_time       datetime                                   comment '创建时间',
-  update_by         varchar(64)     default ''                 comment '更新者',
-  update_time       datetime                                   comment '更新时间',
-  remark            varchar(500)    default null               comment '备注',
+  config_id         int(5)          not null auto_increment    comment 'Parameter ID',
+  config_name       varchar(100)    default ''                 comment 'Parameter name',
+  config_key        varchar(100)    default ''                 comment 'Parameter key',
+  config_value      varchar(500)    default ''                 comment 'Parameter value',
+  config_type       char(1)         default 'N'                comment 'Built-in system (Y Yes N No)',
+  create_by         varchar(64)     default ''                 comment 'Creator',
+  create_time       datetime                                   comment 'Create at',
+  update_by         varchar(64)     default ''                 comment 'Updater',
+  update_time       datetime                                   comment 'Updated at',
+  remark            varchar(500)    default null               comment 'Remark',
   primary key (config_id)
-) engine=innodb auto_increment=100 comment = '参数配置表';
+) engine=innodb auto_increment=100 comment = 'Parameter configuration table';
 
-insert into sys_config values(1, '主框架页-默认皮肤样式名称', 'sys.index.skinName',     'skin-blue',     'Y', 'admin', sysdate(), '', null, '蓝色 skin-blue、绿色 skin-green、紫色 skin-purple、红色 skin-red、黄色 skin-yellow' );
-insert into sys_config values(2, '用户管理-账号初始密码',     'sys.user.initPassword',  '123456',        'Y', 'admin', sysdate(), '', null, '初始化密码 123456' );
-insert into sys_config values(3, '主框架页-侧边栏主题',       'sys.index.sideTheme',    'theme-dark',    'Y', 'admin', sysdate(), '', null, '深色主题theme-dark，浅色主题theme-light' );
+insert into sys_config values(1, 'Main frame page-default skin style name', 'sys.index.skinName',     'skin-blue',     'Y', 'admin', sysdate(), '', null, 'Blue skin-blue, Green skin-green, Purple skin-purple, Red skin-red, Yellow skin-yellow' );
+insert into sys_config values(2, 'User management-account initial password',     'sys.user.initPassword',  '123456',        'Y', 'admin', sysdate(), '', null, 'Initialization password 123456' );
+insert into sys_config values(3, 'Main frame page-sidebar theme',       'sys.index.sideTheme',    'theme-dark',    'Y', 'admin', sysdate(), '', null, 'Dark theme theme-dark, Light theme theme-light' );
 
 
 -- ----------------------------
--- 14、系统访问记录
+-- 14,System access table
 -- ----------------------------
 drop table if exists sys_logininfor;
 create table sys_logininfor (
-  info_id        bigint(20)     not null auto_increment   comment '访问ID',
-  user_name      varchar(50)    default ''                comment '用户账号',
-  ipaddr         varchar(128)   default ''                comment '登录IP地址',
-  login_location varchar(255)   default ''                comment '登录地点',
-  browser        varchar(50)    default ''                comment '浏览器类型',
-  os             varchar(50)    default ''                comment '操作系统',
-  status         char(1)        default '0'               comment '登录状态（0成功 1失败）',
-  msg            varchar(255)   default ''                comment '提示消息',
-  login_time     datetime                                 comment '访问时间',
+  info_id        bigint(20)     not null auto_increment   comment 'Access ID',
+  user_name      varchar(50)    default ''                comment 'User account',
+  ipaddr         varchar(128)   default ''                comment 'Login IP address',
+  login_location varchar(255)   default ''                comment 'Login location',
+  browser        varchar(50)    default ''                comment 'Browser type',
+  os             varchar(50)    default ''                comment 'Operating system',
+  status         char(1)        default '0'               comment 'Login status (0 success 1 failure)',
+  msg            varchar(255)   default ''                comment 'Prompt message',
+  login_time     datetime                                 comment 'Access time',
   primary key (info_id)
-) engine=innodb auto_increment=100 comment = '系统访问记录';
+) engine=innodb auto_increment=100 comment = 'System access table';
 
 
 -- ----------------------------
--- 15、定时任务调度表
+-- 15, Timed task schedule table
 -- ----------------------------
 drop table if exists sys_job;
 create table sys_job (
-  job_id              bigint(20)    not null auto_increment    comment '任务ID',
-  job_name            varchar(64)   default ''                 comment '任务名称',
-  job_group           varchar(64)   default 'DEFAULT'          comment '任务组名',
-  invoke_target       varchar(500)  not null                   comment '调用目标字符串',
-  cron_expression     varchar(255)  default ''                 comment 'cron执行表达式',
-  misfire_policy      varchar(20)   default '3'                comment '计划执行错误策略（1立即执行 2执行一次 3放弃执行）',
-  concurrent          char(1)       default '1'                comment '是否并发执行（0允许 1禁止）',
-  status              char(1)       default '0'                comment '状态（0正常 1暂停）',
-  create_by           varchar(64)   default ''                 comment '创建者',
-  create_time         datetime                                 comment '创建时间',
-  update_by           varchar(64)   default ''                 comment '更新者',
-  update_time         datetime                                 comment '更新时间',
-  remark              varchar(500)  default ''                 comment '备注信息',
+  job_id              bigint(20)    not null auto_increment    comment 'Task ID',
+  job_name            varchar(64)   default ''                 comment 'Mission name',
+  job_group           varchar(64)   default 'DEFAULT'          comment 'Task group name',
+  invoke_target       varchar(500)  not null                   comment 'Call target string',
+  cron_expression     varchar(255)  default ''                 comment 'Cron execution expression',
+  misfire_policy      varchar(20)   default '3'                comment 'Plan execution error strategy (1 execute immediately, 2 execute once, 3 give up execution)',
+  concurrent          char(1)       default '1'                comment 'Allow to execute concurrently (0 allowed, 1 prohibited)',
+  status              char(1)       default '0'                comment 'Status (0 normal, 1 pause)',
+  create_by           varchar(64)   default ''                 comment 'Creator',
+  create_time         datetime                                 comment 'Created at',
+  update_by           varchar(64)   default ''                 comment 'Updater',
+  update_time         datetime                                 comment 'Updated at',
+  remark              varchar(500)  default ''                 comment 'Remark',
   primary key (job_id, job_name, job_group)
-) engine=innodb auto_increment=100 comment = '定时任务调度表';
+) engine=innodb auto_increment=100 comment = 'Timed task schedule table';
 
-insert into sys_job values(1, '系统默认（无参）', 'DEFAULT', 'ryTask.ryNoParams',        '0/10 * * * * ?', '3', '1', '1', 'admin', sysdate(), '', null, '');
-insert into sys_job values(2, '系统默认（有参）', 'DEFAULT', 'ryTask.ryParams(\'ry\')',  '0/15 * * * * ?', '3', '1', '1', 'admin', sysdate(), '', null, '');
-insert into sys_job values(3, '系统默认（多参）', 'DEFAULT', 'ryTask.ryMultipleParams(\'ry\', true, 2000L, 316.50D, 100)',  '0/20 * * * * ?', '3', '1', '1', 'admin', sysdate(), '', null, '');
+insert into sys_job values(1, 'System default (no parameters)', 'DEFAULT', 'ryTask.ryNoParams',        '0/10 * * * * ?', '3', '1', '1', 'admin', sysdate(), '', null, '');
+insert into sys_job values(2, 'System default (with parameters)', 'DEFAULT', 'ryTask.ryParams(\'ry\')',  '0/15 * * * * ?', '3', '1', '1', 'admin', sysdate(), '', null, '');
+insert into sys_job values(3, 'System default (multiple parameters)', 'DEFAULT', 'ryTask.ryMultipleParams(\'ry\', true, 2000L, 316.50D, 100)',  '0/20 * * * * ?', '3', '1', '1', 'admin', sysdate(), '', null, '');
 
 
 -- ----------------------------
--- 16、定时任务调度日志表
+-- 16, Scheduled task scheduling log table
 -- ----------------------------
 drop table if exists sys_job_log;
 create table sys_job_log (
-  job_log_id          bigint(20)     not null auto_increment    comment '任务日志ID',
-  job_name            varchar(64)    not null                   comment '任务名称',
-  job_group           varchar(64)    not null                   comment '任务组名',
-  invoke_target       varchar(500)   not null                   comment '调用目标字符串',
-  job_message         varchar(500)                              comment '日志信息',
-  status              char(1)        default '0'                comment '执行状态（0正常 1失败）',
-  exception_info      varchar(2000)  default ''                 comment '异常信息',
-  create_time         datetime                                  comment '创建时间',
+  job_log_id          bigint(20)     not null auto_increment    comment 'Task log ID',
+  job_name            varchar(64)    not null                   comment 'Mission name',
+  job_group           varchar(64)    not null                   comment 'Task group name',
+  invoke_target       varchar(500)   not null                   comment 'Call target string',
+  job_message         varchar(500)                              comment 'Log information',
+  status              char(1)        default '0'                comment 'Execution status (0 normal and 1 failed)',
+  exception_info      varchar(2000)  default ''                 comment 'Exception information',
+  create_time         datetime                                  comment 'Created at',
   primary key (job_log_id)
-) engine=innodb comment = '定时任务调度日志表';
+) engine=innodb comment = 'Scheduled task scheduling log table';
 
 
 -- ----------------------------
--- 17、通知公告表
+-- 17, Notification inform table
 -- ----------------------------
 drop table if exists sys_notice;
 create table sys_notice (
-  notice_id         int(4)          not null auto_increment    comment '公告ID',
-  notice_title      varchar(50)     not null                   comment '公告标题',
-  notice_type       char(1)         not null                   comment '公告类型（1通知 2公告）',
-  notice_content    longblob        default null               comment '公告内容',
-  status            char(1)         default '0'                comment '公告状态（0正常 1关闭）',
-  create_by         varchar(64)     default ''                 comment '创建者',
-  create_time       datetime                                   comment '创建时间',
-  update_by         varchar(64)     default ''                 comment '更新者',
-  update_time       datetime                                   comment '更新时间',
-  remark            varchar(255)    default null               comment '备注',
+  notice_id         int(4)          not null auto_increment    comment 'Announcement ID',
+  notice_title      varchar(256)     not null                   comment 'Announcement title',
+  notice_type       char(1)         not null                   comment 'Announcement type (1 notification, 2 announcement)',
+  notice_content    longblob        default null               comment 'Announcement content',
+  status            char(1)         default '0'                comment 'Announcement status (0 normal 1 closed)',
+  create_by         varchar(64)     default ''                 comment 'Creator',
+  create_time       datetime                                   comment 'Created at',
+  update_by         varchar(64)     default ''                 comment 'Updater',
+  update_time       datetime                                   comment 'Update at',
+  remark            varchar(255)    default null               comment 'Remark',
   primary key (notice_id)
-) engine=innodb auto_increment=10 comment = '通知公告表';
+) engine=innodb auto_increment=10 comment = 'Notification inform table';
 
 -- ----------------------------
--- 初始化-公告信息表数据
+-- Initialization-notification information table
 -- ----------------------------
-insert into sys_notice values('1', '温馨提醒：2018-07-01 若依新版本发布啦', '2', '新版本内容', '0', 'admin', sysdate(), '', null, '管理员');
-insert into sys_notice values('2', '维护通知：2018-07-01 若依系统凌晨维护', '1', '维护内容',   '0', 'admin', sysdate(), '', null, '管理员');
+insert into sys_notice values('1', 'Reminder: 26-12-2020 If the new version is released', '2', 'Release note', '0', 'admin', sysdate(), '', null, 'Administrator');
+insert into sys_notice values('2', 'Maintenance notice: 25-12-2020 If the system is maintained in the early morning', '1', 'Maintenance content',   '0', 'admin', sysdate(), '', null, 'Administrator');
 
 
 -- ----------------------------
--- 18、代码生成业务表
+-- 18, Code generation business table
 -- ----------------------------
 drop table if exists gen_table;
 create table gen_table (
-  table_id          bigint(20)      not null auto_increment    comment '编号',
-  table_name        varchar(200)    default ''                 comment '表名称',
-  table_comment     varchar(500)    default ''                 comment '表描述',
-  sub_table_name    varchar(64)     default null               comment '关联子表的表名',
-  sub_table_fk_name varchar(64)     default null               comment '子表关联的外键名',
-  class_name        varchar(100)    default ''                 comment '实体类名称',
-  tpl_category      varchar(200)    default 'crud'             comment '使用的模板（crud单表操作 tree树表操作）',
-  package_name      varchar(100)                               comment '生成包路径',
-  module_name       varchar(30)                                comment '生成模块名',
-  business_name     varchar(30)                                comment '生成业务名',
-  function_name     varchar(50)                                comment '生成功能名',
-  function_author   varchar(50)                                comment '生成功能作者',
-  gen_type          char(1)         default '0'                comment '生成代码方式（0zip压缩包 1自定义路径）',
-  gen_path          varchar(200)    default '/'                comment '生成路径（不填默认项目路径）',
-  options           varchar(1000)                              comment '其它生成选项',
-  create_by         varchar(64)     default ''                 comment '创建者',
-  create_time 	    datetime                                   comment '创建时间',
-  update_by         varchar(64)     default ''                 comment '更新者',
-  update_time       datetime                                   comment '更新时间',
-  remark            varchar(500)    default null               comment '备注',
+  table_id          bigint(20)      not null auto_increment    comment 'Numbering',
+  table_name        varchar(200)    default ''                 comment 'Table name',
+  table_comment     varchar(500)    default ''                 comment 'Table description',
+  sub_table_name    varchar(64)     default null               comment 'Table name of the associated child table',
+  sub_table_fk_name varchar(64)     default null               comment 'The name of the foreign key associated with the child table',
+  class_name        varchar(100)    default ''                 comment 'Entity class name',
+  tpl_category      varchar(200)    default 'crud'             comment 'The template used (crud - single table operation, tree - tree table operation)',
+  package_name      varchar(100)                               comment 'Generate package path',
+  module_name       varchar(30)                                comment 'Generate module name',
+  business_name     varchar(30)                                comment 'Generate business name',
+  function_name     varchar(50)                                comment 'Generate function name',
+  function_author   varchar(50)                                comment 'Generate function author',
+  gen_type          char(1)         default '0'                comment 'Code generation method (0 zip compressed package, 1 custom path)',
+  gen_path          varchar(200)    default '/'                comment 'Build path (do not fill in the default project path)',
+  options           varchar(1000)                              comment 'Other build options',
+  create_by         varchar(64)     default ''                 comment 'Creator',
+  create_time 	    datetime                                   comment 'Created at',
+  update_by         varchar(64)     default ''                 comment 'Updater',
+  update_time       datetime                                   comment 'Updated at',
+  remark            varchar(500)    default null               comment 'Remark',
   primary key (table_id)
-) engine=innodb auto_increment=1 comment = '代码生成业务表';
+) engine=innodb auto_increment=1 comment = 'Code generation business table';
 
 
 -- ----------------------------
--- 19、代码生成业务表字段
+-- 19, Code generation business fields table
 -- ----------------------------
 drop table if exists gen_table_column;
 create table gen_table_column (
-  column_id         bigint(20)      not null auto_increment    comment '编号',
-  table_id          varchar(64)                                comment '归属表编号',
-  column_name       varchar(200)                               comment '列名称',
-  column_comment    varchar(500)                               comment '列描述',
-  column_type       varchar(100)                               comment '列类型',
-  java_type         varchar(500)                               comment 'JAVA类型',
-  java_field        varchar(200)                               comment 'JAVA字段名',
-  is_pk             char(1)                                    comment '是否主键（1是）',
-  is_increment      char(1)                                    comment '是否自增（1是）',
-  is_required       char(1)                                    comment '是否必填（1是）',
-  is_insert         char(1)                                    comment '是否为插入字段（1是）',
-  is_edit           char(1)                                    comment '是否编辑字段（1是）',
-  is_list           char(1)                                    comment '是否列表字段（1是）',
-  is_query          char(1)                                    comment '是否查询字段（1是）',
-  query_type        varchar(200)    default 'EQ'               comment '查询方式（等于、不等于、大于、小于、范围）',
-  html_type         varchar(200)                               comment '显示类型（文本框、文本域、下拉框、复选框、单选框、日期控件）',
-  dict_type         varchar(200)    default ''                 comment '字典类型',
-  sort              int                                        comment '排序',
-  create_by         varchar(64)     default ''                 comment '创建者',
-  create_time 	    datetime                                   comment '创建时间',
-  update_by         varchar(64)     default ''                 comment '更新者',
-  update_time       datetime                                   comment '更新时间',
+  column_id         bigint(20)      not null auto_increment    comment 'Numbering',
+  table_id          varchar(64)                                comment 'Attribute table number',
+  column_name       varchar(200)                               comment 'Column name',
+  column_comment    varchar(500)                               comment 'Column description',
+  column_type       varchar(100)                               comment 'Column type',
+  java_type         varchar(500)                               comment 'JAVA type',
+  java_field        varchar(200)                               comment 'JAVA field name',
+  is_pk             char(1)                                    comment 'Whether the primary key (1 yes)',
+  is_increment      char(1)                                    comment 'Whether to auto-increase (1 yes)',
+  is_required       char(1)                                    comment 'Is it required (1 yes)',
+  is_insert         char(1)                                    comment 'Is it an insert field (1 yes)',
+  is_edit           char(1)                                    comment 'Whether to edit the field (1 yes)',
+  is_list           char(1)                                    comment 'Whether the list field (1 is)',
+  is_query          char(1)                                    comment 'Whether to query the field (1 is)',
+  query_type        varchar(200)    default 'EQ'               comment 'Query method (equal to, not equal to, greater than, less than, range)',
+  html_type         varchar(200)                               comment 'Display type (text box, text field, drop-down box, check box, radio button, date control)',
+  dict_type         varchar(200)    default ''                 comment 'Dictionary type',
+  sort              int                                        comment 'Sort position',
+  create_by         varchar(64)     default ''                 comment 'Creator',
+  create_time 	    datetime                                   comment 'Created at',
+  update_by         varchar(64)     default ''                 comment 'Updater',
+  update_time       datetime                                   comment 'Updated at',
   primary key (column_id)
-) engine=innodb auto_increment=1 comment = '代码生成业务表字段';
+) engine=innodb auto_increment=1 comment = 'Code generation business fields table';
