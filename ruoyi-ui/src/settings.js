@@ -1,28 +1,28 @@
 module.exports = {
-  title: '若依管理系统',
+  title: 'Ruoyi Management System',
 
   /**
-   * 侧边栏主题 深色主题theme-dark，浅色主题theme-light
+   * Sidebar theme dark theme (theme-dark), light theme (theme-light)
    */
   sideTheme: 'theme-dark',
 
   /**
-   * 是否系统布局配置
+   * Show the system layout configuration
    */
   showSettings: false,
 
   /**
-   * 是否显示 tagsView
+   * Show tagsView
    */
   tagsView: true,
 
   /**
-   * 是否固定头部
+   * Should fix the head
    */
   fixedHeader: false,
 
   /**
-   * 是否显示logo
+   * Should display the logo
    */
   sidebarLogo: true,
 

@@ -13,10 +13,10 @@ export const formConf = {
 
 export const inputComponents = [
   {
-    label: '单行文本',
+    label: 'Single line text',
     tag: 'el-input',
     tagIcon: 'input',
-    placeholder: '请输入',
+    placeholder: 'Please enter',
     defaultValue: undefined,
     span: 24,
     labelWidth: null,

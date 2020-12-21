@@ -1,30 +1,31 @@
-## 开发
+## Development
 
 ```bash
-# 克隆项目
+# Clone project
 git clone https://gitee.com/y_project/RuoYi-Vue
 
-# 进入项目目录
+# Enter project directory
 cd ruoyi-ui
 
-# 安装依赖
+# Install dependencies
 npm install
 
-# 建议不要直接使用 cnpm 安装依赖，会有各种诡异的 bug。可以通过如下操作解决 npm 下载速度慢的问题
+# It is recommended not to use cnpm to install dependencies directly, as there will be various weird bugs. 
+# The slow download speed of npm can be solved by the following operations
 npm install --registry=https://registry.npm.taobao.org
 
-# 启动服务
+# Start service
 npm run dev
 ```
 
-浏览器访问 http://localhost:80
+Browser visit http://localhost:80
 
-## 发布
+## Production
 
 ```bash
-# 构建测试环境
+# Build the test environment
 npm run build:stage
 
-# 构建生产环境
+# Build a production environment
 npm run build:prod
 ```
