@@ -89,7 +89,7 @@ service.interceptors.response.use(res => {
       message = "Request timeout";
     }
     else if (message.includes("Request failed with status code")) {
-      message = "Request fail with message " + message.substr(message.length - 3);
+      message = "Request fail with code " + message.substr(message.length - 3);
     }
     Message({
       message: message,
