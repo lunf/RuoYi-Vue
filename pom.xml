@@ -10,7 +10,7 @@
 
     <name>ruoyi</name>
     <url>http://www.ruoyi.vip</url>
-    <description>若依管理系统</description>
+    <description>Backend Management System</description>
     
     <properties>
         <ruoyi.version>3.4.0</ruoyi.version>
@@ -152,6 +152,19 @@
                 <artifactId>jackson-databind</artifactId>
                 <version>${fasterxml.version}</version>
             </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-core</artifactId>
+                <version>${fasterxml.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-annotations</artifactId>
+                <version>${fasterxml.version}</version>
+            </dependency>
+
 
 
             <!--Token生成与解析-->
