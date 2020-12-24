@@ -150,7 +150,7 @@
             <dependency>
                 <groupId>com.fasterxml.jackson.core</groupId>
                 <artifactId>jackson-databind</artifactId>
-                <version>${fasterxml.json}</version>
+                <version>${fasterxml.version}</version>
             </dependency>
 
 
