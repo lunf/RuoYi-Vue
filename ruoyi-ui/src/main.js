@@ -3,6 +3,8 @@ import Vue from 'vue'
 import Cookies from 'js-cookie'
 
 import Element from 'element-ui'
+import locale from 'element-ui/lib/locale/lang/en'
+
 import './assets/styles/element-variables.scss'
 
 import '@/assets/styles/index.scss' // global css
@@ -58,6 +60,8 @@ Vue.use(permission)
  * Currently MockJs will be used in the production environment,
  * please remove it before going online! ! !
  */
+
+Vue.use(Element, { locale })
 
 Vue.use(Element, {
   size: Cookies.get('size') || 'medium' // set element-ui default size

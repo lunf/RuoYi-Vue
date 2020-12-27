@@ -1,5 +1,5 @@
 module.exports = {
-  title: 'Ruoyi Management System',
+  title: 'Admin Dashboard System',
 
   /**
    * Sidebar theme dark theme (theme-dark), light theme (theme-light)
