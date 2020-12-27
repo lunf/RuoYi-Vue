@@ -89,3 +89,18 @@ export default {
   }
 };
 </script>
+
+<style rel="stylesheet/scss" lang="scss">
+
+.user-form {
+  border-radius: 6px;
+  background: #ffffff;
+  padding: 5px 5px px 5px;
+  .el-form-item {
+    label-width: 120px;
+    .el-input {
+        width: 100%;
+      }
+  }
+}
+</style>

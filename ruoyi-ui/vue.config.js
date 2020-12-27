@@ -6,7 +6,7 @@ function resolve(dir) {
   return path.join(__dirname, dir)
 }
 
-const name = defaultSettings.title || 'Ruoyi Management System' // Title
+const name = defaultSettings.title || 'Backend Management System' // Title
 
 const port = process.env.port || process.env.npm_config_port || 80 // Port
 

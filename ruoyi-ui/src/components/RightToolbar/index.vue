@@ -1,19 +1,19 @@
 <template>
   <div class="top-right-btn">
     <el-row>
-      <el-tooltip class="item" effect="dark" :content="showSearch ? '隐藏搜索' : '显示搜索'" placement="top">
+      <el-tooltip class="item" effect="dark" :content="showSearch ? 'Hide search' : 'Show search'" placement="top">
         <el-button size="mini" circle icon="el-icon-search" @click="toggleSearch()" />
       </el-tooltip>
-      <el-tooltip class="item" effect="dark" content="刷新" placement="top">
+      <el-tooltip class="item" effect="dark" content="Refresh" placement="top">
         <el-button size="mini" circle icon="el-icon-refresh" @click="refresh()" />
       </el-tooltip>
-      <el-tooltip class="item" effect="dark" content="显隐列" placement="top" v-if="columns">
+      <el-tooltip class="item" effect="dark" content="Column" placement="top" v-if="columns">
         <el-button size="mini" circle icon="el-icon-menu" @click="showColumn()" />
       </el-tooltip>
     </el-row>
     <el-dialog :title="title" :visible.sync="open" append-to-body>
       <el-transfer
-        :titles="['显示', '隐藏']"
+        :titles="['Show', 'Hide']"
         v-model="value"
         :data="columns"
         @change="dataChange"
@@ -26,11 +26,11 @@ export default {
   name: "RightToolbar",
   data() {
     return {
-      // 显隐数据
+      // Explicit data
       value: [],
-      // 弹出层标题
-      title: "显示/隐藏",
-      // 是否显示弹出层
+      // Pop-up layer title
+      title: "Show/Hide",
+      // Should show the pop-up layer
       open: false,
     };
   },
@@ -45,22 +45,22 @@ export default {
   },
 
   methods: {
-    // 搜索
+    // Search
     toggleSearch() {
       this.$emit("update:showSearch", !this.showSearch);
     },
-    // 刷新
+    // Refresh
     refresh() {
       this.$emit("queryTable");
     },
-    // 右侧列表元素变化
+    // List element changes on the right
     dataChange(data) {
       for (var item in this.columns) {
         const key = this.columns[item].key;
         this.columns[item].visible = !data.includes(key);
       }
     },
-    // 打开显隐列dialog
+    // Show and hide dialog
     showColumn() {
       this.open = true;
     },

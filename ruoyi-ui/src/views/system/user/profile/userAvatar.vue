@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="user-info-head" @click="editCropper()"><img v-bind:src="options.img" title="点击上传头像" class="img-circle img-lg" /></div>
+    <div class="user-info-head" @click="editCropper()"><img v-bind:src="options.img" title="Click to upload avatar" class="img-circle img-lg" /></div>
     <el-dialog :title="title" :visible.sync="open" width="800px" append-to-body @opened="modalOpened">
       <el-row>
         <el-col :xs="24" :md="12" :style="{height: '350px'}">
@@ -27,7 +27,7 @@
         <el-col :lg="2" :md="2">
           <el-upload action="#" :http-request="requestUpload" :show-file-list="false" :before-upload="beforeUpload">
             <el-button size="small">
-              选择
+              Select
               <i class="el-icon-upload el-icon--right"></i>
             </el-button>
           </el-upload>
@@ -45,7 +45,7 @@
           <el-button icon="el-icon-refresh-right" size="small" @click="rotateRight()"></el-button>
         </el-col>
         <el-col :lg="{span: 2, offset: 6}" :md="2">
-          <el-button type="primary" size="small" @click="uploadImg()">提 交</el-button>
+          <el-button type="primary" size="small" @click="uploadImg()">Submit</el-button>
         </el-col>
       </el-row>
     </el-dialog>
@@ -66,51 +66,51 @@ export default {
   },
   data() {
     return {
-      // 是否显示弹出层
+      // Whether to show the pop-up layer
       open: false,
-      // 是否显示cropper
+      // Whether to show cropper
       visible: false,
-      // 弹出层标题
-      title: "修改头像",
+      // Pop-up layer title
+      title: "Modify avatar",
       options: {
-        img: store.getters.avatar, //裁剪图片的地址
-        autoCrop: true, // 是否默认生成截图框
-        autoCropWidth: 200, // 默认生成截图框宽度
-        autoCropHeight: 200, // 默认生成截图框高度
-        fixedBox: true // 固定截图框大小 不允许改变
+        img: store.getters.avatar, // The address of the cropped picture
+        autoCrop: true, // Whether to generate a screenshot frame by default
+        autoCropWidth: 200, // The default screenshot frame width
+        autoCropHeight: 200, // The default height of the screenshot frame
+        fixedBox: true // The size of the screenshot frame is fixed and cannot be changed
       },
       previews: {}
     };
   },
   methods: {
-    // 编辑头像
+    // Edit avatar
     editCropper() {
       this.open = true;
     },
-    // 打开弹出层结束时的回调
+    // Callback at the end of opening the popup layer
     modalOpened() {
       this.visible = true;
     },
-    // 覆盖默认的上传行为
+    // Override the default upload behavior
     requestUpload() {
     },
-    // 向左旋转
+    // Rotate to the left
     rotateLeft() {
       this.$refs.cropper.rotateLeft();
     },
-    // 向右旋转
+    // Rotate to the right
     rotateRight() {
       this.$refs.cropper.rotateRight();
     },
-    // 图片缩放
+    // Picture zoom
     changeScale(num) {
       num = num || 1;
       this.$refs.cropper.changeScale(num);
     },
-    // 上传预处理
+    // Upload pre-processing
     beforeUpload(file) {
       if (file.type.indexOf("image/") == -1) {
-        this.msgError("文件格式错误，请上传图片类型,如：JPG，PNG后缀的文件。");
+        this.msgError("The file format is not supported, please upload the image type, such as: JPG, PNG suffix files.");
       } else {
         const reader = new FileReader();
         reader.readAsDataURL(file);
@@ -119,7 +119,7 @@ export default {
         };
       }
     },
-    // 上传图片
+    // Upload image
     uploadImg() {
       this.$refs.cropper.getCropBlob(data => {
         let formData = new FormData();
@@ -133,7 +133,7 @@ export default {
         });
       });
     },
-    // 实时预览
+    // Real-time preview
     realTime(data) {
       this.previews = data;
     }
