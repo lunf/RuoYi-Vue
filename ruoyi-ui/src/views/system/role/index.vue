@@ -163,7 +163,7 @@
         <el-form-item label="Role Name" prop="roleName">
           <el-input v-model="form.roleName" placeholder="Please enter the role name" />
         </el-form-item>
-        <el-form-item label="Role key" prop="roleKey">
+        <el-form-item label="Role Key" prop="roleKey">
           <el-input v-model="form.roleKey" placeholder="Please enter role key" />
         </el-form-item>
         <el-form-item label="Display Order" prop="roleSort">

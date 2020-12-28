@@ -203,7 +203,7 @@
       <el-form ref="form" :model="form" :rules="rules" label-width="120px">
         <el-row>
           <el-col :span="12">
-            <el-form-item label="Display name" prop="nickName">
+            <el-form-item label="Display Name" prop="nickName">
               <el-input v-model="form.nickName" placeholder="Please enter user display name" />
             </el-form-item>
           </el-col>
