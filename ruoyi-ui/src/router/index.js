@@ -89,7 +89,7 @@ export const constantRoutes = [
         path: 'type/data/:dictId(\\d+)',
         component: (resolve) => require(['@/views/system/dict/data'], resolve),
         name: 'Data',
-        meta: { title: '字典数据', icon: '' }
+        meta: { title: 'Dictionary Data', icon: '' }
       }
     ]
   },
