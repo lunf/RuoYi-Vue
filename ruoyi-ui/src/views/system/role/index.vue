@@ -103,7 +103,7 @@
 
     <el-table v-loading="loading" :data="roleList" @selection-change="handleSelectionChange">
       <el-table-column type="selection" width="55" align="center" />
-      <el-table-column label="Role ID" prop="roleId" width="80" />
+      <el-table-column label="ID" prop="roleId" width="80" />
       <el-table-column label="Role Name" prop="roleName" :show-overflow-tooltip="true" width="240" />
       <el-table-column label="Role Key" prop="roleKey" :show-overflow-tooltip="true" width="150" />
       <el-table-column label="Order" prop="roleSort" width="80" />
