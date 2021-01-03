@@ -1,7 +1,7 @@
 <template>
   <div class="app-container">
     <el-form :model="queryParams" ref="queryForm" :inline="true" v-show="showSearch" label-width="120px">
-      <el-form-item label="IP address" prop="ipaddr">
+      <el-form-item label="IP Address" prop="ipaddr">
         <el-input
           v-model="queryParams.ipaddr"
           placeholder="Please enter login address"
