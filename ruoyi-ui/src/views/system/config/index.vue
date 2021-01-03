@@ -69,7 +69,7 @@
           :disabled="single"
           @click="handleUpdate"
           v-hasPermi="['system:config:edit']"
-        >Edit</el-button>
+        >Modify</el-button>
       </el-col>
       <el-col :span="1.5">
         <el-button
@@ -126,7 +126,7 @@
             icon="el-icon-edit"
             @click="handleUpdate(scope.row)"
             v-hasPermi="['system:config:edit']"
-          >Edit</el-button>
+          >Modify</el-button>
           <el-button
             size="mini"
             type="text"

@@ -359,7 +359,7 @@ export default {
       getMenu(row.menuId).then(response => {
         this.form = response.data;
         this.open = true;
-        this.title = "Modify menu";
+        this.title = "Update a menu";
       });
     },
     /** Submit button */

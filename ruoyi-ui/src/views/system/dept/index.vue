@@ -273,7 +273,7 @@ export default {
       getDept(row.deptId).then(response => {
         this.form = response.data;
         this.open = true;
-        this.title = "Modify department";
+        this.title = "Update a department";
       });
       listDeptExcludeChild(row.deptId).then(response => {
 	        this.deptOptions = this.handleTree(response.data, "deptId");

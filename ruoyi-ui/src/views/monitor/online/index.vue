@@ -111,7 +111,7 @@ export default {
     },
     /** Force logout button operation */
     handleForceLogout(row) {
-      this.$confirm('Please confirm to force logout user "' + row.userName + '"?', "Warning", {
+      this.$confirm('Confirm to force logout user "' + row.userName + '"?', "Warning", {
           confirmButtonText: "Confirm",
           cancelButtonText: "Cancel",
           type: "warning"

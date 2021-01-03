@@ -521,7 +521,7 @@ export default {
             })
           });
         });
-        this.title = "Modify role";
+        this.title = "Update a role";
       });
     },
     /** Select role permission range to trigger */
