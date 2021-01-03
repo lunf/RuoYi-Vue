@@ -26,10 +26,10 @@ public class AddressUtils
     public static String getRealAddressByIP(String ip)
     {
         String address = UNKNOWN;
-        // 内网不查询
+        // Intranet does not query
         if (IpUtils.internalIp(ip))
         {
-            return "内网IP";
+            return "Intranet IP";
         }
         if (RuoYiConfig.isAddressEnabled())
         {
@@ -38,7 +38,7 @@ public class AddressUtils
                 String rspStr = HttpUtils.sendGet(IP_URL, "ip=" + ip + "&json=true", Constants.GBK);
                 if (StringUtils.isEmpty(rspStr))
                 {
-                    log.error("获取地理位置异常 {}", ip);
+                    log.error("Get location exception {}", ip);
                     return UNKNOWN;
                 }
                 JSONObject obj = JSONObject.parseObject(rspStr);
@@ -48,7 +48,7 @@ public class AddressUtils
             }
             catch (Exception e)
             {
-                log.error("获取地理位置异常 {}", ip);
+                log.error("Get location exception {}", ip);
             }
         }
         return address;
