@@ -156,16 +156,16 @@ create table sys_menu (
 -- Initialization-menu table
 -- ----------------------------
 -- Root menu
-insert into sys_menu values('1', 'System Management', '0', '1', 'system',           null,   1, 0, 'M', '0', '0', '', 'system',   'admin', sysdate(), '', null, 'System management directory');
-insert into sys_menu values('2', 'System Monitoring', '0', '2', 'monitor',          null,   1, 0, 'M', '0', '0', '', 'monitor',  'admin', sysdate(), '', null, 'System monitoring directory');
-insert into sys_menu values('3', 'System Tools', '0', '3', 'tool',             null,   1, 0, 'M', '0', '0', '', 'tool',     'admin', sysdate(), '', null, 'System tool catalog');
+insert into sys_menu values('1', 'System', '0', '1', 'system',           null,   1, 0, 'M', '0', '0', '', 'system',   'admin', sysdate(), '', null, 'System management directory');
+insert into sys_menu values('2', 'Monitoring', '0', '2', 'monitor',          null,   1, 0, 'M', '0', '0', '', 'monitor',  'admin', sysdate(), '', null, 'System monitoring directory');
+insert into sys_menu values('3', 'Tools', '0', '3', 'tool',             null,   1, 0, 'M', '0', '0', '', 'tool',     'admin', sysdate(), '', null, 'System tool catalog');
 insert into sys_menu values('4', 'Official website', '0', '4', 'http://ruoyi.vip', null ,  0, 0, 'M', '0', '0', '', 'guide',    'admin', sysdate(), '', null, 'Official website address');
 -- Secondary menu
 insert into sys_menu values('100',  'User Management', '1',   '1', 'user',       'system/user/index',        1, 0, 'C', '0', '0', 'system:user:list',        'user',          'admin', sysdate(), '', null, 'User management menu');
 insert into sys_menu values('101',  'Role Management', '1',   '2', 'role',       'system/role/index',        1, 0, 'C', '0', '0', 'system:role:list',        'peoples',       'admin', sysdate(), '', null, 'Role management menu');
 insert into sys_menu values('102',  'Menu Management', '1',   '3', 'menu',       'system/menu/index',        1, 0, 'C', '0', '0', 'system:menu:list',        'tree-table',    'admin', sysdate(), '', null, 'Menu management menu');
 insert into sys_menu values('103',  'Department Management', '1',   '4', 'dept',       'system/dept/index',        1, 0, 'C', '0', '0', 'system:dept:list',        'tree',          'admin', sysdate(), '', null, 'Department management menu');
-insert into sys_menu values('104',  'Job Management', '1',   '5', 'post',       'system/post/index',        1, 0, 'C', '0', '0', 'system:post:list',        'post',          'admin', sysdate(), '', null, 'Post management menu');
+insert into sys_menu values('104',  'Position Management', '1',   '5', 'post',       'system/post/index',        1, 0, 'C', '0', '0', 'system:post:list',        'post',          'admin', sysdate(), '', null, 'Position management menu');
 insert into sys_menu values('105',  'Dictionary Management', '1',   '6', 'dict',       'system/dict/index',        1, 0, 'C', '0', '0', 'system:dict:list',        'dict',          'admin', sysdate(), '', null, 'Dictionary management menu');
 insert into sys_menu values('106',  'Parameter Settings', '1',   '7', 'config',     'system/config/index',      1, 0, 'C', '0', '0', 'system:config:list',      'edit',          'admin', sysdate(), '', null, 'Parameter setting menu');
 insert into sys_menu values('107',  'Announcement', '1',   '8', 'notice',     'system/notice/index',      1, 0, 'C', '0', '0', 'system:notice:list',      'message',       'admin', sysdate(), '', null, 'Notification announcement menu');
