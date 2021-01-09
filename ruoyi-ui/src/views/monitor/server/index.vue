@@ -200,7 +200,7 @@ export default {
     openLoading() {
       this.loading = this.$loading({
         lock: true,
-        text: "拼命读取中",
+        text: "Loading...",
         spinner: "el-icon-loading",
         background: "rgba(0, 0, 0, 0.7)"
       });
