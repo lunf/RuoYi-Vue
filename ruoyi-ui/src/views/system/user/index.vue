@@ -130,7 +130,7 @@
               v-hasPermi="['system:user:export']"
             >Export</el-button>
           </el-col>
-          <right-toolbar :showSearch.sync="showSearch" @queryTable="getList"></right-toolbar>
+          <right-toolbar :showSearch.sync="showSearch" @queryTable="getList" :columns="columns"></right-toolbar>
         </el-row>
 
         <el-table v-loading="loading" :data="userList" @selection-change="handleSelectionChange">
@@ -150,7 +150,7 @@
               ></el-switch>
             </template>
           </el-table-column>
-          <el-table-column label="Created At" align="center" prop="createTime" width="160">
+          <el-table-column label="Created At" align="center" prop="createTime" v-if="columns[6].visible" width="160">
             <template slot-scope="scope">
               <span>{{ parseTime(scope.row.createTime) }}</span>
             </template>
@@ -413,6 +413,16 @@ export default {
         status: undefined,
         deptId: undefined
       },
+      // column information
+      columns: [
+        { key: 0, label: `ID`, visible: true },
+        { key: 1, label: `User Name`, visible: true },
+        { key: 2, label: `Display Name`, visible: true },
+        { key: 3, label: `Department`, visible: true },
+        { key: 4, label: `Phone`, visible: true },
+        { key: 5, label: `Status`, visible: true },
+        { key: 6, label: `Created At`, visible: true }
+      ],
       // Form validation
       rules: {
         userName: [
