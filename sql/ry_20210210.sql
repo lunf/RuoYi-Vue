@@ -159,7 +159,8 @@ create table sys_menu (
 insert into sys_menu values('1', 'System', '0', '1', 'system',           null,   1, 0, 'M', '0', '0', '', 'system',   'admin', sysdate(), '', null, 'System management directory');
 insert into sys_menu values('2', 'Monitoring', '0', '2', 'monitor',          null,   1, 0, 'M', '0', '0', '', 'monitor',  'admin', sysdate(), '', null, 'System monitoring directory');
 insert into sys_menu values('3', 'Tools', '0', '3', 'tool',             null,   1, 0, 'M', '0', '0', '', 'tool',     'admin', sysdate(), '', null, 'System tool catalog');
-insert into sys_menu values('4', 'Official website', '0', '4', 'http://ruoyi.vip', null ,  0, 0, 'M', '0', '0', '', 'guide',    'admin', sysdate(), '', null, 'Official website address');
+
+insert into sys_menu values('90', 'Official website', '0', '90', 'http://ruoyi.vip', null ,  0, 0, 'M', '0', '0', '', 'guide',    'admin', sysdate(), '', null, 'Official website address');
 -- Secondary menu
 insert into sys_menu values('100',  'User Management', '1',   '1', 'user',       'system/user/index',        1, 0, 'C', '0', '0', 'system:user:list',        'user',          'admin', sysdate(), '', null, 'User management menu');
 insert into sys_menu values('101',  'Role Management', '1',   '2', 'role',       'system/role/index',        1, 0, 'C', '0', '0', 'system:role:list',        'peoples',       'admin', sysdate(), '', null, 'Role management menu');
