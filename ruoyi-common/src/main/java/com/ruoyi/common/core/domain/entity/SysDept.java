@@ -10,7 +10,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 import com.ruoyi.common.core.domain.BaseEntity;
 
 /**
- * 部门表 sys_dept
+ * Department table sys_dept
  * 
  * @author ruoyi
  */
@@ -117,7 +117,7 @@ public class SysDept extends BaseEntity
         this.leader = leader;
     }
 
-    @Size(min = 0, max = 11, message = "联系电话长度不能超过11个字符")
+    @Size(min = 0, max = 11, message = "The length of the contact number cannot exceed 11 characters")
     public String getPhone()
     {
         return phone;

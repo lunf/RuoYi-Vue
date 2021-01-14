@@ -25,31 +25,31 @@ public class SysUser extends BaseEntity
     private static final long serialVersionUID = 1L;
 
     /** 用户ID */
-    @Excel(name = "用户序号", cellType = ColumnType.NUMERIC, prompt = "用户编号")
+    @Excel(name = "User ID", cellType = ColumnType.NUMERIC, prompt = "User ID")
     private Long userId;
 
-    /** 部门ID */
-    @Excel(name = "部门编号", type = Type.IMPORT)
+    /** Department ID */
+    @Excel(name = "Department Number", type = Type.IMPORT)
     private Long deptId;
 
-    /** 用户账号 */
-    @Excel(name = "登录名称")
+    /** user account */
+    @Excel(name = "User Account")
     private String userName;
 
-    /** 用户昵称 */
-    @Excel(name = "用户名称")
+    /** Display Name */
+    @Excel(name = "Display Name")
     private String nickName;
 
-    /** 用户邮箱 */
-    @Excel(name = "用户邮箱")
+    /** User mail */
+    @Excel(name = "User Mail")
     private String email;
 
-    /** 手机号码 */
-    @Excel(name = "手机号码")
+    /** mobile phone number */
+    @Excel(name = "Phone Number")
     private String phonenumber;
 
-    /** 用户性别 */
-    @Excel(name = "用户性别", readConverterExp = "0=男,1=女,2=未知")
+    /** User gender */
+    @Excel(name = "Gender", readConverterExp = "0=male, 1=female, 2=unknown")
     private String sex;
 
     /** 用户头像 */
@@ -61,25 +61,25 @@ public class SysUser extends BaseEntity
     /** 盐加密 */
     private String salt;
 
-    /** 帐号状态（0正常 1停用） */
-    @Excel(name = "帐号状态", readConverterExp = "0=正常,1=停用")
+    /** Account status (0 normal 1 disabled) */
+    @Excel(name = "Account Status", readConverterExp = "0=normal, 1=disabled")
     private String status;
 
-    /** 删除标志（0代表存在 2代表删除） */
+    /** Delete flag (0 means existence 2 means deletion) */
     private String delFlag;
 
     /** 最后登录IP */
-    @Excel(name = "最后登录IP", type = Type.EXPORT)
+    @Excel(name = "Last Login IP", type = Type.EXPORT)
     private String loginIp;
 
     /** 最后登录时间 */
-    @Excel(name = "最后登录时间", width = 30, dateFormat = "yyyy-MM-dd HH:mm:ss", type = Type.EXPORT)
+    @Excel(name = "Last Login Time", width = 30, dateFormat = "yyyy-MM-dd HH:mm:ss", type = Type.EXPORT)
     private Date loginDate;
 
     /** 部门对象 */
     @Excels({
-        @Excel(name = "部门名称", targetAttr = "deptName", type = Type.EXPORT),
-        @Excel(name = "部门负责人", targetAttr = "leader", type = Type.EXPORT)
+        @Excel(name = "Department Name", targetAttr = "deptName", type = Type.EXPORT),
+        @Excel(name = "Head of Department", targetAttr = "leader", type = Type.EXPORT)
     })
     private SysDept dept;
 
