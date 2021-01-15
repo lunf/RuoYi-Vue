@@ -180,10 +180,10 @@ public class SysDeptServiceImpl implements ISysDeptService
     public int insertDept(SysDept dept)
     {
         SysDept info = deptMapper.selectDeptById(dept.getParentId());
-        // 如果父节点不为正常状态,则不允许新增子节点
+        // If the parent node is not in the normal state, no new child nodes are allowed
         if (!UserConstants.DEPT_NORMAL.equals(info.getStatus()))
         {
-            throw new CustomException("部门停用，不允许新增");
+            throw new CustomException("Department is disabled, adding is not allowed");
         }
         dept.setAncestors(info.getAncestors() + "," + dept.getParentId());
         return deptMapper.insertDept(dept);
