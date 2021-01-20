@@ -1,30 +1,30 @@
 <template>
   <el-card>
     <el-tabs v-model="activeName">
-      <el-tab-pane label="基本信息" name="basic">
+      <el-tab-pane label="Basic Information" name="basic">
         <basic-info-form ref="basicInfo" :info="info" />
       </el-tab-pane>
-      <el-tab-pane label="字段信息" name="cloum">
+      <el-tab-pane label="Field information" name="cloum">
         <el-table ref="dragTable" :data="cloumns" row-key="columnId" :max-height="tableHeight">
-          <el-table-column label="序号" type="index" min-width="5%" class-name="allowDrag" />
+          <el-table-column label="Serial number" type="index" min-width="5%" class-name="allowDrag" />
           <el-table-column
-            label="字段列名"
+            label="Column name"
             prop="columnName"
             min-width="10%"
             :show-overflow-tooltip="true"
           />
-          <el-table-column label="字段描述" min-width="10%">
+          <el-table-column label="Field description" min-width="10%">
             <template slot-scope="scope">
               <el-input v-model="scope.row.columnComment"></el-input>
             </template>
           </el-table-column>
           <el-table-column
-            label="物理类型"
+            label="Physical type"
             prop="columnType"
             min-width="10%"
             :show-overflow-tooltip="true"
           />
-          <el-table-column label="Java类型" min-width="11%">
+          <el-table-column label="Java type" min-width="11%">
             <template slot-scope="scope">
               <el-select v-model="scope.row.javaType">
                 <el-option label="Long" value="Long" />
@@ -36,33 +36,33 @@
               </el-select>
             </template>
           </el-table-column>
-          <el-table-column label="java属性" min-width="10%">
+          <el-table-column label="java attributes" min-width="10%">
             <template slot-scope="scope">
               <el-input v-model="scope.row.javaField"></el-input>
             </template>
           </el-table-column>
 
-          <el-table-column label="插入" min-width="5%">
+          <el-table-column label="Insert" min-width="5%">
             <template slot-scope="scope">
               <el-checkbox true-label="1" v-model="scope.row.isInsert"></el-checkbox>
             </template>
           </el-table-column>
-          <el-table-column label="编辑" min-width="5%">
+          <el-table-column label="Edit" min-width="5%">
             <template slot-scope="scope">
               <el-checkbox true-label="1" v-model="scope.row.isEdit"></el-checkbox>
             </template>
           </el-table-column>
-          <el-table-column label="列表" min-width="5%">
+          <el-table-column label="List" min-width="5%">
             <template slot-scope="scope">
               <el-checkbox true-label="1" v-model="scope.row.isList"></el-checkbox>
             </template>
           </el-table-column>
-          <el-table-column label="查询" min-width="5%">
+          <el-table-column label="Query" min-width="5%">
             <template slot-scope="scope">
               <el-checkbox true-label="1" v-model="scope.row.isQuery"></el-checkbox>
             </template>
           </el-table-column>
-          <el-table-column label="查询方式" min-width="10%">
+          <el-table-column label="Query mode" min-width="10%">
             <template slot-scope="scope">
               <el-select v-model="scope.row.queryType">
                 <el-option label="=" value="EQ" />
@@ -76,29 +76,29 @@
               </el-select>
             </template>
           </el-table-column>
-          <el-table-column label="必填" min-width="5%">
+          <el-table-column label="Required" min-width="5%">
             <template slot-scope="scope">
               <el-checkbox true-label="1" v-model="scope.row.isRequired"></el-checkbox>
             </template>
           </el-table-column>
-          <el-table-column label="显示类型" min-width="12%">
+          <el-table-column label="Display type" min-width="12%">
             <template slot-scope="scope">
               <el-select v-model="scope.row.htmlType">
-                <el-option label="文本框" value="input" />
-                <el-option label="文本域" value="textarea" />
-                <el-option label="下拉框" value="select" />
-                <el-option label="单选框" value="radio" />
-                <el-option label="复选框" value="checkbox" />
-                <el-option label="日期控件" value="datetime" />
-                <el-option label="图片上传" value="imageUpload" />
-                <el-option label="文件上传" value="fileUpload" />
-                <el-option label="富文本控件" value="editor" />
+                <el-option label="Text box" value="input" />
+                <el-option label="Text field" value="textarea" />
+                <el-option label="Drop down box" value="select" />
+                <el-option label="Single box" value="radio" />
+                <el-option label="Checkbox" value="checkbox" />
+                <el-option label="Date control" value="datetime" />
+                <el-option label="Upload image" value="imageUpload" />
+                <el-option label="File Upload" value="fileUpload" />
+                <el-option label="Rich text control" value="editor" />
               </el-select>
             </template>
           </el-table-column>
-          <el-table-column label="字典类型" min-width="12%">
+          <el-table-column label="Dictionary type" min-width="12%">
             <template slot-scope="scope">
-              <el-select v-model="scope.row.dictType" clearable filterable placeholder="请选择">
+              <el-select v-model="scope.row.dictType" clearable filterable placeholder="Please choose">
                 <el-option
                   v-for="dict in dictOptions"
                   :key="dict.dictType"
@@ -112,14 +112,14 @@
           </el-table-column>
         </el-table>
       </el-tab-pane>
-      <el-tab-pane label="生成信息" name="genInfo">
+      <el-tab-pane label="Generate information" name="genInfo">
         <gen-info-form ref="genInfo" :info="info" :tables="tables" :menus="menus"/>
       </el-tab-pane>
     </el-tabs>
     <el-form label-width="100px">
       <el-form-item style="text-align: center;margin-left:-100px;margin-top:10px;">
-        <el-button type="primary" @click="submitForm()">提交</el-button>
-        <el-button @click="close()">返回</el-button>
+        <el-button type="primary" @click="submitForm()">Confirm</el-button>
+        <el-button @click="close()">Cancel</el-button>
       </el-form-item>
     </el-form>
   </el-card>
@@ -140,43 +140,43 @@ export default {
   },
   data() {
     return {
-      // 选中选项卡的 name
+      // The name of the selected tab
       activeName: "cloum",
-      // 表格的高度
+      // Table height
       tableHeight: document.documentElement.scrollHeight - 245 + "px",
-      // 表信息
+      // Table information
       tables: [],
-      // 表列信息
+      // Table information
       cloumns: [],
-      // 字典信息
+      // Dictionary information
       dictOptions: [],
       // 菜单信息
       menus: [],
-      // 表详细信息
+      // Table details
       info: {}
     };
   },
   created() {
     const tableId = this.$route.params && this.$route.params.tableId;
     if (tableId) {
-      // 获取表详细信息
+      // Get table details
       getGenTable(tableId).then(res => {
         this.cloumns = res.data.rows;
         this.info = res.data.info;
         this.tables = res.data.tables;
       });
-      /** 查询字典下拉列表 */
+      /** Query dictionary drop-down list */
       getDictOptionselect().then(response => {
         this.dictOptions = response.data;
       });
-      /** 查询菜单下拉列表 */
+      /** Query menu drop-down list */
       getMenuTreeselect().then(response => {
         this.menus = this.handleTree(response.data, "menuId");
       });
     }
   },
   methods: {
-    /** 提交按钮 */
+    /** Submit button */
     submitForm() {
       const basicForm = this.$refs.basicInfo.$refs.basicInfoForm;
       const genForm = this.$refs.genInfo.$refs.genInfoForm;
@@ -198,7 +198,7 @@ export default {
             }
           });
         } else {
-          this.msgError("表单校验未通过，请重新检查提交内容");
+          this.msgError("The form verification failed, please recheck the submitted content");
         }
       });
     },
@@ -209,7 +209,7 @@ export default {
         });
       });
     },
-    /** 关闭按钮 */
+    /** Close button */
     close() {
       this.$store.dispatch("tagsView/delView", this.$route);
       this.$router.push({ path: "/tool/gen", query: { t: Date.now()}})

@@ -6,12 +6,12 @@ const components = {
   itemBtns(h, element, index, parent) {
     const { copyItem, deleteItem } = this.$listeners
     return [
-      <span class="drawing-item-copy" title="复制" onClick={event => {
+      <span class="drawing-item-copy" title="Copy" onClick={event => {
         copyItem(element, parent); event.stopPropagation()
       }}>
         <i class="el-icon-copy-document" />
       </span>,
-      <span class="drawing-item-delete" title="删除" onClick={event => {
+      <span class="drawing-item-delete" title="Delete" onClick={event => {
         deleteItem(index, parent); event.stopPropagation()
       }}>
         <i class="el-icon-delete" />

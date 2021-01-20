@@ -9,12 +9,12 @@
       @close="onClose"
     >
       <div slot="title">
-        选择图标
+        Select icon
         <el-input
           v-model="key"
           size="mini"
           :style="{width: '260px'}"
-          placeholder="请输入图标名称"
+          placeholder="Please enter the icon name"
           prefix-icon="el-icon-search"
           clearable
         />

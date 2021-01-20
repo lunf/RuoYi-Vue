@@ -5,11 +5,11 @@ let confGlobal
 let someSpanIsNot24
 
 export function dialogWrapper(str) {
-  return `<el-dialog v-bind="$attrs" v-on="$listeners" @open="onOpen" @close="onClose" title="Dialog Titile">
+  return `<el-dialog v-bind="$attrs" v-on="$listeners" @open="onOpen" @close="onClose" title="Dialog Title">
     ${str}
     <div slot="footer">
-      <el-button @click="close">取消</el-button>
-      <el-button type="primary" @click="handelConfirm">确定</el-button>
+      <el-button @click="close">Cancel</el-button>
+      <el-button type="primary" @click="handelConfirm">Confirm</el-button>
     </div>
   </el-dialog>`
 }
@@ -56,8 +56,8 @@ function buildFromBtns(conf, type) {
   let str = ''
   if (conf.formBtns && type === 'file') {
     str = `<el-form-item size="large">
-          <el-button type="primary" @click="submitForm">提交</el-button>
-          <el-button @click="resetForm">重置</el-button>
+          <el-button type="primary" @click="submitForm">Confirm</el-button>
+          <el-button @click="resetForm">Cancel</el-button>
         </el-form-item>`
     if (someSpanIsNot24) {
       str = `<el-col :span="24">
@@ -68,7 +68,7 @@ function buildFromBtns(conf, type) {
   return str
 }
 
-// span不为24的用el-col包裹
+// Wrap with el-col if span is not 24
 function colWrapper(element, str) {
   if (someSpanIsNot24 || element.span !== 24) {
     return `<el-col :span="${element.span}">
@@ -135,7 +135,7 @@ const tags = {
       : ''
     let child = buildElInputChild(el)
 
-    if (child) child = `\n${child}\n` // 换行
+    if (child) child = `\n${child}\n` // Wrap
     return `<${el.tag} ${vModel} ${type} ${placeholder} ${maxlength} ${showWordLimit} ${readonly} ${disabled} ${clearable} ${prefixIcon} ${suffixIcon} ${showPassword} ${autosize} ${width}>${child}</${el.tag}>`
   },
   'el-input-number': el => {
@@ -157,7 +157,7 @@ const tags = {
     const multiple = el.multiple ? 'multiple' : ''
     let child = buildElSelectChild(el)
 
-    if (child) child = `\n${child}\n` // 换行
+    if (child) child = `\n${child}\n` // Wrap
     return `<${el.tag} ${vModel} ${placeholder} ${disabled} ${multiple} ${filterable} ${clearable} ${width}>${child}</${el.tag}>`
   },
   'el-radio-group': el => {
