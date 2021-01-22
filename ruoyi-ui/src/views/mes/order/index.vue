@@ -124,12 +124,12 @@
       <el-table-column label="Priority" align="center" prop="status" :formatter="statusFormat" />
       <el-table-column label="Status" align="center" prop="status" :formatter="statusFormat" />
       <el-table-column label="Remark" align="center" prop="remark" :show-overflow-tooltip="true" />
-      <el-table-column label="Scheduled At" align="center" prop="createTime" width="180">
+      <el-table-column label="Started At" align="center" prop="createTime" width="180">
         <template slot-scope="scope">
           <span>{{ parseTime(scope.row.createTime) }}</span>
         </template>
       </el-table-column>
-      <el-table-column label="Finished At" align="center" prop="createTime" width="180">
+      <el-table-column label="Ended At" align="center" prop="createTime" width="180">
               <template slot-scope="scope">
                 <span>{{ parseTime(scope.row.createTime, '{d}-{m}-{y}') }}</span>
               </template>

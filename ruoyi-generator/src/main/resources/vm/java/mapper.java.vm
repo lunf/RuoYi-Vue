@@ -7,7 +7,7 @@ import ${packageName}.domain.${subClassName};
 #end
 
 /**
- * ${functionName}Mapper接口
+ * ${functionName} Mapper Interface
  * 
  * @author ${author}
  * @date ${datetime}
@@ -15,7 +15,7 @@ import ${packageName}.domain.${subClassName};
 public interface ${ClassName}Mapper 
 {
     /**
-     * 查询${functionName}
+     * Query ${functionName}
      * 
      * @param ${pkColumn.javaField} ${functionName}ID
      * @return ${functionName}
@@ -23,68 +23,68 @@ public interface ${ClassName}Mapper
     public ${ClassName} select${ClassName}ById(${pkColumn.javaType} ${pkColumn.javaField});
 
     /**
-     * 查询${functionName}列表
+     * Query the list of ${functionName}
      * 
      * @param ${className} ${functionName}
-     * @return ${functionName}集合
+     * @return ${functionName} collection
      */
     public List<${ClassName}> select${ClassName}List(${ClassName} ${className});
 
     /**
-     * 新增${functionName}
+     * Add ${functionName}
      * 
      * @param ${className} ${functionName}
-     * @return 结果
+     * @return result
      */
     public int insert${ClassName}(${ClassName} ${className});
 
     /**
-     * 修改${functionName}
+     * Modify ${functionName}
      * 
      * @param ${className} ${functionName}
-     * @return 结果
+     * @return result
      */
     public int update${ClassName}(${ClassName} ${className});
 
     /**
-     * 删除${functionName}
+     * Delete ${functionName}
      * 
      * @param ${pkColumn.javaField} ${functionName}ID
-     * @return 结果
+     * @return result
      */
     public int delete${ClassName}ById(${pkColumn.javaType} ${pkColumn.javaField});
 
     /**
-     * 批量删除${functionName}
+     * Batch delete ${functionName}
      * 
-     * @param ${pkColumn.javaField}s 需要删除的数据ID
-     * @return 结果
+     * @param ${pkColumn.javaField}s ID of the data to be deleted
+     * @return result
      */
     public int delete${ClassName}ByIds(${pkColumn.javaType}[] ${pkColumn.javaField}s);
 #if($table.sub)
 
     /**
-     * 批量删除${subTable.functionName}
+     * Batch delete ${subTable.functionName}
      * 
-     * @param customerIds 需要删除的数据ID
-     * @return 结果
+     * @param customerIds ID of the data to be deleted
+     * @return result
      */
     public int delete${subClassName}By${subTableFkClassName}s(${pkColumn.javaType}[] ${pkColumn.javaField}s);
     
     /**
-     * 批量新增${subTable.functionName}
+     * Add ${subTable.functionName} in bulk
      * 
-     * @param ${subclassName}List ${subTable.functionName}列表
-     * @return 结果
+     * @param ${subclassName}List ${subTable.functionName} List
+     * @return result
      */
     public int batch${subClassName}(List<${subClassName}> ${subclassName}List);
     
 
     /**
-     * 通过${functionName}ID删除${subTable.functionName}信息
+     * Delete ${subTable.functionName} information by ${functionName}ID
      * 
-     * @param roleId 角色ID
-     * @return 结果
+     * @param roleId Role ID
+     * @return result
      */
     public int delete${subClassName}By${subTableFkClassName}(${pkColumn.javaType} ${pkColumn.javaField});
 #end
