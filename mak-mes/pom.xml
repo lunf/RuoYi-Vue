@@ -7,8 +7,8 @@
     <version>3.3.0</version>
   </parent>
 
-  <groupId>com.lunf</groupId>
-  <artifactId>mak-mes</artifactId>
+  <groupId>com.ruoyi</groupId>
+  <artifactId>mes</artifactId>
 
   <name>mak-mes</name>
 

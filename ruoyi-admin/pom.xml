@@ -12,7 +12,7 @@
     <artifactId>ruoyi-admin</artifactId>
 
     <description>
-        web服务入口
+        web service entry
     </description>
 
     <dependencies>
@@ -71,6 +71,11 @@
         <dependency>
             <groupId>com.ruoyi</groupId>
             <artifactId>ruoyi-generator</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.ruoyi</groupId>
+            <artifactId>mes</artifactId>
         </dependency>
 
     </dependencies>

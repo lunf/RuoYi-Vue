@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.mes.mapper.MesJobMapper">
+
+    <resultMap type="MesJob" id="MesJobResult">
+        <result property="jobId"    column="job_id"    />
+        <result property="jobCode"    column="job_code"    />
+        <result property="purchaseOrder"    column="purchase_order"    />
+        <result property="customerName"    column="customer_name"    />
+        <result property="customerAddress"    column="customer_address"    />
+        <result property="customerPhone"    column="customer_phone"    />
+        <result property="status"    column="status"    />
+        <result property="priority"    column="priority"    />
+        <result property="startAt"    column="start_at"    />
+        <result property="endAt"    column="end_at"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="createBy"    column="create_by"    />
+        <result property="updateTime"    column="update_time"    />
+        <result property="updateBy"    column="update_by"    />
+    </resultMap>
+
+    <sql id="selectMesJobVo">
+        select job_id, job_code, purchase_order, customer_name, customer_address, customer_phone, status, priority, start_at, end_at, create_time, create_by, update_time, update_by from mes_job
+    </sql>
+
+    <select id="selectMesJobList" parameterType="MesJob" resultMap="MesJobResult">
+        <include refid="selectMesJobVo"/>
+        <where>
+            <if test="jobCode != null  and jobCode != ''"> and job_code like concat('%', #{jobCode}, '%')</if>
+            <if test="customerName != null  and customerName != ''"> and customer_name like concat('%', #{customerName}, '%')</if>
+            <if test="params.beginEndAt != null and params.beginEndAt != '' and params.endEndAt != null and params.endEndAt != ''"> and end_at between #{params.beginEndAt} and #{params.endEndAt}</if>
+        </where>
+    </select>
+
+    <select id="selectMesJobById" parameterType="Long" resultMap="MesJobResult">
+        <include refid="selectMesJobVo"/>
+        where job_id = #{jobId}
+    </select>
+
+    <insert id="insertMesJob" parameterType="MesJob">
+        insert into mes_job
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="jobId != null">job_id,</if>
+            <if test="jobCode != null and jobCode != ''">job_code,</if>
+            <if test="purchaseOrder != null">purchase_order,</if>
+            <if test="customerName != null and customerName != ''">customer_name,</if>
+            <if test="customerAddress != null">customer_address,</if>
+            <if test="customerPhone != null">customer_phone,</if>
+            <if test="status != null">status,</if>
+            <if test="priority != null">priority,</if>
+            <if test="startAt != null">start_at,</if>
+            <if test="endAt != null">end_at,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="createBy != null and createBy != ''">create_by,</if>
+            <if test="updateTime != null">update_time,</if>
+            <if test="updateBy != null">update_by,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="jobId != null">#{jobId},</if>
+            <if test="jobCode != null and jobCode != ''">#{jobCode},</if>
+            <if test="purchaseOrder != null">#{purchaseOrder},</if>
+            <if test="customerName != null and customerName != ''">#{customerName},</if>
+            <if test="customerAddress != null">#{customerAddress},</if>
+            <if test="customerPhone != null">#{customerPhone},</if>
+            <if test="status != null">#{status},</if>
+            <if test="priority != null">#{priority},</if>
+            <if test="startAt != null">#{startAt},</if>
+            <if test="endAt != null">#{endAt},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="createBy != null and createBy != ''">#{createBy},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+            <if test="updateBy != null">#{updateBy},</if>
+        </trim>
+    </insert>
+
+    <update id="updateMesJob" parameterType="MesJob">
+        update mes_job
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="jobCode != null and jobCode != ''">job_code = #{jobCode},</if>
+            <if test="purchaseOrder != null">purchase_order = #{purchaseOrder},</if>
+            <if test="customerName != null and customerName != ''">customer_name = #{customerName},</if>
+            <if test="customerAddress != null">customer_address = #{customerAddress},</if>
+            <if test="customerPhone != null">customer_phone = #{customerPhone},</if>
+            <if test="status != null">status = #{status},</if>
+            <if test="priority != null">priority = #{priority},</if>
+            <if test="startAt != null">start_at = #{startAt},</if>
+            <if test="endAt != null">end_at = #{endAt},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="createBy != null and createBy != ''">create_by = #{createBy},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+            <if test="updateBy != null">update_by = #{updateBy},</if>
+        </trim>
+        where job_id = #{jobId}
+    </update>
+
+    <delete id="deleteMesJobById" parameterType="Long">
+        delete from mes_job where job_id = #{jobId}
+    </delete>
+
+    <delete id="deleteMesJobByIds" parameterType="String">
+        delete from mes_job where job_id in
+        <foreach item="jobId" collection="array" open="(" separator="," close=")">
+            #{jobId}
+        </foreach>
+    </delete>
+</mapper>
