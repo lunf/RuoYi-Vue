@@ -12,22 +12,22 @@ import org.springframework.stereotype.Component;
 @ConfigurationProperties(prefix = "ruoyi")
 public class RuoYiConfig
 {
-    /** 项目名称 */
+    /** Project name */
     private String name;
 
-    /** 版本 */
+    /** Version */
     private String version;
 
-    /** 版权年份 */
+    /** Copyright year */
     private String copyrightYear;
 
-    /** 实例演示开关 */
+    /** Example demo switch */
     private boolean demoEnabled;
 
-    /** 上传路径 */
+    /** Upload path */
     private static String profile;
 
-    /** 获取地址开关 */
+    /** Get address switch */
     private static boolean addressEnabled;
 
     public String getName()
@@ -91,7 +91,7 @@ public class RuoYiConfig
     }
 
     /**
-     * 获取头像上传路径
+     * Get avatar upload path
      */
     public static String getAvatarPath()
     {
@@ -99,7 +99,7 @@ public class RuoYiConfig
     }
 
     /**
-     * 获取下载路径
+     * Get download path
      */
     public static String getDownloadPath()
     {
@@ -107,7 +107,7 @@ public class RuoYiConfig
     }
 
     /**
-     * 获取上传路径
+     * Get upload path
      */
     public static String getUploadPath()
     {

@@ -2,6 +2,7 @@ package com.ruoyi.framework.web.service;
 
 import javax.annotation.Resource;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -35,14 +36,17 @@ public class SysLoginService
     @Autowired
     private RedisCache redisCache;
 
+    @Value("${ruoyi.captchaType}")
+    private String captchaType;
+
     /**
      * 登录验证
      * 
      * @param username 用户名
      * @param password 密码
      * @param code 验证码
-     * @param uuid 唯一标识
-     * @return 结果
+     * @param uuid Uniquely identifies
+     * @return result
      */
     public String login(String username, String password, String code, String uuid)
     {
@@ -59,11 +63,11 @@ public class SysLoginService
             AsyncManager.me().execute(AsyncFactory.recordLogininfor(username, Constants.LOGIN_FAIL, MessageUtils.message("user.jcaptcha.error")));
             throw new CaptchaException();
         }
-        // 用户验证
+        // User Authentication
         Authentication authentication = null;
         try
         {
-            // 该方法会去调用UserDetailsServiceImpl.loadUserByUsername
+            // This method will call UserDetailsServiceImpl.loadUserByUsername
             authentication = authenticationManager
                     .authenticate(new UsernamePasswordAuthenticationToken(username, password));
         }
@@ -82,7 +86,7 @@ public class SysLoginService
         }
         AsyncManager.me().execute(AsyncFactory.recordLogininfor(username, Constants.LOGIN_SUCCESS, MessageUtils.message("user.login.success")));
         LoginUser loginUser = (LoginUser) authentication.getPrincipal();
-        // 生成token
+        // Generate token
         return tokenService.createToken(loginUser);
     }
 }
