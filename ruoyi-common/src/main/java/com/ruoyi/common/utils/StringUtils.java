@@ -99,10 +99,10 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils
     }
 
     /**
-     * * 判断一个字符串是否为空串
+     * * Determine whether a string is empty
      * 
      * @param str String
-     * @return true：为空 false：非空
+     * @return true：empty false：not empty
      */
     public static boolean isEmpty(String str)
     {

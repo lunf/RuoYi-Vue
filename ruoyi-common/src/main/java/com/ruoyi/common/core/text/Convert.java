@@ -357,10 +357,10 @@ public class Convert
     }
 
     /**
-     * 转换为String数组<br>
-     *
-     * @param str 被转换的值
-     * @return 结果
+     * Convert to String array from comma separator
+     * 
+     * @param str Converted value
+     * @return result
      */
     public static String[] toStrArray(String str)
     {

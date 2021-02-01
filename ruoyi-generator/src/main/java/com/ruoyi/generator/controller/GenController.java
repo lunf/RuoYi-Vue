@@ -5,6 +5,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import javax.servlet.http.HttpServletResponse;
+
+import com.ruoyi.common.utils.StringUtils;
 import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -158,7 +160,7 @@ public class GenController extends BaseController
     public void download(HttpServletResponse response, @PathVariable("tableName") String tableName) throws IOException
     {
         byte[] data = genTableService.downloadCode(tableName);
-        genCode(response, data);
+        genCode(response, data, tableName);
     }
 
     /**
@@ -195,18 +197,24 @@ public class GenController extends BaseController
     {
         String[] tableNames = Convert.toStrArray(tables);
         byte[] data = genTableService.downloadCode(tableNames);
-        genCode(response, data);
+        genCode(response, data, tables);
     }
 
     /**
-     * 生成zip文件
+     * Generate zip file
      */
-    private void genCode(HttpServletResponse response, byte[] data) throws IOException
+    private void genCode(HttpServletResponse response, byte[] data, String fileName) throws IOException
     {
+        if (StringUtils.isEmpty(fileName)) {
+            fileName = "ruoyi.zip";
+        } else {
+            fileName = fileName + ".zip";
+        }
+
         response.reset();
         response.addHeader("Access-Control-Allow-Origin", "*");
         response.addHeader("Access-Control-Expose-Headers", "Content-Disposition");
-        response.setHeader("Content-Disposition", "attachment; filename=\"ruoyi.zip\"");
+        response.setHeader("Content-Disposition", "attachment; filename=\""+ fileName +"\"");
         response.addHeader("Content-Length", "" + data.length);
         response.setContentType("application/octet-stream; charset=UTF-8");
         IOUtils.write(data, response.getOutputStream());
