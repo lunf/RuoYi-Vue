@@ -1,4 +1,4 @@
-package com.ruoyi.web.controller.mes;
+package com.ruoyi.mes.controller;
 
 import java.util.List;
 
