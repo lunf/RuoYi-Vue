@@ -608,7 +608,7 @@ export default {
     /** ${subTable.functionName} Delete button operation */
     handleDelete${subClassName}() {
       if (this.checked${subClassName}.length == 0) {
-        this.$alert("请先选择要删除的${subTable.functionName}数据", "提示", { confirmButtonText: "确定", });
+        this.$alert("Please confirm that you want to delete ${subTable.functionName}", "Warning", { confirmButtonText: "Confirm", });
       } else {
         this.${subclassName}List.splice(this.checked${subClassName}[0].index - 1, 1);
       }
