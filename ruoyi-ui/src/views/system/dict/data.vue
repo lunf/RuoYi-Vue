@@ -292,7 +292,7 @@ export default {
       this.single = selection.length!=1
       this.multiple = !selection.length
     },
-    /** 修改按钮操作 */
+    /** Modify button operation */
     handleUpdate(row) {
       this.reset();
       const dictCode = row.dictCode || this.ids
@@ -308,7 +308,7 @@ export default {
         if (valid) {
           if (this.form.dictCode != undefined) {
             updateData(this.form).then(response => {
-              this.msgSuccess("修改成功");
+              this.msgSuccess("Updated successful");
               this.open = false;
               this.getList();
             });
