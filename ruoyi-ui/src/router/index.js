@@ -8,24 +8,24 @@ import Layout from '@/layout'
 import ParentView from '@/components/ParentView';
 
 /**
- * Note: 路由配置项
+ * Note: Routing configuration items
  *
- * hidden: true                   // 当设置 true 的时候该路由不会再侧边栏出现 如401，login等页面，或者如一些编辑页面/edit/1
- * alwaysShow: true               // 当你一个路由下面的 children 声明的路由大于1个时，自动会变成嵌套的模式--如组件页面
- *                                // 只有一个时，会将那个子路由当做根路由显示在侧边栏--如引导页面
- *                                // 若你想不管路由下面的 children 声明的个数都显示你的根路由
- *                                // 你可以设置 alwaysShow: true，这样它就会忽略之前定义的规则，一直显示根路由
- * redirect: noRedirect           // 当设置 noRedirect 的时候该路由在面包屑导航中不可被点击
- * name:'router-name'             // 设定路由的名字，一定要填写不然使用<keep-alive>时会出现各种问题
+ * hidden: true                   // When set to true, the route will not appear in the sidebar such as 401, login and other pages, or some edit pages such as /edit/1
+ * alwaysShow: true               // When you have more than one route declared by children under a route, it will automatically become a nested mode - such as a component page
+ *                                // When there is only one, the sub-route will be displayed as the root route in the sidebar-such as the guide page
+ *                                // If you want to display your root route regardless of the number of children declared under the route
+ *                                // You can set alwaysShow: true, so that it will ignore the previously defined rules and always show the root route
+ * redirect: noRedirect           // When noRedirect is set, the route cannot be clicked in the breadcrumb navigation
+ * name:'router-name'             // Set the name of the route, it must be filled in otherwise various problems will occur when using <keep-alive>
  * meta : {
-    noCache: true                // 如果设置为true，则不会被 <keep-alive> 缓存(默认 false)
-    title: 'title'               // 设置该路由在侧边栏和面包屑中展示的名字
-    icon: 'svg-name'             // 设置该路由的图标，对应路径src/assets/icons/svg
-    breadcrumb: false            // 如果设置为false，则不会在breadcrumb面包屑中显示
+    noCache: true                // If set to true, it will not be cached by <keep-alive> (default false)
+    title: 'title'               // Set the name of the route displayed in the sidebar and breadcrumbs
+    icon: 'svg-name'             // Set the icon of the route, corresponding to the path src/assets/icons/svg
+    breadcrumb: false            // If set to false, it will not be displayed in breadcrumb
   }
  */
 
-// 公共路由
+// Public routing
 export const constantRoutes = [
   {
     path: '/redirect',
@@ -118,11 +118,24 @@ export const constantRoutes = [
         meta: { title: 'Modify build configuration' }
       }
     ]
+  },
+  {
+    path: '/work',
+    component: Layout,
+    hidden: true,
+    children: [
+      {
+        path: 'job/:jobId(\\d+)',
+        component: (resolve) => require(['@/views/mes/work/index'], resolve),
+        name: 'Work Order',
+        meta: { title: 'Work Order', icon: '' }
+      }
+    ]
   }
 ]
 
 export default new Router({
-  mode: 'history', // 去掉url中的#
+  mode: 'history', // Remove the # in the url
   scrollBehavior: () => ({ y: 0 }),
   routes: constantRoutes
 })

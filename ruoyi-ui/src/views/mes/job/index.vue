@@ -103,8 +103,16 @@
           <span>{{ parseTime(scope.row.endAt, '{y}-{m}-{d}') }}</span>
         </template>
       </el-table-column>
+      </el-table-column>
       <el-table-column label="Actions" align="center" class-name="small-padding fixed-width">
         <template slot-scope="scope">
+          <el-button
+              size="mini"
+              type="text"
+              icon="el-icon-collection-tag"
+              @click="viewWorkOrder(scope.row)"
+              v-hasPermi="['mes:job:edit']"
+            >Work Order</el-button>
           <el-button
             size="mini"
             type="text"
@@ -352,6 +360,12 @@ export default {
         this.open = true;
         this.title = "Modify Job Order";
       });
+    },
+    /** View Work Order */
+    viewWorkOrder(row) {
+      this.reset();
+      const jobId = row.jobId || this.ids
+      this.$router.push("/work/job/" + jobId)
     },
     /** Submit button */
     submitForm() {

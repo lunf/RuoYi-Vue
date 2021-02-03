@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.mes.mapper.MesWorkOrderMapper">
+
+    <resultMap type="MesWorkOrder" id="MesWorkOrderResult">
+        <result property="workOrderId"    column="work_order_id"    />
+        <result property="jobId"    column="job_id"    />
+        <result property="description"    column="description"    />
+        <result property="status"    column="status"    />
+        <result property="type"    column="type"    />
+        <result property="sequence"    column="sequence"    />
+        <result property="cabinetQty"    column="cabinet_qty"    />
+        <result property="partQty"    column="part_qty"    />
+        <result property="uploadFileName"    column="upload_file_name"    />
+        <result property="uploadFilePath"    column="upload_file_path"    />
+        <result property="processFilePath"    column="process_file_path"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="createBy"    column="create_by"    />
+        <result property="updateTime"    column="update_time"    />
+        <result property="updateBy"    column="update_by"    />
+    </resultMap>
+
+    <sql id="selectMesWorkOrderVo">
+        select work_order_id, job_id, description, status, type, sequence, cabinet_qty, part_qty, upload_file_name, upload_file_path, process_file_path, create_time, create_by, update_time, update_by from mes_work_order
+    </sql>
+
+    <select id="selectMesWorkOrderList" parameterType="MesWorkOrder" resultMap="MesWorkOrderResult">
+        <include refid="selectMesWorkOrderVo"/>
+        <where>
+            <if test="jobId != null "> and job_id = #{jobId}</if>
+            <if test="description != null  and description != ''"> and description like concat('%', #{description}, '%')</if>
+            <if test="status != null "> and status = #{status}</if>
+        </where>
+    </select>
+
+    <select id="selectMesWorkOrderById" parameterType="Long" resultMap="MesWorkOrderResult">
+        <include refid="selectMesWorkOrderVo"/>
+        where work_order_id = #{workOrderId}
+    </select>
+
+    <insert id="insertMesWorkOrder" parameterType="MesWorkOrder" useGeneratedKeys="true" keyProperty="workOrderId">
+        insert into mes_work_order
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="jobId != null">job_id,</if>
+            <if test="description != null and description != ''">description,</if>
+            <if test="status != null">status,</if>
+            <if test="type != null">type,</if>
+            <if test="sequence != null">sequence,</if>
+            <if test="cabinetQty != null">cabinet_qty,</if>
+            <if test="partQty != null">part_qty,</if>
+            <if test="uploadFileName != null">upload_file_name,</if>
+            <if test="uploadFilePath != null and uploadFilePath != ''">upload_file_path,</if>
+            <if test="processFilePath != null">process_file_path,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="createBy != null">create_by,</if>
+            <if test="updateTime != null">update_time,</if>
+            <if test="updateBy != null">update_by,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="jobId != null">#{jobId},</if>
+            <if test="description != null and description != ''">#{description},</if>
+            <if test="status != null">#{status},</if>
+            <if test="type != null">#{type},</if>
+            <if test="sequence != null">#{sequence},</if>
+            <if test="cabinetQty != null">#{cabinetQty},</if>
+            <if test="partQty != null">#{partQty},</if>
+            <if test="uploadFileName != null">#{uploadFileName},</if>
+            <if test="uploadFilePath != null and uploadFilePath != ''">#{uploadFilePath},</if>
+            <if test="processFilePath != null">#{processFilePath},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="createBy != null">#{createBy},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+            <if test="updateBy != null">#{updateBy},</if>
+        </trim>
+    </insert>
+
+    <update id="updateMesWorkOrder" parameterType="MesWorkOrder">
+        update mes_work_order
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="jobId != null">job_id = #{jobId},</if>
+            <if test="description != null and description != ''">description = #{description},</if>
+            <if test="status != null">status = #{status},</if>
+            <if test="type != null">type = #{type},</if>
+            <if test="sequence != null">sequence = #{sequence},</if>
+            <if test="cabinetQty != null">cabinet_qty = #{cabinetQty},</if>
+            <if test="partQty != null">part_qty = #{partQty},</if>
+            <if test="uploadFileName != null">upload_file_name = #{uploadFileName},</if>
+            <if test="uploadFilePath != null and uploadFilePath != ''">upload_file_path = #{uploadFilePath},</if>
+            <if test="processFilePath != null">process_file_path = #{processFilePath},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="createBy != null">create_by = #{createBy},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+            <if test="updateBy != null">update_by = #{updateBy},</if>
+        </trim>
+        where work_order_id = #{workOrderId}
+    </update>
+
+    <delete id="deleteMesWorkOrderById" parameterType="Long">
+        delete from mes_work_order where work_order_id = #{workOrderId}
+    </delete>
+
+    <delete id="deleteMesWorkOrderByIds" parameterType="String">
+        delete from mes_work_order where work_order_id in
+        <foreach item="workOrderId" collection="array" open="(" separator="," close=")">
+            #{workOrderId}
+        </foreach>
+    </delete>
+</mapper>
