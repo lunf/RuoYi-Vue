@@ -102,9 +102,9 @@ public class SysProfileController extends BaseController
     }
 
     /**
-     * 头像上传
+     * Avatar upload
      */
-    @Log(title = "用户头像", businessType = BusinessType.UPDATE)
+    @Log(title = "profile picture", businessType = BusinessType.UPDATE)
     @PostMapping("/avatar")
     public AjaxResult avatar(@RequestParam("avatarfile") MultipartFile file) throws IOException
     {
@@ -116,12 +116,12 @@ public class SysProfileController extends BaseController
             {
                 AjaxResult ajax = AjaxResult.success();
                 ajax.put("imgUrl", avatar);
-                // 更新缓存用户头像
+                // Update cached user avatar
                 loginUser.getUser().setAvatar(avatar);
                 tokenService.setLoginUser(loginUser);
                 return ajax;
             }
         }
-        return AjaxResult.error("上传图片异常，请联系管理员");
+        return AjaxResult.error("The uploaded picture is abnormal, please contact the administrator");
     }
 }
