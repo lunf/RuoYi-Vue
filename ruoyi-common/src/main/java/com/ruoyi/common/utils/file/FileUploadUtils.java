@@ -2,6 +2,9 @@ package com.ruoyi.common.utils.file;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
+
 import org.apache.commons.io.FilenameUtils;
 import org.springframework.web.multipart.MultipartFile;
 import com.ruoyi.common.config.RuoYiConfig;
@@ -46,10 +49,10 @@ public class FileUploadUtils
     }
 
     /**
-     * 以默认配置进行文件上传
+     * File upload with default configuration
      *
-     * @param file 上传的文件
-     * @return 文件名称
+     * @param file Uploaded file
+     * @return File name
      * @throws Exception
      */
     public static final String upload(MultipartFile file) throws IOException
@@ -65,11 +68,11 @@ public class FileUploadUtils
     }
 
     /**
-     * 根据文件路径上传
+     * Upload according to file path
      *
-     * @param baseDir 相对应用的基目录
-     * @param file 上传的文件
-     * @return 文件名称
+     * @param baseDir Relative application base directory
+     * @param file Uploaded file
+     * @return File name
      * @throws IOException
      */
     public static final String upload(String baseDir, MultipartFile file) throws IOException
@@ -85,23 +88,23 @@ public class FileUploadUtils
     }
 
     /**
-     * 文件上传
+     * File Upload
      *
-     * @param baseDir 相对应用的基目录
-     * @param file 上传的文件
-     * @param allowedExtension 上传文件类型
-     * @return 返回上传成功的文件名
-     * @throws FileSizeLimitExceededException 如果超出最大大小
-     * @throws FileNameLengthLimitExceededException 文件名太长
-     * @throws IOException 比如读写文件出错时
-     * @throws InvalidExtensionException 文件校验异常
+     * @param baseDir Relative application base directory
+     * @param file Uploaded file
+     * @param allowedExtension Upload file type
+     * @return Return the name of the uploaded file
+     * @throws FileSizeLimitExceededException If the maximum size is exceeded
+     * @throws FileNameLengthLimitExceededException File name is too long
+     * @throws IOException For example, when reading and writing files are wrong
+     * @throws InvalidExtensionException File verification exception
      */
     public static final String upload(String baseDir, MultipartFile file, String[] allowedExtension)
             throws FileSizeLimitExceededException, IOException, FileNameLengthLimitExceededException,
             InvalidExtensionException
     {
-        int fileNamelength = file.getOriginalFilename().length();
-        if (fileNamelength > FileUploadUtils.DEFAULT_FILE_NAME_LENGTH)
+        int fileNameLength = file.getOriginalFilename().length();
+        if (fileNameLength > FileUploadUtils.DEFAULT_FILE_NAME_LENGTH)
         {
             throw new FileNameLengthLimitExceededException(FileUploadUtils.DEFAULT_FILE_NAME_LENGTH);
         }
@@ -111,13 +114,14 @@ public class FileUploadUtils
         String fileName = extractFilename(file);
 
         File desc = getAbsoluteFile(baseDir, fileName);
-        file.transferTo(desc);
+        Files.copy(file.getInputStream(), desc.toPath(), StandardCopyOption.REPLACE_EXISTING);
+
         String pathFileName = getPathFileName(baseDir, fileName);
         return pathFileName;
     }
 
     /**
-     * 编码文件名
+     * Encoding file name
      */
     public static final String extractFilename(MultipartFile file)
     {
