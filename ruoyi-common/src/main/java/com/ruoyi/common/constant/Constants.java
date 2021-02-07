@@ -8,32 +8,32 @@ package com.ruoyi.common.constant;
 public class Constants
 {
     /**
-     * UTF-8 字符集
+     * UTF-8 character set
      */
     public static final String UTF8 = "UTF-8";
 
     /**
-     * GBK 字符集
+     * GBK character set
      */
     public static final String GBK = "GBK";
 
     /**
-     * http请求
+     * http request
      */
     public static final String HTTP = "http://";
 
     /**
-     * https请求
+     * https request
      */
     public static final String HTTPS = "https://";
 
     /**
-     * 通用成功标识
+     * Universal success indicator
      */
     public static final String SUCCESS = "0";
 
     /**
-     * 通用失败标识
+     * General failure indicator
      */
     public static final String FAIL = "1";
 
@@ -43,87 +43,87 @@ public class Constants
     public static final String LOGIN_SUCCESS = "Success";
 
     /**
-     * 注销
+     * Logout
      */
     public static final String LOGOUT = "Logout";
 
     /**
-     * 登录失败
+     * Login failed
      */
     public static final String LOGIN_FAIL = "Error";
 
     /**
-     * 验证码 redis key
+     * Verification code redis key
      */
     public static final String CAPTCHA_CODE_KEY = "captcha_codes:";
 
     /**
-     * 登录用户 redis key
+     * Login user redis key
      */
     public static final String LOGIN_TOKEN_KEY = "login_tokens:";
     
     /**
-     * 防重提交 redis key
+     * Anti-resubmit redis key
      */
     public static final String REPEAT_SUBMIT_KEY = "repeat_submit:";
 
     /**
-     * 验证码有效期（分钟）
+     * Verification code validity period (minutes)
      */
     public static final Integer CAPTCHA_EXPIRATION = 2;
 
     /**
-     * 令牌
+     * Token
      */
     public static final String TOKEN = "token";
 
     /**
-     * 令牌前缀
+     * Token prefix
      */
     public static final String TOKEN_PREFIX = "Bearer ";
 
     /**
-     * 令牌前缀
+     * Token prefix
      */
     public static final String LOGIN_USER_KEY = "login_user_key";
 
     /**
-     * 用户ID
+     * User ID
      */
     public static final String JWT_USERID = "userid";
 
     /**
-     * 用户名称
+     * user name
      */
     public static final String JWT_USERNAME = "sub";
 
     /**
-     * 用户头像
+     * profile picture
      */
     public static final String JWT_AVATAR = "avatar";
 
     /**
-     * 创建时间
+     * Creation time
      */
     public static final String JWT_CREATED = "created";
 
     /**
-     * 用户权限
+     * User rights
      */
     public static final String JWT_AUTHORITIES = "authorities";
 
     /**
-     * 参数管理 cache key
+     * Parameter management cache key
      */
     public static final String SYS_CONFIG_KEY = "sys_config:";
 
     /**
-     * 字典管理 cache key
+     * Dictionary management cache key
      */
     public static final String SYS_DICT_KEY = "sys_dict:";
 
     /**
-     * 资源映射路径 前缀
+     * Resource mapping path prefix
      */
     public static final String RESOURCE_PREFIX = "/profile";
 }

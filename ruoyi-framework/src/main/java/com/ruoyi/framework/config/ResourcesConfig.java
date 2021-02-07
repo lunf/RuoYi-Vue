@@ -14,7 +14,7 @@ import com.ruoyi.common.constant.Constants;
 import com.ruoyi.framework.interceptor.RepeatSubmitInterceptor;
 
 /**
- * 通用配置
+ * General resource configuration
  * 
  * @author ruoyi
  */
@@ -27,16 +27,16 @@ public class ResourcesConfig implements WebMvcConfigurer
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry)
     {
-        /** 本地文件上传路径 */
+        /** Local file upload path */
         registry.addResourceHandler(Constants.RESOURCE_PREFIX + "/**").addResourceLocations("file:" + RuoYiConfig.getProfile() + "/");
 
-        /** swagger配置 */
+        /** swagger configuration */
         registry.addResourceHandler("swagger-ui.html").addResourceLocations("classpath:/META-INF/resources/");
         registry.addResourceHandler("/webjars/**").addResourceLocations("classpath:/META-INF/resources/webjars/");
     }
 
     /**
-     * 自定义拦截规则
+     * Custom blocking rules
      */
     @Override
     public void addInterceptors(InterceptorRegistry registry)
@@ -45,7 +45,7 @@ public class ResourcesConfig implements WebMvcConfigurer
     }
 
     /**
-     * 跨域配置
+     * Cross-domain configuration
      */
     @Bean
     public CorsFilter corsFilter()
@@ -53,13 +53,13 @@ public class ResourcesConfig implements WebMvcConfigurer
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         CorsConfiguration config = new CorsConfiguration();
         config.setAllowCredentials(true);
-        // 设置访问源地址
+        // Set access source address
         config.addAllowedOrigin("*");
-        // 设置访问源请求头
+        // Set access source request header
         config.addAllowedHeader("*");
-        // 设置访问源请求方法
+        // Set access source request method
         config.addAllowedMethod("*");
-        // 对接口配置跨域设置
+        // Configure cross-domain settings on the interface
         source.registerCorsConfiguration("/**", config);
         return new CorsFilter(source);
     }
