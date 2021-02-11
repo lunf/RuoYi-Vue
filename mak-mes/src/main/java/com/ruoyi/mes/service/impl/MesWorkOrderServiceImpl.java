@@ -1,12 +1,13 @@
 package com.ruoyi.mes.service.impl;
 
-import java.util.List;
 import com.ruoyi.common.utils.DateUtils;
+import com.ruoyi.mes.domain.MesWorkOrder;
+import com.ruoyi.mes.mapper.MesWorkOrderMapper;
+import com.ruoyi.mes.service.IMesWorkOrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.ruoyi.mes.mapper.MesWorkOrderMapper;
-import com.ruoyi.mes.domain.MesWorkOrder;
-import com.ruoyi.mes.service.IMesWorkOrderService;
+
+import java.util.List;
 
 /**
  * Work Order Service Implementation
@@ -54,6 +55,19 @@ public class MesWorkOrderServiceImpl implements IMesWorkOrderService
     public int insertMesWorkOrder(MesWorkOrder mesWorkOrder)
     {
         mesWorkOrder.setCreateTime(DateUtils.getNowDate());
+
+        // Check sequence
+        int seqId = mesWorkOrderMapper.getCurrentWorkOrderSequence(mesWorkOrder.getJobId());
+
+        if (seqId < 1) {
+            seqId = 1;
+        } else {
+            seqId = seqId + 1;
+        }
+        mesWorkOrder.setSequence((long) seqId);
+
+
+
         return mesWorkOrderMapper.insertMesWorkOrder(mesWorkOrder);
     }
 

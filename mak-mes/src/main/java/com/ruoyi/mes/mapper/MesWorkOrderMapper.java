@@ -17,7 +17,7 @@ public interface MesWorkOrderMapper
      * @param workOrderId Work OrderID
      * @return Work Order
      */
-    public MesWorkOrder selectMesWorkOrderById(Long workOrderId);
+    MesWorkOrder selectMesWorkOrderById(Long workOrderId);
 
     /**
      * Query the list of Work Order
@@ -25,7 +25,7 @@ public interface MesWorkOrderMapper
      * @param mesWorkOrder Work Order
      * @return Work Order collection
      */
-    public List<MesWorkOrder> selectMesWorkOrderList(MesWorkOrder mesWorkOrder);
+    List<MesWorkOrder> selectMesWorkOrderList(MesWorkOrder mesWorkOrder);
 
     /**
      * Add Work Order
@@ -33,7 +33,7 @@ public interface MesWorkOrderMapper
      * @param mesWorkOrder Work Order
      * @return result
      */
-    public int insertMesWorkOrder(MesWorkOrder mesWorkOrder);
+    int insertMesWorkOrder(MesWorkOrder mesWorkOrder);
 
     /**
      * Modify Work Order
@@ -41,7 +41,7 @@ public interface MesWorkOrderMapper
      * @param mesWorkOrder Work Order
      * @return result
      */
-    public int updateMesWorkOrder(MesWorkOrder mesWorkOrder);
+    int updateMesWorkOrder(MesWorkOrder mesWorkOrder);
 
     /**
      * Delete Work Order
@@ -49,7 +49,7 @@ public interface MesWorkOrderMapper
      * @param workOrderId Work OrderID
      * @return result
      */
-    public int deleteMesWorkOrderById(Long workOrderId);
+    int deleteMesWorkOrderById(Long workOrderId);
 
     /**
      * Batch delete Work Order
@@ -57,5 +57,13 @@ public interface MesWorkOrderMapper
      * @param workOrderIds ID of the data to be deleted
      * @return result
      */
-    public int deleteMesWorkOrderByIds(Long[] workOrderIds);
+    int deleteMesWorkOrderByIds(Long[] workOrderIds);
+
+    /**
+     * Get current work order sequence for each job
+     *
+     * @param jobId
+     * @return
+     */
+    int getCurrentWorkOrderSequence(Long jobId);
 }

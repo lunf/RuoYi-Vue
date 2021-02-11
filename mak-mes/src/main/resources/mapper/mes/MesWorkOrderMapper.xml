@@ -107,4 +107,8 @@
             #{workOrderId}
         </foreach>
     </delete>
+
+    <select id="getCurrentWorkOrderSequence" parameterType="Long" resultType="Integer">
+        select coalesce(max(sequence), 0) from mes_work_order where job_num = #{jobNum}
+    </select>
 </mapper>
