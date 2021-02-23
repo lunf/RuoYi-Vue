@@ -15,10 +15,8 @@ public class MesWorkOrder extends BaseEntity
 {
     private static final long serialVersionUID = 1L;
 
-    /** $column.columnComment */
     private Long workOrderId;
 
-    /** $column.columnComment */
     private Long jobId;
 
     /** Description */
@@ -37,17 +35,13 @@ public class MesWorkOrder extends BaseEntity
     @Excel(name = "Sequence of the work order in the job")
     private Long sequence;
 
-    /** $column.columnComment */
+    /** Number of cabinet in the work order */
     @Excel(name = "Sequence of the work order in the job")
     private Long cabinetQty;
 
-    /** $column.columnComment */
+    /** Number of parts in the work order */
     @Excel(name = "Sequence of the work order in the job")
     private Long partQty;
-
-    /** $column.columnComment */
-    @Excel(name = "Sequence of the work order in the job")
-    private String uploadFileName;
 
     /** Link to store the uploaded file	 */
     private String uploadFilePath;
@@ -127,15 +121,7 @@ public class MesWorkOrder extends BaseEntity
     {
         return partQty;
     }
-    public void setUploadFileName(String uploadFileName)
-    {
-        this.uploadFileName = uploadFileName;
-    }
 
-    public String getUploadFileName()
-    {
-        return uploadFileName;
-    }
     public void setUploadFilePath(String uploadFilePath)
     {
         this.uploadFilePath = uploadFilePath;
@@ -166,7 +152,6 @@ public class MesWorkOrder extends BaseEntity
                 .append("sequence", getSequence())
                 .append("cabinetQty", getCabinetQty())
                 .append("partQty", getPartQty())
-                .append("uploadFileName", getUploadFileName())
                 .append("uploadFilePath", getUploadFilePath())
                 .append("processFilePath", getProcessFilePath())
                 .append("createTime", getCreateTime())

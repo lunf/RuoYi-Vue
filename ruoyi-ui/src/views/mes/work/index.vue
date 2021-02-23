@@ -81,7 +81,6 @@
       <el-table-column label="Work order sequence" align="center" prop="sequence" />
       <el-table-column label="Cabinet qty" align="center" prop="cabinetQty" />
       <el-table-column label="Part qty" align="center" prop="partQty" />
-      <el-table-column label="File name" align="center" prop="uploadFileName" />
       <el-table-column label="Actions" align="center" class-name="small-padding fixed-width">
         <template slot-scope="scope">
           <el-button
@@ -249,7 +248,6 @@ export default {
         sequence: null,
         cabinetQty: null,
         partQty: null,
-        uploadFileName: null,
         uploadFilePath: null,
         processFilePath: null,
         createTime: null,

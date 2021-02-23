@@ -58,6 +58,12 @@
     <jaxb-api.version>2.3.1</jaxb-api.version>
             
     <fasterxml.version>2.12.0</fasterxml.version>
+
+    <zip4j.version>2.7.0</zip4j.version>
+
+    <ucanaccess.version>5.0.1</ucanaccess.version>
+
+    <lombok.version>1.18.18</lombok.version>
         
   </properties>
   	
@@ -298,7 +304,7 @@
                     
       </dependency>
                   
-      <!--Token生成与解析-->
+      <!--Token generation and analysis -->
                   
       <dependency>
                         
@@ -311,7 +317,7 @@
       </dependency>
       			
             
-      <!--验证码 -->
+      <!--Verification code -->
                   
       <dependency>
                         
@@ -332,8 +338,42 @@
         <version>${jaxb-api.version}</version>
                     
       </dependency>
-                  
-            
+
+      <!-- Do zup/unzip file & folder -->
+
+      <dependency>
+
+        <groupId>net.lingala.zip4j</groupId>
+
+        <artifactId>zip4j</artifactId>
+
+        <version>${zip4j.version}</version>
+
+      </dependency>
+
+
+      <!-- Read MDB file -->
+      <dependency>
+
+        <groupId>net.sf.ucanaccess</groupId>
+
+        <artifactId>ucanaccess</artifactId>
+
+        <version>${ucanaccess.version}</version>
+
+      </dependency>
+
+      <dependency>
+        <groupId>org.projectlombok</groupId>
+
+        <artifactId>lombok</artifactId>
+
+        <version>${lombok.version}</version>
+
+        <scope>provided</scope>
+
+      </dependency>
+
       <!-- 定时任务-->
                   
       <dependency>
@@ -446,7 +486,7 @@
                         
         <artifactId>maven-compiler-plugin</artifactId>
                         
-        <version>3.1</version>
+        <version>3.8.1</version>
                         
         <configuration>
                               
@@ -455,6 +495,14 @@
           <target>${java.version}</target>
                               
           <encoding>${project.build.sourceEncoding}</encoding>
+
+          <annotationProcessorPaths>
+            <path>
+              <groupId>org.projectlombok</groupId>
+              <artifactId>lombok</artifactId>
+              <version>1.18.16</version>
+            </path>
+          </annotationProcessorPaths>
                           
         </configuration>
                     

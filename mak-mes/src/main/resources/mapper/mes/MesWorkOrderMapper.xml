@@ -13,7 +13,6 @@
         <result property="sequence"    column="sequence"    />
         <result property="cabinetQty"    column="cabinet_qty"    />
         <result property="partQty"    column="part_qty"    />
-        <result property="uploadFileName"    column="upload_file_name"    />
         <result property="uploadFilePath"    column="upload_file_path"    />
         <result property="processFilePath"    column="process_file_path"    />
         <result property="createTime"    column="create_time"    />
@@ -23,7 +22,7 @@
     </resultMap>
 
     <sql id="selectMesWorkOrderVo">
-        select work_order_id, job_id, description, status, type, sequence, cabinet_qty, part_qty, upload_file_name, upload_file_path, process_file_path, create_time, create_by, update_time, update_by from mes_work_order
+        select work_order_id, job_id, description, status, type, sequence, cabinet_qty, part_qty, upload_file_path, process_file_path, create_time, create_by, update_time, update_by from mes_work_order
     </sql>
 
     <select id="selectMesWorkOrderList" parameterType="MesWorkOrder" resultMap="MesWorkOrderResult">
@@ -66,7 +65,6 @@
             <if test="sequence != null">#{sequence},</if>
             <if test="cabinetQty != null">#{cabinetQty},</if>
             <if test="partQty != null">#{partQty},</if>
-            <if test="uploadFileName != null">#{uploadFileName},</if>
             <if test="uploadFilePath != null and uploadFilePath != ''">#{uploadFilePath},</if>
             <if test="processFilePath != null">#{processFilePath},</if>
             <if test="createTime != null">#{createTime},</if>
@@ -86,7 +84,6 @@
             <if test="sequence != null">sequence = #{sequence},</if>
             <if test="cabinetQty != null">cabinet_qty = #{cabinetQty},</if>
             <if test="partQty != null">part_qty = #{partQty},</if>
-            <if test="uploadFileName != null">upload_file_name = #{uploadFileName},</if>
             <if test="uploadFilePath != null and uploadFilePath != ''">upload_file_path = #{uploadFilePath},</if>
             <if test="processFilePath != null">process_file_path = #{processFilePath},</if>
             <if test="createTime != null">create_time = #{createTime},</if>

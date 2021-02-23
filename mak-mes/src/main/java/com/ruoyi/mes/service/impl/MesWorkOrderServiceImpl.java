@@ -66,8 +66,6 @@ public class MesWorkOrderServiceImpl implements IMesWorkOrderService
         }
         mesWorkOrder.setSequence((long) seqId);
 
-
-
         return mesWorkOrderMapper.insertMesWorkOrder(mesWorkOrder);
     }
 

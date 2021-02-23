@@ -8,8 +8,15 @@ import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.*;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import net.lingala.zip4j.ZipFile;
+import net.lingala.zip4j.exception.ZipException;
 import org.apache.commons.lang3.ArrayUtils;
 import com.ruoyi.common.utils.StringUtils;
 
@@ -200,4 +207,69 @@ public class FileUtils extends org.apache.commons.io.FileUtils
         String encode = URLEncoder.encode(s, StandardCharsets.UTF_8.toString());
         return encode.replaceAll("\\+", "%20");
     }
+
+    /**
+     * Unzip folder
+     *
+     * @param source
+     * @param destination
+     * @param password
+     * @return true of unzip successful otherwise throw Exception
+     * @throws ZipException
+     */
+    public static void unzip(String source, String destination, String password) throws ZipException {
+
+        try {
+            ZipFile zipFile = new ZipFile(source);
+            if (zipFile.isEncrypted()) {
+                zipFile.setPassword(password.toCharArray());
+            }
+            zipFile.extractAll(destination);
+        } catch (ZipException e) {
+            throw e;
+        }
+    }
+
+    /**
+     * Look up file type in folder
+     * @param folderLocation
+     * @param pathMatcher
+     * @return null if not found
+     * @throws IOException
+     */
+    public static String lookupFileTypeInFolder(String folderLocation, PathMatcher pathMatcher) {
+
+        Stream<Path> paths;
+
+        try {
+            paths = Files.walk(Paths.get(folderLocation));
+        } catch (IOException ex) {
+            return null;
+        }
+
+        if (paths == null) return null;
+
+        List<File> filesInFolder = paths.filter(Files::isRegularFile)
+                .filter(file -> {
+                    Path name = file.getFileName();
+                    if (name != null && pathMatcher.matches(name)) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                })
+                .map(Path::toFile)
+                .collect(Collectors.toList());
+
+        if (filesInFolder == null || filesInFolder.isEmpty()) {
+            return null;
+        }
+
+        if (filesInFolder.size() > 1) {
+            // There is more than 1 MDB file in folder. System will pick the first one
+        }
+
+        return filesInFolder.get(0).getAbsolutePath();
+    }
+
 }
