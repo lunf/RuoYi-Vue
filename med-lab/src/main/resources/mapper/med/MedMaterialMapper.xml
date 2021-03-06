@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.med.mapper.MedMaterialMapper">
+
+    <resultMap type="MedMaterial" id="MedMaterialResult">
+        <result property="materialId"    column="material_id"    />
+        <result property="name"    column="name"    />
+        <result property="description"    column="description"    />
+        <result property="barcode"    column="barcode"    />
+        <result property="supplier"    column="supplier"    />
+        <result property="status"    column="status"    />
+        <result property="qty"    column="qty"    />
+        <result property="unit"    column="unit"    />
+    </resultMap>
+
+    <sql id="selectMedMaterialVo">
+        select material_id, name, description, barcode, supplier, status, qty, unit from med_material
+    </sql>
+
+    <select id="selectMedMaterialList" parameterType="MedMaterial" resultMap="MedMaterialResult">
+        <include refid="selectMedMaterialVo"/>
+        <where>
+            <if test="name != null  and name != ''"> and name like concat('%', #{name}, '%')</if>
+            <if test="barcode != null  and barcode != ''"> and barcode like concat('%', #{barcode}, '%')</if>
+        </where>
+    </select>
+
+    <select id="selectMedMaterialById" parameterType="Long" resultMap="MedMaterialResult">
+        <include refid="selectMedMaterialVo"/>
+        where material_id = #{materialId}
+    </select>
+
+    <insert id="insertMedMaterial" parameterType="MedMaterial" useGeneratedKeys="true" keyProperty="materialId">
+        insert into med_material
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="name != null and name != ''">name,</if>
+            <if test="description != null">description,</if>
+            <if test="barcode != null and barcode != ''">barcode,</if>
+            <if test="supplier != null">supplier,</if>
+            <if test="status != null">status,</if>
+            <if test="qty != null">qty,</if>
+            <if test="unit != null">unit,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="name != null and name != ''">#{name},</if>
+            <if test="description != null">#{description},</if>
+            <if test="barcode != null and barcode != ''">#{barcode},</if>
+            <if test="supplier != null">#{supplier},</if>
+            <if test="status != null">#{status},</if>
+            <if test="qty != null">#{qty},</if>
+            <if test="unit != null">#{unit},</if>
+        </trim>
+    </insert>
+
+    <update id="updateMedMaterial" parameterType="MedMaterial">
+        update med_material
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="name != null and name != ''">name = #{name},</if>
+            <if test="description != null">description = #{description},</if>
+            <if test="barcode != null and barcode != ''">barcode = #{barcode},</if>
+            <if test="supplier != null">supplier = #{supplier},</if>
+            <if test="status != null">status = #{status},</if>
+            <if test="qty != null">qty = #{qty},</if>
+            <if test="unit != null">unit = #{unit},</if>
+        </trim>
+        where material_id = #{materialId}
+    </update>
+
+    <delete id="deleteMedMaterialById" parameterType="Long">
+        delete from med_material where material_id = #{materialId}
+    </delete>
+
+    <delete id="deleteMedMaterialByIds" parameterType="String">
+        delete from med_material where material_id in
+        <foreach item="materialId" collection="array" open="(" separator="," close=")">
+            #{materialId}
+        </foreach>
+    </delete>
+</mapper>
