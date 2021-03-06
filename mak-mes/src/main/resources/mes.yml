@@ -1,17 +1,11 @@
-# MES configuration
-mes:
-  # Primary machine list
-  primary-machines: {'E4','Selco'}
-  # Edge indicator for bevel edge
-  edge:
-    indicator-bevel: H
-  # Template for part label
-  report:
-    # pre-compile file
-    compiled-path: file:reports/baseLabelTemplate.jasper
-    # store compiled file
-    compiled-location: reports/baseLabelTemplate.jasper
-  # Shop-floor station label
-  shopfloor:
-    station-cut: CUT
-    station-pack: PACK
+# Primary machine list
+primary-machines: {'E4','Selco'}
+# Edge indicator for bevel edge
+edge-indicator-bevel: H
+# pre-compile file for part label
+report-compiled-path: file:reports/baseLabelTemplate.jasper
+# store compiled file
+report-compiled-location: reports/baseLabelTemplate.jasper
+# Shop-floor station label
+shopfloor-station-cut: CUT
+shopfloor-station-pack: PACK

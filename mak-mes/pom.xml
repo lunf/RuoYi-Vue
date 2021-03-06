@@ -4,10 +4,9 @@
   <parent>
     <artifactId>ruoyi</artifactId>
     <groupId>com.ruoyi</groupId>
-    <version>3.3.0</version>
+    <version>3.4.0</version>
   </parent>
 
-  <groupId>com.ruoyi</groupId>
   <artifactId>mes</artifactId>
 
   <name>mak-mes</name>

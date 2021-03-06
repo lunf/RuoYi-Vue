@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 @Component
-@ConfigurationProperties(prefix = "mes")
+@ConfigurationProperties
 @PropertySource(value = { "classpath:mes.yml" })
 public class MesConfig {
 
@@ -54,7 +54,7 @@ public class MesConfig {
         return bevelEdgeIndicator;
     }
 
-    @Value("${edge.indicator-bevel}")
+    @Value("${edge-indicator-bevel}")
     public void setBevelEdgeIndicator(String bevelEdgeIndicator) {
         MesConfig.bevelEdgeIndicator = bevelEdgeIndicator;
     }
@@ -72,7 +72,7 @@ public class MesConfig {
         return jasperCompiledLabelTemplate;
     }
 
-    @Value("${report.compiled-path}")
+    @Value("${report-compiled-path}")
     public void setJasperCompiledLabelTemplate(Resource jasperCompiledLabelTemplate) {
         MesConfig.jasperCompiledLabelTemplate = jasperCompiledLabelTemplate;
     }
@@ -81,7 +81,7 @@ public class MesConfig {
         return jasperCompiledStoreLocation;
     }
 
-    @Value("${report.compiled-location}")
+    @Value("${report-compiled-location}")
     public void setJasperCompiledStoreLocation(String jasperCompiledStoreLocation) {
         MesConfig.jasperCompiledStoreLocation = jasperCompiledStoreLocation;
     }
@@ -90,7 +90,7 @@ public class MesConfig {
         return shopFloorStationCutLabel;
     }
 
-    @Value("${shopfloor.station-cut}")
+    @Value("${shopfloor-station-cut}")
     public void setShopFloorStationCutLabel(String shopFloorStationCutLabel) {
         MesConfig.shopFloorStationCutLabel = shopFloorStationCutLabel;
     }
@@ -99,7 +99,7 @@ public class MesConfig {
         return shopFloorStationPackLabel;
     }
 
-    @Value("${shopfloor.station-pack}")
+    @Value("${shopfloor-station-pack}")
     public void setShopFloorStationPackLabel(String shopFloorStationPackLabel) {
         this.shopFloorStationPackLabel = shopFloorStationPackLabel;
     }
