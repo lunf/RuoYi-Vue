@@ -449,6 +449,16 @@
         <version>${ruoyi.version}</version>
 
       </dependency>
+
+      <dependency>
+
+        <groupId>com.ruoyi</groupId>
+
+        <artifactId>med-lab</artifactId>
+
+        <version>${ruoyi.version}</version>
+
+      </dependency>
               
     </dependencies>
         
@@ -469,7 +479,9 @@
     <module>ruoyi-common</module>
           
     <module>mak-mes</module>
-      
+
+    <module>med-lab</module>
+
   </modules>
       
   <packaging>pom</packaging>

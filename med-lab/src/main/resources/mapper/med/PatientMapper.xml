@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.med.mapper.PatientMapper">
+    
+    <resultMap type="Patient" id="PatientResult">
+        <result property="patientId"    column="patient_id"    />
+        <result property="fullName"    column="full_name"    />
+        <result property="barcode"    column="barcode"    />
+        <result property="mobile"    column="mobile"    />
+        <result property="sex"    column="sex"    />
+        <result property="dateOfBirth"    column="date_of_birth"    />
+        <result property="nationalNumber"    column="national_number"    />
+        <result property="homeAddress"    column="home_address"    />
+        <result property="remark"    column="remark"    />
+    </resultMap>
+
+    <sql id="selectPatientVo">
+        select patient_id, full_name, barcode, mobile, sex, date_of_birth, national_number, home_address, remark from med_patient
+    </sql>
+
+    <select id="selectPatientList" parameterType="Patient" resultMap="PatientResult">
+        <include refid="selectPatientVo"/>
+        <where>  
+            <if test="fullName != null  and fullName != ''"> and full_name like concat('%', #{fullName}, '%')</if>
+            <if test="barcode != null  and barcode != ''"> and barcode = #{barcode}</if>
+            <if test="mobile != null  and mobile != ''"> and mobile like concat('%', #{mobile}, '%')</if>
+            <if test="nationalNumber != null  and nationalNumber != ''"> and national_number like concat('%', #{nationalNumber}, '%')</if>
+        </where>
+    </select>
+    
+    <select id="selectPatientById" parameterType="Long" resultMap="PatientResult">
+        <include refid="selectPatientVo"/>
+        where patient_id = #{patientId}
+    </select>
+        
+    <insert id="insertPatient" parameterType="Patient" useGeneratedKeys="true" keyProperty="patientId">
+        insert into med_patient
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="fullName != null and fullName != ''">full_name,</if>
+            <if test="barcode != null">barcode,</if>
+            <if test="mobile != null">mobile,</if>
+            <if test="sex != null">sex,</if>
+            <if test="dateOfBirth != null">date_of_birth,</if>
+            <if test="nationalNumber != null">national_number,</if>
+            <if test="homeAddress != null">home_address,</if>
+            <if test="remark != null">remark,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="fullName != null and fullName != ''">#{fullName},</if>
+            <if test="barcode != null">#{barcode},</if>
+            <if test="mobile != null">#{mobile},</if>
+            <if test="sex != null">#{sex},</if>
+            <if test="dateOfBirth != null">#{dateOfBirth},</if>
+            <if test="nationalNumber != null">#{nationalNumber},</if>
+            <if test="homeAddress != null">#{homeAddress},</if>
+            <if test="remark != null">#{remark},</if>
+         </trim>
+    </insert>
+
+    <update id="updatePatient" parameterType="Patient">
+        update med_patient
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="fullName != null and fullName != ''">full_name = #{fullName},</if>
+            <if test="barcode != null">barcode = #{barcode},</if>
+            <if test="mobile != null">mobile = #{mobile},</if>
+            <if test="sex != null">sex = #{sex},</if>
+            <if test="dateOfBirth != null">date_of_birth = #{dateOfBirth},</if>
+            <if test="nationalNumber != null">national_number = #{nationalNumber},</if>
+            <if test="homeAddress != null">home_address = #{homeAddress},</if>
+            <if test="remark != null">remark = #{remark},</if>
+        </trim>
+        where patient_id = #{patientId}
+    </update>
+
+    <delete id="deletePatientById" parameterType="Long">
+        delete from med_patient where patient_id = #{patientId}
+    </delete>
+
+    <delete id="deletePatientByIds" parameterType="String">
+        delete from med_patient where patient_id in
+        <foreach item="patientId" collection="array" open="(" separator="," close=")">
+            #{patientId}
+        </foreach>
+    </delete>
+
+    <select id="selectPatientByBarcode" parameterType="String" resultMap="PatientResult">
+        <include refid="selectPatientVo"/>
+        where barcode = #{barcode}
+    </select>
+</mapper>

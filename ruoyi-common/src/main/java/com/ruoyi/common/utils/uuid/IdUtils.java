@@ -2,17 +2,21 @@ package com.ruoyi.common.utils.uuid;
 
 import com.ruoyi.common.utils.uuid.UUID;
 
+import java.time.LocalDateTime;
+import java.time.ZoneOffset;
+import java.util.concurrent.TimeUnit;
+
 /**
- * ID生成器工具类
+ * ID generator tools
  * 
  * @author ruoyi
  */
 public class IdUtils
 {
     /**
-     * 获取随机UUID
+     * Get random UUID
      * 
-     * @return 随机UUID
+     * @return Random UUID
      */
     public static String randomUUID()
     {
@@ -20,9 +24,9 @@ public class IdUtils
     }
 
     /**
-     * 简化的UUID，去掉了横线
+     * Simplified UUID, without the dash line
      * 
-     * @return 简化的UUID，去掉了横线
+     * @return Simplified UUID, without the dash line
      */
     public static String simpleUUID()
     {
@@ -30,9 +34,9 @@ public class IdUtils
     }
 
     /**
-     * 获取随机UUID，使用性能更好的ThreadLocalRandom生成UUID
+     * Obtain a random UUID and use the better-performing ThreadLocalRandom to generate a UUID
      * 
-     * @return 随机UUID
+     * @return Random UUID
      */
     public static String fastUUID()
     {
@@ -40,12 +44,32 @@ public class IdUtils
     }
 
     /**
-     * 简化的UUID，去掉了横线，使用性能更好的ThreadLocalRandom生成UUID
+     * Simplified UUID, remove the dash line, use better performance ThreadLocalRandom to generate UUID
      * 
-     * @return 简化的UUID，去掉了横线
+     * @return Simplified UUID, without the dash line
      */
     public static String fastSimpleUUID()
     {
         return UUID.fastUUID().toString(true);
+    }
+
+    /**
+     * Return Epoch time in String format
+     * @return Epoch time
+     */
+    public static synchronized String fastEpochSecond() {
+
+        StringBuilder builder = new StringBuilder();
+        builder.append(System.currentTimeMillis());
+        builder.insert(6, "-");
+
+        // Sleep so the next run should be different number
+        try {
+            TimeUnit.MILLISECONDS.sleep(100);
+        } catch (InterruptedException ie) {
+            Thread.currentThread().interrupt();
+        }
+
+        return builder.toString();
     }
 }

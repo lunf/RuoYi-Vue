@@ -78,6 +78,11 @@
             <artifactId>mes</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>com.ruoyi</groupId>
+            <artifactId>med-lab</artifactId>
+        </dependency>
+
     </dependencies>
 
     <build>
