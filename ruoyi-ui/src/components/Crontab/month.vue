@@ -2,30 +2,30 @@
 	<el-form size='small'>
 		<el-form-item>
 			<el-radio v-model='radioValue' :label="1">
-				月，允许的通配符[, - * /]
+				The Moon，Allowed accessories.[, - * /]
 			</el-radio>
 		</el-form-item>
 
 		<el-form-item>
 			<el-radio v-model='radioValue' :label="2">
-				周期从
+				The cycle from
 				<el-input-number v-model='cycle01' :min="1" :max="11" /> -
-				<el-input-number v-model='cycle02' :min="cycle01 ? cycle01 + 1 : 2" :max="12" /> 月
+				<el-input-number v-model='cycle02' :min="cycle01 ? cycle01 + 1 : 2" :max="12" /> The Moon
 			</el-radio>
 		</el-form-item>
 
 		<el-form-item>
 			<el-radio v-model='radioValue' :label="3">
-				从
-				<el-input-number v-model='average01' :min="1" :max="11" /> 月开始，每
-				<el-input-number v-model='average02' :min="1" :max="12 - average01 || 0" /> 月月执行一次
+				from
+				<el-input-number v-model='average01' :min="1" :max="11" /> The month begins.，Every one
+				<el-input-number v-model='average02' :min="1" :max="12 - average01 || 0" /> Execute once a month.
 			</el-radio>
 		</el-form-item>
 
 		<el-form-item>
 			<el-radio v-model='radioValue' :label="4">
-				指定
-				<el-select clearable v-model="checkboxList" placeholder="可多选" multiple style="width:100%">
+				designated
+				<el-select clearable v-model="checkboxList" placeholder="A lot of choice." multiple style="width:100%">
 					<el-option v-for="item in 12" :key="item" :value="item">{{item}}</el-option>
 				</el-select>
 			</el-radio>
@@ -49,7 +49,7 @@ export default {
 	name: 'crontab-month',
 	props: ['check', 'cron'],
 	methods: {
-		// 单选按钮值变化时
+		// When the button value changes.
 		radioChange() {
 			switch (this.radioValue) {
 				case 1:
@@ -66,19 +66,19 @@ export default {
 					break;
 			}
 		},
-		// 周期两个值变化时
+		// When two cycles change.
 		cycleChange() {
 			if (this.radioValue == '2') {
 				this.$emit('update', 'month', this.cycleTotal);
 			}
 		},
-		// 平均两个值变化时
+		// Meanwhile two values change.
 		averageChange() {
 			if (this.radioValue == '3') {
 				this.$emit('update', 'month', this.averageTotal);
 			}
 		},
-		// checkbox值变化时
+		// checkboxWhen the value changes.
 		checkboxChange() {
 			if (this.radioValue == '4') {
 				this.$emit('update', 'month', this.checkboxString);
@@ -92,19 +92,19 @@ export default {
 		'checkboxString': 'checkboxChange'
 	},
 	computed: {
-		// 计算两个周期值
+		// Calculate two cycle values.
 		cycleTotal: function () {
 			const cycle01 = this.checkNum(this.cycle01, 1, 11)
 			const cycle02 = this.checkNum(this.cycle02, cycle01 ? cycle01 + 1 : 2, 12)
 			return cycle01 + '-' + cycle02;
 		},
-		// 计算平均用到的值
+		// Calculate the average value.
 		averageTotal: function () {
 			const average01 = this.checkNum(this.average01, 1, 11)
 			const average02 = this.checkNum(this.average02, 1, 12 - average01 || 0)
 			return average01 + '/' + average02;
 		},
-		// 计算勾选的checkbox值合集
+		// Calculations are selected.checkboxValue of gathering
 		checkboxString: function () {
 			let str = this.checkboxList.join();
 			return str == '' ? '*' : str;

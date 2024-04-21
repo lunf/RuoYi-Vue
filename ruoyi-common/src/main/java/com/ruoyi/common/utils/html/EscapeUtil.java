@@ -3,7 +3,7 @@ package com.ruoyi.common.utils.html;
 import com.ruoyi.common.utils.StringUtils;
 
 /**
- * 转义和反转义工具类
+ * Conversion and Conversion Tools
  * 
  * @author ruoyi
  */
@@ -21,18 +21,18 @@ public class EscapeUtil
         }
 
         // special HTML characters
-        TEXT['\''] = "&#039;".toCharArray(); // 单引号
-        TEXT['"'] = "&#34;".toCharArray(); // 双引号
-        TEXT['&'] = "&#38;".toCharArray(); // &符
-        TEXT['<'] = "&#60;".toCharArray(); // 小于号
-        TEXT['>'] = "&#62;".toCharArray(); // 大于号
+        TEXT['\''] = "&#039;".toCharArray(); // A single quote.
+        TEXT['"'] = "&#34;".toCharArray(); // The double quote.
+        TEXT['&'] = "&#38;".toCharArray(); // &Tagged
+        TEXT['<'] = "&#60;".toCharArray(); // Less than number.
+        TEXT['>'] = "&#62;".toCharArray(); // greater than number.
     }
 
     /**
-     * 转义文本中的HTML字符为安全的字符
+     * Conversion in the text.HTMLThe characters are secure.
      * 
-     * @param text 被转义的文本
-     * @return 转义后的文本
+     * @param text Translated text.
+     * @return Text after conversion.
      */
     public static String escape(String text)
     {
@@ -40,10 +40,10 @@ public class EscapeUtil
     }
 
     /**
-     * 还原被转义的HTML特殊字符
+     * Returned to convert.HTMLSpecial characters
      * 
-     * @param content 包含转义符的HTML内容
-     * @return 转换后的字符串
+     * @param content Includes the conversion.HTMLThe content
+     * @return Character after conversion.
      */
     public static String unescape(String content)
     {
@@ -51,10 +51,10 @@ public class EscapeUtil
     }
 
     /**
-     * 清除所有HTML标签，但是不删除标签内的内容
+     * Cleaning all.HTMLTagged，Do not delete the content on the label.
      * 
-     * @param content 文本
-     * @return 清除标签后的文本
+     * @param content The text
+     * @return Remove the text after the label.
      */
     public static String clean(String content)
     {
@@ -62,10 +62,10 @@ public class EscapeUtil
     }
 
     /**
-     * Escape编码
+     * Escapecoded
      * 
-     * @param text 被编码的文本
-     * @return 编码后的字符
+     * @param text coded text.
+     * @return Postcoding characters.
      */
     private static String encode(String text)
     {
@@ -103,10 +103,10 @@ public class EscapeUtil
     }
 
     /**
-     * Escape解码
+     * EscapeDecoded
      * 
-     * @param content 被转义的内容
-     * @return 解码后的字符串
+     * @param content Contained content.
+     * @return Posts after decoding.
      */
     public static String decode(String content)
     {

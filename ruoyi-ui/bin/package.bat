@@ -1,6 +1,6 @@
 @echo off
 echo.
-echo [ÐÅÏ¢] °²×°Web¹¤³Ì£¬Éú³Énode_modulesÎÄ¼þ¡£
+echo [Information] InstalledWebProjectsï¼Œproducednode_modulesDocumentsã€‚
 echo.
 
 %~d0

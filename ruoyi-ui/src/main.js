@@ -3,6 +3,7 @@ import Vue from 'vue'
 import Cookies from 'js-cookie'
 
 import Element from 'element-ui'
+import locale_en from 'element-ui/lib/locale/lang/en';
 import './assets/styles/element-variables.scss'
 
 import '@/assets/styles/index.scss' // global css
@@ -19,26 +20,26 @@ import './permission' // permission control
 import { getDicts } from "@/api/system/dict/data";
 import { getConfigKey } from "@/api/system/config";
 import { parseTime, resetForm, addDateRange, selectDictLabel, selectDictLabels, handleTree } from "@/utils/ruoyi";
-// 分页组件
+// Parts of page
 import Pagination from "@/components/Pagination";
-// 自定义表格工具组件
+// Customized Table Tool Components
 import RightToolbar from "@/components/RightToolbar"
-// 富文本组件
+// rich text components.
 import Editor from "@/components/Editor"
-// 文件上传组件
+// The file upload components.
 import FileUpload from "@/components/FileUpload"
-// 图片上传组件
+// Photo upload components.
 import ImageUpload from "@/components/ImageUpload"
-// 图片预览组件
+// Preview of components
 import ImagePreview from "@/components/ImagePreview"
-// 字典标签组件
+// Dictionary tag components
 import DictTag from '@/components/DictTag'
-// 头部标签组件
+// The head label component.
 import VueMeta from 'vue-meta'
-// 字典数据组件
+// Dictionary data components
 import DictData from '@/components/DictData'
 
-// 全局方法挂载
+// The overall method of charging
 Vue.prototype.getDicts = getDicts
 Vue.prototype.getConfigKey = getConfigKey
 Vue.prototype.parseTime = parseTime
@@ -49,7 +50,7 @@ Vue.prototype.selectDictLabels = selectDictLabels
 Vue.prototype.download = download
 Vue.prototype.handleTree = handleTree
 
-// 全局组件挂载
+// Components are charged.
 Vue.component('DictTag', DictTag)
 Vue.component('Pagination', Pagination)
 Vue.component('RightToolbar', RightToolbar)
@@ -73,7 +74,8 @@ DictData.install()
  */
 
 Vue.use(Element, {
-  size: Cookies.get('size') || 'medium' // set element-ui default size
+  size: Cookies.get('size') || 'medium', // set element-ui default size
+  locale: locale_en
 })
 
 Vue.config.productionTip = false

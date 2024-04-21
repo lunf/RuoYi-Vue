@@ -45,3 +45,5 @@ nbdist/
 !*/build/*.java
 !*/build/*.html
 !*/build/*.xml
+/data/mysql/db/
+/data/redis/dump.rdb

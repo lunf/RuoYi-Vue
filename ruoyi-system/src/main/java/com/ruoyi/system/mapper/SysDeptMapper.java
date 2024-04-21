@@ -5,114 +5,114 @@ import org.apache.ibatis.annotations.Param;
 import com.ruoyi.common.core.domain.entity.SysDept;
 
 /**
- * 部门管理 数据层
+ * Department Management The Data Layer
  * 
  * @author ruoyi
  */
 public interface SysDeptMapper
 {
     /**
-     * 查询部门管理数据
+     * Department Data Management
      * 
-     * @param dept 部门信息
-     * @return 部门信息集合
+     * @param dept Department Information
+     * @return Department Information Collection
      */
     public List<SysDept> selectDeptList(SysDept dept);
 
     /**
-     * 根据角色ID查询部门树信息
+     * According to the roleIDInformation of the tree department
      * 
-     * @param roleId 角色ID
-     * @param deptCheckStrictly 部门树选择项是否关联显示
-     * @return 选中部门列表
+     * @param roleId The roleID
+     * @param deptCheckStrictly Department Tree Options Related to Show
+     * @return Selected department list
      */
     public List<Long> selectDeptListByRoleId(@Param("roleId") Long roleId, @Param("deptCheckStrictly") boolean deptCheckStrictly);
 
     /**
-     * 根据部门ID查询信息
+     * According to the departmentIDAsk for information
      * 
-     * @param deptId 部门ID
-     * @return 部门信息
+     * @param deptId DepartmentID
+     * @return Department Information
      */
     public SysDept selectDeptById(Long deptId);
 
     /**
-     * 根据ID查询所有子部门
+     * based onIDConsulting all sub-departments.
      * 
-     * @param deptId 部门ID
-     * @return 部门列表
+     * @param deptId DepartmentID
+     * @return List of departments
      */
     public List<SysDept> selectChildrenDeptById(Long deptId);
 
     /**
-     * 根据ID查询所有子部门（正常状态）
+     * based onIDConsulting all sub-departments.（in normal state.）
      * 
-     * @param deptId 部门ID
-     * @return 子部门数
+     * @param deptId DepartmentID
+     * @return Number of subsidiaries
      */
     public int selectNormalChildrenDeptById(Long deptId);
 
     /**
-     * 是否存在子节点
+     * Is there a subnode?
      * 
-     * @param deptId 部门ID
-     * @return 结果
+     * @param deptId DepartmentID
+     * @return Results
      */
     public int hasChildByDeptId(Long deptId);
 
     /**
-     * 查询部门是否存在用户
+     * Ask if there are users.
      * 
-     * @param deptId 部门ID
-     * @return 结果
+     * @param deptId DepartmentID
+     * @return Results
      */
     public int checkDeptExistUser(Long deptId);
 
     /**
-     * 校验部门名称是否唯一
+     * The name of the study department is unique.
      * 
-     * @param deptName 部门名称
-     * @param parentId 父部门ID
-     * @return 结果
+     * @param deptName Name of department
+     * @param parentId The Father DepartmentID
+     * @return Results
      */
     public SysDept checkDeptNameUnique(@Param("deptName") String deptName, @Param("parentId") Long parentId);
 
     /**
-     * 新增部门信息
+     * Additional Department Information
      * 
-     * @param dept 部门信息
-     * @return 结果
+     * @param dept Department Information
+     * @return Results
      */
     public int insertDept(SysDept dept);
 
     /**
-     * 修改部门信息
+     * Modification of Department Information
      * 
-     * @param dept 部门信息
-     * @return 结果
+     * @param dept Department Information
+     * @return Results
      */
     public int updateDept(SysDept dept);
 
     /**
-     * 修改所在部门正常状态
+     * Modifying the normal state of the department.
      * 
-     * @param deptIds 部门ID组
+     * @param deptIds DepartmentIDThe group
      */
     public void updateDeptStatusNormal(Long[] deptIds);
 
     /**
-     * 修改子元素关系
+     * Modification of Element Relationship
      * 
-     * @param depts 子元素
-     * @return 结果
+     * @param depts The element.
+     * @return Results
      */
     public int updateDeptChildren(@Param("depts") List<SysDept> depts);
 
     /**
-     * 删除部门管理信息
+     * Delete department management information
      * 
-     * @param deptId 部门ID
-     * @return 结果
+     * @param deptId DepartmentID
+     * @return Results
      */
     public int deleteDeptById(Long deptId);
 }

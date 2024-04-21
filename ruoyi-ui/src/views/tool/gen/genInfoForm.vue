@@ -3,28 +3,28 @@
     <el-row>
       <el-col :span="12">
         <el-form-item prop="tplCategory">
-          <span slot="label">生成模板</span>
+          <span slot="label">Create a template.</span>
           <el-select v-model="info.tplCategory" @change="tplSelectChange">
-            <el-option label="单表（增删改查）" value="crud" />
-            <el-option label="树表（增删改查）" value="tree" />
-            <el-option label="主子表（增删改查）" value="sub" />
+            <el-option label="The Single Table（Additional removal check）" value="crud" />
+            <el-option label="The Tree（Additional removal check）" value="tree" />
+            <el-option label="The master table.（Additional removal check）" value="sub" />
           </el-select>
         </el-form-item>
       </el-col>
       <el-col :span="12">
         <el-form-item prop="tplWebType">
-          <span slot="label">前端类型</span>
+          <span slot="label">Type of front</span>
           <el-select v-model="info.tplWebType">
-            <el-option label="Vue2 Element UI 模版" value="element-ui" />
-            <el-option label="Vue3 Element Plus 模版" value="element-plus" />
+            <el-option label="Vue2 Element UI The model" value="element-ui" />
+            <el-option label="Vue3 Element Plus The model" value="element-plus" />
           </el-select>
         </el-form-item>
       </el-col>
       <el-col :span="12">
         <el-form-item prop="packageName">
           <span slot="label">
-            生成包路径
-            <el-tooltip content="生成在哪个java包下，例如 com.ruoyi.system" placement="top">
+            Create a package route.
+            <el-tooltip content="Which is generated.javaUnder the package.，for example com.ruoyi.system" placement="top">
               <i class="el-icon-question"></i>
             </el-tooltip>
           </span>
@@ -35,8 +35,8 @@
       <el-col :span="12">
         <el-form-item prop="moduleName">
           <span slot="label">
-            生成模块名
-            <el-tooltip content="可理解为子系统名，例如 system" placement="top">
+            Create a module name.
+            <el-tooltip content="Understood as a subsystem.，for example system" placement="top">
               <i class="el-icon-question"></i>
             </el-tooltip>
           </span>
@@ -47,8 +47,8 @@
       <el-col :span="12">
         <el-form-item prop="businessName">
           <span slot="label">
-            生成业务名
-            <el-tooltip content="可理解为功能英文名，例如 user" placement="top">
+            Create a business name.
+            <el-tooltip content="Understood as functional English name.，for example user" placement="top">
               <i class="el-icon-question"></i>
             </el-tooltip>
           </span>
@@ -59,8 +59,8 @@
       <el-col :span="12">
         <el-form-item prop="functionName">
           <span slot="label">
-            生成功能名
-            <el-tooltip content="用作类描述，例如 用户" placement="top">
+            Name of Success.
+            <el-tooltip content="Used as a description.，for example Users" placement="top">
               <i class="el-icon-question"></i>
             </el-tooltip>
           </span>
@@ -71,21 +71,21 @@
       <el-col :span="12">
         <el-form-item prop="genType">
           <span slot="label">
-            生成代码方式
-            <el-tooltip content="默认为zip压缩包下载，也可以自定义生成路径" placement="top">
+            Create the method of code.
+            <el-tooltip content="I thinkzipCompressed package.，You can also customize the route." placement="top">
               <i class="el-icon-question"></i>
             </el-tooltip>
           </span>
-          <el-radio v-model="info.genType" label="0">zip压缩包</el-radio>
-          <el-radio v-model="info.genType" label="1">自定义路径</el-radio>
+          <el-radio v-model="info.genType" label="0">zipCompressed package</el-radio>
+          <el-radio v-model="info.genType" label="1">Personalized route</el-radio>
         </el-form-item>
       </el-col>
 
       <el-col :span="12">
         <el-form-item>
           <span slot="label">
-            上级菜单
-            <el-tooltip content="分配到指定菜单下，例如 系统管理" placement="top">
+            The top menu.
+            <el-tooltip content="Distributed to the specified menu.，for example system management" placement="top">
               <i class="el-icon-question"></i>
             </el-tooltip>
           </span>
@@ -95,7 +95,7 @@
             :options="menus"
             :normalizer="normalizer"
             :show-count="true"
-            placeholder="请选择系统菜单"
+            placeholder="Please select the system menu."
           />
         </el-form-item>
       </el-col>
@@ -103,19 +103,19 @@
       <el-col :span="24" v-if="info.genType == '1'">
         <el-form-item prop="genPath">
           <span slot="label">
-            自定义路径
-            <el-tooltip content="填写磁盘绝对路径，若不填写，则生成到当前Web项目下" placement="top">
+            Personalized route
+            <el-tooltip content="Complete the disks with absolute route.，If not filled.，Created to the present.Webunder the project." placement="top">
               <i class="el-icon-question"></i>
             </el-tooltip>
           </span>
           <el-input v-model="info.genPath">
             <el-dropdown slot="append">
               <el-button type="primary">
-                最近路径快速选择
+                Fast choice of new routes
                 <i class="el-icon-arrow-down el-icon--right"></i>
               </el-button>
               <el-dropdown-menu slot="dropdown">
-                <el-dropdown-item @click.native="info.genPath = '/'">恢复默认的生成基础路径</el-dropdown-item>
+                <el-dropdown-item @click.native="info.genPath = '/'">Restore the default production basis route</el-dropdown-item>
               </el-dropdown-menu>
             </el-dropdown>
           </el-input>
@@ -124,16 +124,16 @@
     </el-row>
 
     <el-row v-show="info.tplCategory == 'tree'">
-      <h4 class="form-header">其他信息</h4>
+      <h4 class="form-header">Other information</h4>
       <el-col :span="12">
         <el-form-item>
           <span slot="label">
-            树编码字段
-            <el-tooltip content="树显示的编码字段名， 如：dept_id" placement="top">
+            The tree code field.
+            <el-tooltip content="The tree shows the code field name.， as：dept_id" placement="top">
               <i class="el-icon-question"></i>
             </el-tooltip>
           </span>
-          <el-select v-model="info.treeCode" placeholder="请选择">
+          <el-select v-model="info.treeCode" placeholder="Please choose">
             <el-option
               v-for="(column, index) in info.columns"
               :key="index"
@@ -146,12 +146,12 @@
       <el-col :span="12">
         <el-form-item>
           <span slot="label">
-            树父编码字段
-            <el-tooltip content="树显示的父编码字段名， 如：parent_Id" placement="top">
+            The tree code field.
+            <el-tooltip content="The tree shows the father code field name， as：parent_Id" placement="top">
               <i class="el-icon-question"></i>
             </el-tooltip>
           </span>
-          <el-select v-model="info.treeParentCode" placeholder="请选择">
+          <el-select v-model="info.treeParentCode" placeholder="Please choose">
             <el-option
               v-for="(column, index) in info.columns"
               :key="index"
@@ -164,12 +164,12 @@
       <el-col :span="12">
         <el-form-item>
           <span slot="label">
-            树名称字段
-            <el-tooltip content="树节点的显示名称字段名， 如：dept_name" placement="top">
+            Name of the tree field
+            <el-tooltip content="Showing the tree nod name field name， as：dept_name" placement="top">
               <i class="el-icon-question"></i>
             </el-tooltip>
           </span>
-          <el-select v-model="info.treeName" placeholder="请选择">
+          <el-select v-model="info.treeName" placeholder="Please choose">
             <el-option
               v-for="(column, index) in info.columns"
               :key="index"
@@ -181,16 +181,16 @@
       </el-col>
     </el-row>
     <el-row v-show="info.tplCategory == 'sub'">
-      <h4 class="form-header">关联信息</h4>
+      <h4 class="form-header">Related Information</h4>
       <el-col :span="12">
         <el-form-item>
           <span slot="label">
-            关联子表的表名
-            <el-tooltip content="关联子表的表名， 如：sys_user" placement="top">
+            Name of associated subtitles.
+            <el-tooltip content="Name of associated subtitles.， as：sys_user" placement="top">
               <i class="el-icon-question"></i>
             </el-tooltip>
           </span>
-          <el-select v-model="info.subTableName" placeholder="请选择" @change="subSelectChange">
+          <el-select v-model="info.subTableName" placeholder="Please choose" @change="subSelectChange">
             <el-option
               v-for="(table, index) in tables"
               :key="index"
@@ -203,12 +203,12 @@
       <el-col :span="12">
         <el-form-item>
           <span slot="label">
-            子表关联的外键名
-            <el-tooltip content="子表关联的外键名， 如：user_id" placement="top">
+            The external key name associated with the subtitle.
+            <el-tooltip content="The external key name associated with the subtitle.， as：user_id" placement="top">
               <i class="el-icon-question"></i>
             </el-tooltip>
           </span>
-          <el-select v-model="info.subTableFkName" placeholder="请选择">
+          <el-select v-model="info.subTableFkName" placeholder="Please choose">
             <el-option
               v-for="(column, index) in subColumns"
               :key="index"
@@ -247,19 +247,19 @@ export default {
       subColumns: [],
       rules: {
         tplCategory: [
-          { required: true, message: "请选择生成模板", trigger: "blur" }
+          { required: true, message: "Please create a template.", trigger: "blur" }
         ],
         packageName: [
-          { required: true, message: "请输入生成包路径", trigger: "blur" }
+          { required: true, message: "Please enter the package route.", trigger: "blur" }
         ],
         moduleName: [
-          { required: true, message: "请输入生成模块名", trigger: "blur" }
+          { required: true, message: "Please enter the module name.", trigger: "blur" }
         ],
         businessName: [
-          { required: true, message: "请输入生成业务名", trigger: "blur" }
+          { required: true, message: "Please enter a business name.", trigger: "blur" }
         ],
         functionName: [
-          { required: true, message: "请输入生成功能名", trigger: "blur" }
+          { required: true, message: "Please enter the success name.", trigger: "blur" }
         ],
       }
     };
@@ -275,7 +275,7 @@ export default {
     }
   },
   methods: {
-    /** 转换菜单数据结构 */
+    /** Convert menu data structure */
     normalizer(node) {
       if (node.children && !node.children.length) {
         delete node.children;
@@ -286,18 +286,18 @@ export default {
         children: node.children
       };
     },
-    /** 选择子表名触发 */
+    /** Choose the subname trigger */
     subSelectChange(value) {
       this.info.subTableFkName = '';
     },
-    /** 选择生成模板触发 */
+    /** Choose to create a template. */
     tplSelectChange(value) {
       if(value !== 'sub') {
         this.info.subTableName = '';
         this.info.subTableFkName = '';
       }
     },
-    /** 设置关联外键 */
+    /** Set the external key. */
     setSubTableColumns(value) {
       for (var item in this.tables) {
         const name = this.tables[item].tableName;

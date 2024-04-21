@@ -16,7 +16,7 @@ import com.ruoyi.common.utils.StringUtils;
 import com.ruoyi.framework.datasource.DynamicDataSourceContextHolder;
 
 /**
- * 多数据源处理
+ * Processing of multiple data sources
  * 
  * @author ruoyi
  */
@@ -50,13 +50,13 @@ public class DataSourceAspect
         }
         finally
         {
-            // 销毁数据源 在执行方法之后
+            // Destruction of data sources After the method.
             DynamicDataSourceContextHolder.clearDataSourceType();
         }
     }
 
     /**
-     * 获取需要切换的数据源
+     * Data sources that need to be changed.
      */
     public DataSource getDataSource(ProceedingJoinPoint point)
     {

@@ -4,16 +4,16 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
 /**
- * 角色和部门关联 sys_role_dept
+ * Role and Department Relationship sys_role_dept
  * 
  * @author ruoyi
  */
 public class SysRoleDept
 {
-    /** 角色ID */
+    /** The roleID */
     private Long roleId;
     
-    /** 部门ID */
+    /** DepartmentID */
     private Long deptId;
 
     public Long getRoleId()

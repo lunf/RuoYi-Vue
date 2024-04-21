@@ -4,21 +4,21 @@ import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Workbook;
 
 /**
- * Excel数据格式处理适配器
+ * ExcelData Format Processing Adapter
  * 
  * @author ruoyi
  */
 public interface ExcelHandlerAdapter
 {
     /**
-     * 格式化
+     * Formated
      * 
-     * @param value 单元格数据值
-     * @param args excel注解args参数组
-     * @param cell 单元格对象
-     * @param wb 工作簿对象
+     * @param value Data Value of Cells
+     * @param args excelNotesargsThe Parameters Group
+     * @param cell The Cell Objects
+     * @param wb Objects of Workbook
      *
-     * @return 处理后的值
+     * @return Value after processing.
      */
     Object format(Object value, String[] args, Cell cell, Workbook wb);
 }

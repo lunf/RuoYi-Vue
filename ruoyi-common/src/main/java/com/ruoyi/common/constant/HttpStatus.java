@@ -1,94 +1,94 @@
 package com.ruoyi.common.constant;
 
 /**
- * 返回状态码
+ * Return to state code.
  * 
  * @author ruoyi
  */
 public class HttpStatus
 {
     /**
-     * 操作成功
+     * Operations Successful
      */
     public static final int SUCCESS = 200;
 
     /**
-     * 对象创建成功
+     * Objects Create Success
      */
     public static final int CREATED = 201;
 
     /**
-     * 请求已经被接受
+     * The request has been accepted.
      */
     public static final int ACCEPTED = 202;
 
     /**
-     * 操作已经执行成功，但是没有返回数据
+     * Operations have been successful.，No returns of data.
      */
     public static final int NO_CONTENT = 204;
 
     /**
-     * 资源已被移除
+     * Resources have been removed.
      */
     public static final int MOVED_PERM = 301;
 
     /**
-     * 重定向
+     * to redirect
      */
     public static final int SEE_OTHER = 303;
 
     /**
-     * 资源没有被修改
+     * Resources are not modified.
      */
     public static final int NOT_MODIFIED = 304;
 
     /**
-     * 参数列表错误（缺少，格式不匹配）
+     * Parameters list errors（Lack of，The format does not match.）
      */
     public static final int BAD_REQUEST = 400;
 
     /**
-     * 未授权
+     * not authorized.
      */
     public static final int UNAUTHORIZED = 401;
 
     /**
-     * 访问受限，授权过期
+     * Access is limited.，Permit expiration
      */
     public static final int FORBIDDEN = 403;
 
     /**
-     * 资源，服务未找到
+     * Resources，The service was not found.
      */
     public static final int NOT_FOUND = 404;
 
     /**
-     * 不允许的http方法
+     * not allowed.httpMethod
      */
     public static final int BAD_METHOD = 405;
 
     /**
-     * 资源冲突，或者资源被锁
+     * Resource conflict，Resources are locked.
      */
     public static final int CONFLICT = 409;
 
     /**
-     * 不支持的数据，媒体类型
+     * Unsupported data，Type of Media
      */
     public static final int UNSUPPORTED_TYPE = 415;
 
     /**
-     * 系统内部错误
+     * Internal system errors
      */
     public static final int ERROR = 500;
 
     /**
-     * 接口未实现
+     * Interface is not achieved.
      */
     public static final int NOT_IMPLEMENTED = 501;
 
     /**
-     * 系统警告消息
+     * System warning.
      */
     public static final int WARN = 601;
 }

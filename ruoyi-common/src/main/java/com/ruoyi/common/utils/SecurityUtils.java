@@ -14,7 +14,7 @@ import com.ruoyi.common.core.domain.model.LoginUser;
 import com.ruoyi.common.exception.ServiceException;
 
 /**
- * 安全服务工具类
+ * Secure Service Tools
  * 
  * @author ruoyi
  */
@@ -22,7 +22,7 @@ public class SecurityUtils
 {
 
     /**
-     * 用户ID
+     * UsersID
      **/
     public static Long getUserId()
     {
@@ -32,12 +32,12 @@ public class SecurityUtils
         }
         catch (Exception e)
         {
-            throw new ServiceException("获取用户ID异常", HttpStatus.UNAUTHORIZED);
+            throw new ServiceException("Obtaining UsersIDUnusual", HttpStatus.UNAUTHORIZED);
         }
     }
 
     /**
-     * 获取部门ID
+     * Acquired departmentID
      **/
     public static Long getDeptId()
     {
@@ -47,12 +47,12 @@ public class SecurityUtils
         }
         catch (Exception e)
         {
-            throw new ServiceException("获取部门ID异常", HttpStatus.UNAUTHORIZED);
+            throw new ServiceException("Acquired departmentIDUnusual", HttpStatus.UNAUTHORIZED);
         }
     }
 
     /**
-     * 获取用户账户
+     * Obtaining User Account
      **/
     public static String getUsername()
     {
@@ -62,12 +62,12 @@ public class SecurityUtils
         }
         catch (Exception e)
         {
-            throw new ServiceException("获取用户账户异常", HttpStatus.UNAUTHORIZED);
+            throw new ServiceException("Unusual access to user accounts", HttpStatus.UNAUTHORIZED);
         }
     }
 
     /**
-     * 获取用户
+     * Obtaining Users
      **/
     public static LoginUser getLoginUser()
     {
@@ -77,12 +77,12 @@ public class SecurityUtils
         }
         catch (Exception e)
         {
-            throw new ServiceException("获取用户信息异常", HttpStatus.UNAUTHORIZED);
+            throw new ServiceException("Unusual access to user information.", HttpStatus.UNAUTHORIZED);
         }
     }
 
     /**
-     * 获取Authentication
+     * obtainedAuthentication
      */
     public static Authentication getAuthentication()
     {
@@ -90,10 +90,10 @@ public class SecurityUtils
     }
 
     /**
-     * 生成BCryptPasswordEncoder密码
+     * producedBCryptPasswordEncoderThe code
      *
-     * @param password 密码
-     * @return 加密字符串
+     * @param password The code
+     * @return Encryption of characters
      */
     public static String encryptPassword(String password)
     {
@@ -102,11 +102,11 @@ public class SecurityUtils
     }
 
     /**
-     * 判断密码是否相同
+     * Find out if the password is the same.
      *
-     * @param rawPassword 真实密码
-     * @param encodedPassword 加密后字符
-     * @return 结果
+     * @param rawPassword The real code.
+     * @param encodedPassword Postcrypted characters
+     * @return Results
      */
     public static boolean matchesPassword(String rawPassword, String encodedPassword)
     {
@@ -115,10 +115,10 @@ public class SecurityUtils
     }
 
     /**
-     * 是否为管理员
+     * to the manager.
      * 
-     * @param userId 用户ID
-     * @return 结果
+     * @param userId UsersID
+     * @return Results
      */
     public static boolean isAdmin(Long userId)
     {
@@ -126,10 +126,10 @@ public class SecurityUtils
     }
 
     /**
-     * 验证用户是否具备某权限
+     * Verify whether the user has any authorization.
      * 
-     * @param permission 权限字符串
-     * @return 用户是否具备某权限
+     * @param permission Authorization of characters
+     * @return Does the user have any permission?
      */
     public static boolean hasPermi(String permission)
     {
@@ -137,11 +137,11 @@ public class SecurityUtils
     }
 
     /**
-     * 判断是否包含权限
+     * Deciding whether it contains authority.
      * 
-     * @param authorities 权限列表
-     * @param permission 权限字符串
-     * @return 用户是否具备某权限
+     * @param authorities List of permissions
+     * @param permission Authorization of characters
+     * @return Does the user have any permission?
      */
     public static boolean hasPermi(Collection<String> authorities, String permission)
     {
@@ -150,10 +150,10 @@ public class SecurityUtils
     }
 
     /**
-     * 验证用户是否拥有某个角色
+     * Verify whether the user has a role.
      * 
-     * @param role 角色标识
-     * @return 用户是否具备某角色
+     * @param role Character Identification
+     * @return Does the user have a role?
      */
     public static boolean hasRole(String role)
     {
@@ -163,11 +163,11 @@ public class SecurityUtils
     }
 
     /**
-     * 判断是否包含角色
+     * Deciding whether it includes a role.
      * 
-     * @param roles 角色列表
-     * @param role 角色
-     * @return 用户是否具备某角色权限
+     * @param roles List of roles
+     * @param role The role
+     * @return Does the user have a role authorization?
      */
     public static boolean hasRole(Collection<String> roles, String role)
     {

@@ -13,9 +13,9 @@
       </el-menu-item>
     </template>
 
-    <!-- 顶部菜单超出数量折叠 -->
+    <!-- The top menu exceeds the number of overlaps. -->
     <el-submenu :style="{'--theme': theme}" index="more" v-if="topMenus.length > visibleNumber">
-      <template slot="title">更多菜单</template>
+      <template slot="title">More Menu</template>
       <template v-for="(item, index) in topMenus">
         <el-menu-item
           :index="item.path"
@@ -34,15 +34,15 @@
 <script>
 import { constantRoutes } from "@/router";
 
-// 隐藏侧边栏路由
+// Hidden side wall routing.
 const hideList = ['/index', '/user/profile'];
 
 export default {
   data() {
     return {
-      // 顶部栏初始数
+      // The upper bar number.
       visibleNumber: 5,
-      // 当前激活菜单的 index
+      // Actually activate the menu. index
       currentIndex: undefined
     };
   },
@@ -50,12 +50,12 @@ export default {
     theme() {
       return this.$store.state.settings.theme;
     },
-    // 顶部显示菜单
+    // Show the menu top.
     topMenus() {
       let topMenus = [];
       this.routers.map((menu) => {
         if (menu.hidden !== true) {
-          // 兼容顶部栏一级菜单内部跳转
+          // Compatible Top Bar Level Menu Inside
           if (menu.path === "/") {
             topMenus.push(menu.children[0]);
           } else {
@@ -65,11 +65,11 @@ export default {
       });
       return topMenus;
     },
-    // 所有的路由信息
+    // All routing information.
     routers() {
       return this.$store.state.permission.topbarRouters;
     },
-    // 设置子路由
+    // Set up the routing.
     childrenMenus() {
       var childrenMenus = [];
       this.routers.map((router) => {
@@ -89,7 +89,7 @@ export default {
       });
       return constantRoutes.concat(childrenMenus);
     },
-    // 默认激活的菜单
+    // Default active menu.
     activeMenu() {
       const path = this.$route.path;
       let activePath = path;
@@ -117,20 +117,20 @@ export default {
     this.setVisibleNumber();
   },
   methods: {
-    // 根据宽度计算设置显示栏数
+    // Set the number of columns according to the width calculation
     setVisibleNumber() {
       const width = document.body.getBoundingClientRect().width / 3;
       this.visibleNumber = parseInt(width / 85);
     },
-    // 菜单选择事件
+    // Menu Selection of Events
     handleSelect(key, keyPath) {
       this.currentIndex = key;
       const route = this.routers.find(item => item.path === key);
       if (this.ishttp(key)) {
-        // http(s):// 路径新窗口打开
+        // http(s):// New window open.
         window.open(key, "_blank");
       } else if (!route || !route.children) {
-        // 没有子路由路径内部打开
+        // No subway is opened inside the route.
         const routeMenu = this.childrenMenus.find(item => item.path === key);
         if (routeMenu && routeMenu.query) {
           let query = JSON.parse(routeMenu.query);
@@ -140,12 +140,12 @@ export default {
         }
         this.$store.dispatch('app/toggleSideBarHide', true);
       } else {
-        // 显示左侧联动菜单
+        // Show the link menu on the left
         this.activeRoutes(key);
         this.$store.dispatch('app/toggleSideBarHide', false);
       }
     },
-    // 当前激活的路由
+    // Currently activated routes
     activeRoutes(key) {
       var routes = [];
       if (this.childrenMenus && this.childrenMenus.length > 0) {

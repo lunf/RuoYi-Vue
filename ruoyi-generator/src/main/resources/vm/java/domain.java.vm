@@ -13,7 +13,7 @@ import com.ruoyi.common.core.domain.TreeEntity;
 #end
 
 /**
- * ${functionName}对象 ${tableName}
+ * ${functionName}Objects ${tableName}
  * 
  * @author ${author}
  * @date ${datetime}
@@ -51,7 +51,7 @@ public class ${ClassName} extends ${Entity}
 #end
 #end
 #if($table.sub)
-    /** $table.subTable.functionName信息 */
+    /** $table.subTable.functionNameInformation */
     private List<${subClassName}> ${subclassName}List;
 
 #end

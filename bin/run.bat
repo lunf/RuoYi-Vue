@@ -1,6 +1,6 @@
 @echo off
 echo.
-echo [–≈œ¢]  π”√Jar√¸¡Ó‘À––Webπ§≥Ã°£
+echo [Information] Use ofJarCommand to Work.WebProjects„ÄÇ
 echo.
 
 cd %~dp0

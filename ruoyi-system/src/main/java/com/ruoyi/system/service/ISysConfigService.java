@@ -4,86 +4,86 @@ import java.util.List;
 import com.ruoyi.system.domain.SysConfig;
 
 /**
- * 参数配置 服务层
+ * The parameter configuration of service.
  * 
  * @author ruoyi
  */
 public interface ISysConfigService
 {
     /**
-     * 查询参数配置信息
+     * Ask for parameter configuration information
      * 
-     * @param configId 参数配置ID
-     * @return 参数配置信息
+     * @param configId The parameter configurationID
+     * @return parameter configuration information
      */
     public SysConfig selectConfigById(Long configId);
 
     /**
-     * 根据键名查询参数配置信息
+     * Based on the key name query parameter configuration information
      * 
-     * @param configKey 参数键名
-     * @return 参数键值
+     * @param configKey The parameter name.
+     * @return The parameter value.
      */
     public String selectConfigByKey(String configKey);
 
     /**
-     * 获取验证码开关
+     * Get the verification code.
      * 
-     * @return true开启，false关闭
+     * @return trueopened，falseclosed
      */
     public boolean selectCaptchaEnabled();
 
     /**
-     * 查询参数配置列表
+     * Ask for the parameter configuration list
      * 
-     * @param config 参数配置信息
-     * @return 参数配置集合
+     * @param config parameter configuration information
+     * @return The Parameters Collection
      */
     public List<SysConfig> selectConfigList(SysConfig config);
 
     /**
-     * 新增参数配置
+     * Additional parameters
      * 
-     * @param config 参数配置信息
-     * @return 结果
+     * @param config parameter configuration information
+     * @return Results
      */
     public int insertConfig(SysConfig config);
 
     /**
-     * 修改参数配置
+     * Modification of parameters
      * 
-     * @param config 参数配置信息
-     * @return 结果
+     * @param config parameter configuration information
+     * @return Results
      */
     public int updateConfig(SysConfig config);
 
     /**
-     * 批量删除参数信息
+     * Remove parameter information.
      * 
-     * @param configIds 需要删除的参数ID
+     * @param configIds The parameters need to be removed.ID
      */
     public void deleteConfigByIds(Long[] configIds);
 
     /**
-     * 加载参数缓存数据
+     * Loading parameter cache data
      */
     public void loadingConfigCache();
 
     /**
-     * 清空参数缓存数据
+     * Empty parameters cache data
      */
     public void clearConfigCache();
 
     /**
-     * 重置参数缓存数据
+     * Repair parameter cache data
      */
     public void resetConfigCache();
 
     /**
-     * 校验参数键名是否唯一
+     * Is the test parameter key name unique?
      * 
-     * @param config 参数信息
-     * @return 结果
+     * @param config parameter information
+     * @return Results
      */
     public boolean checkConfigKeyUnique(SysConfig config);
 }

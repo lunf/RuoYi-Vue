@@ -7,24 +7,24 @@ import com.ruoyi.common.utils.Threads;
 import com.ruoyi.common.utils.spring.SpringUtils;
 
 /**
- * 异步任务管理器
+ * Extraterrestrial task manager
  * 
  * @author ruoyi
  */
 public class AsyncManager
 {
     /**
-     * 操作延迟10毫秒
+     * Delayed operation.10Mills of seconds.
      */
     private final int OPERATE_DELAY_TIME = 10;
 
     /**
-     * 异步操作任务调度线程池
+     * Extraterrestrial Operation Task Modification Linear Pool
      */
     private ScheduledExecutorService executor = SpringUtils.getBean("scheduledExecutorService");
 
     /**
-     * 单例模式
+     * The single model.
      */
     private AsyncManager(){}
 
@@ -36,9 +36,9 @@ public class AsyncManager
     }
 
     /**
-     * 执行任务
+     * performing the task.
      * 
-     * @param task 任务
+     * @param task The task
      */
     public void execute(TimerTask task)
     {
@@ -46,7 +46,7 @@ public class AsyncManager
     }
 
     /**
-     * 停止任务线程池
+     * Stop the task line.
      */
     public void shutdown()
     {

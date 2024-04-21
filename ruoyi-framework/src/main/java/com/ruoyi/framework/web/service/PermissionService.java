@@ -11,7 +11,7 @@ import com.ruoyi.common.utils.StringUtils;
 import com.ruoyi.framework.security.context.PermissionContextHolder;
 
 /**
- * RuoYi首创 自定义权限实现，ss取自SpringSecurity首字母
+ * RuoYiThe first Implementation of custom authority，sstaken fromSpringSecurityThe first letter.
  * 
  * @author ruoyi
  */
@@ -19,10 +19,10 @@ import com.ruoyi.framework.security.context.PermissionContextHolder;
 public class PermissionService
 {
     /**
-     * 验证用户是否具备某权限
+     * Verify whether the user has any authorization.
      * 
-     * @param permission 权限字符串
-     * @return 用户是否具备某权限
+     * @param permission Authorization of characters
+     * @return Does the user have any permission?
      */
     public boolean hasPermi(String permission)
     {
@@ -40,10 +40,10 @@ public class PermissionService
     }
 
     /**
-     * 验证用户是否不具备某权限，与 hasPermi逻辑相反
+     * Verify whether the user has no authorization.，and hasPermiLogic is the opposite.
      *
-     * @param permission 权限字符串
-     * @return 用户是否不具备某权限
+     * @param permission Authorization of characters
+     * @return Does the user have no permission?
      */
     public boolean lacksPermi(String permission)
     {
@@ -51,10 +51,10 @@ public class PermissionService
     }
 
     /**
-     * 验证用户是否具有以下任意一个权限
+     * Verify whether the user has the following arbitrary authorization:
      *
-     * @param permissions 以 PERMISSION_DELIMETER 为分隔符的权限列表
-     * @return 用户是否具有以下任意一个权限
+     * @param permissions by PERMISSION_DELIMETER Authorization list for separators
+     * @return Does the user have the following arbitrary authorization?
      */
     public boolean hasAnyPermi(String permissions)
     {
@@ -80,10 +80,10 @@ public class PermissionService
     }
 
     /**
-     * 判断用户是否拥有某个角色
+     * To determine whether the user has a role.
      * 
-     * @param role 角色字符串
-     * @return 用户是否具备某角色
+     * @param role The character string.
+     * @return Does the user have a role?
      */
     public boolean hasRole(String role)
     {
@@ -108,10 +108,10 @@ public class PermissionService
     }
 
     /**
-     * 验证用户是否不具备某角色，与 isRole逻辑相反。
+     * Verify whether the user has no role.，and isRoleLogic is the opposite.。
      *
-     * @param role 角色名称
-     * @return 用户是否不具备某角色
+     * @param role The role name.
+     * @return Does the user have no role?
      */
     public boolean lacksRole(String role)
     {
@@ -119,10 +119,10 @@ public class PermissionService
     }
 
     /**
-     * 验证用户是否具有以下任意一个角色
+     * Verify whether the user has the following arbitrary role:
      *
-     * @param roles 以 ROLE_NAMES_DELIMETER 为分隔符的角色列表
-     * @return 用户是否具有以下任意一个角色
+     * @param roles by ROLE_NAMES_DELIMETER List of roles for separators
+     * @return Does the user have the following arbitrary role?
      */
     public boolean hasAnyRoles(String roles)
     {
@@ -146,11 +146,11 @@ public class PermissionService
     }
 
     /**
-     * 判断是否包含权限
+     * Deciding whether it contains authority.
      * 
-     * @param permissions 权限列表
-     * @param permission 权限字符串
-     * @return 用户是否具备某权限
+     * @param permissions List of permissions
+     * @param permission Authorization of characters
+     * @return Does the user have any permission?
      */
     private boolean hasPermissions(Set<String> permissions, String permission)
     {

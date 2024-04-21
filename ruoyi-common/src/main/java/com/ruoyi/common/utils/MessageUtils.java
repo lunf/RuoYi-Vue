@@ -5,18 +5,18 @@ import org.springframework.context.i18n.LocaleContextHolder;
 import com.ruoyi.common.utils.spring.SpringUtils;
 
 /**
- * 获取i18n资源文件
+ * obtainedi18nResource Documents
  * 
  * @author ruoyi
  */
 public class MessageUtils
 {
     /**
-     * 根据消息键和参数 获取消息 委托给spring messageSource
+     * Based on key and parameters. Get the news. Committed tospring messageSource
      *
-     * @param code 消息键
-     * @param args 参数
-     * @return 获取国际化翻译值
+     * @param code The news key.
+     * @param args Parameters
+     * @return Acquired international translation value
      */
     public static String message(String code, Object... args)
     {

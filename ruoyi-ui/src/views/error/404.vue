@@ -9,16 +9,16 @@
       </div>
       <div class="bullshit">
         <div class="bullshit__oops">
-          404错误!
+          404errors!
         </div>
         <div class="bullshit__headline">
           {{ message }}
         </div>
         <div class="bullshit__info">
-          对不起，您正在寻找的页面不存在。尝试检查URL的错误，然后按浏览器上的刷新按钮或尝试在我们的应用程序中找到其他内容。
+          Sorry to，The page you are looking for does not exist.。Try to check.URLThe mistake.，Then press the Update button on the browser or try to find other content in our application.。
         </div>
         <router-link to="/" class="bullshit__return-home">
-          返回首页
+          Back to the first page.
         </router-link>
       </div>
     </div>
@@ -31,7 +31,7 @@ export default {
   name: 'Page404',
   computed: {
     message() {
-      return '找不到网页！'
+      return 'Not found web pages.！'
     }
   }
 }

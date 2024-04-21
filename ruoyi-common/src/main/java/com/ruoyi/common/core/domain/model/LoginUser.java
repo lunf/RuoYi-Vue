@@ -8,7 +8,7 @@ import java.util.Collection;
 import java.util.Set;
 
 /**
- * 登录用户身份权限
+ * Registration of User Identity
  * 
  * @author ruoyi
  */
@@ -17,57 +17,57 @@ public class LoginUser implements UserDetails
     private static final long serialVersionUID = 1L;
 
     /**
-     * 用户ID
+     * UsersID
      */
     private Long userId;
 
     /**
-     * 部门ID
+     * DepartmentID
      */
     private Long deptId;
 
     /**
-     * 用户唯一标识
+     * The only user identification.
      */
     private String token;
 
     /**
-     * 登录时间
+     * time of registration.
      */
     private Long loginTime;
 
     /**
-     * 过期时间
+     * expiration time.
      */
     private Long expireTime;
 
     /**
-     * 登录IP地址
+     * RegisteredIPAddressed
      */
     private String ipaddr;
 
     /**
-     * 登录地点
+     * place of registration.
      */
     private String loginLocation;
 
     /**
-     * 浏览器类型
+     * Type of browser.
      */
     private String browser;
 
     /**
-     * 操作系统
+     * Operating system
      */
     private String os;
 
     /**
-     * 权限列表
+     * List of permissions
      */
     private Set<String> permissions;
 
     /**
-     * 用户信息
+     * User Information
      */
     private SysUser user;
 
@@ -133,7 +133,7 @@ public class LoginUser implements UserDetails
     }
 
     /**
-     * 账户是否未过期,过期无法验证
+     * Is the account not expired?,Exceeding cannot be verified.
      */
     @JSONField(serialize = false)
     @Override
@@ -143,7 +143,7 @@ public class LoginUser implements UserDetails
     }
 
     /**
-     * 指定用户是否解锁,锁定的用户无法进行身份验证
+     * Identify whether the user is unlocked,Locked users cannot verify their identity.
      * 
      * @return
      */
@@ -155,7 +155,7 @@ public class LoginUser implements UserDetails
     }
 
     /**
-     * 指示是否已过期的用户的凭据(密码),过期的凭据防止认证
+     * Indicate whether the user's certificate has expired.(The code),Examination proof prevents certification
      * 
      * @return
      */
@@ -167,7 +167,7 @@ public class LoginUser implements UserDetails
     }
 
     /**
-     * 是否可用 ,禁用的用户不能身份验证
+     * Is Available ,banned users cannot verify their identity.
      * 
      * @return
      */

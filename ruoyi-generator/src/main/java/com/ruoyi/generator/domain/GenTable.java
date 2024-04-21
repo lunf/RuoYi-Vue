@@ -9,7 +9,7 @@ import com.ruoyi.common.core.domain.BaseEntity;
 import com.ruoyi.common.utils.StringUtils;
 
 /**
- * 业务表 gen_table
+ * The Business Table gen_table
  * 
  * @author ruoyi
  */
@@ -17,85 +17,85 @@ public class GenTable extends BaseEntity
 {
     private static final long serialVersionUID = 1L;
 
-    /** 编号 */
+    /** Number of */
     private Long tableId;
 
-    /** 表名称 */
-    @NotBlank(message = "表名称不能为空")
+    /** Name of Table */
+    @NotBlank(message = "The name cannot be empty.")
     private String tableName;
 
-    /** 表描述 */
-    @NotBlank(message = "表描述不能为空")
+    /** Table Description */
+    @NotBlank(message = "Table description cannot be empty.")
     private String tableComment;
 
-    /** 关联父表的表名 */
+    /** Name of the Father's Table */
     private String subTableName;
 
-    /** 本表关联父表的外键名 */
+    /** This table relates to the external key name of the father's table. */
     private String subTableFkName;
 
-    /** 实体类名称(首字母大写) */
-    @NotBlank(message = "实体类名称不能为空")
+    /** Name of entity(The first letter is written.) */
+    @NotBlank(message = "The entity name cannot be empty.")
     private String className;
 
-    /** 使用的模板（crud单表操作 tree树表操作 sub主子表操作） */
+    /** The template used.（crudSingle operations treeTree operations subMaster of Operations.） */
     private String tplCategory;
 
-    /** 前端类型（element-ui模版 element-plus模版） */
+    /** Type of front（element-uiThe model element-plusThe model） */
     private String tplWebType;
 
-    /** 生成包路径 */
-    @NotBlank(message = "生成包路径不能为空")
+    /** Create a package route. */
+    @NotBlank(message = "The package route cannot be empty.")
     private String packageName;
 
-    /** 生成模块名 */
-    @NotBlank(message = "生成模块名不能为空")
+    /** Create a module name. */
+    @NotBlank(message = "The name of the module cannot be empty.")
     private String moduleName;
 
-    /** 生成业务名 */
-    @NotBlank(message = "生成业务名不能为空")
+    /** Create a business name. */
+    @NotBlank(message = "The business name cannot be empty.")
     private String businessName;
 
-    /** 生成功能名 */
-    @NotBlank(message = "生成功能名不能为空")
+    /** Name of Success. */
+    @NotBlank(message = "Success can not be empty.")
     private String functionName;
 
-    /** 生成作者 */
-    @NotBlank(message = "作者不能为空")
+    /** Creating a writer */
+    @NotBlank(message = "The writer cannot be empty.")
     private String functionAuthor;
 
-    /** 生成代码方式（0zip压缩包 1自定义路径） */
+    /** Create the method of code.（0zipCompressed package 1Personalized route） */
     private String genType;
 
-    /** 生成路径（不填默认项目路径） */
+    /** Create the path.（Not filling the default project route） */
     private String genPath;
 
-    /** 主键信息 */
+    /** Main Key Information */
     private GenTableColumn pkColumn;
 
-    /** 子表信息 */
+    /** Subscription information */
     private GenTable subTable;
 
-    /** 表列信息 */
+    /** List of information */
     @Valid
     private List<GenTableColumn> columns;
 
-    /** 其它生成选项 */
+    /** Other generating options. */
     private String options;
 
-    /** 树编码字段 */
+    /** The tree code field. */
     private String treeCode;
 
-    /** 树父编码字段 */
+    /** The tree code field. */
     private String treeParentCode;
 
-    /** 树名称字段 */
+    /** Name of the tree field */
     private String treeName;
 
-    /** 上级菜单ID字段 */
+    /** The top menu.IDFields */
     private String parentMenuId;
 
-    /** 上级菜单名称字段 */
+    /** Top Menu Name Fields */
     private String parentMenuName;
 
     public Long getTableId()

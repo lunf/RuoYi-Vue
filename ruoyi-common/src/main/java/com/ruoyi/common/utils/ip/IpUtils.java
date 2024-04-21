@@ -7,23 +7,23 @@ import com.ruoyi.common.utils.ServletUtils;
 import com.ruoyi.common.utils.StringUtils;
 
 /**
- * 获取IP方法
+ * obtainedIPMethod
  * 
  * @author ruoyi
  */
 public class IpUtils
 {
     public final static String REGX_0_255 = "(25[0-5]|2[0-4]\\d|1\\d{2}|[1-9]\\d|\\d)";
-    // 匹配 ip
+    // matched ip
     public final static String REGX_IP = "((" + REGX_0_255 + "\\.){3}" + REGX_0_255 + ")";
     public final static String REGX_IP_WILDCARD = "(((\\*\\.){3}\\*)|(" + REGX_0_255 + "(\\.\\*){3})|(" + REGX_0_255 + "\\." + REGX_0_255 + ")(\\.\\*){2}" + "|((" + REGX_0_255 + "\\.){3}\\*))";
-    // 匹配网段
+    // matching the network.
     public final static String REGX_IP_SEG = "(" + REGX_IP + "\\-" + REGX_IP + ")";
 
     /**
-     * 获取客户端IP
+     * Get the client.IP
      * 
-     * @return IP地址
+     * @return IPAddressed
      */
     public static String getIpAddr()
     {
@@ -31,10 +31,10 @@ public class IpUtils
     }
 
     /**
-     * 获取客户端IP
+     * Get the client.IP
      * 
-     * @param request 请求对象
-     * @return IP地址
+     * @param request Requested objects
+     * @return IPAddressed
      */
     public static String getIpAddr(HttpServletRequest request)
     {
@@ -69,10 +69,10 @@ public class IpUtils
     }
 
     /**
-     * 检查是否为内部IP地址
+     * Check whether it is inside.IPAddressed
      * 
-     * @param ip IP地址
-     * @return 结果
+     * @param ip IPAddressed
+     * @return Results
      */
     public static boolean internalIp(String ip)
     {
@@ -81,10 +81,10 @@ public class IpUtils
     }
 
     /**
-     * 检查是否为内部IP地址
+     * Check whether it is inside.IPAddressed
      * 
-     * @param addr byte地址
-     * @return 结果
+     * @param addr byteAddressed
+     * @return Results
      */
     private static boolean internalIp(byte[] addr)
     {
@@ -124,10 +124,10 @@ public class IpUtils
     }
 
     /**
-     * 将IPv4地址转换成字节
+     * willIPv4Address converts to bytes.
      * 
-     * @param text IPv4地址
-     * @return byte 字节
+     * @param text IPv4Addressed
+     * @return byte byth
      */
     public static byte[] textToNumericFormatV4(String text)
     {
@@ -212,9 +212,9 @@ public class IpUtils
     }
 
     /**
-     * 获取IP地址
+     * obtainedIPAddressed
      * 
-     * @return 本地IP地址
+     * @return LocalIPAddressed
      */
     public static String getHostIp()
     {
@@ -229,9 +229,9 @@ public class IpUtils
     }
 
     /**
-     * 获取主机名
+     * Get the host name.
      * 
-     * @return 本地主机名
+     * @return Local host name
      */
     public static String getHostName()
     {
@@ -242,18 +242,18 @@ public class IpUtils
         catch (UnknownHostException e)
         {
         }
-        return "未知";
+        return "Unknown";
     }
 
     /**
-     * 从多级反向代理中获得第一个非unknown IP地址
+     * Get the first not from the multi-level reverse agentunknown IPAddressed
      *
-     * @param ip 获得的IP地址
-     * @return 第一个非unknown IP地址
+     * @param ip obtainedIPAddressed
+     * @return The first non.unknown IPAddressed
      */
     public static String getMultistageReverseProxyIp(String ip)
     {
-        // 多级反向代理检测
+        // Multi-level reverse agent testing
         if (ip != null && ip.indexOf(",") > 0)
         {
             final String[] ips = ip.trim().split(",");
@@ -270,10 +270,10 @@ public class IpUtils
     }
 
     /**
-     * 检测给定字符串是否为未知，多用于检测HTTP请求相关
+     * Verify whether the given string is unknown.，More for testing.HTTPRequest is related.
      *
-     * @param checkString 被检测的字符串
-     * @return 是否未知
+     * @param checkString Identified characters.
+     * @return Is unknown
      */
     public static boolean isUnknown(String checkString)
     {
@@ -281,7 +281,7 @@ public class IpUtils
     }
 
     /**
-     * 是否为IP
+     * Is it forIP
      */
     public static boolean isIP(String ip)
     {
@@ -289,7 +289,7 @@ public class IpUtils
     }
 
     /**
-     * 是否为IP，或 *为间隔的通配符地址
+     * Is it forIP，or *Address for intervals.
      */
     public static boolean isIpWildCard(String ip)
     {
@@ -297,7 +297,7 @@ public class IpUtils
     }
 
     /**
-     * 检测参数是否在ip通配符里
+     * Check whether the parameters areipin the compound.
      */
     public static boolean ipIsInWildCardNoCheck(String ipWildCard, String ip)
     {
@@ -316,7 +316,7 @@ public class IpUtils
     }
 
     /**
-     * 是否为特定格式如:“10.10.10.1-10.10.10.99”的ip段字符串
+     * For a specific format.:“10.10.10.1-10.10.10.99”ofipParts of characters
      */
     public static boolean isIPSegment(String ipSeg)
     {
@@ -324,7 +324,7 @@ public class IpUtils
     }
 
     /**
-     * 判断ip是否在指定网段中
+     * judgmentipIn the specified network.
      */
     public static boolean ipIsInNetNoCheck(String iparea, String ip)
     {
@@ -349,11 +349,11 @@ public class IpUtils
     }
 
     /**
-     * 校验ip是否符合过滤串规则
+     * ExaminationipCompliance with the filter rule.
      * 
-     * @param filter 过滤IP列表,支持后缀'*'通配,支持网段如:`10.10.10.1-10.10.10.99`
-     * @param ip 校验IP地址
-     * @return boolean 结果
+     * @param filter FilteredIPList of,Support after.'*'Combined,Supporting the network as:`10.10.10.1-10.10.10.99`
+     * @param ip ExaminationIPAddressed
+     * @return boolean Results
      */
     public static boolean isMatchedIp(String filter, String ip)
     {

@@ -22,7 +22,7 @@ import com.ruoyi.common.utils.StringUtils;
 import com.ruoyi.system.service.ISysMenuService;
 
 /**
- * 菜单信息
+ * Menu Information
  * 
  * @author ruoyi
  */
@@ -34,7 +34,7 @@ public class SysMenuController extends BaseController
     private ISysMenuService menuService;
 
     /**
-     * 获取菜单列表
+     * Get a menu list.
      */
     @PreAuthorize("@ss.hasPermi('system:menu:list')")
     @GetMapping("/list")
@@ -45,7 +45,7 @@ public class SysMenuController extends BaseController
     }
 
     /**
-     * 根据菜单编号获取详细信息
+     * Detailed information according to the menu number.
      */
     @PreAuthorize("@ss.hasPermi('system:menu:query')")
     @GetMapping(value = "/{menuId}")
@@ -55,7 +55,7 @@ public class SysMenuController extends BaseController
     }
 
     /**
-     * 获取菜单下拉树列表
+     * Get the menu to drop the tree list
      */
     @GetMapping("/treeselect")
     public AjaxResult treeselect(SysMenu menu)
@@ -65,7 +65,7 @@ public class SysMenuController extends BaseController
     }
 
     /**
-     * 加载对应角色菜单列表树
+     * Load the corresponding role menu list trees
      */
     @GetMapping(value = "/roleMenuTreeselect/{roleId}")
     public AjaxResult roleMenuTreeselect(@PathVariable("roleId") Long roleId)
@@ -78,64 +78,64 @@ public class SysMenuController extends BaseController
     }
 
     /**
-     * 新增菜单
+     * Added Menu
      */
     @PreAuthorize("@ss.hasPermi('system:menu:add')")
-    @Log(title = "菜单管理", businessType = BusinessType.INSERT)
+    @Log(title = "Management of Menu", businessType = BusinessType.INSERT)
     @PostMapping
     public AjaxResult add(@Validated @RequestBody SysMenu menu)
     {
         if (!menuService.checkMenuNameUnique(menu))
         {
-            return error("新增菜单'" + menu.getMenuName() + "'失败，菜单名称已存在");
+            return error("Added Menu'" + menu.getMenuName() + "'Failure，The menu name already exists.");
         }
         else if (UserConstants.YES_FRAME.equals(menu.getIsFrame()) && !StringUtils.ishttp(menu.getPath()))
         {
-            return error("新增菜单'" + menu.getMenuName() + "'失败，地址必须以http(s)://开头");
+            return error("Added Menu'" + menu.getMenuName() + "'Failure，The address must behttp(s)://Beginning");
         }
         menu.setCreateBy(getUsername());
         return toAjax(menuService.insertMenu(menu));
     }
 
     /**
-     * 修改菜单
+     * Modifying the menu
      */
     @PreAuthorize("@ss.hasPermi('system:menu:edit')")
-    @Log(title = "菜单管理", businessType = BusinessType.UPDATE)
+    @Log(title = "Management of Menu", businessType = BusinessType.UPDATE)
     @PutMapping
     public AjaxResult edit(@Validated @RequestBody SysMenu menu)
     {
         if (!menuService.checkMenuNameUnique(menu))
         {
-            return error("修改菜单'" + menu.getMenuName() + "'失败，菜单名称已存在");
+            return error("Modifying the menu'" + menu.getMenuName() + "'Failure，The menu name already exists.");
         }
         else if (UserConstants.YES_FRAME.equals(menu.getIsFrame()) && !StringUtils.ishttp(menu.getPath()))
         {
-            return error("修改菜单'" + menu.getMenuName() + "'失败，地址必须以http(s)://开头");
+            return error("Modifying the menu'" + menu.getMenuName() + "'Failure，The address must behttp(s)://Beginning");
         }
         else if (menu.getMenuId().equals(menu.getParentId()))
         {
-            return error("修改菜单'" + menu.getMenuName() + "'失败，上级菜单不能选择自己");
+            return error("Modifying the menu'" + menu.getMenuName() + "'Failure，The top menu cannot choose itself.");
         }
         menu.setUpdateBy(getUsername());
         return toAjax(menuService.updateMenu(menu));
     }
 
     /**
-     * 删除菜单
+     * Remove the menu.
      */
     @PreAuthorize("@ss.hasPermi('system:menu:remove')")
-    @Log(title = "菜单管理", businessType = BusinessType.DELETE)
+    @Log(title = "Management of Menu", businessType = BusinessType.DELETE)
     @DeleteMapping("/{menuId}")
     public AjaxResult remove(@PathVariable("menuId") Long menuId)
     {
         if (menuService.hasChildByMenuId(menuId))
         {
-            return warn("存在子菜单,不允许删除");
+            return warn("The existing menu.,Not allowed to remove.");
         }
         if (menuService.checkMenuExistRole(menuId))
         {
-            return warn("菜单已分配,不允许删除");
+            return warn("The menu is allocated.,Not allowed to remove.");
         }
         return toAjax(menuService.deleteMenuById(menuId));
     }

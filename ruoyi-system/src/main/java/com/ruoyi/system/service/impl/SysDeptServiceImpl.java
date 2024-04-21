@@ -22,7 +22,7 @@ import com.ruoyi.system.mapper.SysRoleMapper;
 import com.ruoyi.system.service.ISysDeptService;
 
 /**
- * 部门管理 服务实现
+ * Department Management Service is achieved
  * 
  * @author ruoyi
  */
@@ -36,10 +36,10 @@ public class SysDeptServiceImpl implements ISysDeptService
     private SysRoleMapper roleMapper;
 
     /**
-     * 查询部门管理数据
+     * Department Data Management
      * 
-     * @param dept 部门信息
-     * @return 部门信息集合
+     * @param dept Department Information
+     * @return Department Information Collection
      */
     @Override
     @DataScope(deptAlias = "d")
@@ -49,10 +49,10 @@ public class SysDeptServiceImpl implements ISysDeptService
     }
 
     /**
-     * 查询部门树结构信息
+     * Information about the tree structure department
      * 
-     * @param dept 部门信息
-     * @return 部门树信息集合
+     * @param dept Department Information
+     * @return Department Tree Information Collection
      */
     @Override
     public List<TreeSelect> selectDeptTreeList(SysDept dept)
@@ -62,10 +62,10 @@ public class SysDeptServiceImpl implements ISysDeptService
     }
 
     /**
-     * 构建前端所需要树结构
+     * The building of the front structure is required.
      * 
-     * @param depts 部门列表
-     * @return 树结构列表
+     * @param depts List of departments
+     * @return List of tree structures
      */
     @Override
     public List<SysDept> buildDeptTree(List<SysDept> depts)
@@ -74,7 +74,7 @@ public class SysDeptServiceImpl implements ISysDeptService
         List<Long> tempList = depts.stream().map(SysDept::getDeptId).collect(Collectors.toList());
         for (SysDept dept : depts)
         {
-            // 如果是顶级节点, 遍历该父节点的所有子节点
+            // If the top point., Through all the node of the father.
             if (!tempList.contains(dept.getParentId()))
             {
                 recursionFn(depts, dept);
@@ -89,10 +89,10 @@ public class SysDeptServiceImpl implements ISysDeptService
     }
 
     /**
-     * 构建前端所需要下拉树结构
+     * The building of the front end requires the drawing tree structure.
      * 
-     * @param depts 部门列表
-     * @return 下拉树结构列表
+     * @param depts List of departments
+     * @return List of tree structures
      */
     @Override
     public List<TreeSelect> buildDeptTreeSelect(List<SysDept> depts)
@@ -102,10 +102,10 @@ public class SysDeptServiceImpl implements ISysDeptService
     }
 
     /**
-     * 根据角色ID查询部门树信息
+     * According to the roleIDInformation of the tree department
      * 
-     * @param roleId 角色ID
-     * @return 选中部门列表
+     * @param roleId The roleID
+     * @return Selected department list
      */
     @Override
     public List<Long> selectDeptListByRoleId(Long roleId)
@@ -115,10 +115,10 @@ public class SysDeptServiceImpl implements ISysDeptService
     }
 
     /**
-     * 根据部门ID查询信息
+     * According to the departmentIDAsk for information
      * 
-     * @param deptId 部门ID
-     * @return 部门信息
+     * @param deptId DepartmentID
+     * @return Department Information
      */
     @Override
     public SysDept selectDeptById(Long deptId)
@@ -127,10 +127,10 @@ public class SysDeptServiceImpl implements ISysDeptService
     }
 
     /**
-     * 根据ID查询所有子部门（正常状态）
+     * based onIDConsulting all sub-departments.（in normal state.）
      * 
-     * @param deptId 部门ID
-     * @return 子部门数
+     * @param deptId DepartmentID
+     * @return Number of subsidiaries
      */
     @Override
     public int selectNormalChildrenDeptById(Long deptId)
@@ -139,10 +139,10 @@ public class SysDeptServiceImpl implements ISysDeptService
     }
 
     /**
-     * 是否存在子节点
+     * Is there a subnode?
      * 
-     * @param deptId 部门ID
-     * @return 结果
+     * @param deptId DepartmentID
+     * @return Results
      */
     @Override
     public boolean hasChildByDeptId(Long deptId)
@@ -152,10 +152,10 @@ public class SysDeptServiceImpl implements ISysDeptService
     }
 
     /**
-     * 查询部门是否存在用户
+     * Ask if there are users.
      * 
-     * @param deptId 部门ID
-     * @return 结果 true 存在 false 不存在
+     * @param deptId DepartmentID
+     * @return Results true existing false There is no
      */
     @Override
     public boolean checkDeptExistUser(Long deptId)
@@ -165,10 +165,10 @@ public class SysDeptServiceImpl implements ISysDeptService
     }
 
     /**
-     * 校验部门名称是否唯一
+     * The name of the study department is unique.
      * 
-     * @param dept 部门信息
-     * @return 结果
+     * @param dept Department Information
+     * @return Results
      */
     @Override
     public boolean checkDeptNameUnique(SysDept dept)
@@ -183,9 +183,9 @@ public class SysDeptServiceImpl implements ISysDeptService
     }
 
     /**
-     * 校验部门是否有数据权限
+     * Does the examination department have data authority?
      * 
-     * @param deptId 部门id
+     * @param deptId Departmentid
      */
     @Override
     public void checkDeptDataScope(Long deptId)
@@ -197,35 +197,35 @@ public class SysDeptServiceImpl implements ISysDeptService
             List<SysDept> depts = SpringUtils.getAopProxy(this).selectDeptList(dept);
             if (StringUtils.isEmpty(depts))
             {
-                throw new ServiceException("没有权限访问部门数据！");
+                throw new ServiceException("No access to department data！");
             }
         }
     }
 
     /**
-     * 新增保存部门信息
+     * Additional Information of the Conservation Department
      * 
-     * @param dept 部门信息
-     * @return 结果
+     * @param dept Department Information
+     * @return Results
      */
     @Override
     public int insertDept(SysDept dept)
     {
         SysDept info = deptMapper.selectDeptById(dept.getParentId());
-        // 如果父节点不为正常状态,则不允许新增子节点
+        // If the father's nodes are not normal.,It does not allow new subsidiary nodes.
         if (!UserConstants.DEPT_NORMAL.equals(info.getStatus()))
         {
-            throw new ServiceException("部门停用，不允许新增");
+            throw new ServiceException("Department stops.，Not allowed to add.");
         }
         dept.setAncestors(info.getAncestors() + "," + dept.getParentId());
         return deptMapper.insertDept(dept);
     }
 
     /**
-     * 修改保存部门信息
+     * Modification of the Conservation Department Information
      * 
-     * @param dept 部门信息
-     * @return 结果
+     * @param dept Department Information
+     * @return Results
      */
     @Override
     public int updateDept(SysDept dept)
@@ -243,16 +243,16 @@ public class SysDeptServiceImpl implements ISysDeptService
         if (UserConstants.DEPT_NORMAL.equals(dept.getStatus()) && StringUtils.isNotEmpty(dept.getAncestors())
                 && !StringUtils.equals("0", dept.getAncestors()))
         {
-            // 如果该部门是启用状态，则启用该部门的所有上级部门
+            // If the section is activated.，All upper departments of the department are activated.
             updateParentDeptStatusNormal(dept);
         }
         return result;
     }
 
     /**
-     * 修改该部门的父级部门状态
+     * Modification of the status of the department’s parental level.
      * 
-     * @param dept 当前部门
+     * @param dept The current department
      */
     private void updateParentDeptStatusNormal(SysDept dept)
     {
@@ -262,11 +262,11 @@ public class SysDeptServiceImpl implements ISysDeptService
     }
 
     /**
-     * 修改子元素关系
+     * Modification of Element Relationship
      * 
-     * @param deptId 被修改的部门ID
-     * @param newAncestors 新的父ID集合
-     * @param oldAncestors 旧的父ID集合
+     * @param deptId The modified department.ID
+     * @param newAncestors The New FatherIDThe gathering
+     * @param oldAncestors The Old FatherIDThe gathering
      */
     public void updateDeptChildren(Long deptId, String newAncestors, String oldAncestors)
     {
@@ -282,10 +282,10 @@ public class SysDeptServiceImpl implements ISysDeptService
     }
 
     /**
-     * 删除部门管理信息
+     * Delete department management information
      * 
-     * @param deptId 部门ID
-     * @return 结果
+     * @param deptId DepartmentID
+     * @return Results
      */
     @Override
     public int deleteDeptById(Long deptId)
@@ -294,11 +294,11 @@ public class SysDeptServiceImpl implements ISysDeptService
     }
 
     /**
-     * 递归列表
+     * Submit to the list.
      */
     private void recursionFn(List<SysDept> list, SysDept t)
     {
-        // 得到子节点列表
+        // Get a subcutaneous list.
         List<SysDept> childList = getChildList(list, t);
         t.setChildren(childList);
         for (SysDept tChild : childList)
@@ -311,7 +311,7 @@ public class SysDeptServiceImpl implements ISysDeptService
     }
 
     /**
-     * 得到子节点列表
+     * Get a subcutaneous list.
      */
     private List<SysDept> getChildList(List<SysDept> list, SysDept t)
     {
@@ -329,7 +329,7 @@ public class SysDeptServiceImpl implements ISysDeptService
     }
 
     /**
-     * 判断是否有子节点
+     * Find out if there is a node.
      */
     private boolean hasChild(List<SysDept> list, SysDept t)
     {

@@ -10,7 +10,7 @@ import com.ruoyi.common.utils.StringUtils;
 import com.ruoyi.common.utils.http.HttpUtils;
 
 /**
- * 获取地址类
+ * Obtaining Address Classes
  * 
  * @author ruoyi
  */
@@ -18,18 +18,18 @@ public class AddressUtils
 {
     private static final Logger log = LoggerFactory.getLogger(AddressUtils.class);
 
-    // IP地址查询
+    // IPAddress requests
     public static final String IP_URL = "http://whois.pconline.com.cn/ipJson.jsp";
 
-    // 未知地址
+    // Unknown Address
     public static final String UNKNOWN = "XX XX";
 
     public static String getRealAddressByIP(String ip)
     {
-        // 内网不查询
+        // The Internet does not search.
         if (IpUtils.internalIp(ip))
         {
-            return "内网IP";
+            return "The internal networkIP";
         }
         if (RuoYiConfig.isAddressEnabled())
         {
@@ -38,7 +38,7 @@ public class AddressUtils
                 String rspStr = HttpUtils.sendGet(IP_URL, "ip=" + ip + "&json=true", Constants.GBK);
                 if (StringUtils.isEmpty(rspStr))
                 {
-                    log.error("获取地理位置异常 {}", ip);
+                    log.error("Unusual geographical location. {}", ip);
                     return UNKNOWN;
                 }
                 JSONObject obj = JSON.parseObject(rspStr);
@@ -48,7 +48,7 @@ public class AddressUtils
             }
             catch (Exception e)
             {
-                log.error("获取地理位置异常 {}", ip);
+                log.error("Unusual geographical location. {}", ip);
             }
         }
         return UNKNOWN;

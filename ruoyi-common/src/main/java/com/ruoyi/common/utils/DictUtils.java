@@ -9,22 +9,22 @@ import com.ruoyi.common.core.redis.RedisCache;
 import com.ruoyi.common.utils.spring.SpringUtils;
 
 /**
- * 字典工具类
+ * Dictionary tools
  * 
  * @author ruoyi
  */
 public class DictUtils
 {
     /**
-     * 分隔符
+     * Separation
      */
     public static final String SEPARATOR = ",";
 
     /**
-     * 设置字典缓存
+     * Set the dictionary cache.
      * 
-     * @param key 参数键
-     * @param dictDatas 字典数据列表
+     * @param key The parameter key.
+     * @param dictDatas Dictionary data list
      */
     public static void setDictCache(String key, List<SysDictData> dictDatas)
     {
@@ -32,10 +32,10 @@ public class DictUtils
     }
 
     /**
-     * 获取字典缓存
+     * Get the dictionary cache.
      * 
-     * @param key 参数键
-     * @return dictDatas 字典数据列表
+     * @param key The parameter key.
+     * @return dictDatas Dictionary data list
      */
     public static List<SysDictData> getDictCache(String key)
     {
@@ -48,11 +48,11 @@ public class DictUtils
     }
 
     /**
-     * 根据字典类型和字典值获取字典标签
+     * Obtaining dictionary labels according to dictionary type and value
      * 
-     * @param dictType 字典类型
-     * @param dictValue 字典值
-     * @return 字典标签
+     * @param dictType Type of dictionary
+     * @param dictValue The dictionary value.
+     * @return dictionary labels
      */
     public static String getDictLabel(String dictType, String dictValue)
     {
@@ -60,11 +60,11 @@ public class DictUtils
     }
 
     /**
-     * 根据字典类型和字典标签获取字典值
+     * To obtain dictionary value according to dictionary type and dictionary label
      * 
-     * @param dictType 字典类型
-     * @param dictLabel 字典标签
-     * @return 字典值
+     * @param dictType Type of dictionary
+     * @param dictLabel dictionary labels
+     * @return The dictionary value.
      */
     public static String getDictValue(String dictType, String dictLabel)
     {
@@ -72,12 +72,12 @@ public class DictUtils
     }
 
     /**
-     * 根据字典类型和字典值获取字典标签
+     * Obtaining dictionary labels according to dictionary type and value
      * 
-     * @param dictType 字典类型
-     * @param dictValue 字典值
-     * @param separator 分隔符
-     * @return 字典标签
+     * @param dictType Type of dictionary
+     * @param dictValue The dictionary value.
+     * @param separator Separation
+     * @return dictionary labels
      */
     public static String getDictLabel(String dictType, String dictValue, String separator)
     {
@@ -115,12 +115,12 @@ public class DictUtils
     }
 
     /**
-     * 根据字典类型和字典标签获取字典值
+     * To obtain dictionary value according to dictionary type and dictionary label
      * 
-     * @param dictType 字典类型
-     * @param dictLabel 字典标签
-     * @param separator 分隔符
-     * @return 字典值
+     * @param dictType Type of dictionary
+     * @param dictLabel dictionary labels
+     * @param separator Separation
+     * @return The dictionary value.
      */
     public static String getDictValue(String dictType, String dictLabel, String separator)
     {
@@ -155,9 +155,9 @@ public class DictUtils
     }
 
     /**
-     * 删除指定字典缓存
+     * Remove the specified dictionary cache
      * 
-     * @param key 字典键
+     * @param key The dictionary key.
      */
     public static void removeDictCache(String key)
     {
@@ -165,7 +165,7 @@ public class DictUtils
     }
 
     /**
-     * 清空字典缓存
+     * Clean dictionary cache.
      */
     public static void clearDictCache()
     {
@@ -174,10 +174,10 @@ public class DictUtils
     }
 
     /**
-     * 设置cache key
+     * set upcache key
      * 
-     * @param configKey 参数键
-     * @return 缓存键key
+     * @param configKey The parameter key.
+     * @return Cache keykey
      */
     public static String getCacheKey(String configKey)
     {

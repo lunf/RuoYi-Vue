@@ -5,14 +5,14 @@ export const options = {
   metas: {
     '*': {
       /**
-       * 字典请求，方法签名为function(dictMeta: DictMeta): Promise
+       * Dictionary request，The method is signedfunction(dictMeta: DictMeta): Promise
        */
       request: (dictMeta) => {
         console.log(`load dict ${dictMeta.type}`)
         return Promise.resolve([])
       },
       /**
-       * 字典响应数据转换器，方法签名为function(response: Object, dictMeta: DictMeta): DictData
+       * Dictionary React Data Converter，The method is signedfunction(response: Object, dictMeta: DictMeta): DictData
        */
       responseConverter,
       labelField: 'label',
@@ -20,19 +20,19 @@ export const options = {
     },
   },
   /**
-   * 默认标签字段
+   * default labelling fields
    */
   DEFAULT_LABEL_FIELDS: ['label', 'name', 'title'],
   /**
-   * 默认值字段
+   * default value field.
    */
   DEFAULT_VALUE_FIELDS: ['value', 'id', 'uid', 'key'],
 }
 
 /**
- * 映射字典
- * @param {Object} response 字典数据
- * @param {DictMeta} dictMeta 字典元数据
+ * The dictionary.
+ * @param {Object} response dictionary data
+ * @param {DictMeta} dictMeta Dictionary data
  * @returns {DictData}
  */
 function responseConverter(response, dictMeta) {

@@ -13,7 +13,7 @@ import com.ruoyi.common.filter.XssFilter;
 import com.ruoyi.common.utils.StringUtils;
 
 /**
- * Filter配置
+ * FilterConfiguration
  *
  * @author ruoyi
  */

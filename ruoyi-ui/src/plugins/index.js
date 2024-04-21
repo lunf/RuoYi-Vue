@@ -6,15 +6,15 @@ import download from './download'
 
 export default {
   install(Vue) {
-    // 页签操作
+    // Page operations
     Vue.prototype.$tab = tab
-    // 认证对象
+    // Certified Objects
     Vue.prototype.$auth = auth
-    // 缓存对象
+    // cache objects
     Vue.prototype.$cache = cache
-    // 模态框对象
+    // Modular frame objects
     Vue.prototype.$modal = modal
-    // 下载文件
+    // Download the document.
     Vue.prototype.$download = download
   }
 }

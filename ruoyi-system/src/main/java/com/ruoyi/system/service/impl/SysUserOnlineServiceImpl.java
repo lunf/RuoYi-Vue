@@ -7,7 +7,7 @@ import com.ruoyi.system.domain.SysUserOnline;
 import com.ruoyi.system.service.ISysUserOnlineService;
 
 /**
- * 在线用户 服务层处理
+ * Online users Service level processing.
  * 
  * @author ruoyi
  */
@@ -15,11 +15,11 @@ import com.ruoyi.system.service.ISysUserOnlineService;
 public class SysUserOnlineServiceImpl implements ISysUserOnlineService
 {
     /**
-     * 通过登录地址查询信息
+     * Ask for information through the login address.
      * 
-     * @param ipaddr 登录地址
-     * @param user 用户信息
-     * @return 在线用户信息
+     * @param ipaddr Registration Address
+     * @param user User Information
+     * @return Online User Information
      */
     @Override
     public SysUserOnline selectOnlineByIpaddr(String ipaddr, LoginUser user)
@@ -32,11 +32,11 @@ public class SysUserOnlineServiceImpl implements ISysUserOnlineService
     }
 
     /**
-     * 通过用户名称查询信息
+     * Ask for information through user name
      * 
-     * @param userName 用户名称
-     * @param user 用户信息
-     * @return 在线用户信息
+     * @param userName User Name
+     * @param user User Information
+     * @return Online User Information
      */
     @Override
     public SysUserOnline selectOnlineByUserName(String userName, LoginUser user)
@@ -49,12 +49,12 @@ public class SysUserOnlineServiceImpl implements ISysUserOnlineService
     }
 
     /**
-     * 通过登录地址/用户名称查询信息
+     * by login address./User Name Request Information
      * 
-     * @param ipaddr 登录地址
-     * @param userName 用户名称
-     * @param user 用户信息
-     * @return 在线用户信息
+     * @param ipaddr Registration Address
+     * @param userName User Name
+     * @param user User Information
+     * @return Online User Information
      */
     @Override
     public SysUserOnline selectOnlineByInfo(String ipaddr, String userName, LoginUser user)
@@ -67,10 +67,10 @@ public class SysUserOnlineServiceImpl implements ISysUserOnlineService
     }
 
     /**
-     * 设置在线用户信息
+     * Set up online user information
      * 
-     * @param user 用户信息
-     * @return 在线用户
+     * @param user User Information
+     * @return Online users
      */
     @Override
     public SysUserOnline loginUserToUserOnline(LoginUser user)

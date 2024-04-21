@@ -22,7 +22,7 @@ import oshi.software.os.OperatingSystem;
 import oshi.util.Util;
 
 /**
- * 服务器相关信息
+ * Information related to the server
  * 
  * @author ruoyi
  */
@@ -31,27 +31,27 @@ public class Server
     private static final int OSHI_WAIT_SECOND = 1000;
     
     /**
-     * CPU相关信息
+     * CPURelated Information
      */
     private Cpu cpu = new Cpu();
 
     /**
-     * 內存相关信息
+     * Content related information.
      */
     private Mem mem = new Mem();
 
     /**
-     * JVM相关信息
+     * JVMRelated Information
      */
     private Jvm jvm = new Jvm();
 
     /**
-     * 服务器相关信息
+     * Information related to the server
      */
     private Sys sys = new Sys();
 
     /**
-     * 磁盘相关信息
+     * Disc Related Information
      */
     private List<SysFile> sysFiles = new LinkedList<SysFile>();
 
@@ -122,11 +122,11 @@ public class Server
     }
 
     /**
-     * 设置CPU信息
+     * set upCPUInformation
      */
     private void setCpuInfo(CentralProcessor processor)
     {
-        // CPU信息
+        // CPUInformation
         long[] prevTicks = processor.getSystemCpuLoadTicks();
         Util.sleep(OSHI_WAIT_SECOND);
         long[] ticks = processor.getSystemCpuLoadTicks();
@@ -148,7 +148,7 @@ public class Server
     }
 
     /**
-     * 设置内存信息
+     * Set up memory information.
      */
     private void setMemInfo(GlobalMemory memory)
     {
@@ -158,7 +158,7 @@ public class Server
     }
 
     /**
-     * 设置服务器信息
+     * Set up server information.
      */
     private void setSysInfo()
     {
@@ -171,7 +171,7 @@ public class Server
     }
 
     /**
-     * 设置Java虚拟机
+     * set upJavaThe Virtual Machine
      */
     private void setJvmInfo() throws UnknownHostException
     {
@@ -184,7 +184,7 @@ public class Server
     }
 
     /**
-     * 设置磁盘信息
+     * Set up the disk information.
      */
     private void setSysFiles(OperatingSystem os)
     {
@@ -208,10 +208,10 @@ public class Server
     }
 
     /**
-     * 字节转换
+     * byte conversion.
      * 
-     * @param size 字节大小
-     * @return 转换后值
+     * @param size byte size.
+     * @return Conversion after value.
      */
     public String convertFileSize(long size)
     {

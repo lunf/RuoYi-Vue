@@ -20,7 +20,7 @@ import com.ruoyi.common.utils.uuid.IdUtils;
 import org.apache.commons.io.FilenameUtils;
 
 /**
- * 文件处理工具类
+ * Document Processing Tools
  * 
  * @author ruoyi
  */
@@ -29,10 +29,10 @@ public class FileUtils
     public static String FILENAME_PATTERN = "[a-zA-Z0-9_\\-\\|\\.\\u4e00-\\u9fa5]+";
 
     /**
-     * 输出指定文件的byte数组
+     * Exit the specified document.byteNumber of groups
      * 
-     * @param filePath 文件路径
-     * @param os 输出流
+     * @param filePath The Document Route
+     * @param os output flow.
      * @return
      */
     public static void writeBytes(String filePath, OutputStream os) throws IOException
@@ -65,11 +65,11 @@ public class FileUtils
     }
 
     /**
-     * 写数据到文件中
+     * Write data into the document.
      *
-     * @param data 数据
-     * @return 目标文件
-     * @throws IOException IO异常
+     * @param data The data
+     * @return The target document
+     * @throws IOException IOUnusual
      */
     public static String writeImportBytes(byte[] data) throws IOException
     {
@@ -77,12 +77,12 @@ public class FileUtils
     }
 
     /**
-     * 写数据到文件中
+     * Write data into the document.
      *
-     * @param data 数据
-     * @param uploadDir 目标文件
-     * @return 目标文件
-     * @throws IOException IO异常
+     * @param data The data
+     * @param uploadDir The target document
+     * @return The target document
+     * @throws IOException IOUnusual
      */
     public static String writeBytes(byte[] data, String uploadDir) throws IOException
     {
@@ -104,16 +104,16 @@ public class FileUtils
     }
 
     /**
-     * 删除文件
+     * Delete the document.
      * 
-     * @param filePath 文件
+     * @param filePath Documents
      * @return
      */
     public static boolean deleteFile(String filePath)
     {
         boolean flag = false;
         File file = new File(filePath);
-        // 路径为文件且不为空则进行删除
+        // Route to file and not to empty.
         if (file.isFile() && file.exists())
         {
             flag = file.delete();
@@ -122,10 +122,10 @@ public class FileUtils
     }
 
     /**
-     * 文件名称验证
+     * Document Name Verification
      * 
-     * @param filename 文件名称
-     * @return true 正常 false 非法
+     * @param filename Name of document
+     * @return true Normal false Illegal
      */
     public static boolean isValidFilename(String filename)
     {
@@ -133,35 +133,35 @@ public class FileUtils
     }
 
     /**
-     * 检查文件是否可下载
+     * Check if the file can be downloaded.
      * 
-     * @param resource 需要下载的文件
-     * @return true 正常 false 非法
+     * @param resource Files required to download.
+     * @return true Normal false Illegal
      */
     public static boolean checkAllowDownload(String resource)
     {
-        // 禁止目录上跳级别
+        // It is forbidden to catch up the level.
         if (StringUtils.contains(resource, ".."))
         {
             return false;
         }
 
-        // 检查允许下载的文件规则
+        // Check the files permitted to download.
         if (ArrayUtils.contains(MimeTypeUtils.DEFAULT_ALLOWED_EXTENSION, FileTypeUtils.getFileType(resource)))
         {
             return true;
         }
 
-        // 不在允许下载的文件规则
+        // The file rules that are not allowed to download
         return false;
     }
 
     /**
-     * 下载文件名重新编码
+     * Download file name re-coding
      * 
-     * @param request 请求对象
-     * @param fileName 文件名
-     * @return 编码后的文件名
+     * @param request Requested objects
+     * @param fileName Name of document
+     * @return The file name after coding.
      */
     public static String setFileDownloadHeader(HttpServletRequest request, String fileName) throws UnsupportedEncodingException
     {
@@ -169,33 +169,33 @@ public class FileUtils
         String filename = fileName;
         if (agent.contains("MSIE"))
         {
-            // IE浏览器
+            // IEbrowsers
             filename = URLEncoder.encode(filename, "utf-8");
             filename = filename.replace("+", " ");
         }
         else if (agent.contains("Firefox"))
         {
-            // 火狐浏览器
+            // Firefighter browsers
             filename = new String(fileName.getBytes(), "ISO8859-1");
         }
         else if (agent.contains("Chrome"))
         {
-            // google浏览器
+            // googlebrowsers
             filename = URLEncoder.encode(filename, "utf-8");
         }
         else
         {
-            // 其它浏览器
+            // Other browsers
             filename = URLEncoder.encode(filename, "utf-8");
         }
         return filename;
     }
 
     /**
-     * 下载文件名重新编码
+     * Download file name re-coding
      *
-     * @param response 响应对象
-     * @param realFileName 真实文件名
+     * @param response Reacting objects
+     * @param realFileName The real document name
      */
     public static void setAttachmentResponseHeader(HttpServletResponse response, String realFileName) throws UnsupportedEncodingException
     {
@@ -215,10 +215,10 @@ public class FileUtils
     }
 
     /**
-     * 百分号编码工具方法
+     * Percentage Coding Method
      *
-     * @param s 需要百分号编码的字符串
-     * @return 百分号编码后的字符串
+     * @param s Requires a percentage code.
+     * @return Postcode by percentage.
      */
     public static String percentEncode(String s) throws UnsupportedEncodingException
     {
@@ -227,10 +227,10 @@ public class FileUtils
     }
 
     /**
-     * 获取图像后缀
+     * Get the picture after.
      * 
-     * @param photoByte 图像数据
-     * @return 后缀名
+     * @param photoByte Image data
+     * @return after the name.
      */
     public static String getFileExtendName(byte[] photoByte)
     {
@@ -256,10 +256,10 @@ public class FileUtils
     }
 
     /**
-     * 获取文件名称 /profile/upload/2022/04/16/ruoyi.png -- ruoyi.png
+     * Get the document name. /profile/upload/2022/04/16/ruoyi.png -- ruoyi.png
      * 
-     * @param fileName 路径名称
-     * @return 没有文件路径的名称
+     * @param fileName The route name.
+     * @return No document route name.
      */
     public static String getName(String fileName)
     {
@@ -274,10 +274,10 @@ public class FileUtils
     }
 
     /**
-     * 获取不带后缀文件名称 /profile/upload/2022/04/16/ruoyi.png -- ruoyi
+     * Get the name of the file without a postcard. /profile/upload/2022/04/16/ruoyi.png -- ruoyi
      * 
-     * @param fileName 路径名称
-     * @return 没有文件路径和后缀的名称
+     * @param fileName The route name.
+     * @return No file routes and subtitles.
      */
     public static String getNameNotSuffix(String fileName)
     {

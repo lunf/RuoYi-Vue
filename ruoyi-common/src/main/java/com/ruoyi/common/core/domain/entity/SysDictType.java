@@ -10,7 +10,7 @@ import com.ruoyi.common.annotation.Excel.ColumnType;
 import com.ruoyi.common.core.domain.BaseEntity;
 
 /**
- * 字典类型表 sys_dict_type
+ * Type of dictionary sys_dict_type
  * 
  * @author ruoyi
  */
@@ -18,20 +18,20 @@ public class SysDictType extends BaseEntity
 {
     private static final long serialVersionUID = 1L;
 
-    /** 字典主键 */
-    @Excel(name = "字典主键", cellType = ColumnType.NUMERIC)
+    /** The dictionary key. */
+    @Excel(name = "The dictionary key.", cellType = ColumnType.NUMERIC)
     private Long dictId;
 
-    /** 字典名称 */
-    @Excel(name = "字典名称")
+    /** Name of Dictionary */
+    @Excel(name = "Name of Dictionary")
     private String dictName;
 
-    /** 字典类型 */
-    @Excel(name = "字典类型")
+    /** Type of dictionary */
+    @Excel(name = "Type of dictionary")
     private String dictType;
 
-    /** 状态（0正常 1停用） */
-    @Excel(name = "状态", readConverterExp = "0=正常,1=停用")
+    /** state of（0Normal 1stopped） */
+    @Excel(name = "state of", readConverterExp = "0=Normal,1=stopped")
     private String status;
 
     public Long getDictId()
@@ -44,8 +44,8 @@ public class SysDictType extends BaseEntity
         this.dictId = dictId;
     }
 
-    @NotBlank(message = "字典名称不能为空")
-    @Size(min = 0, max = 100, message = "字典类型名称长度不能超过100个字符")
+    @NotBlank(message = "The dictionary name cannot be empty.")
+    @Size(min = 0, max = 100, message = "Dictionary type name length cannot exceed100A character.")
     public String getDictName()
     {
         return dictName;
@@ -56,9 +56,9 @@ public class SysDictType extends BaseEntity
         this.dictName = dictName;
     }
 
-    @NotBlank(message = "字典类型不能为空")
-    @Size(min = 0, max = 100, message = "字典类型类型长度不能超过100个字符")
-    @Pattern(regexp = "^[a-z][a-z0-9_]*$", message = "字典类型必须以字母开头，且只能为（小写字母，数字，下滑线）")
+    @NotBlank(message = "Dictionary cannot be empty.")
+    @Size(min = 0, max = 100, message = "The length of the dictionary type cannot exceed100A character.")
+    @Pattern(regexp = "^[a-z][a-z0-9_]*$", message = "The dictionary type must begin with letters.，and only for（Writing the letter.，The numbers，The downline）")
     public String getDictType()
     {
         return dictType;

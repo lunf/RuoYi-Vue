@@ -1,19 +1,19 @@
 <template>
   <div class="errPage-container">
     <el-button icon="arrow-left" class="pan-back-btn" @click="back">
-      返回
+      Return to
     </el-button>
     <el-row>
       <el-col :span="12">
         <h1 class="text-jumbo text-ginormous">
-          401错误!
+          401errors!
         </h1>
-        <h2>您没有访问权限！</h2>
-        <h6>对不起，您没有访问权限，请不要进行非法操作！您可以返回主页面</h6>
+        <h2>You have no access permits.！</h2>
+        <h6>Sorry to，You have no access permits.，Please do not do illegal actions.！You can return to the home page.</h6>
         <ul class="list-unstyled">
           <li class="link-type">
             <router-link to="/">
-              回首页
+              Back to the first page.
             </router-link>
           </li>
         </ul>

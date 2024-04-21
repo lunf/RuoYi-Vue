@@ -2,7 +2,7 @@ import store from '@/store'
 import router from '@/router';
 
 export default {
-  // 刷新当前tab页签
+  // Updated CurrenttabPage signs
   refreshPage(obj) {
     const { path, query, matched } = router.currentRoute;
     if (obj === undefined) {
@@ -22,14 +22,14 @@ export default {
       })
     })
   },
-  // 关闭当前tab页签，打开新页签
+  // Closed at present.tabPage signs，Open a new page.
   closeOpenPage(obj) {
     store.dispatch("tagsView/delView", router.currentRoute);
     if (obj !== undefined) {
       return router.push(obj);
     }
   },
-  // 关闭指定tab页签
+  // Closing the designation.tabPage signs
   closePage(obj) {
     if (obj === undefined) {
       return store.dispatch('tagsView/delView', router.currentRoute).then(({ visitedViews }) => {
@@ -42,29 +42,29 @@ export default {
     }
     return store.dispatch('tagsView/delView', obj);
   },
-  // 关闭所有tab页签
+  // Close all.tabPage signs
   closeAllPage() {
     return store.dispatch('tagsView/delAllViews');
   },
-  // 关闭左侧tab页签
+  // Closed on the left.tabPage signs
   closeLeftPage(obj) {
     return store.dispatch('tagsView/delLeftTags', obj || router.currentRoute);
   },
-  // 关闭右侧tab页签
+  // Close the right side.tabPage signs
   closeRightPage(obj) {
     return store.dispatch('tagsView/delRightTags', obj || router.currentRoute);
   },
-  // 关闭其他tab页签
+  // Closing the others.tabPage signs
   closeOtherPage(obj) {
     return store.dispatch('tagsView/delOthersViews', obj || router.currentRoute);
   },
-  // 添加tab页签
+  // AddedtabPage signs
   openPage(title, url, params) {
     const obj = { path: url, meta: { title: title } }
     store.dispatch('tagsView/addView', obj);
     return router.push({ path: url, query: params });
   },
-  // 修改tab页签
+  // ModifiedtabPage signs
   updatePage(obj) {
     return store.dispatch('tagsView/updateVisitedView', obj);
   }

@@ -4,169 +4,169 @@ import java.util.Locale;
 import io.jsonwebtoken.Claims;
 
 /**
- * 通用常量信息
+ * Permanent information
  * 
  * @author ruoyi
  */
 public class Constants
 {
     /**
-     * UTF-8 字符集
+     * UTF-8 Collection of characters
      */
     public static final String UTF8 = "UTF-8";
 
     /**
-     * GBK 字符集
+     * GBK Collection of characters
      */
     public static final String GBK = "GBK";
 
     /**
-     * 系统语言
+     * system language
      */
     public static final Locale DEFAULT_LOCALE = Locale.SIMPLIFIED_CHINESE;
 
     /**
-     * www主域
+     * wwwThe main area
      */
     public static final String WWW = "www.";
 
     /**
-     * http请求
+     * httprequested
      */
     public static final String HTTP = "http://";
 
     /**
-     * https请求
+     * httpsrequested
      */
     public static final String HTTPS = "https://";
 
     /**
-     * 通用成功标识
+     * General success mark.
      */
     public static final String SUCCESS = "0";
 
     /**
-     * 通用失败标识
+     * General Failure Signs
      */
     public static final String FAIL = "1";
 
     /**
-     * 登录成功
+     * Register Successful
      */
     public static final String LOGIN_SUCCESS = "Success";
 
     /**
-     * 注销
+     * Cancelled
      */
     public static final String LOGOUT = "Logout";
 
     /**
-     * 注册
+     * Registered
      */
     public static final String REGISTER = "Register";
 
     /**
-     * 登录失败
+     * Registration failed.
      */
     public static final String LOGIN_FAIL = "Error";
 
     /**
-     * 所有权限标识
+     * Identify all powers.
      */
     public static final String ALL_PERMISSION = "*:*:*";
 
     /**
-     * 管理员角色权限标识
+     * Identification of administrator roles.
      */
     public static final String SUPER_ADMIN = "admin";
 
     /**
-     * 角色权限分隔符
+     * The role authority separator.
      */
     public static final String ROLE_DELIMETER = ",";
 
     /**
-     * 权限标识分隔符
+     * Identifying the separator.
      */
     public static final String PERMISSION_DELIMETER = ",";
 
     /**
-     * 验证码有效期（分钟）
+     * Verification code validity.（Minutes）
      */
     public static final Integer CAPTCHA_EXPIRATION = 2;
 
     /**
-     * 令牌
+     * The mark.
      */
     public static final String TOKEN = "token";
 
     /**
-     * 令牌前缀
+     * Signs in front.
      */
     public static final String TOKEN_PREFIX = "Bearer ";
 
     /**
-     * 令牌前缀
+     * Signs in front.
      */
     public static final String LOGIN_USER_KEY = "login_user_key";
 
     /**
-     * 用户ID
+     * UsersID
      */
     public static final String JWT_USERID = "userid";
 
     /**
-     * 用户名称
+     * User Name
      */
     public static final String JWT_USERNAME = Claims.SUBJECT;
 
     /**
-     * 用户头像
+     * User image
      */
     public static final String JWT_AVATAR = "avatar";
 
     /**
-     * 创建时间
+     * Creating time.
      */
     public static final String JWT_CREATED = "created";
 
     /**
-     * 用户权限
+     * User permits
      */
     public static final String JWT_AUTHORITIES = "authorities";
 
     /**
-     * 资源映射路径 前缀
+     * Routes of Resources The Preview
      */
     public static final String RESOURCE_PREFIX = "/profile";
 
     /**
-     * RMI 远程方法调用
+     * RMI Remote method call
      */
     public static final String LOOKUP_RMI = "rmi:";
 
     /**
-     * LDAP 远程方法调用
+     * LDAP Remote method call
      */
     public static final String LOOKUP_LDAP = "ldap:";
 
     /**
-     * LDAPS 远程方法调用
+     * LDAPS Remote method call
      */
     public static final String LOOKUP_LDAPS = "ldaps:";
 
     /**
-     * 自动识别json对象白名单配置（仅允许解析的包名，范围越小越安全）
+     * Automatic IdentificationjsonThe White List of Objects（Only permitted analysis.，The smaller the safer.）
      */
     public static final String[] JSON_WHITELIST_STR = { "org.springframework", "com.ruoyi" };
 
     /**
-     * 定时任务白名单配置（仅允许访问的包名，如其他需要可以自行添加）
+     * Configuration of timely task list（Only permitted access.，Other needs can be added on your own.）
      */
     public static final String[] JOB_WHITELIST_STR = { "com.ruoyi.quartz.task" };
 
     /**
-     * 定时任务违规的字符
+     * Temporary tasks of irregularity.
      */
     public static final String[] JOB_ERROR_STR = { "java.net.URL", "javax.naming.InitialContext", "org.yaml.snakeyaml",
             "org.springframework", "org.apache", "com.ruoyi.common.utils.file", "com.ruoyi.common.config", "com.ruoyi.generator" };

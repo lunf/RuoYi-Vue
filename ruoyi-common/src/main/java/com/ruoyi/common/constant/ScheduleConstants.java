@@ -1,7 +1,7 @@
 package com.ruoyi.common.constant;
 
 /**
- * 任务调度通用常量
+ * Functional Conduct.
  * 
  * @author ruoyi
  */
@@ -9,29 +9,29 @@ public class ScheduleConstants
 {
     public static final String TASK_CLASS_NAME = "TASK_CLASS_NAME";
 
-    /** 执行目标key */
+    /** Implementing the Targetkey */
     public static final String TASK_PROPERTIES = "TASK_PROPERTIES";
 
-    /** 默认 */
+    /** presumed */
     public static final String MISFIRE_DEFAULT = "0";
 
-    /** 立即触发执行 */
+    /** Immediately trigger execution. */
     public static final String MISFIRE_IGNORE_MISFIRES = "1";
 
-    /** 触发一次执行 */
+    /** Provoking one execution. */
     public static final String MISFIRE_FIRE_AND_PROCEED = "2";
 
-    /** 不触发立即执行 */
+    /** Do not trigger immediate implementation. */
     public static final String MISFIRE_DO_NOTHING = "3";
 
     public enum Status
     {
         /**
-         * 正常
+         * Normal
          */
         NORMAL("0"),
         /**
-         * 暂停
+         * suspended
          */
         PAUSE("1");
 

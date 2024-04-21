@@ -4,53 +4,53 @@ import java.util.List;
 import com.ruoyi.quartz.domain.SysJobLog;
 
 /**
- * 定时任务调度日志信息信息 服务层
+ * Time-to-time task conversion of log information of service.
  * 
  * @author ruoyi
  */
 public interface ISysJobLogService
 {
     /**
-     * 获取quartz调度器日志的计划任务
+     * obtainedquartzPlanning tasks of the moderators log
      * 
-     * @param jobLog 调度日志信息
-     * @return 调度任务日志集合
+     * @param jobLog Modification of log information
+     * @return Meet the task logs.
      */
     public List<SysJobLog> selectJobLogList(SysJobLog jobLog);
 
     /**
-     * 通过调度任务日志ID查询调度信息
+     * through the task log.IDAsk for information.
      * 
-     * @param jobLogId 调度任务日志ID
-     * @return 调度任务日志对象信息
+     * @param jobLogId Modification of task logsID
+     * @return Conduct task log objects information
      */
     public SysJobLog selectJobLogById(Long jobLogId);
 
     /**
-     * 新增任务日志
+     * Add new task logs.
      * 
-     * @param jobLog 调度日志信息
+     * @param jobLog Modification of log information
      */
     public void addJobLog(SysJobLog jobLog);
 
     /**
-     * 批量删除调度日志信息
+     * Remove the log information.
      * 
-     * @param logIds 需要删除的日志ID
-     * @return 结果
+     * @param logIds The logs to be deleted.ID
+     * @return Results
      */
     public int deleteJobLogByIds(Long[] logIds);
 
     /**
-     * 删除任务日志
+     * Delete the task log.
      * 
-     * @param jobId 调度日志ID
-     * @return 结果
+     * @param jobId Modified DiaryID
+     * @return Results
      */
     public int deleteJobLogById(Long jobId);
 
     /**
-     * 清空任务日志
+     * Empty task logs.
      */
     public void cleanJobLog();
 }

@@ -4,39 +4,39 @@ import com.ruoyi.common.core.text.Convert;
 import com.ruoyi.common.utils.ServletUtils;
 
 /**
- * 表格数据处理
+ * Form Data Processing
  * 
  * @author ruoyi
  */
 public class TableSupport
 {
     /**
-     * 当前记录起始索引
+     * Current Record Start Index
      */
     public static final String PAGE_NUM = "pageNum";
 
     /**
-     * 每页显示记录数
+     * Each page shows record numbers.
      */
     public static final String PAGE_SIZE = "pageSize";
 
     /**
-     * 排序列
+     * in order.
      */
     public static final String ORDER_BY_COLUMN = "orderByColumn";
 
     /**
-     * 排序的方向 "desc" 或者 "asc".
+     * The direction of order. "desc" or "asc".
      */
     public static final String IS_ASC = "isAsc";
 
     /**
-     * 分页参数合理化
+     * Rationalization of page parameters
      */
     public static final String REASONABLE = "reasonable";
 
     /**
-     * 封装分页对象
+     * Covered page objects.
      */
     public static PageDomain getPageDomain()
     {

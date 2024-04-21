@@ -12,24 +12,24 @@
     <artifactId>ruoyi-generator</artifactId>
 
     <description>
-        generator代码生成
+        generatorCode is generated.
     </description>
 
     <dependencies>
 
-        <!-- velocity代码生成使用模板 -->
+        <!-- velocityCreate code using templates. -->
         <dependency>
             <groupId>org.apache.velocity</groupId>
             <artifactId>velocity-engine-core</artifactId>
         </dependency>
 
-        <!-- 通用工具-->
+        <!-- General Tools-->
         <dependency>
             <groupId>com.ruoyi</groupId>
             <artifactId>ruoyi-common</artifactId>
         </dependency>
 
-        <!-- 阿里数据库连接池 -->
+        <!-- Ali Database Connecting Pool -->
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid-spring-boot-starter</artifactId>

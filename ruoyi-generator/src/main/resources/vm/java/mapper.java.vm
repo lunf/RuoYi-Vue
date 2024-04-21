@@ -7,7 +7,7 @@ import ${packageName}.domain.${subClassName};
 #end
 
 /**
- * ${functionName}Mapper接口
+ * ${functionName}MapperInterface
  * 
  * @author ${author}
  * @date ${datetime}
@@ -15,76 +15,76 @@ import ${packageName}.domain.${subClassName};
 public interface ${ClassName}Mapper 
 {
     /**
-     * 查询${functionName}
+     * The query${functionName}
      * 
-     * @param ${pkColumn.javaField} ${functionName}主键
+     * @param ${pkColumn.javaField} ${functionName}The key.
      * @return ${functionName}
      */
     public ${ClassName} select${ClassName}By${pkColumn.capJavaField}(${pkColumn.javaType} ${pkColumn.javaField});
 
     /**
-     * 查询${functionName}列表
+     * The query${functionName}List of
      * 
      * @param ${className} ${functionName}
-     * @return ${functionName}集合
+     * @return ${functionName}The gathering
      */
     public List<${ClassName}> select${ClassName}List(${ClassName} ${className});
 
     /**
-     * 新增${functionName}
+     * Added${functionName}
      * 
      * @param ${className} ${functionName}
-     * @return 结果
+     * @return Results
      */
     public int insert${ClassName}(${ClassName} ${className});
 
     /**
-     * 修改${functionName}
+     * Modified${functionName}
      * 
      * @param ${className} ${functionName}
-     * @return 结果
+     * @return Results
      */
     public int update${ClassName}(${ClassName} ${className});
 
     /**
-     * 删除${functionName}
+     * removed${functionName}
      * 
-     * @param ${pkColumn.javaField} ${functionName}主键
-     * @return 结果
+     * @param ${pkColumn.javaField} ${functionName}The key.
+     * @return Results
      */
     public int delete${ClassName}By${pkColumn.capJavaField}(${pkColumn.javaType} ${pkColumn.javaField});
 
     /**
-     * 批量删除${functionName}
+     * Mass removal.${functionName}
      * 
-     * @param ${pkColumn.javaField}s 需要删除的数据主键集合
-     * @return 结果
+     * @param ${pkColumn.javaField}s The data key collection that needs to be removed
+     * @return Results
      */
     public int delete${ClassName}By${pkColumn.capJavaField}s(${pkColumn.javaType}[] ${pkColumn.javaField}s);
 #if($table.sub)
 
     /**
-     * 批量删除${subTable.functionName}
+     * Mass removal.${subTable.functionName}
      * 
-     * @param ${pkColumn.javaField}s 需要删除的数据主键集合
-     * @return 结果
+     * @param ${pkColumn.javaField}s The data key collection that needs to be removed
+     * @return Results
      */
     public int delete${subClassName}By${subTableFkClassName}s(${pkColumn.javaType}[] ${pkColumn.javaField}s);
     
     /**
-     * 批量新增${subTable.functionName}
+     * The mass increased.${subTable.functionName}
      * 
-     * @param ${subclassName}List ${subTable.functionName}列表
-     * @return 结果
+     * @param ${subclassName}List ${subTable.functionName}List of
+     * @return Results
      */
     public int batch${subClassName}(List<${subClassName}> ${subclassName}List);
     
 
     /**
-     * 通过${functionName}主键删除${subTable.functionName}信息
+     * Through${functionName}Main key removed.${subTable.functionName}Information
      * 
      * @param ${pkColumn.javaField} ${functionName}ID
-     * @return 结果
+     * @return Results
      */
     public int delete${subClassName}By${subTableFkClassName}(${pkColumn.javaType} ${pkColumn.javaField});
 #end

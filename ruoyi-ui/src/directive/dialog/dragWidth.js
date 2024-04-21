@@ -1,5 +1,5 @@
 /**
- * v-dialogDragWidth 可拖动弹窗宽度（右侧边）
+ * v-dialogDragWidth Can pull the width of the window.（on the right side.）
  * Copyright (c) 2019 ruoyi
  */
 
@@ -10,13 +10,13 @@ export default {
     lineEl.style = 'width: 5px; background: inherit; height: 80%; position: absolute; right: 0; top: 0; bottom: 0; margin: auto; z-index: 1; cursor: w-resize;';
     lineEl.addEventListener('mousedown',
       function (e) {
-        // 鼠标按下，计算当前元素距离可视区的距离
+        // Press the mouse.，Calculate the distance of the current element from the visible area
         const disX = e.clientX - el.offsetLeft;
-        // 当前宽度
+        // Current width
         const curWidth = dragDom.offsetWidth;
         document.onmousemove = function (e) {
-          e.preventDefault(); // 移动时禁用默认事件
-          // 通过事件委托，计算移动的距离
+          e.preventDefault(); // Prohibit default events when moving.
+          // Committed by the incident.，Calculate the distance.
           const l = e.clientX - disX;
           dragDom.style.width = `${curWidth + l}px`;
         };

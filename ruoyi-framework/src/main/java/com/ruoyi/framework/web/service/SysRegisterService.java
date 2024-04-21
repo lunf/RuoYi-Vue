@@ -19,7 +19,7 @@ import com.ruoyi.system.service.ISysConfigService;
 import com.ruoyi.system.service.ISysUserService;
 
 /**
- * 注册校验方法
+ * Registration Test Method
  * 
  * @author ruoyi
  */
@@ -36,7 +36,7 @@ public class SysRegisterService
     private RedisCache redisCache;
 
     /**
-     * 注册
+     * Registered
      */
     public String register(RegisterBody registerBody)
     {
@@ -44,7 +44,7 @@ public class SysRegisterService
         SysUser sysUser = new SysUser();
         sysUser.setUserName(username);
 
-        // 验证码开关
+        // Confirmation of code.
         boolean captchaEnabled = configService.selectCaptchaEnabled();
         if (captchaEnabled)
         {
@@ -53,25 +53,25 @@ public class SysRegisterService
 
         if (StringUtils.isEmpty(username))
         {
-            msg = "用户名不能为空";
+            msg = "Username cannot be empty.";
         }
         else if (StringUtils.isEmpty(password))
         {
-            msg = "用户密码不能为空";
+            msg = "The user password cannot be empty.";
         }
         else if (username.length() < UserConstants.USERNAME_MIN_LENGTH
                 || username.length() > UserConstants.USERNAME_MAX_LENGTH)
         {
-            msg = "账户长度必须在2到20个字符之间";
+            msg = "The account length must be2to20Between a character.";
         }
         else if (password.length() < UserConstants.PASSWORD_MIN_LENGTH
                 || password.length() > UserConstants.PASSWORD_MAX_LENGTH)
         {
-            msg = "密码长度必须在5到20个字符之间";
+            msg = "The password length must be5to20Between a character.";
         }
         else if (!userService.checkUserNameUnique(sysUser))
         {
-            msg = "保存用户'" + username + "'失败，注册账号已存在";
+            msg = "Conservation of users'" + username + "'Failure，The registration account has existed.";
         }
         else
         {
@@ -80,7 +80,7 @@ public class SysRegisterService
             boolean regFlag = userService.registerUser(sysUser);
             if (!regFlag)
             {
-                msg = "注册失败,请联系系统管理人员";
+                msg = "Registration Failure,Please contact the system manager.";
             }
             else
             {
@@ -91,12 +91,12 @@ public class SysRegisterService
     }
 
     /**
-     * 校验验证码
+     * School verification code.
      * 
-     * @param username 用户名
-     * @param code 验证码
-     * @param uuid 唯一标识
-     * @return 结果
+     * @param username User Name
+     * @param code verification code
+     * @param uuid The only mark.
+     * @return Results
      */
     public void validateCaptcha(String username, String code, String uuid)
     {

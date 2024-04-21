@@ -8,7 +8,7 @@ import com.ruoyi.quartz.mapper.SysJobLogMapper;
 import com.ruoyi.quartz.service.ISysJobLogService;
 
 /**
- * 定时任务调度日志信息 服务层
+ * Time-to-time task conversion of log information of service.
  * 
  * @author ruoyi
  */
@@ -19,10 +19,10 @@ public class SysJobLogServiceImpl implements ISysJobLogService
     private SysJobLogMapper jobLogMapper;
 
     /**
-     * 获取quartz调度器日志的计划任务
+     * obtainedquartzPlanning tasks of the moderators log
      * 
-     * @param jobLog 调度日志信息
-     * @return 调度任务日志集合
+     * @param jobLog Modification of log information
+     * @return Meet the task logs.
      */
     @Override
     public List<SysJobLog> selectJobLogList(SysJobLog jobLog)
@@ -31,10 +31,10 @@ public class SysJobLogServiceImpl implements ISysJobLogService
     }
 
     /**
-     * 通过调度任务日志ID查询调度信息
+     * through the task log.IDAsk for information.
      * 
-     * @param jobLogId 调度任务日志ID
-     * @return 调度任务日志对象信息
+     * @param jobLogId Modification of task logsID
+     * @return Conduct task log objects information
      */
     @Override
     public SysJobLog selectJobLogById(Long jobLogId)
@@ -43,9 +43,9 @@ public class SysJobLogServiceImpl implements ISysJobLogService
     }
 
     /**
-     * 新增任务日志
+     * Add new task logs.
      * 
-     * @param jobLog 调度日志信息
+     * @param jobLog Modification of log information
      */
     @Override
     public void addJobLog(SysJobLog jobLog)
@@ -54,10 +54,10 @@ public class SysJobLogServiceImpl implements ISysJobLogService
     }
 
     /**
-     * 批量删除调度日志信息
+     * Remove the log information.
      * 
-     * @param logIds 需要删除的数据ID
-     * @return 结果
+     * @param logIds Data needed to be deleted.ID
+     * @return Results
      */
     @Override
     public int deleteJobLogByIds(Long[] logIds)
@@ -66,9 +66,9 @@ public class SysJobLogServiceImpl implements ISysJobLogService
     }
 
     /**
-     * 删除任务日志
+     * Delete the task log.
      * 
-     * @param jobId 调度日志ID
+     * @param jobId Modified DiaryID
      */
     @Override
     public int deleteJobLogById(Long jobId)
@@ -77,7 +77,7 @@ public class SysJobLogServiceImpl implements ISysJobLogService
     }
 
     /**
-     * 清空任务日志
+     * Empty task logs.
      */
     @Override
     public void cleanJobLog()

@@ -1,9 +1,9 @@
 /**
-* 通用css样式布局处理
+* GeneralcssStyle processing.
 * Copyright (c) 2019 ruoyi
 */
 
-/** 基础通用 **/
+/** Basic General **/
 .pt5 {
   padding-top: 5px;
 }
@@ -106,7 +106,7 @@
   }
 }
 
-/** 表单布局 **/
+/** Form of arrangement. **/
 .form-header {
   font-size: 15px;
   color: #6379bb;
@@ -115,7 +115,7 @@
   padding-bottom: 5px
 }
 
-/** 表格布局 **/
+/** Form of layout. **/
 .pagination-container {
   position: relative;
   height: 25px;
@@ -152,7 +152,7 @@
   width: inherit;
 }
 
-/** 表格更多操作下拉样式 */
+/** More operations in the style. */
 .el-table .el-dropdown-link,.el-table .el-dropdown-selfdefine {
 	cursor: pointer;
 	margin-left: 5px;
@@ -278,7 +278,7 @@
   overflow: hidden;
 }
 
-/* 拖拽列样式 */
+/* Tracing style. */
 .sortable-ghost {
   opacity: .8;
   color: #fff !important;

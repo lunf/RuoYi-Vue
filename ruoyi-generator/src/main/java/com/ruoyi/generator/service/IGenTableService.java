@@ -5,126 +5,126 @@ import java.util.Map;
 import com.ruoyi.generator.domain.GenTable;
 
 /**
- * 业务 服务层
+ * The business of service.
  * 
  * @author ruoyi
  */
 public interface IGenTableService
 {
     /**
-     * 查询业务列表
+     * Ask for business list.
      * 
-     * @param genTable 业务信息
-     * @return 业务集合
+     * @param genTable Business Information
+     * @return The business collection.
      */
     public List<GenTable> selectGenTableList(GenTable genTable);
 
     /**
-     * 查询据库列表
+     * Question by library list
      * 
-     * @param genTable 业务信息
-     * @return 数据库表集合
+     * @param genTable Business Information
+     * @return Database collection
      */
     public List<GenTable> selectDbTableList(GenTable genTable);
 
     /**
-     * 查询据库列表
+     * Question by library list
      * 
-     * @param tableNames 表名称组
-     * @return 数据库表集合
+     * @param tableNames Name group
+     * @return Database collection
      */
     public List<GenTable> selectDbTableListByNames(String[] tableNames);
 
     /**
-     * 查询所有表信息
+     * Find all table information.
      * 
-     * @return 表信息集合
+     * @return Table of information collection
      */
     public List<GenTable> selectGenTableAll();
 
     /**
-     * 查询业务信息
+     * Ask for business information.
      * 
-     * @param id 业务ID
-     * @return 业务信息
+     * @param id The businessID
+     * @return Business Information
      */
     public GenTable selectGenTableById(Long id);
 
     /**
-     * 修改业务
+     * Modification of business
      * 
-     * @param genTable 业务信息
-     * @return 结果
+     * @param genTable Business Information
+     * @return Results
      */
     public void updateGenTable(GenTable genTable);
 
     /**
-     * 删除业务信息
+     * Delete business information.
      * 
-     * @param tableIds 需要删除的表数据ID
-     * @return 结果
+     * @param tableIds Table data needed to be deleted.ID
+     * @return Results
      */
     public void deleteGenTableByIds(Long[] tableIds);
 
     /**
-     * 创建表
+     * Create a Table
      *
-     * @param sql 创建表语句
-     * @return 结果
+     * @param sql Create the word.
+     * @return Results
      */
     public boolean createTable(String sql);
 
     /**
-     * 导入表结构
+     * Introduction to Table Structure
      *
-     * @param tableList 导入表列表
-     * @param operName 操作人员
+     * @param tableList Introduction to Table List
+     * @param operName Operating staff
      */
     public void importGenTable(List<GenTable> tableList, String operName);
 
     /**
-     * 预览代码
+     * Preview of code.
      * 
-     * @param tableId 表编号
-     * @return 预览数据列表
+     * @param tableId Number of Table
+     * @return Preview of data list
      */
     public Map<String, String> previewCode(Long tableId);
 
     /**
-     * 生成代码（下载方式）
+     * Create the code.（The Download Method）
      * 
-     * @param tableName 表名称
-     * @return 数据
+     * @param tableName Name of Table
+     * @return The data
      */
     public byte[] downloadCode(String tableName);
 
     /**
-     * 生成代码（自定义路径）
+     * Create the code.（Personalized route）
      * 
-     * @param tableName 表名称
-     * @return 数据
+     * @param tableName Name of Table
+     * @return The data
      */
     public void generatorCode(String tableName);
 
     /**
-     * 同步数据库
+     * Synchronize the database
      * 
-     * @param tableName 表名称
+     * @param tableName Name of Table
      */
     public void synchDb(String tableName);
 
     /**
-     * 批量生成代码（下载方式）
+     * Growth Generates Code（The Download Method）
      * 
-     * @param tableNames 表数组
-     * @return 数据
+     * @param tableNames Number of tables
+     * @return The data
      */
     public byte[] downloadCode(String[] tableNames);
 
     /**
-     * 修改保存参数校验
+     * Modification of conservation parameters.
      * 
-     * @param genTable 业务信息
+     * @param genTable Business Information
      */
     public void validateEdit(GenTable genTable);
 }

@@ -6,7 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Md5加密方法
+ * Md5Method of encryption
  * 
  * @author ruoyi
  */

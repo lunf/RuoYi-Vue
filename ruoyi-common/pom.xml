@@ -12,85 +12,85 @@
     <artifactId>ruoyi-common</artifactId>
 
     <description>
-        common通用工具
+        commonGeneral Tools
     </description>
 
     <dependencies>
 
-        <!-- Spring框架基本的核心工具 -->
+        <!-- SpringThe core framework tools -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context-support</artifactId>
         </dependency>
 
-        <!-- SpringWeb模块 -->
+        <!-- SpringWebThe Module -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-web</artifactId>
         </dependency>
 
-        <!-- spring security 安全认证 -->
+        <!-- spring security Safety Certification -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
 
-        <!-- pagehelper 分页插件 -->
+        <!-- pagehelper Separate Page Plugins -->
         <dependency>
             <groupId>com.github.pagehelper</groupId>
             <artifactId>pagehelper-spring-boot-starter</artifactId>
         </dependency>
 
-        <!-- 自定义验证注解 -->
+        <!-- Custom verification notes -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-validation</artifactId>
         </dependency>
 
-        <!--常用工具类 -->
+        <!--Frequently used tools -->
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
         </dependency>
   
-        <!-- JSON工具类 -->
+        <!-- JSONClass of tools -->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
         </dependency>
         
-        <!-- 动态数据源 -->
+        <!-- Dynamic data sources -->
 		<dependency>
 			<groupId>com.baomidou</groupId>
 			<artifactId>dynamic-datasource-spring-boot-starter</artifactId>
 			<version>3.5.2</version>
 		</dependency>
 
-        <!-- 阿里JSON解析器 -->
+        <!-- by AliJSONThe Analyzer -->
         <dependency>
             <groupId>com.alibaba.fastjson2</groupId>
             <artifactId>fastjson2</artifactId>
         </dependency>
 
-        <!-- io常用工具类 -->
+        <!-- ioFrequently used tools -->
         <dependency>
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
         </dependency>
 
-        <!-- excel工具 -->
+        <!-- excelTools -->
         <dependency>
             <groupId>org.apache.poi</groupId>
             <artifactId>poi-ooxml</artifactId>
         </dependency>
 
-        <!-- yml解析器 -->
+        <!-- ymlThe Analyzer -->
         <dependency>
             <groupId>org.yaml</groupId>
             <artifactId>snakeyaml</artifactId>
         </dependency>
 
-        <!-- Token生成与解析-->
+        <!-- TokenProduction and analysis.-->
         <dependency>
             <groupId>io.jsonwebtoken</groupId>
             <artifactId>jjwt</artifactId>
@@ -102,25 +102,25 @@
             <artifactId>jaxb-api</artifactId>
         </dependency>
 
-        <!-- redis 缓存操作 -->
+        <!-- redis Cache operations -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-redis</artifactId>
         </dependency>
 
-        <!-- pool 对象池 -->
+        <!-- pool The object pool. -->
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-pool2</artifactId>
         </dependency>
 
-        <!-- 解析客户端操作系统、浏览器等 -->
+        <!-- Analysis of Client Operating System、browsers and so on. -->
         <dependency>
             <groupId>eu.bitwalker</groupId>
             <artifactId>UserAgentUtils</artifactId>
         </dependency>
 
-        <!-- servlet包 -->
+        <!-- servletPackage -->
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>

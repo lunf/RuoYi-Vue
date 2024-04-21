@@ -11,20 +11,20 @@ import com.ruoyi.common.utils.StringUtils;
 import org.apache.commons.lang3.ArrayUtils;
 
 /**
- * 类型转换器
+ * Type of Converter
  *
  * @author ruoyi
  */
 public class Convert
 {
     /**
-     * 转换为字符串<br>
-     * 如果给定的值为null，或者转换失败，返回默认值<br>
-     * 转换失败不会报错
+     * Convert to string.<br>
+     * If the value is givennull，or conversion failure.，Return the default value.<br>
+     * Conversion failure will not be mistaken.
      *
-     * @param value 被转换的值
-     * @param defaultValue 转换错误时的默认值
-     * @return 结果
+     * @param value The value converted.
+     * @param defaultValue The default value when converting errors
+     * @return Results
      */
     public static String toStr(Object value, String defaultValue)
     {
@@ -40,12 +40,12 @@ public class Convert
     }
 
     /**
-     * 转换为字符串<br>
-     * 如果给定的值为<code>null</code>，或者转换失败，返回默认值<code>null</code><br>
-     * 转换失败不会报错
+     * Convert to string.<br>
+     * If the value is given<code>null</code>，or conversion failure.，Return the default value.<code>null</code><br>
+     * Conversion failure will not be mistaken.
      *
-     * @param value 被转换的值
-     * @return 结果
+     * @param value The value converted.
+     * @return Results
      */
     public static String toStr(Object value)
     {
@@ -53,13 +53,13 @@ public class Convert
     }
 
     /**
-     * 转换为字符<br>
-     * 如果给定的值为null，或者转换失败，返回默认值<br>
-     * 转换失败不会报错
+     * Convert to characters.<br>
+     * If the value is givennull，or conversion failure.，Return the default value.<br>
+     * Conversion failure will not be mistaken.
      *
-     * @param value 被转换的值
-     * @param defaultValue 转换错误时的默认值
-     * @return 结果
+     * @param value The value converted.
+     * @param defaultValue The default value when converting errors
+     * @return Results
      */
     public static Character toChar(Object value, Character defaultValue)
     {
@@ -77,12 +77,12 @@ public class Convert
     }
 
     /**
-     * 转换为字符<br>
-     * 如果给定的值为<code>null</code>，或者转换失败，返回默认值<code>null</code><br>
-     * 转换失败不会报错
+     * Convert to characters.<br>
+     * If the value is given<code>null</code>，or conversion failure.，Return the default value.<code>null</code><br>
+     * Conversion failure will not be mistaken.
      *
-     * @param value 被转换的值
-     * @return 结果
+     * @param value The value converted.
+     * @return Results
      */
     public static Character toChar(Object value)
     {
@@ -90,13 +90,13 @@ public class Convert
     }
 
     /**
-     * 转换为byte<br>
-     * 如果给定的值为<code>null</code>，或者转换失败，返回默认值<br>
-     * 转换失败不会报错
+     * Convert tobyte<br>
+     * If the value is given<code>null</code>，or conversion failure.，Return the default value.<br>
+     * Conversion failure will not be mistaken.
      *
-     * @param value 被转换的值
-     * @param defaultValue 转换错误时的默认值
-     * @return 结果
+     * @param value The value converted.
+     * @param defaultValue The default value when converting errors
+     * @return Results
      */
     public static Byte toByte(Object value, Byte defaultValue)
     {
@@ -128,12 +128,12 @@ public class Convert
     }
 
     /**
-     * 转换为byte<br>
-     * 如果给定的值为<code>null</code>，或者转换失败，返回默认值<code>null</code><br>
-     * 转换失败不会报错
+     * Convert tobyte<br>
+     * If the value is given<code>null</code>，or conversion failure.，Return the default value.<code>null</code><br>
+     * Conversion failure will not be mistaken.
      *
-     * @param value 被转换的值
-     * @return 结果
+     * @param value The value converted.
+     * @return Results
      */
     public static Byte toByte(Object value)
     {
@@ -141,13 +141,13 @@ public class Convert
     }
 
     /**
-     * 转换为Short<br>
-     * 如果给定的值为<code>null</code>，或者转换失败，返回默认值<br>
-     * 转换失败不会报错
+     * Convert toShort<br>
+     * If the value is given<code>null</code>，or conversion failure.，Return the default value.<br>
+     * Conversion failure will not be mistaken.
      *
-     * @param value 被转换的值
-     * @param defaultValue 转换错误时的默认值
-     * @return 结果
+     * @param value The value converted.
+     * @param defaultValue The default value when converting errors
+     * @return Results
      */
     public static Short toShort(Object value, Short defaultValue)
     {
@@ -179,12 +179,12 @@ public class Convert
     }
 
     /**
-     * 转换为Short<br>
-     * 如果给定的值为<code>null</code>，或者转换失败，返回默认值<code>null</code><br>
-     * 转换失败不会报错
+     * Convert toShort<br>
+     * If the value is given<code>null</code>，or conversion failure.，Return the default value.<code>null</code><br>
+     * Conversion failure will not be mistaken.
      *
-     * @param value 被转换的值
-     * @return 结果
+     * @param value The value converted.
+     * @return Results
      */
     public static Short toShort(Object value)
     {
@@ -192,13 +192,13 @@ public class Convert
     }
 
     /**
-     * 转换为Number<br>
-     * 如果给定的值为空，或者转换失败，返回默认值<br>
-     * 转换失败不会报错
+     * Convert toNumber<br>
+     * If the value is empty.，or conversion failure.，Return the default value.<br>
+     * Conversion failure will not be mistaken.
      *
-     * @param value 被转换的值
-     * @param defaultValue 转换错误时的默认值
-     * @return 结果
+     * @param value The value converted.
+     * @param defaultValue The default value when converting errors
+     * @return Results
      */
     public static Number toNumber(Object value, Number defaultValue)
     {
@@ -226,12 +226,12 @@ public class Convert
     }
 
     /**
-     * 转换为Number<br>
-     * 如果给定的值为空，或者转换失败，返回默认值<code>null</code><br>
-     * 转换失败不会报错
+     * Convert toNumber<br>
+     * If the value is empty.，or conversion failure.，Return the default value.<code>null</code><br>
+     * Conversion failure will not be mistaken.
      *
-     * @param value 被转换的值
-     * @return 结果
+     * @param value The value converted.
+     * @return Results
      */
     public static Number toNumber(Object value)
     {
@@ -239,13 +239,13 @@ public class Convert
     }
 
     /**
-     * 转换为int<br>
-     * 如果给定的值为空，或者转换失败，返回默认值<br>
-     * 转换失败不会报错
+     * Convert toint<br>
+     * If the value is empty.，or conversion failure.，Return the default value.<br>
+     * Conversion failure will not be mistaken.
      *
-     * @param value 被转换的值
-     * @param defaultValue 转换错误时的默认值
-     * @return 结果
+     * @param value The value converted.
+     * @param defaultValue The default value when converting errors
+     * @return Results
      */
     public static Integer toInt(Object value, Integer defaultValue)
     {
@@ -277,12 +277,12 @@ public class Convert
     }
 
     /**
-     * 转换为int<br>
-     * 如果给定的值为<code>null</code>，或者转换失败，返回默认值<code>null</code><br>
-     * 转换失败不会报错
+     * Convert toint<br>
+     * If the value is given<code>null</code>，or conversion failure.，Return the default value.<code>null</code><br>
+     * Conversion failure will not be mistaken.
      *
-     * @param value 被转换的值
-     * @return 结果
+     * @param value The value converted.
+     * @return Results
      */
     public static Integer toInt(Object value)
     {
@@ -290,10 +290,10 @@ public class Convert
     }
 
     /**
-     * 转换为Integer数组<br>
+     * Convert toIntegerNumber of groups<br>
      *
-     * @param str 被转换的值
-     * @return 结果
+     * @param str The value converted.
+     * @return Results
      */
     public static Integer[] toIntArray(String str)
     {
@@ -301,10 +301,10 @@ public class Convert
     }
 
     /**
-     * 转换为Long数组<br>
+     * Convert toLongNumber of groups<br>
      *
-     * @param str 被转换的值
-     * @return 结果
+     * @param str The value converted.
+     * @return Results
      */
     public static Long[] toLongArray(String str)
     {
@@ -312,11 +312,11 @@ public class Convert
     }
 
     /**
-     * 转换为Integer数组<br>
+     * Convert toIntegerNumber of groups<br>
      *
-     * @param split 分隔符
-     * @param split 被转换的值
-     * @return 结果
+     * @param split Separation
+     * @param split The value converted.
+     * @return Results
      */
     public static Integer[] toIntArray(String split, String str)
     {
@@ -335,11 +335,11 @@ public class Convert
     }
 
     /**
-     * 转换为Long数组<br>
+     * Convert toLongNumber of groups<br>
      *
-     * @param split 分隔符
-     * @param str 被转换的值
-     * @return 结果
+     * @param split Separation
+     * @param str The value converted.
+     * @return Results
      */
     public static Long[] toLongArray(String split, String str)
     {
@@ -358,10 +358,10 @@ public class Convert
     }
 
     /**
-     * 转换为String数组<br>
+     * Convert toStringNumber of groups<br>
      *
-     * @param str 被转换的值
-     * @return 结果
+     * @param str The value converted.
+     * @return Results
      */
     public static String[] toStrArray(String str)
     {
@@ -369,11 +369,11 @@ public class Convert
     }
 
     /**
-     * 转换为String数组<br>
+     * Convert toStringNumber of groups<br>
      *
-     * @param split 分隔符
-     * @param split 被转换的值
-     * @return 结果
+     * @param split Separation
+     * @param split The value converted.
+     * @return Results
      */
     public static String[] toStrArray(String split, String str)
     {
@@ -381,13 +381,13 @@ public class Convert
     }
 
     /**
-     * 转换为long<br>
-     * 如果给定的值为空，或者转换失败，返回默认值<br>
-     * 转换失败不会报错
+     * Convert tolong<br>
+     * If the value is empty.，or conversion failure.，Return the default value.<br>
+     * Conversion failure will not be mistaken.
      *
-     * @param value 被转换的值
-     * @param defaultValue 转换错误时的默认值
-     * @return 结果
+     * @param value The value converted.
+     * @param defaultValue The default value when converting errors
+     * @return Results
      */
     public static Long toLong(Object value, Long defaultValue)
     {
@@ -410,7 +410,7 @@ public class Convert
         }
         try
         {
-            // 支持科学计数法
+            // Supporting the Scientific Computing Law
             return new BigDecimal(valueStr.trim()).longValue();
         }
         catch (Exception e)
@@ -420,12 +420,12 @@ public class Convert
     }
 
     /**
-     * 转换为long<br>
-     * 如果给定的值为<code>null</code>，或者转换失败，返回默认值<code>null</code><br>
-     * 转换失败不会报错
+     * Convert tolong<br>
+     * If the value is given<code>null</code>，or conversion failure.，Return the default value.<code>null</code><br>
+     * Conversion failure will not be mistaken.
      *
-     * @param value 被转换的值
-     * @return 结果
+     * @param value The value converted.
+     * @return Results
      */
     public static Long toLong(Object value)
     {
@@ -433,13 +433,13 @@ public class Convert
     }
 
     /**
-     * 转换为double<br>
-     * 如果给定的值为空，或者转换失败，返回默认值<br>
-     * 转换失败不会报错
+     * Convert todouble<br>
+     * If the value is empty.，or conversion failure.，Return the default value.<br>
+     * Conversion failure will not be mistaken.
      *
-     * @param value 被转换的值
-     * @param defaultValue 转换错误时的默认值
-     * @return 结果
+     * @param value The value converted.
+     * @param defaultValue The default value when converting errors
+     * @return Results
      */
     public static Double toDouble(Object value, Double defaultValue)
     {
@@ -462,7 +462,7 @@ public class Convert
         }
         try
         {
-            // 支持科学计数法
+            // Supporting the Scientific Computing Law
             return new BigDecimal(valueStr.trim()).doubleValue();
         }
         catch (Exception e)
@@ -472,12 +472,12 @@ public class Convert
     }
 
     /**
-     * 转换为double<br>
-     * 如果给定的值为空，或者转换失败，返回默认值<code>null</code><br>
-     * 转换失败不会报错
+     * Convert todouble<br>
+     * If the value is empty.，or conversion failure.，Return the default value.<code>null</code><br>
+     * Conversion failure will not be mistaken.
      *
-     * @param value 被转换的值
-     * @return 结果
+     * @param value The value converted.
+     * @return Results
      */
     public static Double toDouble(Object value)
     {
@@ -485,13 +485,13 @@ public class Convert
     }
 
     /**
-     * 转换为Float<br>
-     * 如果给定的值为空，或者转换失败，返回默认值<br>
-     * 转换失败不会报错
+     * Convert toFloat<br>
+     * If the value is empty.，or conversion failure.，Return the default value.<br>
+     * Conversion failure will not be mistaken.
      *
-     * @param value 被转换的值
-     * @param defaultValue 转换错误时的默认值
-     * @return 结果
+     * @param value The value converted.
+     * @param defaultValue The default value when converting errors
+     * @return Results
      */
     public static Float toFloat(Object value, Float defaultValue)
     {
@@ -523,12 +523,12 @@ public class Convert
     }
 
     /**
-     * 转换为Float<br>
-     * 如果给定的值为空，或者转换失败，返回默认值<code>null</code><br>
-     * 转换失败不会报错
+     * Convert toFloat<br>
+     * If the value is empty.，or conversion failure.，Return the default value.<code>null</code><br>
+     * Conversion failure will not be mistaken.
      *
-     * @param value 被转换的值
-     * @return 结果
+     * @param value The value converted.
+     * @return Results
      */
     public static Float toFloat(Object value)
     {
@@ -536,13 +536,13 @@ public class Convert
     }
 
     /**
-     * 转换为boolean<br>
-     * String支持的值为：true、false、yes、ok、no，1,0 如果给定的值为空，或者转换失败，返回默认值<br>
-     * 转换失败不会报错
+     * Convert toboolean<br>
+     * StringThe value of support is：true、false、yes、ok、no，1,0 If the value is empty.，or conversion failure.，Return the default value.<br>
+     * Conversion failure will not be mistaken.
      *
-     * @param value 被转换的值
-     * @param defaultValue 转换错误时的默认值
-     * @return 结果
+     * @param value The value converted.
+     * @param defaultValue The default value when converting errors
+     * @return Results
      */
     public static Boolean toBool(Object value, Boolean defaultValue)
     {
@@ -577,12 +577,12 @@ public class Convert
     }
 
     /**
-     * 转换为boolean<br>
-     * 如果给定的值为空，或者转换失败，返回默认值<code>null</code><br>
-     * 转换失败不会报错
+     * Convert toboolean<br>
+     * If the value is empty.，or conversion failure.，Return the default value.<code>null</code><br>
+     * Conversion failure will not be mistaken.
      *
-     * @param value 被转换的值
-     * @return 结果
+     * @param value The value converted.
+     * @return Results
      */
     public static Boolean toBool(Object value)
     {
@@ -590,12 +590,12 @@ public class Convert
     }
 
     /**
-     * 转换为Enum对象<br>
-     * 如果给定的值为空，或者转换失败，返回默认值<br>
+     * Convert toEnumObjects<br>
+     * If the value is empty.，or conversion failure.，Return the default value.<br>
      *
-     * @param clazz Enum的Class
-     * @param value 值
-     * @param defaultValue 默认值
+     * @param clazz EnumofClass
+     * @param value Value
+     * @param defaultValue The default value
      * @return Enum
      */
     public static <E extends Enum<E>> E toEnum(Class<E> clazz, Object value, E defaultValue)
@@ -626,11 +626,11 @@ public class Convert
     }
 
     /**
-     * 转换为Enum对象<br>
-     * 如果给定的值为空，或者转换失败，返回默认值<code>null</code><br>
+     * Convert toEnumObjects<br>
+     * If the value is empty.，or conversion failure.，Return the default value.<code>null</code><br>
      *
-     * @param clazz Enum的Class
-     * @param value 值
+     * @param clazz EnumofClass
+     * @param value Value
      * @return Enum
      */
     public static <E extends Enum<E>> E toEnum(Class<E> clazz, Object value)
@@ -639,13 +639,13 @@ public class Convert
     }
 
     /**
-     * 转换为BigInteger<br>
-     * 如果给定的值为空，或者转换失败，返回默认值<br>
-     * 转换失败不会报错
+     * Convert toBigInteger<br>
+     * If the value is empty.，or conversion failure.，Return the default value.<br>
+     * Conversion failure will not be mistaken.
      *
-     * @param value 被转换的值
-     * @param defaultValue 转换错误时的默认值
-     * @return 结果
+     * @param value The value converted.
+     * @param defaultValue The default value when converting errors
+     * @return Results
      */
     public static BigInteger toBigInteger(Object value, BigInteger defaultValue)
     {
@@ -677,12 +677,12 @@ public class Convert
     }
 
     /**
-     * 转换为BigInteger<br>
-     * 如果给定的值为空，或者转换失败，返回默认值<code>null</code><br>
-     * 转换失败不会报错
+     * Convert toBigInteger<br>
+     * If the value is empty.，or conversion failure.，Return the default value.<code>null</code><br>
+     * Conversion failure will not be mistaken.
      *
-     * @param value 被转换的值
-     * @return 结果
+     * @param value The value converted.
+     * @return Results
      */
     public static BigInteger toBigInteger(Object value)
     {
@@ -690,13 +690,13 @@ public class Convert
     }
 
     /**
-     * 转换为BigDecimal<br>
-     * 如果给定的值为空，或者转换失败，返回默认值<br>
-     * 转换失败不会报错
+     * Convert toBigDecimal<br>
+     * If the value is empty.，or conversion failure.，Return the default value.<br>
+     * Conversion failure will not be mistaken.
      *
-     * @param value 被转换的值
-     * @param defaultValue 转换错误时的默认值
-     * @return 结果
+     * @param value The value converted.
+     * @param defaultValue The default value when converting errors
+     * @return Results
      */
     public static BigDecimal toBigDecimal(Object value, BigDecimal defaultValue)
     {
@@ -736,12 +736,12 @@ public class Convert
     }
 
     /**
-     * 转换为BigDecimal<br>
-     * 如果给定的值为空，或者转换失败，返回默认值<br>
-     * 转换失败不会报错
+     * Convert toBigDecimal<br>
+     * If the value is empty.，or conversion failure.，Return the default value.<br>
+     * Conversion failure will not be mistaken.
      *
-     * @param value 被转换的值
-     * @return 结果
+     * @param value The value converted.
+     * @return Results
      */
     public static BigDecimal toBigDecimal(Object value)
     {
@@ -749,11 +749,11 @@ public class Convert
     }
 
     /**
-     * 将对象转为字符串<br>
-     * 1、Byte数组和ByteBuffer会被转换为对应字符串的数组 2、对象数组会调用Arrays.toString方法
+     * Convert the object into a string.<br>
+     * 1、ByteThe number andByteBufferThe number will be converted into the corresponding string. 2、The number of objects will be called.Arrays.toStringMethod
      *
-     * @param obj 对象
-     * @return 字符串
+     * @param obj Objects
+     * @return The characters.
      */
     public static String utf8Str(Object obj)
     {
@@ -761,12 +761,12 @@ public class Convert
     }
 
     /**
-     * 将对象转为字符串<br>
-     * 1、Byte数组和ByteBuffer会被转换为对应字符串的数组 2、对象数组会调用Arrays.toString方法
+     * Convert the object into a string.<br>
+     * 1、ByteThe number andByteBufferThe number will be converted into the corresponding string. 2、The number of objects will be called.Arrays.toStringMethod
      *
-     * @param obj 对象
-     * @param charsetName 字符集
-     * @return 字符串
+     * @param obj Objects
+     * @param charsetName Collection of characters
+     * @return The characters.
      */
     public static String str(Object obj, String charsetName)
     {
@@ -774,12 +774,12 @@ public class Convert
     }
 
     /**
-     * 将对象转为字符串<br>
-     * 1、Byte数组和ByteBuffer会被转换为对应字符串的数组 2、对象数组会调用Arrays.toString方法
+     * Convert the object into a string.<br>
+     * 1、ByteThe number andByteBufferThe number will be converted into the corresponding string. 2、The number of objects will be called.Arrays.toStringMethod
      *
-     * @param obj 对象
-     * @param charset 字符集
-     * @return 字符串
+     * @param obj Objects
+     * @param charset Collection of characters
+     * @return The characters.
      */
     public static String str(Object obj, Charset charset)
     {
@@ -809,11 +809,11 @@ public class Convert
     }
 
     /**
-     * 将byte数组转为字符串
+     * willbyteConvert numbers into string.
      *
-     * @param bytes byte数组
-     * @param charset 字符集
-     * @return 字符串
+     * @param bytes byteNumber of groups
+     * @param charset Collection of characters
+     * @return The characters.
      */
     public static String str(byte[] bytes, String charset)
     {
@@ -821,11 +821,11 @@ public class Convert
     }
 
     /**
-     * 解码字节码
+     * Decoding the code.
      *
-     * @param data 字符串
-     * @param charset 字符集，如果此字段为空，则解码的结果取决于平台
-     * @return 解码后的字符串
+     * @param data The characters.
+     * @param charset Collection of characters，If this field is empty.，The result depends on the platform.
+     * @return Posts after decoding.
      */
     public static String str(byte[] data, Charset charset)
     {
@@ -842,11 +842,11 @@ public class Convert
     }
 
     /**
-     * 将编码的byteBuffer数据转换为字符串
+     * will be coded.byteBufferConvert data into string.
      *
-     * @param data 数据
-     * @param charset 字符集，如果为空使用当前系统字符集
-     * @return 字符串
+     * @param data The data
+     * @param charset Collection of characters，If you use the current system character set for free
+     * @return The characters.
      */
     public static String str(ByteBuffer data, String charset)
     {
@@ -859,11 +859,11 @@ public class Convert
     }
 
     /**
-     * 将编码的byteBuffer数据转换为字符串
+     * will be coded.byteBufferConvert data into string.
      *
-     * @param data 数据
-     * @param charset 字符集，如果为空使用当前系统字符集
-     * @return 字符串
+     * @param data The data
+     * @param charset Collection of characters，If you use the current system character set for free
+     * @return The characters.
      */
     public static String str(ByteBuffer data, Charset charset)
     {
@@ -874,12 +874,12 @@ public class Convert
         return charset.decode(data).toString();
     }
 
-    // ----------------------------------------------------------------------- 全角半角转换
+    // ----------------------------------------------------------------------- Transition of the whole corner.
     /**
-     * 半角转全角
+     * Half the angle.
      *
      * @param input String.
-     * @return 全角字符串.
+     * @return The whole corner..
      */
     public static String toSBC(String input)
     {
@@ -887,11 +887,11 @@ public class Convert
     }
 
     /**
-     * 半角转全角
+     * Half the angle.
      *
      * @param input String
-     * @param notConvertSet 不替换的字符集合
-     * @return 全角字符串.
+     * @param notConvertSet Unchanged collection of characters.
+     * @return The whole corner..
      */
     public static String toSBC(String input, Set<Character> notConvertSet)
     {
@@ -900,7 +900,7 @@ public class Convert
         {
             if (null != notConvertSet && notConvertSet.contains(c[i]))
             {
-                // 跳过不替换的字符
+                // The unchanged characters.
                 continue;
             }
 
@@ -918,10 +918,10 @@ public class Convert
     }
 
     /**
-     * 全角转半角
+     * Around half a corner.
      *
      * @param input String.
-     * @return 半角字符串
+     * @return Half corner string.
      */
     public static String toDBC(String input)
     {
@@ -929,11 +929,11 @@ public class Convert
     }
 
     /**
-     * 替换全角为半角
+     * Replace the whole corner to half corner.
      *
-     * @param text 文本
-     * @param notConvertSet 不替换的字符集合
-     * @return 替换后的字符
+     * @param text The text
+     * @param notConvertSet Unchanged collection of characters.
+     * @return Character after replacement.
      */
     public static String toDBC(String text, Set<Character> notConvertSet)
     {
@@ -942,7 +942,7 @@ public class Convert
         {
             if (null != notConvertSet && notConvertSet.contains(c[i]))
             {
-                // 跳过不替换的字符
+                // The unchanged characters.
                 continue;
             }
 
@@ -961,33 +961,33 @@ public class Convert
     }
 
     /**
-     * 数字金额大写转换 先写个完整的然后将如零拾替换成零
+     * Conversion of digital amounts Write a full one first and then replace it as zero.
      *
-     * @param n 数字
-     * @return 中文大写数字
+     * @param n The numbers
+     * @return A Chinese number.
      */
     public static String digitUppercase(double n)
     {
-        String[] fraction = { "角", "分" };
-        String[] digit = { "零", "壹", "贰", "叁", "肆", "伍", "陆", "柒", "捌", "玖" };
-        String[][] unit = { { "元", "万", "亿" }, { "", "拾", "佰", "仟" } };
+        String[] fraction = { "The corner", "Parts" };
+        String[] digit = { "0 is", "The", "", "", "and the", "Woo", "Land", "", "", "" };
+        String[][] unit = { { "by", "Thousand", "Millions" }, { "", "picked up", "", "" } };
 
-        String head = n < 0 ? "负" : "";
+        String head = n < 0 ? "The negative" : "";
         n = Math.abs(n);
 
         String s = "";
         for (int i = 0; i < fraction.length; i++)
         {
-            // 优化double计算精度丢失问题
+            // optimizeddoubleLost accuracy problem.
             BigDecimal nNum = new BigDecimal(n);
             BigDecimal decimal = new BigDecimal(10);
             BigDecimal scale = nNum.multiply(decimal).setScale(2, RoundingMode.HALF_EVEN);
             double d = scale.doubleValue();
-            s += (digit[(int) (Math.floor(d * Math.pow(10, i)) % 10)] + fraction[i]).replaceAll("(零.)+", "");
+            s += (digit[(int) (Math.floor(d * Math.pow(10, i)) % 10)] + fraction[i]).replaceAll("(0 is.)+", "");
         }
         if (s.length() < 1)
         {
-            s = "整";
+            s = "The whole";
         }
         int integerPart = (int) Math.floor(n);
 
@@ -999,8 +999,8 @@ public class Convert
                 p = digit[integerPart % 10] + unit[1][j] + p;
                 integerPart = integerPart / 10;
             }
-            s = p.replaceAll("(零.)*零$", "").replaceAll("^$", "零") + unit[0][i] + s;
+            s = p.replaceAll("(0 is.)*0 is$", "").replaceAll("^$", "0 is") + unit[0][i] + s;
         }
-        return head + s.replaceAll("(零.)*零元", "元").replaceFirst("(零.)+", "").replaceAll("(零.)+", "零").replaceAll("^整$", "零元整");
+        return head + s.replaceAll("(0 is.)*by zero.", "by").replaceFirst("(0 is.)+", "").replaceAll("(0 is.)+", "0 is").replaceAll("^The whole$", "The zero.");
     }
 }

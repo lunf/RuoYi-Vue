@@ -1,5 +1,5 @@
 <template>
-  <div :style="'height:' + height" v-loading="loading" element-loading-text="正在加载页面，请稍候！">
+  <div :style="'height:' + height" v-loading="loading" element-loading-text="The page is loaded.，Please wait a little.！">
     <iframe
       :id="iframeId"
       style="width: 100%; height: 100%"
@@ -30,7 +30,7 @@ export default {
     var _this = this;
     const iframeId = ("#" + this.iframeId).replace(/\//g, "\\/");
     const iframe = document.querySelector(iframeId);
-    // iframe页面loading控制
+    // iframepageloadingcontrolled
     if (iframe.attachEvent) {
       this.loading = true;
       iframe.attachEvent("onload", function () {

@@ -5,94 +5,94 @@ import com.ruoyi.common.core.domain.entity.SysDictData;
 import com.ruoyi.common.core.domain.entity.SysDictType;
 
 /**
- * 字典 业务层
+ * The dictionary The business level.
  * 
  * @author ruoyi
  */
 public interface ISysDictTypeService
 {
     /**
-     * 根据条件分页查询字典类型
+     * Type of dictionary according to conditions.
      * 
-     * @param dictType 字典类型信息
-     * @return 字典类型集合信息
+     * @param dictType Type of dictionary information
+     * @return Type of dictionary information
      */
     public List<SysDictType> selectDictTypeList(SysDictType dictType);
 
     /**
-     * 根据所有字典类型
+     * According to all dictionary types.
      * 
-     * @return 字典类型集合信息
+     * @return Type of dictionary information
      */
     public List<SysDictType> selectDictTypeAll();
 
     /**
-     * 根据字典类型查询字典数据
+     * Question dictionary data according to dictionary type
      * 
-     * @param dictType 字典类型
-     * @return 字典数据集合信息
+     * @param dictType Type of dictionary
+     * @return Dictionary data collection information
      */
     public List<SysDictData> selectDictDataByType(String dictType);
 
     /**
-     * 根据字典类型ID查询信息
+     * according to the dictionary type.IDAsk for information
      * 
-     * @param dictId 字典类型ID
-     * @return 字典类型
+     * @param dictId Type of dictionaryID
+     * @return Type of dictionary
      */
     public SysDictType selectDictTypeById(Long dictId);
 
     /**
-     * 根据字典类型查询信息
+     * Information according to dictionary type
      * 
-     * @param dictType 字典类型
-     * @return 字典类型
+     * @param dictType Type of dictionary
+     * @return Type of dictionary
      */
     public SysDictType selectDictTypeByType(String dictType);
 
     /**
-     * 批量删除字典信息
+     * Remove the dictionary information
      * 
-     * @param dictIds 需要删除的字典ID
+     * @param dictIds The dictionary needed to be removed.ID
      */
     public void deleteDictTypeByIds(Long[] dictIds);
 
     /**
-     * 加载字典缓存数据
+     * Loading dictionary cache data
      */
     public void loadingDictCache();
 
     /**
-     * 清空字典缓存数据
+     * Clean dictionary cache data
      */
     public void clearDictCache();
 
     /**
-     * 重置字典缓存数据
+     * Repair dictionary cache data
      */
     public void resetDictCache();
 
     /**
-     * 新增保存字典类型信息
+     * Add new stored dictionary type information
      * 
-     * @param dictType 字典类型信息
-     * @return 结果
+     * @param dictType Type of dictionary information
+     * @return Results
      */
     public int insertDictType(SysDictType dictType);
 
     /**
-     * 修改保存字典类型信息
+     * Modifying Saving Dictionary Type Information
      * 
-     * @param dictType 字典类型信息
-     * @return 结果
+     * @param dictType Type of dictionary information
+     * @return Results
      */
     public int updateDictType(SysDictType dictType);
 
     /**
-     * 校验字典类型称是否唯一
+     * Test dictionary type is unique.
      * 
-     * @param dictType 字典类型
-     * @return 结果
+     * @param dictType Type of dictionary
+     * @return Results
      */
     public boolean checkDictTypeUnique(SysDictType dictType);
 }

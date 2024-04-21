@@ -4,57 +4,57 @@ import java.util.List;
 import com.ruoyi.generator.domain.GenTableColumn;
 
 /**
- * 业务字段 数据层
+ * The business field. The Data Layer
  * 
  * @author ruoyi
  */
 public interface GenTableColumnMapper
 {
     /**
-     * 根据表名称查询列信息
+     * Ask for information according to the name of the table.
      * 
-     * @param tableName 表名称
-     * @return 列信息
+     * @param tableName Name of Table
+     * @return List of information
      */
     public List<GenTableColumn> selectDbTableColumnsByName(String tableName);
 
     /**
-     * 查询业务字段列表
+     * List of business fields.
      * 
-     * @param tableId 业务字段编号
-     * @return 业务字段集合
+     * @param tableId Business Field Number
+     * @return Business fields gathering
      */
     public List<GenTableColumn> selectGenTableColumnListByTableId(Long tableId);
 
     /**
-     * 新增业务字段
+     * Adding new business fields
      * 
-     * @param genTableColumn 业务字段信息
-     * @return 结果
+     * @param genTableColumn Business field information
+     * @return Results
      */
     public int insertGenTableColumn(GenTableColumn genTableColumn);
 
     /**
-     * 修改业务字段
+     * Modification of business fields
      * 
-     * @param genTableColumn 业务字段信息
-     * @return 结果
+     * @param genTableColumn Business field information
+     * @return Results
      */
     public int updateGenTableColumn(GenTableColumn genTableColumn);
 
     /**
-     * 删除业务字段
+     * Remove the business field.
      * 
-     * @param genTableColumns 列数据
-     * @return 结果
+     * @param genTableColumns The data
+     * @return Results
      */
     public int deleteGenTableColumns(List<GenTableColumn> genTableColumns);
 
     /**
-     * 批量删除业务字段
+     * Mass removal of business fields
      * 
-     * @param ids 需要删除的数据ID
-     * @return 结果
+     * @param ids Data needed to be deleted.ID
+     * @return Results
      */
     public int deleteGenTableColumnByIds(Long[] ids);
 }

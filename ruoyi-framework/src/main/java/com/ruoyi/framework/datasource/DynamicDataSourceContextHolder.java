@@ -4,7 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * 数据源切换处理
+ * Data source exchange processing
  * 
  * @author ruoyi
  */
@@ -13,22 +13,22 @@ public class DynamicDataSourceContextHolder
     public static final Logger log = LoggerFactory.getLogger(DynamicDataSourceContextHolder.class);
 
     /**
-     * 使用ThreadLocal维护变量，ThreadLocal为每个使用该变量的线程提供独立的变量副本，
-     * 所以每一个线程都可以独立地改变自己的副本，而不会影响其它线程所对应的副本。
+     * Use ofThreadLocalMaintenance of Variants，ThreadLocalProvided a separate copy of the variable for each line that uses this variable，
+     * So each line can independently change its own copy.，Not to affect the corresponding copies of other lines.。
      */
     private static final ThreadLocal<String> CONTEXT_HOLDER = new ThreadLocal<>();
 
     /**
-     * 设置数据源的变量
+     * Set the data source variables.
      */
     public static void setDataSourceType(String dsType)
     {
-        log.info("切换到{}数据源", dsType);
+        log.info("Change to{}Source of data", dsType);
         CONTEXT_HOLDER.set(dsType);
     }
 
     /**
-     * 获得数据源的变量
+     * Access to data sources
      */
     public static String getDataSourceType()
     {
@@ -36,7 +36,7 @@ public class DynamicDataSourceContextHolder
     }
 
     /**
-     * 清空数据源变量
+     * The data source variable
      */
     public static void clearDataSourceType()
     {

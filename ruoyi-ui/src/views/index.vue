@@ -3,7 +3,7 @@
     <el-row :gutter="20">
       <el-col :sm="24" :lg="24">
         <blockquote class="text-warning" style="font-size: 14px">
-          领取阿里云通用云产品1888优惠券
+          Get Ali Cloud General Cloud Products1888Promotional Tickets
           <br />
           <el-link
             href="https://www.aliyun.com/minisite/goods?userCode=brki8iof"
@@ -12,7 +12,7 @@
             >https://www.aliyun.com/minisite/goods?userCode=brki8iof</el-link
           >
           <br />
-          领取腾讯云通用云产品2860优惠券
+          Get Tencent Cloud General Cloud Products2860Promotional Tickets
           <br />
           <el-link
             href="https://cloud.tencent.com/redirect.php?redirect=1025&cps_key=198c8df2ed259157187173bc7f4f32fd&from=console"
@@ -21,16 +21,16 @@
             >https://cloud.tencent.com/redirect.php?redirect=1025&cps_key=198c8df2ed259157187173bc7f4f32fd&from=console</el-link
           >
           <br />
-          阿里云服务器折扣区
+          Ali Cloud Server Discount Area
           <el-link href="http://aly.ruoyi.vip" type="primary" target="_blank"
-            >>☛☛点我进入☚☚</el-link
+            >>☛☛Let me enter.☚☚</el-link
           >
-          &nbsp;&nbsp;&nbsp; 腾讯云服务器秒杀区
+          &nbsp;&nbsp;&nbsp; Tencent Cloud Server Second Kill Area
           <el-link href="http://txy.ruoyi.vip" type="primary" target="_blank"
-            >>☛☛点我进入☚☚</el-link
+            >>☛☛Let me enter.☚☚</el-link
           ><br />
           <h4 class="text-danger">
-            云产品通用红包，可叠加官网常规优惠使用。(仅限新用户)
+            Cloud Products Red Package，Use of regular Offers.。(Only new users.)
           </h4>
         </blockquote>
 
@@ -39,15 +39,15 @@
     </el-row>
     <el-row :gutter="20">
       <el-col :sm="24" :lg="12" style="padding-left: 20px">
-        <h2>若依后台管理框架</h2>
+        <h2>Under the background framework.</h2>
         <p>
-          一直想做一款后台管理系统，看了很多优秀的开源项目但是发现没有合适自己的。于是利用空闲休息时间开始自己写一套后台系统。如此有了若依管理系统，她可以用于所有的Web应用程序，如网站管理后台，网站会员中心，CMS，CRM，OA等等，当然，您也可以对她进行深度定制，以做出更强系统。所有前端后台代码封装过后十分精简易上手，出错概率低。同时支持移动客户端访问。系统会陆续更新一些实用功能。
+          I always wanted to have a background management system.，I have seen a lot of great open source projects but found no suitable for myself.。So, using the free time of rest, start writing yourself a backdrop system.。This is according to the management system.，She can use everything.WebApplications，Like the website management background.，Site Membership Center，CMS，CRM，OAWait，of course，You can also adjust to her in depth.，To make a stronger system.。All front-end backdrop codes are very easy to use after packing.，Lower chance of mistake.。Supporting mobile client access。The system will update some practical functions.。
         </p>
         <p>
-          <b>当前版本:</b> <span>v{{ version }}</span>
+          <b>Current version:</b> <span>v{{ version }}</span>
         </p>
         <p>
-          <el-tag type="danger">&yen;免费开源</el-tag>
+          <el-tag type="danger">&yen;Free open source.</el-tag>
         </p>
         <p>
           <el-button
@@ -56,14 +56,14 @@
             icon="el-icon-cloudy"
             plain
             @click="goTarget('https://gitee.com/y_project/RuoYi-Vue')"
-            >访问码云</el-button
+            >Access to Cloud</el-button
           >
           <el-button
             size="mini"
             icon="el-icon-s-home"
             plain
             @click="goTarget('http://ruoyi.vip')"
-            >访问主页</el-button
+            >Visit the homepage.</el-button
           >
         </p>
       </el-col>
@@ -71,12 +71,12 @@
       <el-col :sm="24" :lg="12" style="padding-left: 50px">
         <el-row>
           <el-col :span="12">
-            <h2>技术选型</h2>
+            <h2>Technical Selection</h2>
           </el-col>
         </el-row>
         <el-row>
           <el-col :span="6">
-            <h4>后端技术</h4>
+            <h4>Background technology</h4>
             <ul>
               <li>SpringBoot</li>
               <li>Spring Security</li>
@@ -88,7 +88,7 @@
             </ul>
           </el-col>
           <el-col :span="6">
-            <h4>前端技术</h4>
+            <h4>Frontal technology</h4>
             <ul>
               <li>Vue</li>
               <li>Vuex</li>
@@ -107,35 +107,35 @@
       <el-col :xs="24" :sm="24" :md="12" :lg="8">
         <el-card class="update-log">
           <div slot="header" class="clearfix">
-            <span>联系信息</span>
+            <span>Contact Information</span>
           </div>
           <div class="body">
             <p>
-              <i class="el-icon-s-promotion"></i> 官网：<el-link
+              <i class="el-icon-s-promotion"></i> Official：<el-link
                 href="http://www.ruoyi.vip"
                 target="_blank"
                 >http://www.ruoyi.vip</el-link
               >
             </p>
             <p>
-              <i class="el-icon-user-solid"></i> QQ群：<s> 满937441 </s> <s> 满887144332 </s>
-              <s> 满180251782 </s> <s> 满104180207 </s> <s> 满186866453 </s> <s> 满201396349 </s>
-              <s> 满101456076 </s> <s> 满101539465 </s> <s> 满264312783 </s> <s> 满167385320 </s> 
-              <s> 满104748341 </s> <s> 满160110482 </s> <s> 满170801498 </s> <s> 满108482800 </s> 
-              <s> 满101046199 </s> <s> 满136919097 </s> <s> 满143961921 </s> <s> 满174951577 </s> 
-              <s> 满161281055 </s> <a href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=XIzkm_mV2xTsUtFxo63bmicYoDBA6Ifm&authKey=dDW%2F4qsmw3x9govoZY9w%2FoWAoC4wbHqGal%2BbqLzoS6VBarU8EBptIgPKN%2FviyC8j&noverify=0&group_code=138988063" target="_blank">138988063</a>
+              <i class="el-icon-user-solid"></i> QQThe group：<s> Full of937441 </s> <s> Full of887144332 </s>
+              <s> Full of180251782 </s> <s> Full of104180207 </s> <s> Full of186866453 </s> <s> Full of201396349 </s>
+              <s> Full of101456076 </s> <s> Full of101539465 </s> <s> Full of264312783 </s> <s> Full of167385320 </s> 
+              <s> Full of104748341 </s> <s> Full of160110482 </s> <s> Full of170801498 </s> <s> Full of108482800 </s> 
+              <s> Full of101046199 </s> <s> Full of136919097 </s> <s> Full of143961921 </s> <s> Full of174951577 </s> 
+              <s> Full of161281055 </s> <a href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=XIzkm_mV2xTsUtFxo63bmicYoDBA6Ifm&authKey=dDW%2F4qsmw3x9govoZY9w%2FoWAoC4wbHqGal%2BbqLzoS6VBarU8EBptIgPKN%2FviyC8j&noverify=0&group_code=138988063" target="_blank">138988063</a>
             </p>
             <p>
-              <i class="el-icon-chat-dot-round"></i> 微信：<a
+              <i class="el-icon-chat-dot-round"></i> The microscope：<a
                 href="javascript:;"
-                >/ *若依</a
+                >/ *If I</a
               >
             </p>
             <p>
-              <i class="el-icon-money"></i> 支付宝：<a
+              <i class="el-icon-money"></i> Paying the Treasure：<a
                 href="javascript:;"
-                class="支付宝信息"
-                >/ *若依</a
+                class="Payment information"
+                >/ *If I</a
               >
             </p>
           </div>
@@ -144,820 +144,820 @@
       <el-col :xs="24" :sm="24" :md="12" :lg="8">
         <el-card class="update-log">
           <div slot="header" class="clearfix">
-            <span>更新日志</span>
+            <span>Update the journal.</span>
           </div>
           <el-collapse accordion>
             <el-collapse-item title="v3.8.7 - 2023-12-08">
               <ol>
-                <li>操作日志记录部门名称</li>
-                <li>全局数据存储用户编号</li>
-                <li>新增编程式判断资源访问权限</li>
-                <li>操作日志列表新增IP地址查询</li>
-                <li>定时任务新增页去除状态选项</li>
-                <li>代码生成支持选择前端模板类型</li>
-                <li>显隐列组件支持复选框弹出类型</li>
-                <li>通用排序属性orderBy参数限制长度</li>
-                <li>Excel自定义数据处理器增加单元格/工作簿对象</li>
-                <li>升级oshi到最新版本6.4.8</li>
-                <li>升级druid到最新版本1.2.20</li>
-                <li>升级fastjson到最新版2.0.43</li>
-                <li>升级pagehelper到最新版1.4.7</li>
-                <li>升级commons.io到最新版本2.13.0</li>
-                <li>升级element-ui到最新版本2.15.14</li>
-                <li>修复五级路由缓存无效问题</li>
-                <li>修复外链带端口出现的异常</li>
-                <li>修复树模板父级编码变量错误</li>
-                <li>修复字典表详情页面搜索问题</li>
-                <li>修复内链iframe没有传递参数问题</li>
-                <li>修复自定义字典样式不生效的问题</li>
-                <li>修复字典缓存删除方法参数错误问题</li>
-                <li>修复Excel导入数据临时文件无法删除问题</li>
-                <li>修复未登录带参数访问成功后参数丢失问题</li>
-                <li>修复HeaderSearch组件跳转query参数丢失问题</li>
-                <li>修复代码生成导入后必填项与数据库不匹配问题</li>
-                <li>修复Excels导入时无法获取到dictType字典值问题</li>
-                <li>优化下载zip方法新增遮罩层</li>
-                <li>优化头像上传参数新增文件名称</li>
-                <li>优化字典标签支持自定义分隔符</li>
-                <li>优化菜单管理类型为按钮状态可选</li>
-                <li>优化前端防重复提交数据大小限制</li>
-                <li>优化TopNav菜单没有图标svg不显示</li>
-                <li>优化数字金额大写转换精度丢失问题</li>
-                <li>优化富文本Editor组件检验图片格式</li>
-                <li>优化页签在Firefox浏览器被遮挡的问题</li>
-                <li>优化个人中心/基本资料修改时数据显示问题</li>
-                <li>优化缓存监控图表支持跟随屏幕大小自适应调整</li>
-                <li>其他细节优化</li>
+                <li>Operating Log Registry Department Name</li>
+                <li>Total Data Storage User Number</li>
+                <li>Additional programming to judge access to resources</li>
+                <li>List of operating logs added.IPAddress requests</li>
+                <li>Time Task Add new page Remove state options</li>
+                <li>Code generating support to select front-end template type</li>
+                <li>Screenshot components support the selection box out of type</li>
+                <li>General Order PropertiesorderByLimits of length.</li>
+                <li>ExcelCustom Data Processor Increases Cells/Objects of Workbook</li>
+                <li>Upgradingoshito the latest version.6.4.8</li>
+                <li>Upgradingdruidto the latest version.1.2.20</li>
+                <li>Upgradingfastjsonto the latest version.2.0.43</li>
+                <li>Upgradingpagehelperto the latest version.1.4.7</li>
+                <li>Upgradingcommons.ioto the latest version.2.13.0</li>
+                <li>Upgradingelement-uito the latest version.2.15.14</li>
+                <li>Correction of 5 Level Router Cache Problems</li>
+                <li>Repair the abnormal appearance of the off-chain port</li>
+                <li>Repair tree template father-class coding variable errors</li>
+                <li>Repair dictionary details page search problems</li>
+                <li>Repair the internal chain.iframeNo transmission of parameters.</li>
+                <li>Correction of custom dictionary style failure</li>
+                <li>Repair dictionary cache removal method parameter error problem</li>
+                <li>RepairedExcelImport data temporary file cannot delete the problem</li>
+                <li>Repair Unlogged Belt Parameters Access Successful Parameters Lost Problems</li>
+                <li>RepairedHeaderSearchThe component jumped.queryProblems with parameter loss.</li>
+                <li>Repair code generated after importing must fill with the database does not match the problem</li>
+                <li>RepairedExcelsIt cannot be accessed when imported.dictTypeThe dictionary value issue.</li>
+                <li>Optimize DownloadszipMethod of adding the cover.</li>
+                <li>Optimize image upload parameters Add new file names</li>
+                <li>Optimized dictionary labels support custom separator</li>
+                <li>Optimization Menu Management Type is Optional for Button Status</li>
+                <li>Optimize front-end prevention of repeated submission of data size limits</li>
+                <li>optimizedTopNavThe menu has no symbols.svgNot showing</li>
+                <li>Optimization of digital quantity conversion accuracy loss problem</li>
+                <li>Optimize the rich text.EditorComponent inspection image format</li>
+                <li>Optimize the page.FirefoxThe browser is covered.</li>
+                <li>Optimize the personal center./Basic data changes when data shows problems</li>
+                <li>Optimized cache monitoring charts support track screen size from adaptation adjustments</li>
+                <li>Other details optimized.</li>
               </ol>
             </el-collapse-item>
             <el-collapse-item title="v3.8.6 - 2023-06-30">
               <ol>
-                <li>支持登录IP黑名单限制</li>
-                <li>新增监控页面图标显示</li>
-                <li>操作日志新增消耗时间属性</li>
-                <li>屏蔽定时任务bean违规的字符</li>
-                <li>日志管理使用索引提升查询性能</li>
-                <li>日志注解支持排除指定的请求参数</li>
-                <li>支持自定义隐藏属性列过滤子对象</li>
-                <li>升级oshi到最新版本6.4.3</li>
-                <li>升级druid到最新版本1.2.16</li>
-                <li>升级fastjson到最新版2.0.34</li>
-                <li>升级spring-boot到最新版本2.5.15</li>
-                <li>升级element-ui到最新版本2.15.13</li>
-                <li>移除apache/commons-fileupload依赖</li>
-                <li>修复页面切换时布局错乱的问题</li>
-                <li>修复匿名注解Anonymous空指针问题</li>
-                <li>修复路由跳转被阻止时内部产生报错信息问题</li>
-                <li>修复isMatchedIp的参数判断产生空指针的问题</li>
-                <li>修复用户多角色数据权限可能出现权限抬升的情况</li>
-                <li>修复开启TopNav后一级菜单路由参数设置无效问题</li>
-                <li>修复DictTag组件value没有匹配的值时则展示value</li>
-                <li>优化文件下载出现的异常</li>
-                <li>优化选择图标组件高亮回显</li>
-                <li>优化弹窗后导航栏偏移的问题</li>
-                <li>优化修改密码日志存储明文问题</li>
-                <li>优化页签栏关闭其他出现的异常问题</li>
-                <li>优化页签关闭左侧选项排除首页选项</li>
-                <li>优化关闭当前tab页跳转最右侧tab页</li>
-                <li>优化缓存列表清除操作提示不变的问题</li>
-                <li>优化字符未使用下划线不进行驼峰式处理</li>
-                <li>优化用户导入更新时需获取用户编号问题</li>
-                <li>优化侧边栏的平台标题与VUE_APP_TITLE保持同步</li>
-                <li>优化导出Excel时设置dictType属性重复查缓存问题</li>
-                <li>连接池Druid支持新的配置connectTimeout和socketTimeout</li>
-                <li>其他细节优化</li>
+                <li>Support for EntryIPBlack list restrictions</li>
+                <li>Add a monitoring page icon to display</li>
+                <li>Operating logs add time consumption properties</li>
+                <li>blocking timely tasks.beanThe irregular characters.</li>
+                <li>Log Management uses index to improve query performance</li>
+                <li>Log Note Support Excludes the specified request parameters</li>
+                <li>Support Custom Hidden Properties Filter Objects</li>
+                <li>Upgradingoshito the latest version.6.4.3</li>
+                <li>Upgradingdruidto the latest version.1.2.16</li>
+                <li>Upgradingfastjsonto the latest version.2.0.34</li>
+                <li>Upgradingspring-bootto the latest version.2.5.15</li>
+                <li>Upgradingelement-uito the latest version.2.15.13</li>
+                <li>removedapache/commons-fileuploadDependency</li>
+                <li>Correction of fault layout problems when switching page</li>
+                <li>Repair anonymous notes.AnonymousThe empty problem.</li>
+                <li>Correction of the routing is blocked when internal error information issues are generated.</li>
+                <li>RepairedisMatchedIpParameters of judgment generate empty indicator problems.</li>
+                <li>Repair user multi-roll data permissions may occur in cases where permissions are increased</li>
+                <li>Repair is open.TopNavNext Level Menu Routes by Parameters Set Invalidity Problems</li>
+                <li>RepairedDictTagThe componentvalueWithout a matching value.value</li>
+                <li>Optimize the fail download appears unusual</li>
+                <li>Optimize the selection of the icon component high-light reflection</li>
+                <li>Problems with navigation bar disconnection behind the ammunition window</li>
+                <li>Optimization of Modification of Password Log Storage Problems</li>
+                <li>Optimize the page tag bar to close other unusual problems that appear</li>
+                <li>Optimization of page tags Close the left option Exclude the home page option</li>
+                <li>Optimize Current closuretabPage to the rightest side.tabPage</li>
+                <li>Optimize cache list cleansing operating tips unchanged problems</li>
+                <li>Optimization of characters not using the downline not to be processed by the peak.</li>
+                <li>To optimize user import updates, you need to get the user number issue.</li>
+                <li>Optimize the side bar platform title andVUE_APP_TITLEKeep synchronized.</li>
+                <li>Optimize the export.Exceltime setting.dictTypeRepeated Cache Problems</li>
+                <li>Connecting the pool.DruidSupporting new configurations.connectTimeoutandsocketTimeout</li>
+                <li>Other details optimized.</li>
               </ol>
             </el-collapse-item>
             <el-collapse-item title="v3.8.5 - 2023-01-01">
               <ol>
-                <li>定时任务违规的字符</li>
-                <li>重置时取消部门选中</li>
-                <li>新增返回警告消息提示</li>
-                <li>忽略不必要的属性数据返回</li>
-                <li>修改参数键名时移除前缓存配置</li>
-                <li>导入更新用户数据前校验数据权限</li>
-                <li>兼容Excel下拉框内容过多无法显示的问题</li>
-                <li>升级echarts到最新版本5.4.0</li>
-                <li>升级core-js到最新版本3.25.3</li>
-                <li>升级oshi到最新版本6.4.0</li>
-                <li>升级kaptcha到最新版2.3.3</li>
-                <li>升级druid到最新版本1.2.15</li>
-                <li>升级fastjson到最新版2.0.20</li>
-                <li>升级pagehelper到最新版1.4.6</li>
-                <li>优化弹窗内容过多展示不全问题</li>
-                <li>优化swagger-ui静态资源使用缓存</li>
-                <li>开启TopNav没有子菜单隐藏侧边栏</li>
-                <li>删除fuse无效选项maxPatternLength</li>
-                <li>优化导出对象的子列表为空会出现[]问题</li>
-                <li>优化编辑头像时透明部分会变成黑色问题</li>
-                <li>优化小屏幕上修改头像界面布局错位的问题</li>
-                <li>修复代码生成勾选属性无效问题</li>
-                <li>修复文件上传组件格式验证问题</li>
-                <li>修复回显数据字典数组异常问题</li>
-                <li>修复sheet超出最大行数异常问题</li>
-                <li>修复Log注解GET请求记录不到参数问题</li>
-                <li>修复调度日志点击多次数据不变化的问题</li>
-                <li>修复主题颜色在Drawer组件不会加载问题</li>
-                <li>修复文件名包含特殊字符的文件无法下载问题</li>
-                <li>修复table中更多按钮切换主题色未生效修复问题</li>
-                <li>修复某些特性的环境生成代码变乱码TXT文件问题</li>
-                <li>修复代码生成图片/文件/单选时选择必填无法校验问题</li>
-                <li>修复某些特性的情况用户编辑对话框中角色和部门无法修改问题</li>
-                <li>其他细节优化</li>
+                <li>Temporary tasks of irregularity.</li>
+                <li>Cancellation of the election department.</li>
+                <li>Added back warning messages.</li>
+                <li>Ignoring unnecessary properties data return</li>
+                <li>Change the parameter key name to remove the pre-cache configuration</li>
+                <li>Importing Updated User Data Pre-Culture Data Permit</li>
+                <li>compatibleExcelThere are too many problems that cannot be displayed.</li>
+                <li>Upgradingechartsto the latest version.5.4.0</li>
+                <li>Upgradingcore-jsto the latest version.3.25.3</li>
+                <li>Upgradingoshito the latest version.6.4.0</li>
+                <li>Upgradingkaptchato the latest version.2.3.3</li>
+                <li>Upgradingdruidto the latest version.1.2.15</li>
+                <li>Upgradingfastjsonto the latest version.2.0.20</li>
+                <li>Upgradingpagehelperto the latest version.1.4.6</li>
+                <li>Over optimized window content shows incomplete problems</li>
+                <li>optimizedswagger-uiStatic Resource Use of Cache</li>
+                <li>openedTopNavNo submenu hiding the side bar</li>
+                <li>removedfuseIneffective OptionsmaxPatternLength</li>
+                <li>Optimize the sublist of objects that export to the air will appear.[]The problem</li>
+                <li>When optimizing editing the image, the transparent part becomes a black problem.</li>
+                <li>Optimization of the small screen to modify the front image interface layout error problem</li>
+                <li>Correction of code generates selected properties ineffective problems</li>
+                <li>Repair file upload component format verification problem</li>
+                <li>Repair unusual problems with the data dictionary group</li>
+                <li>RepairedsheetOver the maximum number of unusual problems.</li>
+                <li>RepairedLogNotesGETRequest not recording parameters.</li>
+                <li>Correction of the adjustment log clicking multiple data unchanged problem</li>
+                <li>Repair the theme color.DrawerThe component does not load any problems.</li>
+                <li>Repair file name files containing special characters cannot download the problem</li>
+                <li>RepairedtableMore buttons change theme colour failure problem correction</li>
+                <li>Repair certain characteristics of the environment to generate code disturbanceTXTThe document issue</li>
+                <li>Repair the code to create images./Documents/Choosing a single option must not fill in the exam problem.</li>
+                <li>Correction of certain features in the user's Edit dialog box the roles and departments cannot modify the problem</li>
+                <li>Other details optimized.</li>
               </ol>
             </el-collapse-item>
             <el-collapse-item title="v3.8.4 - 2022-09-26">
               <ol>
-                <li>数据逻辑删除不进行唯一验证</li>
-                <li>Excel注解支持导出对象的子列表方法</li>
-                <li>Excel注解支持自定义隐藏属性列</li>
-                <li>Excel注解支持backgroundColor属性设置背景色</li>
-                <li>支持配置密码最大错误次数/锁定时间</li>
-                <li>登录日志新增解锁账户功能</li>
-                <li>通用下载方法新增config配置选项</li>
-                <li>支持多权限字符匹配角色数据权限</li>
-                <li>页面内嵌iframe切换tab不刷新数据</li>
-                <li>操作日志记录支持排除敏感属性字段</li>
-                <li>修复多文件上传报错出现的异常问题</li>
-                <li>修复图片预览组件src属性为null值控制台报错问题</li>
-                <li>升级oshi到最新版本6.2.2</li>
-                <li>升级fastjson到最新版2.0.14</li>
-                <li>升级pagehelper到最新版1.4.3</li>
-                <li>升级core-js到最新版本3.25.2</li>
-                <li>升级element-ui到最新版本2.15.10</li>
-                <li>优化任务过期不执行调度</li>
-                <li>优化字典数据使用store存取</li>
-                <li>优化修改资料头像被覆盖的问题</li>
-                <li>优化修改用户登录账号重复验证</li>
-                <li>优化代码生成同步后值NULL问题</li>
-                <li>优化定时任务支持执行父类方法</li>
-                <li>优化用户个人信息接口防止修改部门</li>
-                <li>优化布局设置使用el-drawer抽屉显示</li>
-                <li>优化没有权限的用户编辑部门缺少数据</li>
-                <li>优化日志注解记录限制请求地址的长度</li>
-                <li>优化excel/scale属性导出单元格数值类型</li>
-                <li>优化日志操作中重置按钮时重复查询的问题</li>
-                <li>优化多个相同角色数据导致权限SQL重复问题</li>
-                <li>优化表格上右侧工具条（搜索按钮显隐&右侧样式凸出）</li>
-                <li>其他细节优化</li>
+                <li>Data logic deletion does not only verify</li>
+                <li>ExcelNote sublist methods that support export objects</li>
+                <li>ExcelNote Support Customized Hidden Properties Column</li>
+                <li>ExcelNotes of supportbackgroundColorProperity setting background color</li>
+                <li>Support the maximum number of errors./Lock the time.</li>
+                <li>Add new logs to unlock account functions</li>
+                <li>Add new download methods.configConfiguration Options</li>
+                <li>Support Multi-Privacy characters matching role data permits</li>
+                <li>The page embedded.iframeexchangedtabNo update of data.</li>
+                <li>Operating log records supports the elimination of sensitive properties fields</li>
+                <li>Repair multiple file reports of unusual problems occurring</li>
+                <li>Repair image preview componentssrcProperties arenullValue controller error.</li>
+                <li>Upgradingoshito the latest version.6.2.2</li>
+                <li>Upgradingfastjsonto the latest version.2.0.14</li>
+                <li>Upgradingpagehelperto the latest version.1.4.3</li>
+                <li>Upgradingcore-jsto the latest version.3.25.2</li>
+                <li>Upgradingelement-uito the latest version.2.15.10</li>
+                <li>Optimization of task expiration does not carry out measurements</li>
+                <li>Optimize the use of dictionary datastoreAccessed</li>
+                <li>Optimization of modifying data image covered problem</li>
+                <li>Optimization of modifying user login account repeated verification</li>
+                <li>Optimize the code to generate synchronization after value.NULLThe problem</li>
+                <li>Optimization of timely tasks support the implementation of paternal methods</li>
+                <li>Optimize the user’s personal information interface to prevent changes in the department</li>
+                <li>Optimize layout settings for useel-drawerThe show show.</li>
+                <li>Optimize unautorized user editing department lack of data</li>
+                <li>Optimize log notes record limit the length of the request address</li>
+                <li>optimizedexcel/scaleProperties Exporting Cell Number Type</li>
+                <li>Repeat query questions when reinstalling the button in the log operation</li>
+                <li>Optimization of multiple same role data leads to permissionsSQLRepeated Questions</li>
+                <li>Optimize the toolbar on the top right of the table（The search button is clear.&The right-side style appears.）</li>
+                <li>Other details optimized.</li>
               </ol>
             </el-collapse-item>
             <el-collapse-item title="v3.8.3 - 2022-06-27">
               <ol>
-                <li>新增缓存列表菜单功能</li>
-                <li>代码生成树表新增(展开/折叠)</li>
-                <li>Excel注解支持color字体颜色</li>
-                <li>新增Anonymous匿名访问不鉴权注解</li>
-                <li>用户头像上传限制只能为图片格式</li>
-                <li>接口使用泛型使其看到响应属性字段</li>
-                <li>检查定时任务bean所在包名是否为白名单配置</li>
-                <li>添加页签openPage支持传递参数</li>
-                <li>用户缓存信息添加部门ancestors祖级列表</li>
-                <li>升级element-ui到最新版本2.15.8</li>
-                <li>升级oshi到最新版本6.1.6</li>
-                <li>升级druid到最新版本1.2.11</li>
-                <li>升级fastjson到最新版2.0.8</li>
-                <li>升级spring-boot到最新版本2.5.14</li>
-                <li>降级jsencrypt版本兼容IE浏览器</li>
-                <li>删除多余的salt字段</li>
-                <li>新增获取不带后缀文件名称方法</li>
-                <li>新增获取配置文件中的属性值方法</li>
-                <li>新增内容编码/解码方便插件集成使用</li>
-                <li>字典类型必须以字母开头，且只能为（小写字母，数字，下滑线）</li>
-                <li>优化设置分页参数默认值</li>
-                <li>优化对空字符串参数处理的过滤</li>
-                <li>优化显示顺序orderNum类型为整型</li>
-                <li>优化表单构建按钮不显示正则校验</li>
-                <li>优化字典数据回显样式下拉框显示值</li>
-                <li>优化R响应成功状态码与全局保持一致</li>
-                <li>优化druid开启wall过滤器出现的异常问题</li>
-                <li>优化用户管理左侧树型组件增加选中高亮保持</li>
-                <li>优化新增用户与角色信息&用户与岗位信息逻辑</li>
-                <li>优化默认不启用压缩文件缓存防止node_modules过大</li>
-                <li>修复字典数据显示不全问题</li>
-                <li>修复操作日志查询类型条件为0时会查到所有数据</li>
-                <li>修复Excel注解prompt/combo同时使用不生效问题</li>
-                <li>其他细节优化</li>
+                <li>Add new cache list menu functions</li>
+                <li>Code to Create New Tree Table(opened/Completed)</li>
+                <li>ExcelNotes of supportcolorColor of fonts.</li>
+                <li>AddedAnonymousAnonymous Access Notification</li>
+                <li>User image upload limit is only for image format.</li>
+                <li>Interface using Pan-type allows it to see responsive properties fields</li>
+                <li>Check the timely task.beanThe name of the package is configured to the white list</li>
+                <li>Adding a page tagopenPageSupport for transmission parameters</li>
+                <li>User cache information adding departmentancestorsList of ancestors</li>
+                <li>Upgradingelement-uito the latest version.2.15.8</li>
+                <li>Upgradingoshito the latest version.6.1.6</li>
+                <li>Upgradingdruidto the latest version.1.2.11</li>
+                <li>Upgradingfastjsonto the latest version.2.0.8</li>
+                <li>Upgradingspring-bootto the latest version.2.5.14</li>
+                <li>The lower leveljsencryptVersion compatibleIEbrowsers</li>
+                <li>Remove the excess.saltFields</li>
+                <li>Add new methods for obtaining no back-up file name</li>
+                <li>Add new methods to obtain properties in the profile file</li>
+                <li>Additional content code./Easy to integrate plugins.</li>
+                <li>The dictionary type must begin with letters.，and only for（Writing the letter.，The numbers，The downline）</li>
+                <li>Optimization of the default parameter set.</li>
+                <li>Optimize filters for the processing of empty string parameters</li>
+                <li>Optimize the order.orderNumType is whole.</li>
+                <li>Optimize the form building button does not show the rule of validation</li>
+                <li>Optimize the dictionary data replay style of the drop box display value</li>
+                <li>optimizedRThe response status code is consistent with the overall situation.</li>
+                <li>optimizeddruidopenedwallUnusual problems with the filter.</li>
+                <li>Optimize user management left-side tree-like components increase selection high-light maintenance</li>
+                <li>Optimize new user and role information&User and Job Information Logic</li>
+                <li>Optimize default not activate compressed file cache preventionnode_modulestoo big.</li>
+                <li>Repair dictionary data shows incomplete problems</li>
+                <li>Repair operating log requests type conditions for0All data will be found.</li>
+                <li>RepairedExcelNotesprompt/comboUnfunctional use of the problem.</li>
+                <li>Other details optimized.</li>
               </ol>
             </el-collapse-item>
             <el-collapse-item title="v3.8.2 - 2022-04-01">
               <ol>
-                <li>前端支持设置是否需要防止数据重复提交</li>
-                <li>开启TopNav没有子菜单情况隐藏侧边栏</li>
-                <li>侧边栏菜单名称过长悬停显示标题</li>
-                <li>用户访问控制时校验数据权限，防止越权</li>
-                <li>导出Excel时屏蔽公式，防止CSV注入风险</li>
-                <li>组件ImagePreview支持多图预览显示</li>
-                <li>组件ImageUpload支持多图同时选择上传</li>
-                <li>组件FileUpload支持多文件同时选择上传</li>
-                <li>服务监控新增运行参数信息显示</li>
-                <li>定时任务目标字符串过滤特殊字符</li>
-                <li>定时任务目标字符串验证包名白名单</li>
-                <li>代码生成列表图片支持预览</li>
-                <li>代码生成编辑修改打开新页签</li>
-                <li>代码生成新增Java类型Boolean</li>
-                <li>代码生成子表支持日期/字典配置</li>
-                <li>代码生成同步保留必填/类型选项</li>
-                <li>升级oshi到最新版本6.1.2</li>
-                <li>升级fastjson到最新版1.2.80</li>
-                <li>升级pagehelper到最新版1.4.1</li>
-                <li>升级spring-boot到最新版本2.5.11</li>
-                <li>升级spring-boot-mybatis到最新版2.2.2</li>
-                <li>添加遗漏的分页参数合理化属性</li>
-                <li>修改npm即将过期的注册源地址</li>
-                <li>修复分页组件请求两次问题</li>
-                <li>修复通用文件下载接口跨域问题</li>
-                <li>修复Xss注解字段值为空时的异常问题</li>
-                <li>修复选项卡点击右键刷新丢失参数问题</li>
-                <li>修复表单清除元素位置未垂直居中问题</li>
-                <li>修复服务监控中运行参数显示条件错误</li>
-                <li>修复导入Excel时字典字段类型为Long转义为空问题</li>
-                <li>修复登录超时刷新页面跳转登录页面还提示重新登录问题</li>
-                <li>优化加载字典缓存数据</li>
-                <li>优化IP地址获取到多个的问题</li>
-                <li>优化任务队列满时任务拒绝策略</li>
-                <li>优化文件上传兼容Weblogic环境</li>
-                <li>优化定时任务默认保存到内存中执行</li>
-                <li>优化部门修改缩放后出现的错位问题</li>
-                <li>优化Excel格式化不同类型的日期对象</li>
-                <li>优化菜单表关键字导致的插件报错问题</li>
-                <li>优化Oracle用户头像列为空时不显示问题</li>
-                <li>优化页面若未匹配到字典标签则返回原字典值</li>
-                <li>优化修复登录失效后多次请求提示多次弹窗问题</li>
-                <li>其他细节优化</li>
+                <li>Front-end support settings need to prevent data from being submitted again</li>
+                <li>openedTopNavNo submenu situation hidden side bar</li>
+                <li>Side bar menu name too long suspension display title</li>
+                <li>User access control data authorization，Preventing overpower.</li>
+                <li>ExportedExcelThe time blocking formula.，PreventedCSVInjection of risk.</li>
+                <li>The componentImagePreviewSupport Multiple Preview Showing</li>
+                <li>The componentImageUploadSupport multiple images at the same time.</li>
+                <li>The componentFileUploadSupport multiple files at the same time</li>
+                <li>Service Monitoring Additional Operating Parameters Information</li>
+                <li>Time-to-time task target string filter special characters</li>
+                <li>Timely task target string verification package name list</li>
+                <li>Code Generate List Image Support Preview</li>
+                <li>Code Generation Editor Modification Open a new page tag</li>
+                <li>Create a new code.JavaType ofBoolean</li>
+                <li>Code Generation Subtable Support Date/The dictionary configuration.</li>
+                <li>Code generated synchronized must be filled./Type of Options</li>
+                <li>Upgradingoshito the latest version.6.1.2</li>
+                <li>Upgradingfastjsonto the latest version.1.2.80</li>
+                <li>Upgradingpagehelperto the latest version.1.4.1</li>
+                <li>Upgradingspring-bootto the latest version.2.5.11</li>
+                <li>Upgradingspring-boot-mybatisto the latest version.2.2.2</li>
+                <li>Add missed part page parameters of rationalization properties</li>
+                <li>ModifiednpmUpdated registration source address.</li>
+                <li>Repair page component requests two questions</li>
+                <li>Correction General File Download Interface Trans-Domain Problems</li>
+                <li>RepairedXssNote field value is an unusual problem of free time.</li>
+                <li>Right-click Update Lost Parameters Problems</li>
+                <li>Correction form cleansing the element location not vertical in the problem</li>
+                <li>Repair Service Monitoring Operating Parameters Show Conditions Errors</li>
+                <li>Repair of import.ExcelTime dictionary field type isLongTransformed into empty problem.</li>
+                <li>Repair login overtime update page jump login page also suggests re-log problem</li>
+                <li>Optimize the dictionary cache data</li>
+                <li>optimizedIPAddress to multiple issues.</li>
+                <li>Optimize the task team to complete the task refusal strategy</li>
+                <li>Optimize file upload compatibilityWeblogicThe Environment</li>
+                <li>Optimize timely tasks by default to be saved in memory</li>
+                <li>Optimization department changes the error point problems arising after reduction</li>
+                <li>optimizedExcelFormatting different types of date objects</li>
+                <li>Optimization Menu Keywords Caused by Plugin Error Problems</li>
+                <li>optimizedOracleUser image listed as free time does not show any problems</li>
+                <li>Optimization page if it does not match the dictionary label, returns the original dictionary value.</li>
+                <li>Optimization Repair Register Failure Multiple Request Notice Multiple Window Problems</li>
+                <li>Other details optimized.</li>
               </ol>
             </el-collapse-item>
             <el-collapse-item title="v3.8.1 - 2022-01-01">
               <ol>
-                <li>新增Vue3前端代码生成模板</li>
-                <li>新增图片预览组件</li>
-                <li>新增压缩插件实现打包Gzip</li>
-                <li>自定义xss校验注解实现</li>
-                <li>自定义文字复制剪贴指令</li>
-                <li>代码生成预览支持复制内容</li>
-                <li>路由支持单独配置菜单或角色权限</li>
-                <li>用户管理部门查询选择节点后分页参数初始</li>
-                <li>修复用户分配角色属性错误</li>
-                <li>修复打包后字体图标偶现的乱码问题</li>
-                <li>修复菜单管理重置表单出现的错误</li>
-                <li>修复版本差异导致的懒加载报错问题</li>
-                <li>修复Cron组件中周回显问题</li>
-                <li>修复定时任务多参数逗号分隔的问题</li>
-                <li>修复根据ID查询列表可能出现的主键溢出问题</li>
-                <li>修复tomcat配置参数已过期问题</li>
-                <li>升级clipboard到最新版本2.0.8</li>
-                <li>升级oshi到最新版本v5.8.6</li>
-                <li>升级fastjson到最新版1.2.79</li>
-                <li>升级spring-boot到最新版本2.5.8</li>
-                <li>升级log4j2到2.17.1，防止漏洞风险</li>
-                <li>优化下载解析blob异常提示</li>
-                <li>优化代码生成字典组重复问题</li>
-                <li>优化查询用户的角色组&岗位组代码</li>
-                <li>优化定时任务cron表达式小时设置24</li>
-                <li>优化用户导入提示溢出则显示滚动条</li>
-                <li>优化防重复提交标识组合为(key+url+header)</li>
-                <li>优化分页方法设置成通用方便灵活调用</li>
-                <li>其他细节优化</li>
+                <li>AddedVue3Front-end code generates template</li>
+                <li>Add new image preview components</li>
+                <li>Additional Compressed Plugins to PackageGzip</li>
+                <li>customizedxssExamination is realized.</li>
+                <li>Custom Text Copy Cutting Instructions</li>
+                <li>Code Generate Preview Supports Copying Content</li>
+                <li>Router supports individual configuration of menu or role permits</li>
+                <li>The user administration department requests to select the node after the part page parameters start.</li>
+                <li>Repair user allocation character properties errors</li>
+                <li>Correction of post-packing font icon coincidence error problem</li>
+                <li>Repair Menu Management Repair Form Errors</li>
+                <li>Correction Version Differences Caused by Less Up Report Error Problems</li>
+                <li>RepairedCronComponent Weekly Problems</li>
+                <li>Repair timely task multi-parameter comic separation problem</li>
+                <li>Repair basedIDThe query list may appear the main key flows problem</li>
+                <li>RepairedtomcatConfiguration parameters have expired.</li>
+                <li>Upgradingclipboardto the latest version.2.0.8</li>
+                <li>Upgradingoshito the latest version.v5.8.6</li>
+                <li>Upgradingfastjsonto the latest version.1.2.79</li>
+                <li>Upgradingspring-bootto the latest version.2.5.8</li>
+                <li>Upgradinglog4j2to2.17.1，Preventing the risk of vulnerabilities</li>
+                <li>Optimize the download analysis.blobAn unusual advice.</li>
+                <li>Optimization of the code to generate the dictionary group repeated problems</li>
+                <li>Optimization of user query roles&Code of Job Group</li>
+                <li>Optimize timely taskscronThe expressive hour setting.24</li>
+                <li>Optimize the user's importing clue flow shows the rolling bar.</li>
+                <li>Optimization of repeated submission identification portfolio(key+url+header)</li>
+                <li>Optimization of page settings to general and flexible calls</li>
+                <li>Other details optimized.</li>
               </ol>
             </el-collapse-item>
             <el-collapse-item title="v3.8.0 - 2021-12-01">
               <ol>
-                <li>新增配套并同步的Vue3前端版本</li>
-                <li>新增通用方法简化模态/缓存/下载/权限/页签使用</li>
-                <li>优化导出数据/使用通用下载方法</li>
-                <li>Excel注解支持自定义数据处理器</li>
-                <li>Excel注解支持导入导出标题信息</li>
-                <li>Excel导入支持@Excels注解</li>
-                <li>新增组件data-dict，简化数据字典使用</li>
-                <li>新增Jaxb依赖，防止jdk8以上出现的兼容错误</li>
-                <li>生产环境使用路由懒加载提升页面响应速度</li>
-                <li>修复五级以上菜单出现的404问题</li>
-                <li>防重提交注解支持配置间隔时间/提示消息</li>
-                <li>日志注解新增是否保存响应参数</li>
-                <li>任务屏蔽违规字符&参数忽略双引号中的逗号</li>
-                <li>升级SpringBoot到最新版本2.5.6</li>
-                <li>升级pagehelper到最新版1.4.0</li>
-                <li>升级spring-boot-mybatis到最新版2.2.0</li>
-                <li>升级oshi到最新版本v5.8.2</li>
-                <li>升级druid到最新版1.2.8</li>
-                <li>升级velocity到最新版本2.3</li>
-                <li>升级fastjson到最新版1.2.78</li>
-                <li>升级axios到最新版本0.24.0</li>
-                <li>升级dart-sass到版本1.32.13</li>
-                <li>升级core-js到最新版本3.19.1</li>
-                <li>升级jsencrypt到最新版本3.2.1</li>
-                <li>升级js-cookie到最新版本3.0.1</li>
-                <li>升级file-saver到最新版本2.0.5</li>
-                <li>升级sass-loader到最新版本10.1.1</li>
-                <li>升级element-ui到最新版本2.15.6</li>
-                <li>新增sendGet无参请求方法</li>
-                <li>禁用el-tag组件的渐变动画</li>
-                <li>代码生成点击预览重置激活tab</li>
-                <li>AjaxResult重写put方法，以方便链式调用</li>
-                <li>优化登录/验证码请求headers不设置token</li>
-                <li>优化用户个人信息接口防止修改用户名</li>
-                <li>优化Cron表达式生成器关闭时销毁避免缓存</li>
-                <li>优化注册成功提示消息类型success</li>
-                <li>优化aop语法，使用spring自动注入注解</li>
-                <li>优化记录登录信息，移除不必要的修改</li>
-                <li>优化mybatis全局默认的执行器</li>
-                <li>优化Excel导入图片可能出现的异常</li>
-                <li>修复代码生成模板主子表删除缺少事务</li>
-                <li>修复日志记录可能出现的转换异常</li>
-                <li>修复代码生成复选框字典遗漏问题</li>
-                <li>修复关闭xss功能导致可重复读RepeatableFilter失效</li>
-                <li>修复字符串无法被反转义问题</li>
-                <li>修复后端主子表代码模板方法名生成错误问题</li>
-                <li>修复xss过滤后格式出现的异常</li>
-                <li>修复swagger没有指定dataTypeClass导致启动出现warn日志</li>
-                <li>其他细节优化</li>
+                <li>Added and synchronized.Vue3The front version</li>
+                <li>Additional methods to simplify modeling/cache/Downloads/Authority/Use of pages.</li>
+                <li>Optimize the export data/Use the general download method.</li>
+                <li>ExcelSupports custom data processor</li>
+                <li>ExcelNote Support Import and Export Title Information</li>
+                <li>ExcelImported support@ExcelsNotes</li>
+                <li>Additional componentsdata-dict，Simply use of data dictionaries</li>
+                <li>AddedJaxbDependency，Preventedjdk8Compatibility errors that occur.</li>
+                <li>Manufacturing environment using routes to increase page response speed</li>
+                <li>Repair menu above level 5 appeared404The problem</li>
+                <li>Anti-weight submission notice support configuration interval time/suggested news</li>
+                <li>Signal notes add up whether the response parameters are saved.</li>
+                <li>Prohibition of irregular characters.&Parameters Ignore Comics in Double Quotes</li>
+                <li>UpgradingSpringBootto the latest version.2.5.6</li>
+                <li>Upgradingpagehelperto the latest version.1.4.0</li>
+                <li>Upgradingspring-boot-mybatisto the latest version.2.2.0</li>
+                <li>Upgradingoshito the latest version.v5.8.2</li>
+                <li>Upgradingdruidto the latest version.1.2.8</li>
+                <li>Upgradingvelocityto the latest version.2.3</li>
+                <li>Upgradingfastjsonto the latest version.1.2.78</li>
+                <li>Upgradingaxiosto the latest version.0.24.0</li>
+                <li>Upgradingdart-sassto version.1.32.13</li>
+                <li>Upgradingcore-jsto the latest version.3.19.1</li>
+                <li>Upgradingjsencryptto the latest version.3.2.1</li>
+                <li>Upgradingjs-cookieto the latest version.3.0.1</li>
+                <li>Upgradingfile-saverto the latest version.2.0.5</li>
+                <li>Upgradingsass-loaderto the latest version.10.1.1</li>
+                <li>Upgradingelement-uito the latest version.2.15.6</li>
+                <li>AddedsendGetNo request method.</li>
+                <li>prohibitedel-tagChange of components.</li>
+                <li>Create the code and reactivate the preview.tab</li>
+                <li>AjaxResultRewriteputMethod，Facilitated chain calling.</li>
+                <li>Optimize the registration./Verification Code Requestheadersnot set.token</li>
+                <li>Optimize the user’s personal information interface to prevent changing user name</li>
+                <li>optimizedCronExpression generator shut down to avoid cache</li>
+                <li>Optimize registration success tips type of messagesuccess</li>
+                <li>optimizedaopThe language，Use ofspringAutomatic Injection Notes</li>
+                <li>Optimize record registration information，Remove unnecessary modifications</li>
+                <li>optimizedmybatisTotal default executor.</li>
+                <li>optimizedExcelUnusual images that may appear</li>
+                <li>Repair code to generate template master subtitle remove missing transactions</li>
+                <li>Repair log records that may occur conversion abnormalities</li>
+                <li>Correction of code to generate recall box dictionary missing problem</li>
+                <li>Repair closed.xssFunction to repeat reading.RepeatableFilterFailure</li>
+                <li>Repair string cannot be reversed.</li>
+                <li>Correction of the back end master subtitles code template method name generates error problem</li>
+                <li>RepairedxssUnusual after filtering formats appear.</li>
+                <li>RepairedswaggerNot specified.dataTypeClassresulting in the start.warnThe Diary</li>
+                <li>Other details optimized.</li>
               </ol>
             </el-collapse-item>
             <el-collapse-item title="v3.7.0 - 2021-09-13">
               <ol>
-                <li>参数管理支持配置验证码开关</li>
-                <li>新增是否开启用户注册功能</li>
-                <li>定时任务支持在线生成cron表达式</li>
-                <li>菜单管理支持配置路由参数</li>
-                <li>支持自定义注解实现接口限流</li>
-                <li>Excel注解支持Image图片导入</li>
-                <li>自定义弹层溢出滚动样式</li>
-                <li>自定义可拖动弹窗宽度指令</li>
-                <li>自定义可拖动弹窗高度指令</li>
-                <li>修复任意账户越权问题</li>
-                <li>修改时检查用户数据权限范围</li>
-                <li>修复保存配置主题颜色失效问题</li>
-                <li>新增暗色菜单风格主题</li>
-                <li>菜单&部门新增展开/折叠功能</li>
-                <li>页签新增关闭左侧&添加图标</li>
-                <li>顶部菜单排除隐藏的默认路由</li>
-                <li>顶部菜单同步系统主题样式</li>
-                <li>跳转路由高亮相对应的菜单栏</li>
-                <li>代码生成主子表多选行数据</li>
-                <li>日期范围支持添加多组</li>
-                <li>升级element-ui到最新版本2.15.5</li>
-                <li>升级oshi到最新版本v5.8.0</li>
-                <li>升级commons.io到最新版本v2.11.0</li>
-                <li>定时任务屏蔽ldap远程调用</li>
-                <li>定时任务屏蔽http(s)远程调用</li>
-                <li>补充定时任务表字段注释</li>
-                <li>定时任务对检查异常进行事务回滚</li>
-                <li>启用父部门状态排除顶级节点</li>
-                <li>富文本新增上传文件大小限制</li>
-                <li>默认首页使用keep-alive缓存</li>
-                <li>修改代码生成字典回显样式</li>
-                <li>自定义分页合理化传入参数</li>
-                <li>修复字典组件值为整形不显示问题</li>
-                <li>修复定时任务日志执行状态显示</li>
-                <li>角色&菜单新增字段属性提示信息</li>
-                <li>修复角色分配用户页面参数类型错误提醒</li>
-                <li>优化布局设置动画特效</li>
-                <li>优化异常处理信息</li>
-                <li>优化错误token导致的解析异常</li>
-                <li>密码框新增显示切换密码图标</li>
-                <li>定时任务新增更多操作</li>
-                <li>更多操作按钮添加权限控制</li>
-                <li>导入用户样式优化</li>
-                <li>提取通用方法到基类控制器</li>
-                <li>优化使用权限工具获取用户信息</li>
-                <li>优化用户不能删除自己</li>
-                <li>优化XSS跨站脚本过滤</li>
-                <li>优化代码生成模板</li>
-                <li>验证码默认20s超时</li>
-                <li>BLOB下载时清除URL对象引用</li>
-                <li>代码生成导入表按创建时间排序</li>
-                <li>修复代码生成页面数据编辑保存之后总是跳转第一页的问题</li>
-                <li>修复带safari浏览器无法格式化utc日期格式yyyy-MM-dd'T'HH:mm:ss.SSS问题</li>
-                <li>多图上传组件移除多余的api地址&验证失败导致图片删除问题&无法删除相应图片修复</li>
-                <li>其他细节优化</li>
+                <li>Parameters management support Configuration verification code switch</li>
+                <li>Open the user registration function.</li>
+                <li>Time Task Support Online GenerationcronThe expression</li>
+                <li>Menu management supports configuration routing parameters</li>
+                <li>Support custom note to interface limit flow</li>
+                <li>ExcelNotes of supportImageImages are imported</li>
+                <li>Customized bullet layer flowing style</li>
+                <li>Customized drawing window width instructions</li>
+                <li>Customized pullable window height instructions</li>
+                <li>Repair the arbitrary account overright problem</li>
+                <li>Check the user data permits when modifying</li>
+                <li>Repair Save Configuration Theme Color Failure Problem</li>
+                <li>Add a dark menu style theme</li>
+                <li>The menu&The new department opened./Completed function.</li>
+                <li>The page is closed on the left side.&Adding the icon.</li>
+                <li>The top menu eliminates hidden default routes.</li>
+                <li>Top Menu Sync System Theme Style</li>
+                <li>Turn routes from high-light corresponding menu bars</li>
+                <li>Code Generates Multiple Selection Data</li>
+                <li>Date range support add multiple groups</li>
+                <li>Upgradingelement-uito the latest version.2.15.5</li>
+                <li>Upgradingoshito the latest version.v5.8.0</li>
+                <li>Upgradingcommons.ioto the latest version.v2.11.0</li>
+                <li>Temporary task blocking.ldapRemote calls</li>
+                <li>Temporary task blocking.http(s)Remote calls</li>
+                <li>Complete timely task tab field notes</li>
+                <li>Time-to-time tasks to check out unusual transactions</li>
+                <li>Activate the parent department status to eliminate the top nodes</li>
+                <li>Add a new file size limit.</li>
+                <li>Use the first page.keep-alivecache</li>
+                <li>Modify the code to generate the dictionary reflection style</li>
+                <li>Customized part page rationalization input parameters</li>
+                <li>Repair dictionary component value for plastic does not show any problem</li>
+                <li>Repair time task log performing status shows</li>
+                <li>The role&Menu add new field properties tips information</li>
+                <li>Repair character assignment user page parameter type error reminders</li>
+                <li>Optimize the layout setting animation special effects</li>
+                <li>Optimize unusual processing of information</li>
+                <li>Optimization of errorstokenresulting in an abnormal analysis.</li>
+                <li>Password box adds a new display of password switching icon</li>
+                <li>Add more time tasks.</li>
+                <li>Add more power control button.</li>
+                <li>Optimize the user style.</li>
+                <li>Extract General Method to Basic Controller</li>
+                <li>Optimize the use of the permission tools to obtain user information</li>
+                <li>Optimized users cannot remove themselves.</li>
+                <li>optimizedXSSFiltering Screenshots</li>
+                <li>Optimize the code to create templates</li>
+                <li>Verification code.20sSuper time</li>
+                <li>BLOBRemove when downloading.URLReference of objects.</li>
+                <li>Code generate the import table according to the time created</li>
+                <li>Correction code generate page data editing save after always jumping the first page problem</li>
+                <li>Repair the belt.safariThe browser cannot be formated.utcFormat of dateyyyy-MM-dd'T'HH:mm:ss.SSSThe problem</li>
+                <li>Remove the excess components.apiAddressed&Failure verification leads to image deletion problems&Can't remove the corresponding image repair</li>
+                <li>Other details optimized.</li>
               </ol>
             </el-collapse-item>
             <el-collapse-item title="v3.6.0 - 2021-07-12">
               <ol>
-                <li>角色管理新增分配用户功能</li>
-                <li>用户管理新增分配角色功能</li>
-                <li>日志列表支持排序操作</li>
-                <li>优化参数&字典缓存操作</li>
-                <li>系统布局配置支持动态标题开关</li>
-                <li>菜单路由配置支持内链访问</li>
-                <li>默认访问后端首页新增提示语</li>
-                <li>富文本默认上传返回url类型</li>
-                <li>新增自定义弹窗拖拽指令</li>
-                <li>全局注册常用通用组件</li>
-                <li>全局挂载字典标签组件</li>
-                <li>ImageUpload组件支持多图片上传</li>
-                <li>FileUpload组件支持多文件上传</li>
-                <li>文件上传组件添加数量限制属性</li>
-                <li>富文本编辑组件添加类型属性</li>
-                <li>富文本组件工具栏配置视频</li>
-                <li>封装通用iframe组件</li>
-                <li>限制超级管理员不允许操作</li>
-                <li>用户信息长度校验限制</li>
-                <li>分页组件新增pagerCount属性</li>
-                <li>添加bat脚本执行应用</li>
-                <li>升级oshi到最新版本v5.7.4</li>
-                <li>升级element-ui到最新版本2.15.2</li>
-                <li>升级pagehelper到最新版1.3.1</li>
-                <li>升级commons.io到最新版本v2.10.0</li>
-                <li>升级commons.fileupload到最新版本v1.4</li>
-                <li>升级swagger到最新版本v3.0.0</li>
-                <li>修复关闭confirm提示框控制台报错问题</li>
-                <li>修复存在的SQL注入漏洞问题</li>
-                <li>定时任务屏蔽rmi远程调用</li>
-                <li>修复用户搜索分页变量错误</li>
-                <li>修复导出角色数据范围翻译缺少仅本人</li>
-                <li>修复表单构建选择下拉选择控制台报错问题</li>
-                <li>优化图片工具类读取文件</li>
-                <li>其他细节优化</li>
+                <li>Role Management Additional User Functions</li>
+                <li>User Management Additional Role Distribution Functions</li>
+                <li>Log list supports ordering operations</li>
+                <li>Optimized parameters&dictionary cache operation.</li>
+                <li>System layout configuration supports dynamic title switch</li>
+                <li>Menu routing by configuration supports internal chain access</li>
+                <li>By default access the back end first page add new tips</li>
+                <li>The rich text default is uploaded back.urlType of</li>
+                <li>Additional custom window drawing instructions</li>
+                <li>General registration of common components.</li>
+                <li>All posts tagged dictionary.</li>
+                <li>ImageUploadIt supports the upload of multiple images.</li>
+                <li>FileUploadComponents support multiple file upload</li>
+                <li>File upload components add quantity limit properties</li>
+                <li>Rich text editing components add type properties</li>
+                <li>The text component toolbar configuration video</li>
+                <li>Packed in general.iframeThe component</li>
+                <li>Limit Super Administrator does not allow operations</li>
+                <li>User information length test limit</li>
+                <li>Add new page components.pagerCountProperties</li>
+                <li>AddedbatScreenshots implementation</li>
+                <li>Upgradingoshito the latest version.v5.7.4</li>
+                <li>Upgradingelement-uito the latest version.2.15.2</li>
+                <li>Upgradingpagehelperto the latest version.1.3.1</li>
+                <li>Upgradingcommons.ioto the latest version.v2.10.0</li>
+                <li>Upgradingcommons.fileuploadto the latest version.v1.4</li>
+                <li>Upgradingswaggerto the latest version.v3.0.0</li>
+                <li>Repair closed.confirmNote box controller report error.</li>
+                <li>Repair exists.SQLInjection of vulnerabilities.</li>
+                <li>Temporary task blocking.rmiRemote calls</li>
+                <li>Repair user search page variable errors</li>
+                <li>Repair output role data range translation lacks only yourself</li>
+                <li>Correction Form Building Choose Down Choose Console Report Error Problems</li>
+                <li>Optimization of Image Class Reading Tools</li>
+                <li>Other details optimized.</li>
               </ol>
             </el-collapse-item>
             <el-collapse-item title="v3.5.0 - 2021-05-25">
               <ol>
-                <li>新增菜单导航显示风格TopNav（false为左侧导航菜单，true为顶部导航菜单）</li>
-                <li>布局设置支持保存&重置配置</li>
-                <li>修复树表数据显示不全&加载慢问题</li>
-                <li>新增IE浏览器版本过低提示页面</li>
-                <li>用户登录后记录最后登录IP&时间</li>
-                <li>页面导出按钮点击之后添加遮罩</li>
-                <li>富文本编辑器支持自定义上传地址</li>
-                <li>富文本编辑组件新增readOnly属性</li>
-                <li>页签TagsView新增关闭右侧功能</li>
-                <li>显隐列组件加载初始默认隐藏列</li>
-                <li>关闭头像上传窗口还原默认图片</li>
-                <li>个人信息添加手机&邮箱重复验证</li>
-                <li>代码生成模板导出按钮点击后添加遮罩</li>
-                <li>代码生成模板树表操作列添加新增按钮</li>
-                <li>代码生成模板修复主子表字段重名问题</li>
-                <li>升级fastjson到最新版1.2.76</li>
-                <li>升级druid到最新版本v1.2.6</li>
-                <li>升级mybatis到最新版3.5.6 阻止远程代码执行漏洞</li>
-                <li>升级oshi到最新版本v5.6.0</li>
-                <li>velocity剔除commons-collections版本，防止3.2.1版本的反序列化漏洞</li>
-                <li>数据监控页默认账户密码防止越权访问</li>
-                <li>修复firefox下表单构建拖拽会新打卡一个选项卡</li>
-                <li>修正后端导入表权限标识</li>
-                <li>修正前端操作日志&登录日志权限标识</li>
-                <li>设置Redis配置HashKey序列化</li>
-                <li>删除操作日志记录信息</li>
-                <li>上传媒体类型添加视频格式</li>
-                <li>修复请求形参未传值记录日志异常问题</li>
-                <li>优化xss校验json请求条件</li>
-                <li>树级结构更新子节点使用replaceFirst</li>
-                <li>优化ExcelUtil空值处理</li>
-                <li>日志记录过滤BindingResult对象，防止异常</li>
-                <li>修改主题后mini类型按钮无效问题</li>
-                <li>优化通用下载完成后删除节点</li>
-                <li>通用Controller添加响应返回消息</li>
-                <li>其他细节优化</li>
+                <li>Added Menu Navigation Show StyleTopNav（falseNavigation menu on the left.，trueThe top navigation menu.）</li>
+                <li>Setup support to save.&Restoration of configuration.</li>
+                <li>Repair tables data show incomplete&Slow Load Problems</li>
+                <li>AddedIEThe browser version is too low.</li>
+                <li>The user logs in after the last log.IP&time</li>
+                <li>Page export button after clicking add the cover.</li>
+                <li>The rich text editor supports custom upload addresses</li>
+                <li>Add new text editing components.readOnlyProperties</li>
+                <li>Page signsTagsViewOpen the right side function.</li>
+                <li>Showing the hidden column components load the initial default hidden column</li>
+                <li>Close the head image upload window to recover the default image.</li>
+                <li>Add personal information to phone.&Repeat verification of the mailbox</li>
+                <li>Code generate template export button after clicking add the mask</li>
+                <li>Code Generate Template Tree Table Operation Column Add a New Button</li>
+                <li>Code Generate Template Repair Sub-Table Field Replacement Problem</li>
+                <li>Upgradingfastjsonto the latest version.1.2.76</li>
+                <li>Upgradingdruidto the latest version.v1.2.6</li>
+                <li>Upgradingmybatisto the latest version.3.5.6 Prevent remote code execution faults</li>
+                <li>Upgradingoshito the latest version.v5.6.0</li>
+                <li>velocityremovedcommons-collectionsThe version，Prevented3.2.1Versions of Anti-Series Failure</li>
+                <li>Data monitoring page default account password prevents over-right access</li>
+                <li>RepairedfirefoxThe following form build the drawing will be a new card one option card.</li>
+                <li>Modify the back end import tables permission labels</li>
+                <li>Repair the front-end operating log.&Registration log permits.</li>
+                <li>set upRedisConfigurationHashKeyThe sequence</li>
+                <li>Delete the log record information.</li>
+                <li>Download Media Type Add Video Format</li>
+                <li>Correction requests not transmitted value records unusual problems</li>
+                <li>optimizedxssExaminationjsonRequest Conditions</li>
+                <li>Updated structure of the tree nodereplaceFirst</li>
+                <li>optimizedExcelUtilEmpty Treatment</li>
+                <li>Filtering of log records.BindingResultObjects，Prevent the abnormality.</li>
+                <li>After changing the topic.miniThe type of button is invalid.</li>
+                <li>Optimize General Downloads After Deleting Node</li>
+                <li>GeneralControllerAdd a reply to the message.</li>
+                <li>Other details optimized.</li>
               </ol>
             </el-collapse-item>
             <el-collapse-item title="v3.4.0 - 2021-02-22">
               <ol>
-                <li>代码生成模板支持主子表</li>
-                <li>表格右侧工具栏组件支持显隐列</li>
-                <li>图片组件添加预览&移除功能</li>
-                <li>Excel注解支持Image图片导出</li>
-                <li>操作按钮组调整为朴素按钮样式</li>
-                <li>代码生成支持文件上传组件</li>
-                <li>代码生成日期控件区分范围</li>
-                <li>代码生成数据库文本类型生成表单文本域</li>
-                <li>用户手机邮箱&菜单组件修改允许空字符串</li>
-                <li>升级SpringBoot到最新版本2.2.13 提升启动速度</li>
-                <li>升级druid到最新版本v1.2.4</li>
-                <li>升级fastjson到最新版1.2.75</li>
-                <li>升级element-ui到最新版本2.15.0</li>
-                <li>修复IE11浏览器报错问题</li>
-                <li>优化多级菜单之间切换无法缓存的问题</li>
-                <li>修复四级菜单无法显示问题</li>
-                <li>修正侧边栏静态路由丢失问题</li>
-                <li>修复角色管理-编辑角色-功能权限显示异常</li>
-                <li>配置文件新增redis数据库索引属性</li>
-                <li>权限工具类增加admin判断</li>
-                <li>角色非自定义权限范围清空选择值</li>
-                <li>修复导入数据为负浮点数时丢失精度问题</li>
-                <li>移除path-to-regexp正则匹配插件</li>
-                <li>修复生成树表代码异常</li>
-                <li>修改ip字段长度防止ipv6地址长度不够</li>
-                <li>防止get请求参数值为false或0等特殊值会导致无法正确的传参</li>
-                <li>登录后push添加catch防止出现检查错误</li>
-                <li>其他细节优化</li>
+                <li>Code generating template supports master subtables</li>
+                <li>The toolbar component on the right side of the table supports the visible scratch</li>
+                <li>Image components add a preview&Remove the function.</li>
+                <li>ExcelNotes of supportImageImages Exported</li>
+                <li>The operating button group is adjusted to the simple button style.</li>
+                <li>Create code to support file upload components</li>
+                <li>Code Generation Date Controls Difference</li>
+                <li>Code Generate Database Text Type Generate Form Text Domain</li>
+                <li>User phone mailbox&Modification of menu components enables empty string</li>
+                <li>UpgradingSpringBootto the latest version.2.2.13 Increase the start speed.</li>
+                <li>Upgradingdruidto the latest version.v1.2.4</li>
+                <li>Upgradingfastjsonto the latest version.1.2.75</li>
+                <li>Upgradingelement-uito the latest version.2.15.0</li>
+                <li>RepairedIE11Browsers report errors.</li>
+                <li>Optimize the difficulty of switching between multi-level menus</li>
+                <li>Repair four-level menu does not show any problem.</li>
+                <li>Correction of Side Bar Statistical Router Lost Problem</li>
+                <li>Repair role management.-Editor’s role-Functional permits show unusual</li>
+                <li>Add new file.redisDatabase Indicator Properties</li>
+                <li>Augmentation of Authorization Toolsadminjudgment</li>
+                <li>Role of Undefined Role of Options</li>
+                <li>Repair loss of accuracy when imported data is negative.</li>
+                <li>removedpath-to-regexpCompatible with the plugins.</li>
+                <li>Repair Generated Tree Table Code Unusual</li>
+                <li>ModifiedipPrevent the length of the field.ipv6Address length is not enough.</li>
+                <li>PreventedgetRequested parameters arefalseor0Specific values can lead to incorrect transmission.</li>
+                <li>After logging.pushAddedcatchAvoid verification errors.</li>
+                <li>Other details optimized.</li>
               </ol>
             </el-collapse-item>
             <el-collapse-item title="v3.3.0 - 2020-12-14">
               <ol>
-                <li>新增缓存监控功能</li>
-                <li>支持主题风格配置</li>
-                <li>修复多级菜单之间切换无法缓存的问题</li>
-                <li>多级菜单自动配置组件</li>
-                <li>代码生成预览支持高亮显示</li>
-                <li>支持Get请求映射Params参数</li>
-                <li>删除用户和角色解绑关联</li>
-                <li>去除用户手机邮箱部门必填验证</li>
-                <li>Excel支持注解align对齐方式</li>
-                <li>Excel支持导入Boolean型数据</li>
-                <li>优化头像样式，鼠标移入悬停遮罩</li>
-                <li>代码生成预览提供滚动机制</li>
-                <li>代码生成删除多余的数字float类型</li>
-                <li>修正转换字符串的目标字符集属性</li>
-                <li>回显数据字典防止空值报错</li>
-                <li>日志记录增加过滤多文件场景</li>
-                <li>修改缓存Set方法可能导致嵌套的问题</li>
-                <li>移除前端一些多余的依赖</li>
-                <li>防止安全扫描YUI出现的风险提示</li>
-                <li>修改node-sass为dart-sass</li>
-                <li>升级SpringBoot到最新版本2.1.18</li>
-                <li>升级poi到最新版本4.1.2</li>
-                <li>升级oshi到最新版本v5.3.6</li>
-                <li>升级bitwalker到最新版本1.21</li>
-                <li>升级axios到最新版本0.21.0</li>
-                <li>升级element-ui到最新版本2.14.1</li>
-                <li>升级vue到最新版本2.6.12</li>
-                <li>升级vuex到最新版本3.6.0</li>
-                <li>升级vue-cli到版本4.5.9</li>
-                <li>升级vue-router到最新版本3.4.9</li>
-                <li>升级vue-cli到最新版本4.4.6</li>
-                <li>升级vue-cropper到最新版本0.5.5</li>
-                <li>升级clipboard到最新版本2.0.6</li>
-                <li>升级core-js到最新版本3.8.1</li>
-                <li>升级echarts到最新版本4.9.0</li>
-                <li>升级file-saver到最新版本2.0.4</li>
-                <li>升级fuse.js到最新版本6.4.3</li>
-                <li>升级js-beautify到最新版本1.13.0</li>
-                <li>升级js-cookie到最新版本2.2.1</li>
-                <li>升级path-to-regexp到最新版本6.2.0</li>
-                <li>升级quill到最新版本1.3.7</li>
-                <li>升级screenfull到最新版本5.0.2</li>
-                <li>升级sortablejs到最新版本1.10.2</li>
-                <li>升级vuedraggable到最新版本2.24.3</li>
-                <li>升级chalk到最新版本4.1.0</li>
-                <li>升级eslint到最新版本7.15.0</li>
-                <li>升级eslint-plugin-vue到最新版本7.2.0</li>
-                <li>升级lint-staged到最新版本10.5.3</li>
-                <li>升级runjs到最新版本4.4.2</li>
-                <li>升级sass-loader到最新版本10.1.0</li>
-                <li>升级script-ext-html-webpack-plugin到最新版本2.1.5</li>
-                <li>升级svg-sprite-loader到最新版本5.1.1</li>
-                <li>升级vue-template-compiler到最新版本2.6.12</li>
-                <li>其他细节优化</li>
+                <li>Added Cache Monitoring Functions</li>
+                <li>Support thematic style configuration.</li>
+                <li>Correction of no cache change between multi-level menus</li>
+                <li>Multi-level menu automatic configuration of components</li>
+                <li>Code Generate Preview Support High-Light Display</li>
+                <li>supportedGetRequest for shooting.ParamsParameters</li>
+                <li>Remove users and characters.</li>
+                <li>Remove the user’s mobile mailbox department must fill in verification.</li>
+                <li>ExcelSupporting the NotealignMethod of matching</li>
+                <li>ExcelSupport for importsBooleanType of data</li>
+                <li>Optimize the image style.，The mouse moves to the suspension mask.</li>
+                <li>Code generating preview provides a rolling mechanism</li>
+                <li>Code generates the removal of excess numbers.floatType of</li>
+                <li>Modify the target character set properties for converting string</li>
+                <li>Repeat data dictionary to prevent empty errors</li>
+                <li>Log records increase filtering multiple file scenes</li>
+                <li>Modification of CacheSetMethods may lead to embedded problems.</li>
+                <li>Remove some excess dependence.</li>
+                <li>Prevent safety scans.YUIThe risks appear.</li>
+                <li>Modifiednode-sassfordart-sass</li>
+                <li>UpgradingSpringBootto the latest version.2.1.18</li>
+                <li>Upgradingpoito the latest version.4.1.2</li>
+                <li>Upgradingoshito the latest version.v5.3.6</li>
+                <li>Upgradingbitwalkerto the latest version.1.21</li>
+                <li>Upgradingaxiosto the latest version.0.21.0</li>
+                <li>Upgradingelement-uito the latest version.2.14.1</li>
+                <li>Upgradingvueto the latest version.2.6.12</li>
+                <li>Upgradingvuexto the latest version.3.6.0</li>
+                <li>Upgradingvue-clito version.4.5.9</li>
+                <li>Upgradingvue-routerto the latest version.3.4.9</li>
+                <li>Upgradingvue-clito the latest version.4.4.6</li>
+                <li>Upgradingvue-cropperto the latest version.0.5.5</li>
+                <li>Upgradingclipboardto the latest version.2.0.6</li>
+                <li>Upgradingcore-jsto the latest version.3.8.1</li>
+                <li>Upgradingechartsto the latest version.4.9.0</li>
+                <li>Upgradingfile-saverto the latest version.2.0.4</li>
+                <li>Upgradingfuse.jsto the latest version.6.4.3</li>
+                <li>Upgradingjs-beautifyto the latest version.1.13.0</li>
+                <li>Upgradingjs-cookieto the latest version.2.2.1</li>
+                <li>Upgradingpath-to-regexpto the latest version.6.2.0</li>
+                <li>Upgradingquillto the latest version.1.3.7</li>
+                <li>Upgradingscreenfullto the latest version.5.0.2</li>
+                <li>Upgradingsortablejsto the latest version.1.10.2</li>
+                <li>Upgradingvuedraggableto the latest version.2.24.3</li>
+                <li>Upgradingchalkto the latest version.4.1.0</li>
+                <li>Upgradingeslintto the latest version.7.15.0</li>
+                <li>Upgradingeslint-plugin-vueto the latest version.7.2.0</li>
+                <li>Upgradinglint-stagedto the latest version.10.5.3</li>
+                <li>Upgradingrunjsto the latest version.4.4.2</li>
+                <li>Upgradingsass-loaderto the latest version.10.1.0</li>
+                <li>Upgradingscript-ext-html-webpack-pluginto the latest version.2.1.5</li>
+                <li>Upgradingsvg-sprite-loaderto the latest version.5.1.1</li>
+                <li>Upgradingvue-template-compilerto the latest version.2.6.12</li>
+                <li>Other details optimized.</li>
               </ol>
             </el-collapse-item>
             <el-collapse-item title="v3.2.1 - 2020-11-18">
               <ol>
-                <li>阻止任意文件下载漏洞</li>
-                <li>代码生成支持上传控件</li>
-                <li>新增图片上传组件</li>
-                <li>调整默认首页</li>
-                <li>升级druid到最新版本v1.2.2</li>
-                <li>mapperLocations配置支持分隔符</li>
-                <li>权限信息调整</li>
-                <li>调整sql默认时间</li>
-                <li>解决代码生成没有bit类型的问题</li>
-                <li>升级pagehelper到最新版1.3.0</li>
+                <li>Block the failure failure.</li>
+                <li>Create code to support upload controls</li>
+                <li>Add new image upload components</li>
+                <li>Adjust the default page.</li>
+                <li>Upgradingdruidto the latest version.v1.2.2</li>
+                <li>mapperLocationsSupport for separation.</li>
+                <li>Adjustment of permission information</li>
+                <li>Adjustedsqlprescribed time.</li>
+                <li>No code is created.bitType of problem.</li>
+                <li>Upgradingpagehelperto the latest version.1.3.0</li>
               </ol>
             </el-collapse-item>
             <el-collapse-item title="v3.2.0 - 2020-10-10">
               <ol>
-                <li>升级springboot版本到2.1.17 提升安全性</li>
-                <li>升级oshi到最新版本v5.2.5</li>
-                <li>升级druid到最新版本v1.2.1</li>
-                <li>升级jjwt到版本0.9.1</li>
-                <li>升级fastjson到最新版1.2.74</li>
-                <li>修改sass为node-sass，避免el-icon图标乱码</li>
-                <li>代码生成支持同步数据库</li>
-                <li>代码生成支持富文本控件</li>
-                <li>代码生成页面时不忽略remark属性</li>
-                <li>代码生成添加select必填选项</li>
-                <li>Excel导出类型NUMERIC支持精度浮点类型</li>
-                <li>Excel导出targetAttr优化获取值，防止get方法不规范</li>
-                <li>Excel注解支持自动统计数据总和</li>
-                <li>Excel注解支持设置BigDecimal精度&舍入规则</li>
-                <li>菜单&数据权限新增（展开/折叠 全选/全不选 父子联动）</li>
-                <li>允许用户分配到部门父节点</li>
-                <li>菜单新增是否缓存keep-alive</li>
-                <li>表格操作列间距调整</li>
-                <li>限制系统内置参数不允许删除</li>
-                <li>富文本组件优化，支持自定义高度&图片冲突问题</li>
-                <li>富文本工具栏样式对齐</li>
-                <li>导入excel整形值校验优化</li>
-                <li>修复页签关闭所有时固定标签路由不刷新问题</li>
-                <li>表单构建布局型组件新增按钮</li>
-                <li>左侧菜单文字过长显示省略号</li>
-                <li>修正根节点为子部门时，树状结构显示问题</li>
-                <li>修正调用目标字符串最大长度</li>
-                <li>修正菜单提示信息错误</li>
-                <li>修正定时任务执行一次权限标识</li>
-                <li>修正数据库字符串类型nvarchar</li>
-                <li>优化递归子节点</li>
-                <li>优化数据权限判断</li>
-                <li>其他细节优化</li>
+                <li>UpgradingspringbootVersion to2.1.17 Increased Safety</li>
+                <li>Upgradingoshito the latest version.v5.2.5</li>
+                <li>Upgradingdruidto the latest version.v1.2.1</li>
+                <li>Upgradingjjwtto version.0.9.1</li>
+                <li>Upgradingfastjsonto the latest version.1.2.74</li>
+                <li>Modifiedsassfornode-sass，avoidingel-iconSymbol of codes</li>
+                <li>Code Generation Supports Sync Database</li>
+                <li>Create code to support rich text controls</li>
+                <li>Do not ignore the code when creating a page.remarkProperties</li>
+                <li>Create code to add.selectOptions must be filled</li>
+                <li>ExcelType of ExportNUMERICSupport the accuracy point type.</li>
+                <li>ExcelExportedtargetAttrOptimize the gain value.，PreventedgetThe method is unregular.</li>
+                <li>ExcelSupporting automatic statistical data</li>
+                <li>ExcelNote Support SetupBigDecimalaccuracy&Submit to the rules.</li>
+                <li>The menu&Added Data Authority（opened/Completed The full choice/Not all selected Father Connected）</li>
+                <li>Allow users to allocate to the department's father nodes</li>
+                <li>Add a new menu or cache.keep-alive</li>
+                <li>Modification of Table Operations</li>
+                <li>Restriction of the system built-in parameters does not allow removal</li>
+                <li>Optimization of text components，Supports customized height&Images of conflict</li>
+                <li>The rich text tool bar style.</li>
+                <li>IntroductionexcelOptimization of Test Value.</li>
+                <li>Repair page tag closed all time fixed tag routing no update problem</li>
+                <li>Form building layout components add new button</li>
+                <li>The left menu text is too long to show missing numbers.</li>
+                <li>Correction of the root nodes for the sub-section，The tree structure shows the problem.</li>
+                <li>Adjust the maximum length of the target string.</li>
+                <li>Correction menu indicates information errors</li>
+                <li>Modify time-to-date task to execute one authorization mark</li>
+                <li>Modifying the database string typenvarchar</li>
+                <li>Optimize the subcutaneous nodes</li>
+                <li>Optimization of data authority judgment</li>
+                <li>Other details optimized.</li>
               </ol>
             </el-collapse-item>
 
             <el-collapse-item title="v3.1.0 - 2020-08-13">
               <ol>
-                <li>表格工具栏右侧添加刷新&显隐查询组件</li>
-                <li>后端支持CORS跨域请求</li>
-                <li>代码生成支持选择上级菜单</li>
-                <li>代码生成支持自定义路径</li>
-                <li>代码生成支持复选框</li>
-                <li>Excel导出导入支持dictType字典类型</li>
-                <li>Excel支持分割字符串组内容</li>
-                <li>验证码类型支持（数组计算、字符验证）</li>
-                <li>升级vue-cli版本到4.4.4</li>
-                <li>修改 node-sass 为 dart-sass</li>
-                <li>表单类型为Integer/Long设置整形默认值</li>
-                <li>代码生成器默认mapper路径与默认mapperScan路径不一致</li>
-                <li>优化防重复提交拦截器</li>
-                <li>优化上级菜单不能选择自己</li>
-                <li>修复角色的权限分配后，未实时生效问题</li>
-                <li>修复在线用户日志记录类型</li>
-                <li>修复富文本空格和缩进保存后不生效问题</li>
-                <li>修复在线用户判断逻辑</li>
-                <li>唯一限制条件只返回单条数据</li>
-                <li>添加获取当前的环境配置方法</li>
-                <li>超时登录后页面跳转到首页</li>
-                <li>全局异常状态汉化拦截处理</li>
-                <li>HTML过滤器改为将html转义</li>
-                <li>检查字符支持小数点&降级改成异常提醒</li>
-                <li>其他细节优化</li>
+                <li>Add Updates on the right side of the Table Toolbar&Identifying components.</li>
+                <li>back support.CORSInterdisciplinary requests</li>
+                <li>Code generating support to select the upper menu</li>
+                <li>Code Generation Supports Custom Route</li>
+                <li>Create the code to support the selection box.</li>
+                <li>ExcelSupport for importsdictTypeType of dictionary</li>
+                <li>ExcelSupport the division of characters.</li>
+                <li>Type of verification support（Number of calculations、Verification of characters）</li>
+                <li>Upgradingvue-cliVersion to4.4.4</li>
+                <li>Modified node-sass for dart-sass</li>
+                <li>The form type isInteger/LongSet the default value.</li>
+                <li>Code GeneratormapperRoute and default.mapperScanThe path is incompatible.</li>
+                <li>Optimize Repeat Delivery Blocker</li>
+                <li>Optimize the top menu cannot choose yourself.</li>
+                <li>Repair powers after allocation.，Not effective in real time.</li>
+                <li>Repair the online user log record type</li>
+                <li>Correction of rich text spaces and failure to enter into force after reduced storage</li>
+                <li>Repair online user judgment logic</li>
+                <li>The only restriction condition returns only single data.</li>
+                <li>Add to the current environmental configuration method</li>
+                <li>After overtime logging, the page goes to the first page.</li>
+                <li>An unusual state of interruption.</li>
+                <li>HTMLThe filter will be changed.htmltransition</li>
+                <li>Check characters support small numbers.&Reduction to unusual reminders.</li>
+                <li>Other details optimized.</li>
               </ol>
             </el-collapse-item>
 
             <el-collapse-item title="v3.0.0 - 2020-07-20">
               <ol>
-                <li>单应用调整为多模块项目</li>
-                <li>升级element-ui版本到2.13.2</li>
-                <li>删除babel，提高编译速度。</li>
-                <li>新增菜单默认主类目</li>
-                <li>编码文件名修改为uuid方式</li>
-                <li>定时任务cron表达式验证</li>
-                <li>角色权限修改时已有权限未自动勾选异常修复</li>
-                <li>防止切换权限用户后登录出现404</li>
-                <li>Excel支持sort导出排序</li>
-                <li>创建用户不允许选择超级管理员角色</li>
-                <li>修复代码生成导入表结构出现异常页面不提醒问题</li>
-                <li>修复代码生成点击多次表修改数据不变化的问题</li>
-                <li>修复头像上传成功二次打开无法改变裁剪框大小和位置问题</li>
-                <li>修复布局为small者mini用户表单显示错位问题</li>
-                <li>修复热部署导致的强换异常问题</li>
-                <li>修改用户管理复选框宽度，防止部分浏览器出现省略号</li>
-                <li>IpUtils工具，清除Xss特殊字符，防止Xff注入攻击</li>
-                <li>生成domain 如果是浮点型 统一用BigDecimal</li>
-                <li>定时任务调整label-width，防止部署出现错位</li>
-                <li>调整表头固定列默认样式</li>
-                <li>代码生成模板调整，字段为String并且必填则加空串条件</li>
-                <li>代码生成字典Integer/Long使用parseInt</li>
+                <li>Adaptation of single applications to multiple modules</li>
+                <li>Upgradingelement-uiVersion to2.13.2</li>
+                <li>removedbabel，Increase the compilation speed.。</li>
+                <li>Add new menu default headline</li>
+                <li>The file name is modified touuidThe way</li>
+                <li>timely task.cronExpression Verification</li>
+                <li>Character permits are modified when the permits are not automatically selected unusual repair</li>
+                <li>Avoid switching permits after user logging appears404</li>
+                <li>ExcelsupportedsortExporting order.</li>
+                <li>Create user does not allow the choice of supermanager roles</li>
+                <li>Repair code to generate an abnormal page that does not remind the problem</li>
+                <li>Repair code to generate multiple-click tables modify data no change problem</li>
+                <li>Repair head image upload successfully second opening cannot change the cutting box size and location issues</li>
+                <li>Repair arrangements forsmallThe oneminiUser Forms Showing Error Point Problems</li>
+                <li>Repair heat deployment caused by compulsory abnormal problems</li>
+                <li>Modify user management selection box width，Prevent some browsers from disappearing.</li>
+                <li>IpUtilsTools，CleaningXssSpecial characters，PreventedXffInjection of attack.</li>
+                <li>produceddomain If it is floating. Unified useBigDecimal</li>
+                <li>Adjustment of time taskslabel-width，Avoid the misplacement.</li>
+                <li>Adjust the default style of the fixed column.</li>
+                <li>Code to create template adjustments，The field isStringand must fill out the conditions.</li>
+                <li>Code is a dictionary.Integer/LongUse ofparseInt</li>
                 <li>
-                  修复dict_sort不可update为0的问题&查询返回增加dict_sort升序排序
+                  Repaireddict_sortNot toupdatefor0Problems&Request to increase.dict_sortUpgrade order.
                 </li>
-                <li>修正岗位导出权限注解</li>
-                <li>禁止加密密文返回前端</li>
-                <li>修复代码生成页面中的查询条件创建时间未生效的问题</li>
-                <li>修复首页搜索菜单外链无法点击跳转问题</li>
-                <li>修复菜单管理选择图标，backspace删除时不过滤数据</li>
-                <li>用户管理部门分支节点不可检查&显示计数</li>
-                <li>数据范围过滤属性调整</li>
-                <li>其他细节优化</li>
+                <li>Amendment to Export Authority Notes</li>
+                <li>Encryption is banned from returning to the front end.</li>
+                <li>Correction of the code generated page query conditions created the time failed to enter into force</li>
+                <li>Repair the search menu outline cannot click on the jumping problem</li>
+                <li>Repair Menu Management Choose Symbols，backspaceOnly filter data.</li>
+                <li>User management branch nodes are not checked.&Showing the number.</li>
+                <li>Data range filter properties adjustment</li>
+                <li>Other details optimized.</li>
               </ol>
             </el-collapse-item>
 
             <el-collapse-item title="v2.3.0 - 2020-06-01">
               <ol>
-                <li>升级fastjson到最新版1.2.70 修复高危安全漏洞</li>
-                <li>dev启动默认打开浏览器</li>
-                <li>vue-cli使用默认source-map</li>
-                <li>slidebar eslint报错优化</li>
-                <li>当tags-view滚动关闭右键菜单</li>
-                <li>字典管理添加缓存读取</li>
-                <li>参数管理支持缓存操作</li>
-                <li>支持一级菜单（和主页同级）在main区域显示</li>
-                <li>限制外链地址必须以http(s)开头</li>
-                <li>tagview & sidebar 主题颜色与element ui(全局)同步</li>
-                <li>修改数据源类型优先级，先根据方法，再根据类</li>
-                <li>支持是否需要设置token属性，自定义返回码消息。</li>
-                <li>swagger请求前缀加入配置。</li>
-                <li>登录地点设置内容过长则隐藏显示</li>
-                <li>修复定时任务执行一次按钮后不提示消息问题</li>
-                <li>修改上级部门（选择项排除本身和下级）</li>
-                <li>通用http发送方法增加参数 contentType 编码类型</li>
-                <li>更换IP地址查询接口</li>
-                <li>修复页签变量undefined</li>
-                <li>添加校验部门包含未停用的子部门</li>
-                <li>修改定时任务详情下次执行时间日期显示错误</li>
-                <li>角色管理查询设置默认排序字段</li>
-                <li>swagger添加enable参数控制是否启用</li>
-                <li>只对json类型请求构建可重复读取inputStream的request</li>
-                <li>修改代码生成字典字段int类型没有自动选中问题</li>
-                <li>vuex用户名取值修正</li>
-                <li>表格树模板去掉多余的)</li>
-                <li>代码生成序号修正</li>
-                <li>全屏情况下不调整上外边距</li>
-                <li>代码生成Date字段添加默认格式</li>
-                <li>用户管理角色选择权限控制</li>
-                <li>修复路由懒加载报错问题</li>
-                <li>模板sql.vm添加菜单状态</li>
-                <li>设置用户名称不能修改</li>
-                <li>dialog添加append-to-body属性，防止ie遮罩</li>
-                <li>菜单区分状态和显示隐藏功能</li>
-                <li>升级fastjson到最新版1.2.68 修复安全加固</li>
-                <li>修复代码生成如果选择字典类型缺失逗号问题</li>
-                <li>登录请求params更换为data，防止暴露url</li>
-                <li>日志返回时间格式处理</li>
-                <li>添加handle控制允许拖动的元素</li>
-                <li>布局设置点击扩大范围</li>
-                <li>代码生成列属性排序查询</li>
-                <li>代码生成列支持拖动排序</li>
-                <li>修复时间格式不支持ios问题</li>
-                <li>表单构建添加父级class，防止冲突</li>
-                <li>定时任务并发属性修正</li>
-                <li>角色禁用&菜单隐藏不查询权限</li>
-                <li>其他细节优化</li>
+                <li>Upgradingfastjsonto the latest version.1.2.70 Repair high-risk safety faults</li>
+                <li>devStart default to open the browser</li>
+                <li>vue-cliUse the default.source-map</li>
+                <li>slidebar eslintOptimization of errors</li>
+                <li>whentags-viewTurn off the right key menu.</li>
+                <li>Dictionary Management Add Cache Reading</li>
+                <li>Parameters management support cache operations</li>
+                <li>Supporting a level menu.（The homepage level.）inmainThe area shows</li>
+                <li>The external chain address must be limited.http(s)Beginning</li>
+                <li>tagview & sidebar The colour andelement ui(The whole)synchronized</li>
+                <li>Change the data source type priority，First on the method.，Again according to class.</li>
+                <li>Support is required.tokenProperties，Custom Return Code Message。</li>
+                <li>swaggerRequest to join Configuration.。</li>
+                <li>Log in place setting content is too long and hidden display.</li>
+                <li>Repair time task after performing one button no message problem</li>
+                <li>Modification of the top department（Exclude the option itself and the lower level.）</li>
+                <li>GeneralhttpMethod to increase parameters. contentType Type of coding</li>
+                <li>replacedIPAddress Interface</li>
+                <li>Repair the page variable.undefined</li>
+                <li>Added examination department contains uninterrupted sub-section</li>
+                <li>Modify timely task details the next execution time date shows errors</li>
+                <li>Role management queries set default order fields</li>
+                <li>swaggerAddedenableParameters control is activated.</li>
+                <li>Just right.jsonType requests can be read repeatedlyinputStreamofrequest</li>
+                <li>Modify code to generate dictionary fieldsintType No Automatic Selection Problems</li>
+                <li>vuexUser Name Value Modification</li>
+                <li>Table tree template remove the excess.)</li>
+                <li>Code Generation Number Modification</li>
+                <li>No adjustment to the external distance.</li>
+                <li>Code is generated.DateFields add default formats</li>
+                <li>User Management Role Selection Authority Control</li>
+                <li>Correction of the errors.</li>
+                <li>The templatesql.vmAdd the menu status.</li>
+                <li>The user name can not be changed.</li>
+                <li>dialogAddedappend-to-bodyProperties，PreventedieCovered</li>
+                <li>Menu differentiates state and shows hidden function</li>
+                <li>Upgradingfastjsonto the latest version.1.2.68 Repair safety increased.</li>
+                <li>Correction code generated if the dictionary type is selected.</li>
+                <li>Registration requestparamsreplaced bydata，Prevent exposureurl</li>
+                <li>Log Return Time Format Processing</li>
+                <li>AddedhandleControl of the elements that allow traction.</li>
+                <li>Set up the extension range.</li>
+                <li>Code Generate Column Properties Order Question</li>
+                <li>Code Generation Column Supports Tracking Order</li>
+                <li>Repair time format is not supported.iosThe problem</li>
+                <li>Create an Added Father's Classclass，Preventing conflicts</li>
+                <li>Temporary tasks and properties modified.</li>
+                <li>The role is prohibited&The menu is hidden without requests.</li>
+                <li>Other details optimized.</li>
               </ol>
             </el-collapse-item>
 
             <el-collapse-item title="v2.2.0 - 2020-03-18">
               <ol>
-                <li>系统监控新增定时任务功能</li>
-                <li>添加一个打包Web工程bat</li>
-                <li>修复页签鼠标滚轮按下的时候，可以关闭不可关闭的tag</li>
-                <li>修复点击退出登录有时会无提示问题</li>
-                <li>修复防重复提交注解无效问题</li>
-                <li>修复通知公告批量删除异常问题</li>
-                <li>添加菜单时路由地址必填限制</li>
-                <li>代码生成字段描述可编辑</li>
-                <li>修复用户修改个人信息导致缓存不过期问题</li>
-                <li>个人信息创建时间获取正确属性值</li>
-                <li>操作日志详细显示正确类型</li>
-                <li>导入表单击行数据时选中对应的复选框</li>
-                <li>批量替换表前缀逻辑调整</li>
-                <li>固定重定向路径表达式</li>
-                <li>升级element-ui版本到2.13.0</li>
-                <li>操作日志排序调整</li>
-                <li>修复charts切换侧边栏或者缩放窗口显示bug</li>
-                <li>其他细节优化</li>
+                <li>System Monitoring Added Time Task Functions</li>
+                <li>Add a package.WebProjectsbat</li>
+                <li>Repair page tag mouse rolling when pressing.，can be closed and not closed.tag</li>
+                <li>Repair click off logging will sometimes be no problem.</li>
+                <li>Repair Prevent Repeat Submission Notes Invalidity</li>
+                <li>Repair Notification Remove Unusual Problems</li>
+                <li>When adding the menu the address must be filled.</li>
+                <li>Code generate field descriptions can be edited</li>
+                <li>Repair users modify personal information leads to cache failure problems</li>
+                <li>Personal information creates time to obtain the correct property value</li>
+                <li>Operating logs detailed the right type.</li>
+                <li>Select the corresponding selection box when selecting the data.</li>
+                <li>Replacement of the logic.</li>
+                <li>Fixed redirect route expression</li>
+                <li>Upgradingelement-uiVersion to2.13.0</li>
+                <li>Adjustment of Operating Logs</li>
+                <li>RepairedchartsChange the side bar or scratch the window display.bug</li>
+                <li>Other details optimized.</li>
               </ol>
             </el-collapse-item>
 
             <el-collapse-item title="v2.1.0 - 2020-02-24">
               <ol>
-                <li>新增表单构建</li>
-                <li>代码生成支持树表结构</li>
-                <li>新增用户导入</li>
-                <li>修复动态加载路由页面刷新问题</li>
-                <li>修复地址开关无效问题</li>
-                <li>汉化错误提示页面</li>
-                <li>代码生成已知问题修改</li>
-                <li>修复多数据源下配置关闭出现异常处理</li>
-                <li>添加HTML过滤器，用于去除XSS漏洞隐患</li>
-                <li>修复上传头像控制台出现异常</li>
-                <li>修改用户管理分页不正确的问题</li>
-                <li>修复验证码记录提示错误</li>
-                <li>修复request.js缺少Message引用</li>
-                <li>修复表格时间为空出现的异常</li>
-                <li>添加Jackson日期反序列化时区配置</li>
-                <li>调整根据用户权限加载菜单数据树形结构</li>
-                <li>调整成功登录不恢复按钮，防止多次点击</li>
-                <li>修改用户个人资料同步缓存信息</li>
-                <li>修复页面同时出现el-upload和Editor不显示处理</li>
-                <li>修复在角色管理页修改菜单权限偶尔未选中问题</li>
-                <li>配置文件新增redis密码属性</li>
-                <li>设置mybatis全局的配置文件</li>
-                <li>其他细节优化</li>
+                <li>Adding new forms.</li>
+                <li>Code Generation Supported Tree Table Structure</li>
+                <li>Adding new users</li>
+                <li>Repair Dynamic Loading Router Page Update Problems</li>
+                <li>Repair address unfunctional problem.</li>
+                <li>Mistake of error page.</li>
+                <li>Code to modify known problems.</li>
+                <li>Repair Multi-Data Source Configuration Closed Unusual Processing</li>
+                <li>AddedHTMLFilters，used to removeXSSThe vulnerability.</li>
+                <li>Repair upload head like the console appears unusual</li>
+                <li>Modify the user's wrong page management problem</li>
+                <li>Correction of the verification code record indicates error</li>
+                <li>Repairedrequest.jsLack ofMessagecitation</li>
+                <li>Repair form time for unusual appearances.</li>
+                <li>AddedJacksonDate Anti-Series Time Zone Configuration</li>
+                <li>Adjust the user's permission to load the menu data tree structure</li>
+                <li>Adjust Successful Entry Not Restore Button，Prevent multiple clicks.</li>
+                <li>Modify user personal data and synchronize cache information</li>
+                <li>Repair page appears simultaneously.el-uploadandEditorNot showing treatment.</li>
+                <li>Correction of problems in the Character Management page Change menu permissions sometimes unselected</li>
+                <li>Add new file.redisThe code properties.</li>
+                <li>set upmybatisThe overall file.</li>
+                <li>Other details optimized.</li>
               </ol>
             </el-collapse-item>
 
             <el-collapse-item title="v2.0.0 - 2019-12-02">
               <ol>
-                <li>新增代码生成</li>
-                <li>新增@RepeatSubmit注解，防止重复提交</li>
-                <li>新增菜单主目录添加/删除操作</li>
-                <li>日志记录过滤特殊对象，防止转换异常</li>
-                <li>修改代码生成路由脚本错误</li>
-                <li>用户上传头像实时同步缓存，无需重新登录</li>
-                <li>调整切换页签后不重新加载数据</li>
-                <li>添加jsencrypt实现参数的前端加密</li>
-                <li>系统退出删除用户缓存记录</li>
-                <li>其他细节优化</li>
+                <li>Create new codes.</li>
+                <li>Added@RepeatSubmitNotes，Avoid repeated submission.</li>
+                <li>Add new menu directory/Remove the operation.</li>
+                <li>Log records filter special objects，Prevent the abnormal conversion.</li>
+                <li>Modifying the code to generate routing script errors</li>
+                <li>Users upload head like real-time cache，No need to re-enroll.</li>
+                <li>Do not recharge data after changing page tags</li>
+                <li>AddedjsencryptImplementing Parameters Front End Encryption</li>
+                <li>System Removal Remove User Cache Records</li>
+                <li>Other details optimized.</li>
               </ol>
             </el-collapse-item>
             <el-collapse-item title="v1.1.0 - 2019-11-11">
               <ol>
-                <li>新增在线用户管理</li>
-                <li>新增按钮组功能实现（批量删除、导出、清空）</li>
-                <li>新增查询条件重置按钮</li>
-                <li>新增Swagger全局Token配置</li>
-                <li>新增后端参数校验</li>
-                <li>修复字典管理页面的日期查询异常</li>
-                <li>修改时间函数命名防止冲突</li>
-                <li>去除菜单上级校验，默认为顶级</li>
-                <li>修复用户密码无法修改问题</li>
-                <li>修复菜单类型为按钮时不显示权限标识</li>
-                <li>其他细节优化</li>
+                <li>Additional Online User Management</li>
+                <li>Added button group function.（Mass removal.、Exported、the empty）</li>
+                <li>Add the Request Conditions reboot button</li>
+                <li>AddedSwaggerThe wholeTokenConfiguration</li>
+                <li>Additional latter parameters.</li>
+                <li>Repair dictionary management page date query unusual</li>
+                <li>Change the time function name to prevent conflict</li>
+                <li>Remove the menu upper exam.，Supposedly the top.</li>
+                <li>Repair user password cannot change the problem.</li>
+                <li>Repair menu type does not display the authorization mark when the button is</li>
+                <li>Other details optimized.</li>
               </ol>
             </el-collapse-item>
             <el-collapse-item title="v1.0.0 - 2019-10-08">
               <ol>
-                <li>若依前后端分离系统正式发布</li>
+                <li>If the front rear separation system is officially released</li>
               </ol>
             </el-collapse-item>
           </el-collapse>
@@ -966,7 +966,7 @@
       <el-col :xs="24" :sm="24" :md="12" :lg="8">
         <el-card class="update-log">
           <div slot="header" class="clearfix">
-            <span>捐赠支持</span>
+            <span>Support of donations</span>
           </div>
           <div class="body">
             <img
@@ -975,7 +975,7 @@
               width="100%"
             />
             <span style="display: inline-block; height: 30px; line-height: 30px"
-              >你可以请作者喝杯咖啡表示鼓励</span
+              >You can ask the author to drink a cup of coffee.</span
             >
           </div>
         </el-card>
@@ -989,7 +989,7 @@ export default {
   name: "Index",
   data() {
     return {
-      // 版本号
+      // The version number
       version: "3.8.7"
     };
   },

@@ -10,7 +10,7 @@ import com.alibaba.fastjson2.filter.Filter;
 import com.ruoyi.common.constant.Constants;
 
 /**
- * Redis使用FastJson序列化
+ * RedisUse ofFastJsonThe sequence
  * 
  * @author ruoyi
  */

@@ -28,7 +28,7 @@ import com.ruoyi.quartz.util.CronUtils;
 import com.ruoyi.quartz.util.ScheduleUtils;
 
 /**
- * 调度任务信息操作处理
+ * Processing of task information processing
  * 
  * @author ruoyi
  */
@@ -40,7 +40,7 @@ public class SysJobController extends BaseController
     private ISysJobService jobService;
 
     /**
-     * 查询定时任务列表
+     * Find a timely task list
      */
     @PreAuthorize("@ss.hasPermi('monitor:job:list')")
     @GetMapping("/list")
@@ -52,20 +52,20 @@ public class SysJobController extends BaseController
     }
 
     /**
-     * 导出定时任务列表
+     * Export a timely task list
      */
     @PreAuthorize("@ss.hasPermi('monitor:job:export')")
-    @Log(title = "定时任务", businessType = BusinessType.EXPORT)
+    @Log(title = "timely task.", businessType = BusinessType.EXPORT)
     @PostMapping("/export")
     public void export(HttpServletResponse response, SysJob sysJob)
     {
         List<SysJob> list = jobService.selectJobList(sysJob);
         ExcelUtil<SysJob> util = new ExcelUtil<SysJob>(SysJob.class);
-        util.exportExcel(response, list, "定时任务");
+        util.exportExcel(response, list, "timely task.");
     }
 
     /**
-     * 获取定时任务详细信息
+     * Get timely task details.
      */
     @PreAuthorize("@ss.hasPermi('monitor:job:query')")
     @GetMapping(value = "/{jobId}")
@@ -75,82 +75,82 @@ public class SysJobController extends BaseController
     }
 
     /**
-     * 新增定时任务
+     * Added time tasks.
      */
     @PreAuthorize("@ss.hasPermi('monitor:job:add')")
-    @Log(title = "定时任务", businessType = BusinessType.INSERT)
+    @Log(title = "timely task.", businessType = BusinessType.INSERT)
     @PostMapping
     public AjaxResult add(@RequestBody SysJob job) throws SchedulerException, TaskException
     {
         if (!CronUtils.isValid(job.getCronExpression()))
         {
-            return error("新增任务'" + job.getJobName() + "'失败，Cron表达式不正确");
+            return error("Added tasks'" + job.getJobName() + "'Failure，CronExpression is incorrect.");
         }
         else if (StringUtils.containsIgnoreCase(job.getInvokeTarget(), Constants.LOOKUP_RMI))
         {
-            return error("新增任务'" + job.getJobName() + "'失败，目标字符串不允许'rmi'调用");
+            return error("Added tasks'" + job.getJobName() + "'Failure，The target line is not allowed.'rmi'Called");
         }
         else if (StringUtils.containsAnyIgnoreCase(job.getInvokeTarget(), new String[] { Constants.LOOKUP_LDAP, Constants.LOOKUP_LDAPS }))
         {
-            return error("新增任务'" + job.getJobName() + "'失败，目标字符串不允许'ldap(s)'调用");
+            return error("Added tasks'" + job.getJobName() + "'Failure，The target line is not allowed.'ldap(s)'Called");
         }
         else if (StringUtils.containsAnyIgnoreCase(job.getInvokeTarget(), new String[] { Constants.HTTP, Constants.HTTPS }))
         {
-            return error("新增任务'" + job.getJobName() + "'失败，目标字符串不允许'http(s)'调用");
+            return error("Added tasks'" + job.getJobName() + "'Failure，The target line is not allowed.'http(s)'Called");
         }
         else if (StringUtils.containsAnyIgnoreCase(job.getInvokeTarget(), Constants.JOB_ERROR_STR))
         {
-            return error("新增任务'" + job.getJobName() + "'失败，目标字符串存在违规");
+            return error("Added tasks'" + job.getJobName() + "'Failure，The target line is irregular.");
         }
         else if (!ScheduleUtils.whiteList(job.getInvokeTarget()))
         {
-            return error("新增任务'" + job.getJobName() + "'失败，目标字符串不在白名单内");
+            return error("Added tasks'" + job.getJobName() + "'Failure，The target string is not in the white list.");
         }
         job.setCreateBy(getUsername());
         return toAjax(jobService.insertJob(job));
     }
 
     /**
-     * 修改定时任务
+     * Modifying timely tasks
      */
     @PreAuthorize("@ss.hasPermi('monitor:job:edit')")
-    @Log(title = "定时任务", businessType = BusinessType.UPDATE)
+    @Log(title = "timely task.", businessType = BusinessType.UPDATE)
     @PutMapping
     public AjaxResult edit(@RequestBody SysJob job) throws SchedulerException, TaskException
     {
         if (!CronUtils.isValid(job.getCronExpression()))
         {
-            return error("修改任务'" + job.getJobName() + "'失败，Cron表达式不正确");
+            return error("Modifying tasks'" + job.getJobName() + "'Failure，CronExpression is incorrect.");
         }
         else if (StringUtils.containsIgnoreCase(job.getInvokeTarget(), Constants.LOOKUP_RMI))
         {
-            return error("修改任务'" + job.getJobName() + "'失败，目标字符串不允许'rmi'调用");
+            return error("Modifying tasks'" + job.getJobName() + "'Failure，The target line is not allowed.'rmi'Called");
         }
         else if (StringUtils.containsAnyIgnoreCase(job.getInvokeTarget(), new String[] { Constants.LOOKUP_LDAP, Constants.LOOKUP_LDAPS }))
         {
-            return error("修改任务'" + job.getJobName() + "'失败，目标字符串不允许'ldap(s)'调用");
+            return error("Modifying tasks'" + job.getJobName() + "'Failure，The target line is not allowed.'ldap(s)'Called");
         }
         else if (StringUtils.containsAnyIgnoreCase(job.getInvokeTarget(), new String[] { Constants.HTTP, Constants.HTTPS }))
         {
-            return error("修改任务'" + job.getJobName() + "'失败，目标字符串不允许'http(s)'调用");
+            return error("Modifying tasks'" + job.getJobName() + "'Failure，The target line is not allowed.'http(s)'Called");
         }
         else if (StringUtils.containsAnyIgnoreCase(job.getInvokeTarget(), Constants.JOB_ERROR_STR))
         {
-            return error("修改任务'" + job.getJobName() + "'失败，目标字符串存在违规");
+            return error("Modifying tasks'" + job.getJobName() + "'Failure，The target line is irregular.");
         }
         else if (!ScheduleUtils.whiteList(job.getInvokeTarget()))
         {
-            return error("修改任务'" + job.getJobName() + "'失败，目标字符串不在白名单内");
+            return error("Modifying tasks'" + job.getJobName() + "'Failure，The target string is not in the white list.");
         }
         job.setUpdateBy(getUsername());
         return toAjax(jobService.updateJob(job));
     }
 
     /**
-     * 定时任务状态修改
+     * Modification of timely task status
      */
     @PreAuthorize("@ss.hasPermi('monitor:job:changeStatus')")
-    @Log(title = "定时任务", businessType = BusinessType.UPDATE)
+    @Log(title = "timely task.", businessType = BusinessType.UPDATE)
     @PutMapping("/changeStatus")
     public AjaxResult changeStatus(@RequestBody SysJob job) throws SchedulerException
     {
@@ -160,22 +160,22 @@ public class SysJobController extends BaseController
     }
 
     /**
-     * 定时任务立即执行一次
+     * Immediately perform the task once.
      */
     @PreAuthorize("@ss.hasPermi('monitor:job:changeStatus')")
-    @Log(title = "定时任务", businessType = BusinessType.UPDATE)
+    @Log(title = "timely task.", businessType = BusinessType.UPDATE)
     @PutMapping("/run")
     public AjaxResult run(@RequestBody SysJob job) throws SchedulerException
     {
         boolean result = jobService.run(job);
-        return result ? success() : error("任务不存在或已过期！");
+        return result ? success() : error("The task does not exist or has expired.！");
     }
 
     /**
-     * 删除定时任务
+     * Remove timely tasks.
      */
     @PreAuthorize("@ss.hasPermi('monitor:job:remove')")
-    @Log(title = "定时任务", businessType = BusinessType.DELETE)
+    @Log(title = "timely task.", businessType = BusinessType.DELETE)
     @DeleteMapping("/{jobIds}")
     public AjaxResult remove(@PathVariable Long[] jobIds) throws SchedulerException, TaskException
     {

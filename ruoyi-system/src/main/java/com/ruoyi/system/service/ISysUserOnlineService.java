@@ -4,45 +4,45 @@ import com.ruoyi.common.core.domain.model.LoginUser;
 import com.ruoyi.system.domain.SysUserOnline;
 
 /**
- * 在线用户 服务层
+ * Online users of service.
  * 
  * @author ruoyi
  */
 public interface ISysUserOnlineService
 {
     /**
-     * 通过登录地址查询信息
+     * Ask for information through the login address.
      * 
-     * @param ipaddr 登录地址
-     * @param user 用户信息
-     * @return 在线用户信息
+     * @param ipaddr Registration Address
+     * @param user User Information
+     * @return Online User Information
      */
     public SysUserOnline selectOnlineByIpaddr(String ipaddr, LoginUser user);
 
     /**
-     * 通过用户名称查询信息
+     * Ask for information through user name
      * 
-     * @param userName 用户名称
-     * @param user 用户信息
-     * @return 在线用户信息
+     * @param userName User Name
+     * @param user User Information
+     * @return Online User Information
      */
     public SysUserOnline selectOnlineByUserName(String userName, LoginUser user);
 
     /**
-     * 通过登录地址/用户名称查询信息
+     * by login address./User Name Request Information
      * 
-     * @param ipaddr 登录地址
-     * @param userName 用户名称
-     * @param user 用户信息
-     * @return 在线用户信息
+     * @param ipaddr Registration Address
+     * @param userName User Name
+     * @param user User Information
+     * @return Online User Information
      */
     public SysUserOnline selectOnlineByInfo(String ipaddr, String userName, LoginUser user);
 
     /**
-     * 设置在线用户信息
+     * Set up online user information
      * 
-     * @param user 用户信息
-     * @return 在线用户
+     * @param user User Information
+     * @return Online users
      */
     public SysUserOnline loginUserToUserOnline(LoginUser user);
 }

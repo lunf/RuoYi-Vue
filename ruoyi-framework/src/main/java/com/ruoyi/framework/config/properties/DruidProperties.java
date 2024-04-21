@@ -5,7 +5,7 @@ import org.springframework.context.annotation.Configuration;
 import com.alibaba.druid.pool.DruidDataSource;
 
 /**
- * druid 配置属性
+ * druid Configuration of Properties
  * 
  * @author ruoyi
  */
@@ -53,36 +53,36 @@ public class DruidProperties
 
     public DruidDataSource dataSource(DruidDataSource datasource)
     {
-        /** 配置初始化大小、最小、最大 */
+        /** Set up the initial size.、The smallest、The greatest */
         datasource.setInitialSize(initialSize);
         datasource.setMaxActive(maxActive);
         datasource.setMinIdle(minIdle);
 
-        /** 配置获取连接等待超时的时间 */
+        /** Configuration to get connected waiting overtime time */
         datasource.setMaxWait(maxWait);
         
-        /** 配置驱动连接超时时间，检测数据库建立连接的超时时间，单位是毫秒 */
+        /** Configuration of the drive connection overtime，Detection of data base connectivity overtime，The unit is millisecond. */
         datasource.setConnectTimeout(connectTimeout);
         
-        /** 配置网络超时时间，等待数据库操作完成的网络超时时间，单位是毫秒 */
+        /** Network overtime.，Network overtime waiting for the database operation to be completed，The unit is millisecond. */
         datasource.setSocketTimeout(socketTimeout);
 
-        /** 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 */
+        /** How long is the interval for one testing?，Detection of free connections that need to be closed，The unit is millisecond. */
         datasource.setTimeBetweenEvictionRunsMillis(timeBetweenEvictionRunsMillis);
 
-        /** 配置一个连接在池中最小、最大生存的时间，单位是毫秒 */
+        /** Set the smallest connection in the pool.、Maximum time of survival.，The unit is millisecond. */
         datasource.setMinEvictableIdleTimeMillis(minEvictableIdleTimeMillis);
         datasource.setMaxEvictableIdleTimeMillis(maxEvictableIdleTimeMillis);
 
         /**
-         * 用来检测连接是否有效的sql，要求是一个查询语句，常用select 'x'。如果validationQuery为null，testOnBorrow、testOnReturn、testWhileIdle都不会起作用。
+         * Identify whether the connection is effective.sql，Request is a query.，commonly usedselect 'x'。IfvalidationQueryfornull，testOnBorrow、testOnReturn、testWhileIdleNothing works.。
          */
         datasource.setValidationQuery(validationQuery);
-        /** 建议配置为true，不影响性能，并且保证安全性。申请连接的时候检测，如果空闲时间大于timeBetweenEvictionRunsMillis，执行validationQuery检测连接是否有效。 */
+        /** It is recommended totrue，does not affect performance.，and guarantees safety.。Check when requesting connection.，The free time is greater thantimeBetweenEvictionRunsMillis，ExecutionvalidationQueryCheck whether the connection is effective.。 */
         datasource.setTestWhileIdle(testWhileIdle);
-        /** 申请连接时执行validationQuery检测连接是否有效，做了这个配置会降低性能。 */
+        /** Application for connectionvalidationQueryCheck whether the connection is effective.，Doing this configuration will reduce performance.。 */
         datasource.setTestOnBorrow(testOnBorrow);
-        /** 归还连接时执行validationQuery检测连接是否有效，做了这个配置会降低性能。 */
+        /** Return to connection.validationQueryCheck whether the connection is effective.，Doing this configuration will reduce performance.。 */
         datasource.setTestOnReturn(testOnReturn);
         return datasource;
     }

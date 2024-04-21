@@ -1,6 +1,6 @@
 @echo off
 echo.
-echo [–≈œ¢]  π”√ Vue CLI √¸¡Ó‘À–– Web π§≥Ã°£
+echo [Information] Use of Vue CLI Command to Work. Web Projects„ÄÇ
 echo.
 
 %~d0

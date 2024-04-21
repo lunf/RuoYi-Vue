@@ -26,7 +26,7 @@ import com.ruoyi.system.mapper.SysRoleMenuMapper;
 import com.ruoyi.system.service.ISysMenuService;
 
 /**
- * 菜单 业务层处理
+ * The menu Processing of business level
  * 
  * @author ruoyi
  */
@@ -45,10 +45,10 @@ public class SysMenuServiceImpl implements ISysMenuService
     private SysRoleMenuMapper roleMenuMapper;
 
     /**
-     * 根据用户查询系统菜单列表
+     * User request system menu list
      * 
-     * @param userId 用户ID
-     * @return 菜单列表
+     * @param userId UsersID
+     * @return The menu list
      */
     @Override
     public List<SysMenu> selectMenuList(Long userId)
@@ -57,16 +57,16 @@ public class SysMenuServiceImpl implements ISysMenuService
     }
 
     /**
-     * 查询系统菜单列表
+     * Search System Menu List
      * 
-     * @param menu 菜单信息
-     * @return 菜单列表
+     * @param menu Menu Information
+     * @return The menu list
      */
     @Override
     public List<SysMenu> selectMenuList(SysMenu menu, Long userId)
     {
         List<SysMenu> menuList = null;
-        // 管理员显示所有菜单信息
+        // Administrators display all menu information
         if (SysUser.isAdmin(userId))
         {
             menuList = menuMapper.selectMenuList(menu);
@@ -80,10 +80,10 @@ public class SysMenuServiceImpl implements ISysMenuService
     }
 
     /**
-     * 根据用户ID查询权限
+     * According to UsersIDRequest authority
      * 
-     * @param userId 用户ID
-     * @return 权限列表
+     * @param userId UsersID
+     * @return List of permissions
      */
     @Override
     public Set<String> selectMenuPermsByUserId(Long userId)
@@ -101,10 +101,10 @@ public class SysMenuServiceImpl implements ISysMenuService
     }
 
     /**
-     * 根据角色ID查询权限
+     * According to the roleIDRequest authority
      * 
-     * @param roleId 角色ID
-     * @return 权限列表
+     * @param roleId The roleID
+     * @return List of permissions
      */
     @Override
     public Set<String> selectMenuPermsByRoleId(Long roleId)
@@ -122,10 +122,10 @@ public class SysMenuServiceImpl implements ISysMenuService
     }
 
     /**
-     * 根据用户ID查询菜单
+     * According to UsersIDInquiry menu
      * 
-     * @param userId 用户名称
-     * @return 菜单列表
+     * @param userId User Name
+     * @return The menu list
      */
     @Override
     public List<SysMenu> selectMenuTreeByUserId(Long userId)
@@ -143,10 +143,10 @@ public class SysMenuServiceImpl implements ISysMenuService
     }
 
     /**
-     * 根据角色ID查询菜单树信息
+     * According to the roleIDAsk for menu tree information
      * 
-     * @param roleId 角色ID
-     * @return 选中菜单列表
+     * @param roleId The roleID
+     * @return Select the menu list.
      */
     @Override
     public List<Long> selectMenuListByRoleId(Long roleId)
@@ -156,10 +156,10 @@ public class SysMenuServiceImpl implements ISysMenuService
     }
 
     /**
-     * 构建前端路由所需要的菜单
+     * Building the menu required by the front router
      * 
-     * @param menus 菜单列表
-     * @return 路由列表
+     * @param menus The menu list
+     * @return The routing list.
      */
     @Override
     public List<RouterVo> buildMenus(List<SysMenu> menus)
@@ -214,10 +214,10 @@ public class SysMenuServiceImpl implements ISysMenuService
     }
 
     /**
-     * 构建前端所需要树结构
+     * The building of the front structure is required.
      * 
-     * @param menus 菜单列表
-     * @return 树结构列表
+     * @param menus The menu list
+     * @return List of tree structures
      */
     @Override
     public List<SysMenu> buildMenuTree(List<SysMenu> menus)
@@ -227,7 +227,7 @@ public class SysMenuServiceImpl implements ISysMenuService
         for (Iterator<SysMenu> iterator = menus.iterator(); iterator.hasNext();)
         {
             SysMenu menu = (SysMenu) iterator.next();
-            // 如果是顶级节点, 遍历该父节点的所有子节点
+            // If the top point., Through all the node of the father.
             if (!tempList.contains(menu.getParentId()))
             {
                 recursionFn(menus, menu);
@@ -242,10 +242,10 @@ public class SysMenuServiceImpl implements ISysMenuService
     }
 
     /**
-     * 构建前端所需要下拉树结构
+     * The building of the front end requires the drawing tree structure.
      * 
-     * @param menus 菜单列表
-     * @return 下拉树结构列表
+     * @param menus The menu list
+     * @return List of tree structures
      */
     @Override
     public List<TreeSelect> buildMenuTreeSelect(List<SysMenu> menus)
@@ -255,10 +255,10 @@ public class SysMenuServiceImpl implements ISysMenuService
     }
 
     /**
-     * 根据菜单ID查询信息
+     * According to the menu.IDAsk for information
      * 
-     * @param menuId 菜单ID
-     * @return 菜单信息
+     * @param menuId The menuID
+     * @return Menu Information
      */
     @Override
     public SysMenu selectMenuById(Long menuId)
@@ -267,10 +267,10 @@ public class SysMenuServiceImpl implements ISysMenuService
     }
 
     /**
-     * 是否存在菜单子节点
+     * Is there a menu nodes?
      * 
-     * @param menuId 菜单ID
-     * @return 结果
+     * @param menuId The menuID
+     * @return Results
      */
     @Override
     public boolean hasChildByMenuId(Long menuId)
@@ -280,10 +280,10 @@ public class SysMenuServiceImpl implements ISysMenuService
     }
 
     /**
-     * 查询菜单使用数量
+     * Question menu number of use
      * 
-     * @param menuId 菜单ID
-     * @return 结果
+     * @param menuId The menuID
+     * @return Results
      */
     @Override
     public boolean checkMenuExistRole(Long menuId)
@@ -293,10 +293,10 @@ public class SysMenuServiceImpl implements ISysMenuService
     }
 
     /**
-     * 新增保存菜单信息
+     * Add to Save Menu Information
      * 
-     * @param menu 菜单信息
-     * @return 结果
+     * @param menu Menu Information
+     * @return Results
      */
     @Override
     public int insertMenu(SysMenu menu)
@@ -305,10 +305,10 @@ public class SysMenuServiceImpl implements ISysMenuService
     }
 
     /**
-     * 修改保存菜单信息
+     * Modify the menu information
      * 
-     * @param menu 菜单信息
-     * @return 结果
+     * @param menu Menu Information
+     * @return Results
      */
     @Override
     public int updateMenu(SysMenu menu)
@@ -317,10 +317,10 @@ public class SysMenuServiceImpl implements ISysMenuService
     }
 
     /**
-     * 删除菜单管理信息
+     * Remove Menu Management Information
      * 
-     * @param menuId 菜单ID
-     * @return 结果
+     * @param menuId The menuID
+     * @return Results
      */
     @Override
     public int deleteMenuById(Long menuId)
@@ -329,10 +329,10 @@ public class SysMenuServiceImpl implements ISysMenuService
     }
 
     /**
-     * 校验菜单名称是否唯一
+     * Is the test menu name unique?
      * 
-     * @param menu 菜单信息
-     * @return 结果
+     * @param menu Menu Information
+     * @return Results
      */
     @Override
     public boolean checkMenuNameUnique(SysMenu menu)
@@ -347,15 +347,15 @@ public class SysMenuServiceImpl implements ISysMenuService
     }
 
     /**
-     * 获取路由名称
+     * Get the routing name.
      * 
-     * @param menu 菜单信息
-     * @return 路由名称
+     * @param menu Menu Information
+     * @return The name of Ruth.
      */
     public String getRouteName(SysMenu menu)
     {
         String routerName = StringUtils.capitalize(menu.getPath());
-        // 非外链并且是一级目录（类型为目录）
+        // Non-external chain and a level directory.（Type of catalogue.）
         if (isMenuFrame(menu))
         {
             routerName = StringUtils.EMPTY;
@@ -364,26 +364,26 @@ public class SysMenuServiceImpl implements ISysMenuService
     }
 
     /**
-     * 获取路由地址
+     * Get the routing address.
      * 
-     * @param menu 菜单信息
-     * @return 路由地址
+     * @param menu Menu Information
+     * @return The routing address.
      */
     public String getRouterPath(SysMenu menu)
     {
         String routerPath = menu.getPath();
-        // 内链打开外网方式
+        // The internal chain opens the external network
         if (menu.getParentId().intValue() != 0 && isInnerLink(menu))
         {
             routerPath = innerLinkReplaceEach(routerPath);
         }
-        // 非外链并且是一级目录（类型为目录）
+        // Non-external chain and a level directory.（Type of catalogue.）
         if (0 == menu.getParentId().intValue() && UserConstants.TYPE_DIR.equals(menu.getMenuType())
                 && UserConstants.NO_FRAME.equals(menu.getIsFrame()))
         {
             routerPath = "/" + menu.getPath();
         }
-        // 非外链并且是一级目录（类型为菜单）
+        // Non-external chain and a level directory.（Type of menu.）
         else if (isMenuFrame(menu))
         {
             routerPath = "/";
@@ -392,10 +392,10 @@ public class SysMenuServiceImpl implements ISysMenuService
     }
 
     /**
-     * 获取组件信息
+     * Obtaining component information
      * 
-     * @param menu 菜单信息
-     * @return 组件信息
+     * @param menu Menu Information
+     * @return component information
      */
     public String getComponent(SysMenu menu)
     {
@@ -416,10 +416,10 @@ public class SysMenuServiceImpl implements ISysMenuService
     }
 
     /**
-     * 是否为菜单内部跳转
+     * Do you jump inside the menu?
      * 
-     * @param menu 菜单信息
-     * @return 结果
+     * @param menu Menu Information
+     * @return Results
      */
     public boolean isMenuFrame(SysMenu menu)
     {
@@ -428,10 +428,10 @@ public class SysMenuServiceImpl implements ISysMenuService
     }
 
     /**
-     * 是否为内链组件
+     * The internal chain component.
      * 
-     * @param menu 菜单信息
-     * @return 结果
+     * @param menu Menu Information
+     * @return Results
      */
     public boolean isInnerLink(SysMenu menu)
     {
@@ -439,10 +439,10 @@ public class SysMenuServiceImpl implements ISysMenuService
     }
 
     /**
-     * 是否为parent_view组件
+     * Is it forparent_viewThe component
      * 
-     * @param menu 菜单信息
-     * @return 结果
+     * @param menu Menu Information
+     * @return Results
      */
     public boolean isParentView(SysMenu menu)
     {
@@ -450,10 +450,10 @@ public class SysMenuServiceImpl implements ISysMenuService
     }
 
     /**
-     * 根据父节点的ID获取所有子节点
+     * According to the father’s point.IDGet all subpoints.
      * 
-     * @param list 分类表
-     * @param parentId 传入的父节点ID
+     * @param list Classification Table
+     * @param parentId The entrance of the father.ID
      * @return String
      */
     public List<SysMenu> getChildPerms(List<SysMenu> list, int parentId)
@@ -462,7 +462,7 @@ public class SysMenuServiceImpl implements ISysMenuService
         for (Iterator<SysMenu> iterator = list.iterator(); iterator.hasNext();)
         {
             SysMenu t = (SysMenu) iterator.next();
-            // 一、根据传入的某个父节点ID,遍历该父节点的所有子节点
+            // one、Based on a parent point.ID,Through all the node of the father.
             if (t.getParentId() == parentId)
             {
                 recursionFn(list, t);
@@ -473,14 +473,14 @@ public class SysMenuServiceImpl implements ISysMenuService
     }
 
     /**
-     * 递归列表
+     * Submit to the list.
      * 
-     * @param list 分类表
-     * @param t 子节点
+     * @param list Classification Table
+     * @param t The Node.
      */
     private void recursionFn(List<SysMenu> list, SysMenu t)
     {
-        // 得到子节点列表
+        // Get a subcutaneous list.
         List<SysMenu> childList = getChildList(list, t);
         t.setChildren(childList);
         for (SysMenu tChild : childList)
@@ -493,7 +493,7 @@ public class SysMenuServiceImpl implements ISysMenuService
     }
 
     /**
-     * 得到子节点列表
+     * Get a subcutaneous list.
      */
     private List<SysMenu> getChildList(List<SysMenu> list, SysMenu t)
     {
@@ -511,7 +511,7 @@ public class SysMenuServiceImpl implements ISysMenuService
     }
 
     /**
-     * 判断是否有子节点
+     * Find out if there is a node.
      */
     private boolean hasChild(List<SysMenu> list, SysMenu t)
     {
@@ -519,9 +519,9 @@ public class SysMenuServiceImpl implements ISysMenuService
     }
 
     /**
-     * 内链域名特殊字符替换
+     * Substitute Special Character Domain Name
      * 
-     * @return 替换后的内链域名
+     * @return Substitute internal domain name.
      */
     public String innerLinkReplaceEach(String path)
     {

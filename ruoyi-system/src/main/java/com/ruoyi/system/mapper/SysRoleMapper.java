@@ -4,104 +4,104 @@ import java.util.List;
 import com.ruoyi.common.core.domain.entity.SysRole;
 
 /**
- * 角色表 数据层
+ * Character Table The Data Layer
  * 
  * @author ruoyi
  */
 public interface SysRoleMapper
 {
     /**
-     * 根据条件分页查询角色数据
+     * Request role data according to conditions.
      * 
-     * @param role 角色信息
-     * @return 角色数据集合信息
+     * @param role Role Information
+     * @return Character Data Collection Information
      */
     public List<SysRole> selectRoleList(SysRole role);
 
     /**
-     * 根据用户ID查询角色
+     * According to UsersIDQuestion of role.
      * 
-     * @param userId 用户ID
-     * @return 角色列表
+     * @param userId UsersID
+     * @return List of roles
      */
     public List<SysRole> selectRolePermissionByUserId(Long userId);
 
     /**
-     * 查询所有角色
+     * Find all the roles.
      * 
-     * @return 角色列表
+     * @return List of roles
      */
     public List<SysRole> selectRoleAll();
 
     /**
-     * 根据用户ID获取角色选择框列表
+     * According to UsersIDGet the Character Selection Box List
      * 
-     * @param userId 用户ID
-     * @return 选中角色ID列表
+     * @param userId UsersID
+     * @return Choose the role.IDList of
      */
     public List<Long> selectRoleListByUserId(Long userId);
 
     /**
-     * 通过角色ID查询角色
+     * through the role.IDQuestion of role.
      * 
-     * @param roleId 角色ID
-     * @return 角色对象信息
+     * @param roleId The roleID
+     * @return The role object information
      */
     public SysRole selectRoleById(Long roleId);
 
     /**
-     * 根据用户ID查询角色
+     * According to UsersIDQuestion of role.
      * 
-     * @param userName 用户名
-     * @return 角色列表
+     * @param userName User Name
+     * @return List of roles
      */
     public List<SysRole> selectRolesByUserName(String userName);
 
     /**
-     * 校验角色名称是否唯一
+     * The role name is unique.
      * 
-     * @param roleName 角色名称
-     * @return 角色信息
+     * @param roleName The role name.
+     * @return Role Information
      */
     public SysRole checkRoleNameUnique(String roleName);
 
     /**
-     * 校验角色权限是否唯一
+     * Examination of the role authority is unique.
      * 
-     * @param roleKey 角色权限
-     * @return 角色信息
+     * @param roleKey The role authority
+     * @return Role Information
      */
     public SysRole checkRoleKeyUnique(String roleKey);
 
     /**
-     * 修改角色信息
+     * Change the role information.
      * 
-     * @param role 角色信息
-     * @return 结果
+     * @param role Role Information
+     * @return Results
      */
     public int updateRole(SysRole role);
 
     /**
-     * 新增角色信息
+     * Additional role information
      * 
-     * @param role 角色信息
-     * @return 结果
+     * @param role Role Information
+     * @return Results
      */
     public int insertRole(SysRole role);
 
     /**
-     * 通过角色ID删除角色
+     * through the role.IDRemove the role.
      * 
-     * @param roleId 角色ID
-     * @return 结果
+     * @param roleId The roleID
+     * @return Results
      */
     public int deleteRoleById(Long roleId);
 
     /**
-     * 批量删除角色信息
+     * Remove the role information.
      * 
-     * @param roleIds 需要删除的角色ID
-     * @return 结果
+     * @param roleIds The role needed to be removed.ID
+     * @return Results
      */
     public int deleteRoleByIds(Long[] roleIds);
 }

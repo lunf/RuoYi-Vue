@@ -1,22 +1,22 @@
-# 告诉EditorConfig插件，这是根文件，不用继续往上查找
+# Tell meEditorConfigAdditional，This is the root document.，Do not need to go up searching.
 root = true
 
-# 匹配全部文件
+# match all documents.
 [*]
-# 设置字符集
+# Set up characters.
 charset = utf-8
-# 缩进风格，可选space、tab
+# Reduce the style.，Optionalspace、tab
 indent_style = space
-# 缩进的空格数
+# Reduced number of spaces.
 indent_size = 2
-# 结尾换行符，可选lf、cr、crlf
+# End of shift.，Optionallf、cr、crlf
 end_of_line = lf
-# 在文件结尾插入新行
+# Enter a new line at the end of the document.
 insert_final_newline = true
-# 删除一行中的前后空格
+# Remove the front-back spacecraft in one line.
 trim_trailing_whitespace = true
 
-# 匹配md结尾的文件
+# matchedmdThe final document.
 [*.md]
 insert_final_newline = false
 trim_trailing_whitespace = false

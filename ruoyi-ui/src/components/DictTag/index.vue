@@ -36,7 +36,7 @@ export default {
       default: null,
     },
     value: [Number, String, Array],
-    // 当未找到匹配的数据时，显示value
+    // When no matched data is found，Showingvalue
     showValue: {
       type: Boolean,
       default: true,
@@ -48,7 +48,7 @@ export default {
   },
   data() {
     return {
-      unmatchArray: [], // 记录未匹配的项
+      unmatchArray: [], // Not matched records.
     }
   },
   computed: {
@@ -58,17 +58,17 @@ export default {
     },
     unmatch() {
       this.unmatchArray = []
-      // 没有value不显示
+      // NovalueNot showing
       if (this.value === null || typeof this.value === 'undefined' || this.value === '' || this.options.length === 0) return false
-      // 传入值为数组
-      let unmatch = false // 添加一个标志来判断是否有未匹配项
+      // Input value is a number.
+      let unmatch = false // Add a label to determine whether there is an incompatible item.
       this.values.forEach(item => {
         if (!this.options.some(v => v.value === item)) {
           this.unmatchArray.push(item)
-          unmatch = true // 如果有未匹配项，将标志设置为true
+          unmatch = true // If there is an incompatible，Set the label totrue
         }
       })
-      return unmatch // 返回标志的值
+      return unmatch // Return the value of the label.
     },
 
   },

@@ -22,7 +22,7 @@ import com.ruoyi.common.utils.StringUtils;
 import com.ruoyi.common.utils.sql.SqlUtil;
 
 /**
- * web层通用数据处理
+ * webGeneral Data Processing
  * 
  * @author ruoyi
  */
@@ -31,12 +31,12 @@ public class BaseController
     protected final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     /**
-     * 将前台传递过来的日期格式的字符串，自动转化为Date类型
+     * A string of characters in the date format transmitted to the front.，Automatically converted toDateType of
      */
     @InitBinder
     public void initBinder(WebDataBinder binder)
     {
-        // Date 类型转换
+        // Date Type of Conversion
         binder.registerCustomEditor(Date.class, new PropertyEditorSupport()
         {
             @Override
@@ -48,7 +48,7 @@ public class BaseController
     }
 
     /**
-     * 设置请求分页数据
+     * Set page request data
      */
     protected void startPage()
     {
@@ -56,7 +56,7 @@ public class BaseController
     }
 
     /**
-     * 设置请求排序数据
+     * Set the request order data.
      */
     protected void startOrderBy()
     {
@@ -69,7 +69,7 @@ public class BaseController
     }
 
     /**
-     * 清理分页的线程变量
+     * Clean the line variable of the page.
      */
     protected void clearPage()
     {
@@ -77,21 +77,21 @@ public class BaseController
     }
 
     /**
-     * 响应请求分页数据
+     * Reply to request page data
      */
     @SuppressWarnings({ "rawtypes", "unchecked" })
     protected TableDataInfo getDataTable(List<?> list)
     {
         TableDataInfo rspData = new TableDataInfo();
         rspData.setCode(HttpStatus.SUCCESS);
-        rspData.setMsg("查询成功");
+        rspData.setMsg("Successful search.");
         rspData.setRows(list);
         rspData.setTotal(new PageInfo(list).getTotal());
         return rspData;
     }
 
     /**
-     * 返回成功
+     * Return to Success
      */
     public AjaxResult success()
     {
@@ -99,7 +99,7 @@ public class BaseController
     }
 
     /**
-     * 返回失败消息
+     * Return to Failed News
      */
     public AjaxResult error()
     {
@@ -107,7 +107,7 @@ public class BaseController
     }
 
     /**
-     * 返回成功消息
+     * Return to Success News
      */
     public AjaxResult success(String message)
     {
@@ -115,7 +115,7 @@ public class BaseController
     }
     
     /**
-     * 返回成功消息
+     * Return to Success News
      */
     public AjaxResult success(Object data)
     {
@@ -123,7 +123,7 @@ public class BaseController
     }
 
     /**
-     * 返回失败消息
+     * Return to Failed News
      */
     public AjaxResult error(String message)
     {
@@ -131,7 +131,7 @@ public class BaseController
     }
 
     /**
-     * 返回警告消息
+     * Return to warning.
      */
     public AjaxResult warn(String message)
     {
@@ -139,10 +139,10 @@ public class BaseController
     }
 
     /**
-     * 响应返回结果
+     * Response to Results
      * 
-     * @param rows 影响行数
-     * @return 操作结果
+     * @param rows The impact number.
+     * @return Operation Results
      */
     protected AjaxResult toAjax(int rows)
     {
@@ -150,10 +150,10 @@ public class BaseController
     }
 
     /**
-     * 响应返回结果
+     * Response to Results
      * 
-     * @param result 结果
-     * @return 操作结果
+     * @param result Results
+     * @return Operation Results
      */
     protected AjaxResult toAjax(boolean result)
     {
@@ -161,7 +161,7 @@ public class BaseController
     }
 
     /**
-     * 页面跳转
+     * Page is jumping.
      */
     public String redirect(String url)
     {
@@ -169,7 +169,7 @@ public class BaseController
     }
 
     /**
-     * 获取用户缓存信息
+     * Obtaining User Cache Information
      */
     public LoginUser getLoginUser()
     {
@@ -177,7 +177,7 @@ public class BaseController
     }
 
     /**
-     * 获取登录用户id
+     * Obtaining Login Usersid
      */
     public Long getUserId()
     {
@@ -185,7 +185,7 @@ public class BaseController
     }
 
     /**
-     * 获取登录部门id
+     * Get the registration department.id
      */
     public Long getDeptId()
     {
@@ -193,7 +193,7 @@ public class BaseController
     }
 
     /**
-     * 获取登录用户名
+     * Get the login user name.
      */
     public String getUsername()
     {

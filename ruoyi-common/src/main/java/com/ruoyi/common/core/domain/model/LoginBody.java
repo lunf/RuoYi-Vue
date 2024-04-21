@@ -1,29 +1,29 @@
 package com.ruoyi.common.core.domain.model;
 
 /**
- * 用户登录对象
+ * User Login Objects
  * 
  * @author ruoyi
  */
 public class LoginBody
 {
     /**
-     * 用户名
+     * User Name
      */
     private String username;
 
     /**
-     * 用户密码
+     * User Password
      */
     private String password;
 
     /**
-     * 验证码
+     * verification code
      */
     private String code;
 
     /**
-     * 唯一标识
+     * The only mark.
      */
     private String uuid;
 

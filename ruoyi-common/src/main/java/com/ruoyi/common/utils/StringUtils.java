@@ -11,26 +11,26 @@ import com.ruoyi.common.constant.Constants;
 import com.ruoyi.common.core.text.StrFormatter;
 
 /**
- * 字符串工具类
+ * Type of string tools.
  * 
  * @author ruoyi
  */
 public class StringUtils extends org.apache.commons.lang3.StringUtils
 {
-    /** 空字符串 */
+    /** The empty string. */
     private static final String NULLSTR = "";
 
-    /** 下划线 */
+    /** The line down. */
     private static final char SEPARATOR = '_';
 
-    /** 星号 */
+    /** The Star */
     private static final char ASTERISK = '*';
 
     /**
-     * 获取参数不为空值
+     * Parameters are not empty.
      * 
-     * @param value defaultValue 要判断的value
-     * @return value 返回值
+     * @param value defaultValue to judge.value
+     * @return value Return of value.
      */
     public static <T> T nvl(T value, T defaultValue)
     {
@@ -38,10 +38,10 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils
     }
 
     /**
-     * * 判断一个Collection是否为空， 包含List，Set，Queue
+     * * Judge one.Collectionis empty.， IncludedList，Set，Queue
      * 
-     * @param coll 要判断的Collection
-     * @return true：为空 false：非空
+     * @param coll to judge.Collection
+     * @return true：for empty false：not empty
      */
     public static boolean isEmpty(Collection<?> coll)
     {
@@ -49,10 +49,10 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils
     }
 
     /**
-     * * 判断一个Collection是否非空，包含List，Set，Queue
+     * * Judge one.Collectionis not empty.，IncludedList，Set，Queue
      * 
-     * @param coll 要判断的Collection
-     * @return true：非空 false：空
+     * @param coll to judge.Collection
+     * @return true：not empty false：empty
      */
     public static boolean isNotEmpty(Collection<?> coll)
     {
@@ -60,10 +60,10 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils
     }
 
     /**
-     * * 判断一个对象数组是否为空
+     * * To determine whether an object group is empty.
      * 
-     * @param objects 要判断的对象数组
-     ** @return true：为空 false：非空
+     * @param objects The number of objects to be judged
+     ** @return true：for empty false：not empty
      */
     public static boolean isEmpty(Object[] objects)
     {
@@ -71,10 +71,10 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils
     }
 
     /**
-     * * 判断一个对象数组是否非空
+     * * To determine whether an object group is not empty.
      * 
-     * @param objects 要判断的对象数组
-     * @return true：非空 false：空
+     * @param objects The number of objects to be judged
+     * @return true：not empty false：empty
      */
     public static boolean isNotEmpty(Object[] objects)
     {
@@ -82,10 +82,10 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils
     }
 
     /**
-     * * 判断一个Map是否为空
+     * * Judge one.Mapis empty.
      * 
-     * @param map 要判断的Map
-     * @return true：为空 false：非空
+     * @param map to judge.Map
+     * @return true：for empty false：not empty
      */
     public static boolean isEmpty(Map<?, ?> map)
     {
@@ -93,10 +93,10 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils
     }
 
     /**
-     * * 判断一个Map是否为空
+     * * Judge one.Mapis empty.
      * 
-     * @param map 要判断的Map
-     * @return true：非空 false：空
+     * @param map to judge.Map
+     * @return true：not empty false：empty
      */
     public static boolean isNotEmpty(Map<?, ?> map)
     {
@@ -104,10 +104,10 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils
     }
 
     /**
-     * * 判断一个字符串是否为空串
+     * * Decide whether a string is empty.
      * 
      * @param str String
-     * @return true：为空 false：非空
+     * @return true：for empty false：not empty
      */
     public static boolean isEmpty(String str)
     {
@@ -115,10 +115,10 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils
     }
 
     /**
-     * * 判断一个字符串是否为非空串
+     * * Determine whether a string is not empty.
      * 
      * @param str String
-     * @return true：非空串 false：空串
+     * @return true：Not empty. false：The empty
      */
     public static boolean isNotEmpty(String str)
     {
@@ -126,10 +126,10 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils
     }
 
     /**
-     * * 判断一个对象是否为空
+     * * To determine whether an object is empty.
      * 
      * @param object Object
-     * @return true：为空 false：非空
+     * @return true：for empty false：not empty
      */
     public static boolean isNull(Object object)
     {
@@ -137,10 +137,10 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils
     }
 
     /**
-     * * 判断一个对象是否非空
+     * * To determine whether an object is empty.
      * 
      * @param object Object
-     * @return true：非空 false：空
+     * @return true：not empty false：empty
      */
     public static boolean isNotNull(Object object)
     {
@@ -148,10 +148,10 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils
     }
 
     /**
-     * * 判断一个对象是否是数组类型（Java基本型别的数组）
+     * * To determine whether an object is a group type.（JavaBasic types of groups.）
      * 
-     * @param object 对象
-     * @return true：是数组 false：不是数组
+     * @param object Objects
+     * @return true：It is a group. false：Not a group.
      */
     public static boolean isArray(Object object)
     {
@@ -159,7 +159,7 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils
     }
 
     /**
-     * 去空格
+     * Go to space.
      */
     public static String trim(String str)
     {
@@ -167,12 +167,12 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils
     }
 
     /**
-     * 替换指定字符串的指定区间内字符为"*"
+     * Replace the character within the specified range of the specified string to"*"
      *
-     * @param str 字符串
-     * @param startInclude 开始位置（包含）
-     * @param endExclude 结束位置（不包含）
-     * @return 替换后的字符串
+     * @param str The characters.
+     * @param startInclude Start the location.（Included）
+     * @param endExclude End of location.（Not included）
+     * @return Replacement of characters.
      */
     public static String hide(CharSequence str, int startInclude, int endExclude)
     {
@@ -191,7 +191,7 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils
         }
         if (startInclude > endExclude)
         {
-            // 如果起始位置大于结束位置，不替换
+            // The starting position is greater than the end position.，not replaced.
             return NULLSTR;
         }
         final char[] chars = new char[strLength];
@@ -210,11 +210,11 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils
     }
 
     /**
-     * 截取字符串
+     * Cut the string.
      * 
-     * @param str 字符串
-     * @param start 开始
-     * @return 结果
+     * @param str The characters.
+     * @param start Started
+     * @return Results
      */
     public static String substring(final String str, int start)
     {
@@ -241,12 +241,12 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils
     }
 
     /**
-     * 截取字符串
+     * Cut the string.
      * 
-     * @param str 字符串
-     * @param start 开始
-     * @param end 结束
-     * @return 结果
+     * @param str The characters.
+     * @param start Started
+     * @param end ended
+     * @return Results
      */
     public static String substring(final String str, int start, int end)
     {
@@ -287,10 +287,10 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils
     }
 
     /**
-     * 判断是否为空，并且不是空白字符
+     * To determine whether it is empty.，Not empty characters.
      * 
-     * @param str 要判断的value
-     * @return 结果
+     * @param str to judge.value
+     * @return Results
      */
     public static boolean hasText(String str)
     {
@@ -311,17 +311,17 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils
     }
 
     /**
-     * 格式化文本, {} 表示占位符<br>
-     * 此方法只是简单将占位符 {} 按照顺序替换为参数<br>
-     * 如果想输出 {} 使用 \\转义 { 即可，如果想输出 {} 之前的 \ 使用双转义符 \\\\ 即可<br>
-     * 例：<br>
-     * 通常使用：format("this is {} for {}", "a", "b") -> this is a for b<br>
-     * 转义{}： format("this is \\{} for {}", "a", "b") -> this is \{} for a<br>
-     * 转义\： format("this is \\\\{} for {}", "a", "b") -> this is \a for b<br>
+     * Formated text, {} indicate the position.<br>
+     * This method is simple to take place. {} Replacement of parameters according to order.<br>
+     * If you want out. {} Use of \\transition { can be，If you want out. {} The previous \ Use of Double Conversion \\\\ can be<br>
+     * Examples：<br>
+     * Usually used：format("this is {} for {}", "a", "b") -> this is a for b<br>
+     * transition{}： format("this is \\{} for {}", "a", "b") -> this is \{} for a<br>
+     * transition\： format("this is \\\\{} for {}", "a", "b") -> this is \a for b<br>
      * 
-     * @param template 文本模板，被替换的部分用 {} 表示
-     * @param params 参数值
-     * @return 格式化后的文本
+     * @param template Text template，Replaced parts. {} stated
+     * @param params The parameter value
+     * @return Text after formatting.
      */
     public static String format(String template, Object... params)
     {
@@ -333,10 +333,10 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils
     }
 
     /**
-     * 是否为http(s)://开头
+     * Is it forhttp(s)://Beginning
      * 
-     * @param link 链接
-     * @return 结果
+     * @param link linked
+     * @return Results
      */
     public static boolean ishttp(String link)
     {
@@ -344,11 +344,11 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils
     }
 
     /**
-     * 字符串转set
+     * The characters turn.set
      * 
-     * @param str 字符串
-     * @param sep 分隔符
-     * @return set集合
+     * @param str The characters.
+     * @param sep Separation
+     * @return setThe gathering
      */
     public static final Set<String> str2Set(String str, String sep)
     {
@@ -356,13 +356,13 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils
     }
 
     /**
-     * 字符串转list
+     * The characters turn.list
      * 
-     * @param str 字符串
-     * @param sep 分隔符
-     * @param filterBlank 过滤纯空白
-     * @param trim 去掉首尾空白
-     * @return list集合
+     * @param str The characters.
+     * @param sep Separation
+     * @param filterBlank Filtering pure empty.
+     * @param trim Remove the empty end.
+     * @return listThe gathering
      */
     public static final List<String> str2List(String str, String sep, boolean filterBlank, boolean trim)
     {
@@ -372,7 +372,7 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils
             return list;
         }
 
-        // 过滤空白字符串
+        // Filter the empty string.
         if (filterBlank && StringUtils.isBlank(str))
         {
             return list;
@@ -395,11 +395,11 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils
     }
 
     /**
-     * 判断给定的collection列表中是否包含数组array 判断给定的数组array中是否包含给定的元素value
+     * judgment given.collectionDoes the list contain numbers?array Assess the number given.arrayIt contains a given element.value
      *
-     * @param collection 给定的集合
-     * @param array 给定的数组
-     * @return boolean 结果
+     * @param collection The given collection.
+     * @param array The given number.
+     * @return boolean Results
      */
     public static boolean containsAny(Collection<String> collection, String... array)
     {
@@ -421,11 +421,11 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils
     }
 
     /**
-     * 查找指定字符串是否包含指定字符串列表中的任意一个字符串同时串忽略大小写
+     * Find out whether a specified string contains any string in a specified string list while a string ignores the size of the letter.
      *
-     * @param cs 指定字符串
-     * @param searchCharSequences 需要检查的字符串数组
-     * @return 是否包含任意一个字符串
+     * @param cs Identifying the string.
+     * @param searchCharSequences Number of characters to be checked.
+     * @return It contains an arbitrary string.
      */
     public static boolean containsAnyIgnoreCase(CharSequence cs, CharSequence... searchCharSequences)
     {
@@ -444,7 +444,7 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils
     }
 
     /**
-     * 驼峰转下划线命名
+     * Turn down the line name.
      */
     public static String toUnderScoreCase(String str)
     {
@@ -453,11 +453,11 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils
             return null;
         }
         StringBuilder sb = new StringBuilder();
-        // 前置字符是否大写
+        // Are the front characters written?
         boolean preCharIsUpperCase = true;
-        // 当前字符是否大写
+        // Current characters are written.
         boolean curreCharIsUpperCase = true;
-        // 下一字符是否大写
+        // The next character is written.
         boolean nexteCharIsUpperCase = true;
         for (int i = 0; i < str.length(); i++)
         {
@@ -493,11 +493,11 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils
     }
 
     /**
-     * 是否包含字符串
+     * It contains a string.
      * 
-     * @param str 验证字符串
-     * @param strs 字符串组
-     * @return 包含返回true
+     * @param str Verify the string.
+     * @param strs group of characters.
+     * @return Included in Returntrue
      */
     public static boolean inStringIgnoreCase(String str, String... strs)
     {
@@ -515,35 +515,35 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils
     }
 
     /**
-     * 将下划线大写方式命名的字符串转换为驼峰式。如果转换前的下划线大写方式命名的字符串为空，则返回空字符串。 例如：HELLO_WORLD->HelloWorld
+     * Convert the line of characters named the line-down way of writing to the hole.。If the string named in the form of translation before conversion is empty.，Returning the empty string.。 for example：HELLO_WORLD->HelloWorld
      * 
-     * @param name 转换前的下划线大写方式命名的字符串
-     * @return 转换后的驼峰式命名的字符串
+     * @param name A string of characters named in the way of writing before conversion.
+     * @return Character names after conversion.
      */
     public static String convertToCamelCase(String name)
     {
         StringBuilder result = new StringBuilder();
-        // 快速检查
+        // Fast inspection
         if (name == null || name.isEmpty())
         {
-            // 没必要转换
+            // No need to convert.
             return "";
         }
         else if (!name.contains("_"))
         {
-            // 不含下划线，仅将首字母大写
+            // Not underline.，Just write the first letter.
             return name.substring(0, 1).toUpperCase() + name.substring(1);
         }
-        // 用下划线将原始字符串分割
+        // Use the line to divide the original string.
         String[] camels = name.split("_");
         for (String camel : camels)
         {
-            // 跳过原始字符串中开头、结尾的下换线或双重下划线
+            // Starting from the original string.、End of the downline or double downline.
             if (camel.isEmpty())
             {
                 continue;
             }
-            // 首字母大写
+            // The first letter is written.
             result.append(camel.substring(0, 1).toUpperCase());
             result.append(camel.substring(1).toLowerCase());
         }
@@ -551,8 +551,8 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils
     }
 
     /**
-     * 驼峰式命名法
-     * 例如：user_name->userName
+     * The top name law.
+     * for example：user_name->userName
      */
     public static String toCamelCase(String s)
     {
@@ -589,11 +589,11 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils
     }
 
     /**
-     * 查找指定字符串是否匹配指定字符串列表中的任意一个字符串
+     * Find out if the specified string matches any string in the specified string list.
      * 
-     * @param str 指定字符串
-     * @param strs 需要检查的字符串数组
-     * @return 是否匹配
+     * @param str Identifying the string.
+     * @param strs Number of characters to be checked.
+     * @return is matching.
      */
     public static boolean matches(String str, List<String> strs)
     {
@@ -612,13 +612,13 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils
     }
 
     /**
-     * 判断url是否与规则配置: 
-     * ? 表示单个字符; 
-     * * 表示一层路径内的任意字符串，不可跨层级; 
-     * ** 表示任意层路径;
+     * judgmenturlConfiguration with the rules.: 
+     * ? Showing individual characters.; 
+     * * Show an arbitrary string within a layer of route.，Not to cross levels.; 
+     * ** indicate the arbitrary path.;
      * 
-     * @param pattern 匹配规则
-     * @param url 需要匹配的url
+     * @param pattern matching the rules.
+     * @param url Need to match.url
      * @return
      */
     public static boolean isMatch(String pattern, String url)
@@ -634,11 +634,11 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils
     }
 
     /**
-     * 数字左边补齐0，使之达到指定长度。注意，如果数字转换为字符串后，长度大于size，则只保留 最后size个字符。
+     * The number left.0，It reaches the specified length.。Attention，If the number is converted into a string.，The length is greater thansize，Only retain. The LastsizeA character.。
      * 
-     * @param num 数字对象
-     * @param size 字符串指定长度
-     * @return 返回数字的字符串格式，该字符串为指定长度。
+     * @param num The Digital Objects
+     * @param size Character set length.
+     * @return Return the number string format.，The string is specified for length.。
      */
     public static final String padl(final Number num, final int size)
     {
@@ -646,12 +646,12 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils
     }
 
     /**
-     * 字符串左补齐。如果原始字符串s长度大于size，则只保留最后size个字符。
+     * The left line filled.。If the original stringsThe length is greater thansize，Keep only the last.sizeA character.。
      * 
-     * @param s 原始字符串
-     * @param size 字符串指定长度
-     * @param c 用于补齐的字符
-     * @return 返回指定长度的字符串，由原字符串左补齐或截取得到。
+     * @param s The original string.
+     * @param size Character set length.
+     * @param c Use of filled characters.
+     * @return Return the specified length string.，from the original string to the left or to the。
      */
     public static final String padl(final String s, final int size, final char c)
     {

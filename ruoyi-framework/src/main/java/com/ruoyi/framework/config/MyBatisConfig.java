@@ -25,7 +25,7 @@ import org.springframework.util.ClassUtils;
 import com.ruoyi.common.utils.StringUtils;
 
 /**
- * Mybatis支持*匹配扫描包
+ * Mybatissupported*matching the scan package.
  * 
  * @author ruoyi
  */
@@ -81,7 +81,7 @@ public class MyBatisConfig
             }
             else
             {
-                throw new RuntimeException("mybatis typeAliasesPackage 路径扫描错误,参数typeAliasesPackage:" + typeAliasesPackage + "未找到任何包");
+                throw new RuntimeException("mybatis typeAliasesPackage Route scanning errors.,ParameterstypeAliasesPackage:" + typeAliasesPackage + "No package found.");
             }
         }
         catch (IOException e)

@@ -1,13 +1,13 @@
 package com.ruoyi.common.enums;
 
 /**
- * 用户状态
+ * User Status
  * 
  * @author ruoyi
  */
 public enum UserStatus
 {
-    OK("0", "正常"), DISABLE("1", "停用"), DELETED("2", "删除");
+    OK("0", "Normal"), DISABLE("1", "stopped"), DELETED("2", "removed");
 
     private final String code;
     private final String info;

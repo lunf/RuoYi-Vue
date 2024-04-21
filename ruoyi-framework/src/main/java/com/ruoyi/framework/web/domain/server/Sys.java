@@ -1,34 +1,34 @@
 package com.ruoyi.framework.web.domain.server;
 
 /**
- * 系统相关信息
+ * Information related to the system
  * 
  * @author ruoyi
  */
 public class Sys
 {
     /**
-     * 服务器名称
+     * Name of the server
      */
     private String computerName;
 
     /**
-     * 服务器Ip
+     * The server.Ip
      */
     private String computerIp;
 
     /**
-     * 项目路径
+     * The project route
      */
     private String userDir;
 
     /**
-     * 操作系统
+     * Operating system
      */
     private String osName;
 
     /**
-     * 系统架构
+     * The system architecture
      */
     private String osArch;
 

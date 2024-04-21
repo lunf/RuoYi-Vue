@@ -14,25 +14,25 @@
       class="upload-file-uploader"
       ref="fileUpload"
     >
-      <!-- 上传按钮 -->
-      <el-button size="mini" type="primary">选取文件</el-button>
-      <!-- 上传提示 -->
+      <!-- upload the button. -->
+      <el-button size="mini" type="primary">Selection of documents.</el-button>
+      <!-- upload the advice. -->
       <div class="el-upload__tip" slot="tip" v-if="showTip">
-        请上传
-        <template v-if="fileSize"> 大小不超过 <b style="color: #f56c6c">{{ fileSize }}MB</b> </template>
-        <template v-if="fileType"> 格式为 <b style="color: #f56c6c">{{ fileType.join("/") }}</b> </template>
-        的文件
+        Please upload
+        <template v-if="fileSize"> The size does not exceed <b style="color: #f56c6c">{{ fileSize }}MB</b> </template>
+        <template v-if="fileType"> Form for <b style="color: #f56c6c">{{ fileType.join("/") }}</b> </template>
+        The documents.
       </div>
     </el-upload>
 
-    <!-- 文件列表 -->
+    <!-- List of documents -->
     <transition-group class="upload-file-list el-upload-list el-upload-list--text" name="el-fade-in-linear" tag="ul">
       <li :key="file.url" class="el-upload-list__item ele-upload-list__item-content" v-for="(file, index) in fileList">
         <el-link :href="`${baseUrl}${file.url}`" :underline="false" target="_blank">
           <span class="el-icon-document"> {{ getFileName(file.name) }} </span>
         </el-link>
         <div class="ele-upload-list__item-content-action">
-          <el-link :underline="false" @click="handleDelete(index)" type="danger">删除</el-link>
+          <el-link :underline="false" @click="handleDelete(index)" type="danger">removed</el-link>
         </div>
       </li>
     </transition-group>
@@ -45,24 +45,24 @@ import { getToken } from "@/utils/auth";
 export default {
   name: "FileUpload",
   props: {
-    // 值
+    // Value
     value: [String, Object, Array],
-    // 数量限制
+    // The number limitation
     limit: {
       type: Number,
       default: 5,
     },
-    // 大小限制(MB)
+    // The size limit.(MB)
     fileSize: {
       type: Number,
       default: 5,
     },
-    // 文件类型, 例如['png', 'jpg', 'jpeg']
+    // Type of document, for example['png', 'jpg', 'jpeg']
     fileType: {
       type: Array,
       default: () => ["doc", "xls", "ppt", "txt", "pdf"],
     },
-    // 是否显示提示
+    // Showing a tip.
     isShowTip: {
       type: Boolean,
       default: true
@@ -73,7 +73,7 @@ export default {
       number: 0,
       uploadList: [],
       baseUrl: process.env.VUE_APP_BASE_API,
-      uploadFileUrl: process.env.VUE_APP_BASE_API + "/common/upload", // 上传文件服务器地址
+      uploadFileUrl: process.env.VUE_APP_BASE_API + "/common/upload", // The file server address.
       headers: {
         Authorization: "Bearer " + getToken(),
       },
@@ -85,9 +85,9 @@ export default {
       handler(val) {
         if (val) {
           let temp = 1;
-          // 首先将值转为数组
+          // First, convert the value into groups.
           const list = Array.isArray(val) ? val : this.value.split(',');
-          // 然后将数组转为对象数组
+          // Then convert the group into the object group.
           this.fileList = list.map(item => {
             if (typeof item === "string") {
               item = { name: item, url: item };
@@ -105,46 +105,46 @@ export default {
     }
   },
   computed: {
-    // 是否显示提示
+    // Showing a tip.
     showTip() {
       return this.isShowTip && (this.fileType || this.fileSize);
     },
   },
   methods: {
-    // 上传前校检格式和大小
+    // Pre-school examination format and size.
     handleBeforeUpload(file) {
-      // 校检文件类型
+      // Type of school inspection document
       if (this.fileType) {
         const fileName = file.name.split('.');
         const fileExt = fileName[fileName.length - 1];
         const isTypeOk = this.fileType.indexOf(fileExt) >= 0;
         if (!isTypeOk) {
-          this.$modal.msgError(`文件格式不正确, 请上传${this.fileType.join("/")}格式文件!`);
+          this.$modal.msgError(`File format is incorrect., Please upload${this.fileType.join("/")}Format of documents!`);
           return false;
         }
       }
-      // 校检文件大小
+      // School examination file size.
       if (this.fileSize) {
         const isLt = file.size / 1024 / 1024 < this.fileSize;
         if (!isLt) {
-          this.$modal.msgError(`上传文件大小不能超过 ${this.fileSize} MB!`);
+          this.$modal.msgError(`The file size cannot exceed ${this.fileSize} MB!`);
           return false;
         }
       }
-      this.$modal.loading("正在上传文件，请稍候...");
+      this.$modal.loading("The file is uploaded.，Please wait a little....");
       this.number++;
       return true;
     },
-    // 文件个数超出
+    // The number of documents exceeds
     handleExceed() {
-      this.$modal.msgError(`上传文件数量不能超过 ${this.limit} 个!`);
+      this.$modal.msgError(`The number of files can not exceed. ${this.limit} one!`);
     },
-    // 上传失败
+    // upload failure.
     handleUploadError(err) {
-      this.$modal.msgError("上传文件失败，请重试");
+      this.$modal.msgError("Filed failure.，Please try again.");
       this.$modal.closeLoading();
     },
-    // 上传成功回调
+    // Successfully uploaded
     handleUploadSuccess(res, file) {
       if (res.code === 200) {
         this.uploadList.push({ name: res.fileName, url: res.fileName });
@@ -157,12 +157,12 @@ export default {
         this.uploadedSuccessfully();
       }
     },
-    // 删除文件
+    // Delete the document.
     handleDelete(index) {
       this.fileList.splice(index, 1);
       this.$emit("input", this.listToString(this.fileList));
     },
-    // 上传结束处理
+    // End up processing.
     uploadedSuccessfully() {
       if (this.number > 0 && this.uploadList.length === this.number) {
         this.fileList = this.fileList.concat(this.uploadList);
@@ -172,16 +172,16 @@ export default {
         this.$modal.closeLoading();
       }
     },
-    // 获取文件名称
+    // Get the document name.
     getFileName(name) {
-      // 如果是url那么取最后的名字 如果不是直接返回
+      // If it isurlTake the last name. If not directly back.
       if (name.lastIndexOf("/") > -1) {
         return name.slice(name.lastIndexOf("/") + 1);
       } else {
         return name;
       }
     },
-    // 对象转成指定字符串分隔
+    // Convert the object to a specified string separation
     listToString(list, separator) {
       let strs = "";
       separator = separator || ",";

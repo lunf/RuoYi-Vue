@@ -1,36 +1,36 @@
 module.exports = {
   /**
-   * 侧边栏主题 深色主题theme-dark，浅色主题theme-light
+   * The side bar theme. The dark topic.theme-dark，The light theme.theme-light
    */
   sideTheme: 'theme-dark',
 
   /**
-   * 是否系统布局配置
+   * Is the system set up?
    */
   showSettings: false,
 
   /**
-   * 是否显示顶部导航
+   * Showing the top navigation.
    */
   topNav: false,
 
   /**
-   * 是否显示 tagsView
+   * Should show tagsView
    */
   tagsView: true,
 
   /**
-   * 是否固定头部
+   * Is the head fixed?
    */
   fixedHeader: false,
 
   /**
-   * 是否显示logo
+   * Should showlogo
    */
   sidebarLogo: true,
 
   /**
-   * 是否显示动态标题
+   * Showing a dynamic title
    */
   dynamicTitle: false,
 

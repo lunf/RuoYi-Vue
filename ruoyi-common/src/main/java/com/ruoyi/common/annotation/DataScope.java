@@ -7,7 +7,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * 数据权限过滤注解
+ * Data permits filter notes
  * 
  * @author ruoyi
  */
@@ -17,17 +17,17 @@ import java.lang.annotation.Target;
 public @interface DataScope
 {
     /**
-     * 部门表的别名
+     * Other names of the department table
      */
     public String deptAlias() default "";
 
     /**
-     * 用户表的别名
+     * Name of the User Table.
      */
     public String userAlias() default "";
 
     /**
-     * 权限字符（用于多个角色匹配符合要求的权限）默认根据权限注解@ss获取，多个权限用逗号分隔开来
+     * Authorization of characters（Use multiple roles to match the requirements）Based on authorization.@ssobtained，Multiple powers are separated by comics.
      */
     public String permission() default "";
 }

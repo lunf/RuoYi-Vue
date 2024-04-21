@@ -4,96 +4,96 @@ import java.util.List;
 import com.ruoyi.system.domain.SysPost;
 
 /**
- * 岗位信息 数据层
+ * Job Information The Data Layer
  * 
  * @author ruoyi
  */
 public interface SysPostMapper
 {
     /**
-     * 查询岗位数据集合
+     * Question of job data collection
      * 
-     * @param post 岗位信息
-     * @return 岗位数据集合
+     * @param post Job Information
+     * @return Data collection of jobs
      */
     public List<SysPost> selectPostList(SysPost post);
 
     /**
-     * 查询所有岗位
+     * Find all posts.
      * 
-     * @return 岗位列表
+     * @return List of jobs
      */
     public List<SysPost> selectPostAll();
 
     /**
-     * 通过岗位ID查询岗位信息
+     * through the job.IDAsk for job information.
      * 
-     * @param postId 岗位ID
-     * @return 角色对象信息
+     * @param postId The jobID
+     * @return The role object information
      */
     public SysPost selectPostById(Long postId);
 
     /**
-     * 根据用户ID获取岗位选择框列表
+     * According to UsersIDSelect the job list.
      * 
-     * @param userId 用户ID
-     * @return 选中岗位ID列表
+     * @param userId UsersID
+     * @return Choose a position.IDList of
      */
     public List<Long> selectPostListByUserId(Long userId);
 
     /**
-     * 查询用户所属岗位组
+     * Ask for the employment group of users.
      * 
-     * @param userName 用户名
-     * @return 结果
+     * @param userName User Name
+     * @return Results
      */
     public List<SysPost> selectPostsByUserName(String userName);
 
     /**
-     * 删除岗位信息
+     * Delete Job Information
      * 
-     * @param postId 岗位ID
-     * @return 结果
+     * @param postId The jobID
+     * @return Results
      */
     public int deletePostById(Long postId);
 
     /**
-     * 批量删除岗位信息
+     * Delete the job information.
      * 
-     * @param postIds 需要删除的岗位ID
-     * @return 结果
+     * @param postIds Posts to be removed.ID
+     * @return Results
      */
     public int deletePostByIds(Long[] postIds);
 
     /**
-     * 修改岗位信息
+     * Modification of Job Information
      * 
-     * @param post 岗位信息
-     * @return 结果
+     * @param post Job Information
+     * @return Results
      */
     public int updatePost(SysPost post);
 
     /**
-     * 新增岗位信息
+     * Additional Job Information
      * 
-     * @param post 岗位信息
-     * @return 结果
+     * @param post Job Information
+     * @return Results
      */
     public int insertPost(SysPost post);
 
     /**
-     * 校验岗位名称
+     * Examination Job Name
      * 
-     * @param postName 岗位名称
-     * @return 结果
+     * @param postName Employment Name
+     * @return Results
      */
     public SysPost checkPostNameUnique(String postName);
 
     /**
-     * 校验岗位编码
+     * Training job code.
      * 
-     * @param postCode 岗位编码
-     * @return 结果
+     * @param postCode Job Code
+     * @return Results
      */
     public SysPost checkPostCodeUnique(String postCode);
 }

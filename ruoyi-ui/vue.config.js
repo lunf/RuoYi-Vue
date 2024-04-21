@@ -7,27 +7,27 @@ function resolve(dir) {
 
 const CompressionPlugin = require('compression-webpack-plugin')
 
-const name = process.env.VUE_APP_TITLE || '若依管理系统' // 网页标题
+const name = process.env.VUE_APP_TITLE || 'If the management system' // Title of the website
 
-const port = process.env.port || process.env.npm_config_port || 80 // 端口
+const port = process.env.port || process.env.npm_config_port || 80 // The port.
 
-// vue.config.js 配置说明
-//官方vue.config.js 参考文档 https://cli.vuejs.org/zh/config/#css-loaderoptions
-// 这里只列一部分，具体配置参考文档
+// vue.config.js Configuration Explanation
+//Officialvue.config.js Reference Documents https://cli.vuejs.org/zh/config/#css-loaderoptions
+// Here is only a part.，Specific configuration of reference documents
 module.exports = {
-  // 部署生产环境和开发环境下的URL。
-  // 默认情况下，Vue CLI 会假设你的应用是被部署在一个域名的根路径上
-  // 例如 https://www.ruoyi.vip/。如果应用被部署在一个子路径上，你就需要用这个选项指定这个子路径。例如，如果你的应用被部署在 https://www.ruoyi.vip/admin/，则设置 baseUrl 为 /admin/。
+  // Installation in the production and development environmentURL。
+  // In the default circumstances.，Vue CLI It will assume that your application is deployed on a domain name root route.
+  // for example https://www.ruoyi.vip/。If the application is deployed on a subway，You need to specify this subway with this option.。for example，If your application is deployed https://www.ruoyi.vip/admin/，and set up baseUrl for /admin/。
   publicPath: process.env.NODE_ENV === "production" ? "/" : "/",
-  // 在npm run build 或 yarn build 时 ，生成文件的目录名称（要和baseUrl的生产环境路径一致）（默认dist）
+  // innpm run build or yarn build The time ，Name of the directory of the file generated（to andbaseUrlThe production environmental path consistent.）（presumeddist）
   outputDir: 'dist',
-  // 用于放置生成的静态资源 (js、css、img、fonts) 的；（项目打包之后，静态资源会放在这个文件夹下）
+  // Statistical resources generated. (js、css、img、fonts) of；（After the packaging.，Statistical resources will be placed under this folder.）
   assetsDir: 'static',
-  // 是否开启eslint保存检测，有效值：ture | false | 'error'
+  // is opened.eslintpreserved testing.，Effective Value：ture | false | 'error'
   lintOnSave: process.env.NODE_ENV === 'development',
-  // 如果你不需要生产环境的 source map，可以将其设置为 false 以加速生产环境构建。
+  // If you don’t need a production environment. source map，It can be set to false Accelerating the production environment.。
   productionSourceMap: false,
-  // webpack-dev-server 相关配置
+  // webpack-dev-server Related configuration
   devServer: {
     host: '0.0.0.0',
     port: port,
@@ -59,14 +59,14 @@ module.exports = {
       }
     },
     plugins: [
-      // http://doc.ruoyi.vip/ruoyi-vue/other/faq.html#使用gzip解压缩静态文件
+      // http://doc.ruoyi.vip/ruoyi-vue/other/faq.html#Use ofgzipCompressed static files.
       new CompressionPlugin({
-        cache: false,                                  // 不启用文件缓存
-        test: /\.(js|css|html|jpe?g|png|gif|svg)?$/i,  // 压缩文件格式
-        filename: '[path][base].gz[query]',            // 压缩后的文件名
-        algorithm: 'gzip',                             // 使用gzip压缩
-        minRatio: 0.8,                                 // 压缩比例，小于 80% 的文件不会被压缩
-        deleteOriginalAssets: false                    // 压缩后删除原文件
+        cache: false,                                  // Do not activate file cache
+        test: /\.(js|css|html|jpe?g|png|gif|svg)?$/i,  // Compressed file format.
+        filename: '[path][base].gz[query]',            // Document Name After Compression
+        algorithm: 'gzip',                             // Use ofgzipCompressed
+        minRatio: 0.8,                                 // The compression proportion.，less than 80% Documents will not be compressed.
+        deleteOriginalAssets: false                    // Remove the original file after compression.
       })
     ],
   },

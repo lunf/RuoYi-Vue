@@ -73,7 +73,7 @@ export default {
       const path = val.path;
       const query = val.query;
       if(this.ishttp(val.path)) {
-        // http(s):// 路径新窗口打开
+        // http(s):// New window open.
         const pindex = path.indexOf("http");
         window.open(path.substr(pindex, path.length), "_blank");
       } else {

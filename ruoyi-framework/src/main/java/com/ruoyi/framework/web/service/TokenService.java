@@ -24,7 +24,7 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 
 /**
- * token验证处理
+ * tokenVerification of processing
  *
  * @author ruoyi
  */
@@ -33,15 +33,15 @@ public class TokenService
 {
     private static final Logger log = LoggerFactory.getLogger(TokenService.class);
 
-    // 令牌自定义标识
+    // Personalized identification.
     @Value("${token.header}")
     private String header;
 
-    // 令牌秘钥
+    // The Secret Key.
     @Value("${token.secret}")
     private String secret;
 
-    // 令牌有效期（默认30分钟）
+    // Signs are valid.（presumed30Minutes）
     @Value("${token.expireTime}")
     private int expireTime;
 
@@ -55,20 +55,20 @@ public class TokenService
     private RedisCache redisCache;
 
     /**
-     * 获取用户身份信息
+     * Obtaining User Identity Information
      *
-     * @return 用户信息
+     * @return User Information
      */
     public LoginUser getLoginUser(HttpServletRequest request)
     {
-        // 获取请求携带的令牌
+        // Request for carrying signals.
         String token = getToken(request);
         if (StringUtils.isNotEmpty(token))
         {
             try
             {
                 Claims claims = parseToken(token);
-                // 解析对应的权限以及用户信息
+                // Analysis of corresponding permissions and user information
                 String uuid = (String) claims.get(Constants.LOGIN_USER_KEY);
                 String userKey = getTokenKey(uuid);
                 LoginUser user = redisCache.getCacheObject(userKey);
@@ -76,14 +76,14 @@ public class TokenService
             }
             catch (Exception e)
             {
-                log.error("获取用户信息异常'{}'", e.getMessage());
+                log.error("Unusual access to user information.'{}'", e.getMessage());
             }
         }
         return null;
     }
 
     /**
-     * 设置用户身份信息
+     * Set User Identity Information
      */
     public void setLoginUser(LoginUser loginUser)
     {
@@ -94,7 +94,7 @@ public class TokenService
     }
 
     /**
-     * 删除用户身份信息
+     * Delete User Identity Information
      */
     public void delLoginUser(String token)
     {
@@ -106,10 +106,10 @@ public class TokenService
     }
 
     /**
-     * 创建令牌
+     * Create the order.
      *
-     * @param loginUser 用户信息
-     * @return 令牌
+     * @param loginUser User Information
+     * @return The mark.
      */
     public String createToken(LoginUser loginUser)
     {
@@ -124,10 +124,10 @@ public class TokenService
     }
 
     /**
-     * 验证令牌有效期，相差不足20分钟，自动刷新缓存
+     * Verification of validity.，Differences are not sufficient.20Minutes，Automatic update of cache.
      *
      * @param loginUser
-     * @return 令牌
+     * @return The mark.
      */
     public void verifyToken(LoginUser loginUser)
     {
@@ -140,23 +140,23 @@ public class TokenService
     }
 
     /**
-     * 刷新令牌有效期
+     * Updates of validity.
      *
-     * @param loginUser 登录信息
+     * @param loginUser Registration Information
      */
     public void refreshToken(LoginUser loginUser)
     {
         loginUser.setLoginTime(System.currentTimeMillis());
         loginUser.setExpireTime(loginUser.getLoginTime() + expireTime * MILLIS_MINUTE);
-        // 根据uuid将loginUser缓存
+        // based onuuidwillloginUsercache
         String userKey = getTokenKey(loginUser.getToken());
         redisCache.setCacheObject(userKey, loginUser, expireTime, TimeUnit.MINUTES);
     }
 
     /**
-     * 设置用户代理信息
+     * Set User Agent Information
      *
-     * @param loginUser 登录信息
+     * @param loginUser Registration Information
      */
     public void setUserAgent(LoginUser loginUser)
     {
@@ -169,10 +169,10 @@ public class TokenService
     }
 
     /**
-     * 从数据声明生成令牌
+     * Create a sign from data statement.
      *
-     * @param claims 数据声明
-     * @return 令牌
+     * @param claims Data Statement
+     * @return The mark.
      */
     private String createToken(Map<String, Object> claims)
     {
@@ -183,10 +183,10 @@ public class TokenService
     }
 
     /**
-     * 从令牌中获取数据声明
+     * Get data statements from the sign.
      *
-     * @param token 令牌
-     * @return 数据声明
+     * @param token The mark.
+     * @return Data Statement
      */
     private Claims parseToken(String token)
     {
@@ -197,10 +197,10 @@ public class TokenService
     }
 
     /**
-     * 从令牌中获取用户名
+     * Get a user name from the mark.
      *
-     * @param token 令牌
-     * @return 用户名
+     * @param token The mark.
+     * @return User Name
      */
     public String getUsernameFromToken(String token)
     {
@@ -209,7 +209,7 @@ public class TokenService
     }
 
     /**
-     * 获取请求token
+     * obtaining request.token
      *
      * @param request
      * @return token

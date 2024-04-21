@@ -1,44 +1,44 @@
 package com.ruoyi.framework.web.domain.server;
 
 /**
- * 系统文件相关信息
+ * Information related to system documents
  * 
  * @author ruoyi
  */
 public class SysFile
 {
     /**
-     * 盘符路径
+     * The track track.
      */
     private String dirName;
 
     /**
-     * 盘符类型
+     * Type of Plate
      */
     private String sysTypeName;
 
     /**
-     * 文件类型
+     * Type of document
      */
     private String typeName;
 
     /**
-     * 总大小
+     * Total size
      */
     private String total;
 
     /**
-     * 剩余大小
+     * The remaining size.
      */
     private String free;
 
     /**
-     * 已经使用量
+     * The amount is already used.
      */
     private String used;
 
     /**
-     * 资源的使用率
+     * Use of Resources
      */
     private double usage;
 

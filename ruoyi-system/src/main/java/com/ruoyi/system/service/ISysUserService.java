@@ -4,203 +4,203 @@ import java.util.List;
 import com.ruoyi.common.core.domain.entity.SysUser;
 
 /**
- * 用户 业务层
+ * Users The business level.
  * 
  * @author ruoyi
  */
 public interface ISysUserService
 {
     /**
-     * 根据条件分页查询用户列表
+     * List of users according to the conditions.
      * 
-     * @param user 用户信息
-     * @return 用户信息集合信息
+     * @param user User Information
+     * @return User information collection
      */
     public List<SysUser> selectUserList(SysUser user);
 
     /**
-     * 根据条件分页查询已分配用户角色列表
+     * Under the terms of page query has been allocated user role list
      * 
-     * @param user 用户信息
-     * @return 用户信息集合信息
+     * @param user User Information
+     * @return User information collection
      */
     public List<SysUser> selectAllocatedList(SysUser user);
 
     /**
-     * 根据条件分页查询未分配用户角色列表
+     * Under the terms of page query not allocated user role lists
      * 
-     * @param user 用户信息
-     * @return 用户信息集合信息
+     * @param user User Information
+     * @return User information collection
      */
     public List<SysUser> selectUnallocatedList(SysUser user);
 
     /**
-     * 通过用户名查询用户
+     * Ask Users through Username
      * 
-     * @param userName 用户名
-     * @return 用户对象信息
+     * @param userName User Name
+     * @return User Objects Information
      */
     public SysUser selectUserByUserName(String userName);
 
     /**
-     * 通过用户ID查询用户
+     * through the userIDAsk the user.
      * 
-     * @param userId 用户ID
-     * @return 用户对象信息
+     * @param userId UsersID
+     * @return User Objects Information
      */
     public SysUser selectUserById(Long userId);
 
     /**
-     * 根据用户ID查询用户所属角色组
+     * According to UsersIDAsk for the role group of users.
      * 
-     * @param userName 用户名
-     * @return 结果
+     * @param userName User Name
+     * @return Results
      */
     public String selectUserRoleGroup(String userName);
 
     /**
-     * 根据用户ID查询用户所属岗位组
+     * According to UsersIDAsk for the employment group of users.
      * 
-     * @param userName 用户名
-     * @return 结果
+     * @param userName User Name
+     * @return Results
      */
     public String selectUserPostGroup(String userName);
 
     /**
-     * 校验用户名称是否唯一
+     * The user name is unique.
      * 
-     * @param user 用户信息
-     * @return 结果
+     * @param user User Information
+     * @return Results
      */
     public boolean checkUserNameUnique(SysUser user);
 
     /**
-     * 校验手机号码是否唯一
+     * The phone number is unique.
      *
-     * @param user 用户信息
-     * @return 结果
+     * @param user User Information
+     * @return Results
      */
     public boolean checkPhoneUnique(SysUser user);
 
     /**
-     * 校验email是否唯一
+     * ExaminationemailIs the only
      *
-     * @param user 用户信息
-     * @return 结果
+     * @param user User Information
+     * @return Results
      */
     public boolean checkEmailUnique(SysUser user);
 
     /**
-     * 校验用户是否允许操作
+     * Testing whether the user allows operations
      * 
-     * @param user 用户信息
+     * @param user User Information
      */
     public void checkUserAllowed(SysUser user);
 
     /**
-     * 校验用户是否有数据权限
+     * Verify whether the user has data permits
      * 
-     * @param userId 用户id
+     * @param userId Usersid
      */
     public void checkUserDataScope(Long userId);
 
     /**
-     * 新增用户信息
+     * Added User Information
      * 
-     * @param user 用户信息
-     * @return 结果
+     * @param user User Information
+     * @return Results
      */
     public int insertUser(SysUser user);
 
     /**
-     * 注册用户信息
+     * Registration of User Information
      * 
-     * @param user 用户信息
-     * @return 结果
+     * @param user User Information
+     * @return Results
      */
     public boolean registerUser(SysUser user);
 
     /**
-     * 修改用户信息
+     * Modifying User Information
      * 
-     * @param user 用户信息
-     * @return 结果
+     * @param user User Information
+     * @return Results
      */
     public int updateUser(SysUser user);
 
     /**
-     * 用户授权角色
+     * User authorized role
      * 
-     * @param userId 用户ID
-     * @param roleIds 角色组
+     * @param userId UsersID
+     * @param roleIds The role group
      */
     public void insertUserAuth(Long userId, Long[] roleIds);
 
     /**
-     * 修改用户状态
+     * Modification of User Status
      * 
-     * @param user 用户信息
-     * @return 结果
+     * @param user User Information
+     * @return Results
      */
     public int updateUserStatus(SysUser user);
 
     /**
-     * 修改用户基本信息
+     * Modifying basic user information
      * 
-     * @param user 用户信息
-     * @return 结果
+     * @param user User Information
+     * @return Results
      */
     public int updateUserProfile(SysUser user);
 
     /**
-     * 修改用户头像
+     * Change the user image.
      * 
-     * @param userName 用户名
-     * @param avatar 头像地址
-     * @return 结果
+     * @param userName User Name
+     * @param avatar The head address.
+     * @return Results
      */
     public boolean updateUserAvatar(String userName, String avatar);
 
     /**
-     * 重置用户密码
+     * Restore the user password.
      * 
-     * @param user 用户信息
-     * @return 结果
+     * @param user User Information
+     * @return Results
      */
     public int resetPwd(SysUser user);
 
     /**
-     * 重置用户密码
+     * Restore the user password.
      * 
-     * @param userName 用户名
-     * @param password 密码
-     * @return 结果
+     * @param userName User Name
+     * @param password The code
+     * @return Results
      */
     public int resetUserPwd(String userName, String password);
 
     /**
-     * 通过用户ID删除用户
+     * through the userIDRemove Users
      * 
-     * @param userId 用户ID
-     * @return 结果
+     * @param userId UsersID
+     * @return Results
      */
     public int deleteUserById(Long userId);
 
     /**
-     * 批量删除用户信息
+     * Remove User Information
      * 
-     * @param userIds 需要删除的用户ID
-     * @return 结果
+     * @param userIds Users to be removed.ID
+     * @return Results
      */
     public int deleteUserByIds(Long[] userIds);
 
     /**
-     * 导入用户数据
+     * Import User Data
      * 
-     * @param userList 用户数据列表
-     * @param isUpdateSupport 是否更新支持，如果已存在，则进行更新数据
-     * @param operName 操作用户
-     * @return 结果
+     * @param userList User Data List
+     * @param isUpdateSupport Updated support，If there is already，Update the data.
+     * @param operName Operating Users
+     * @return Results
      */
     public String importUser(List<SysUser> userList, Boolean isUpdateSupport, String operName);
 }

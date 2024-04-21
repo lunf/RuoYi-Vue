@@ -1,10 +1,10 @@
-# 代码生成
+# Code is generated.
 gen:
-  # 作者
+  # Author
   author: ruoyi
-  # 默认生成包路径 system 需改成自己的模块名称 如 system monitor tool
+  # The default package route. system You need to change the name of your module. as system monitor tool
   packageName: com.ruoyi.system
-  # 自动去除表前缀，默认是false
+  # Automatically remove the table.，Supposedly isfalse
   autoRemovePre: false
-  # 表前缀（生成类名不会包含表前缀，多个用逗号分隔）
+  # Table of front.（Generated category names do not include the table prefix.，Separate with several comics.）
   tablePrefix: sys_

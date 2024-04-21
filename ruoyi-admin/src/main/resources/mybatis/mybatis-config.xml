@@ -3,17 +3,17 @@
 PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
-    <!-- 全局参数 -->
+    <!-- The overall parameters. -->
     <settings>
-        <!-- 使全局的映射器启用或禁用缓存 -->
+        <!-- To enable or disable the cache. -->
         <setting name="cacheEnabled"             value="true"   />
-        <!-- 允许JDBC 支持自动生成主键 -->
+        <!-- permittedJDBC Support Automatic Generation Key -->
         <setting name="useGeneratedKeys"         value="true"   />
-        <!-- 配置默认的执行器.SIMPLE就是普通执行器;REUSE执行器会重用预处理语句(prepared statements);BATCH执行器将重用语句并执行批量更新 -->
+        <!-- Configurate the default executor..SIMPLEIt is a normal executive.;REUSEThe executive will reuse the pre-working word.(prepared statements);BATCHThe executor will reuse the word and execute mass updates. -->
         <setting name="defaultExecutorType"      value="SIMPLE" />
-		<!-- 指定 MyBatis 所用日志的具体实现 -->
+		<!-- designated MyBatis Specific implementation of the logs used. -->
         <setting name="logImpl"                  value="SLF4J"  />
-        <!-- 使用驼峰命名法转换字段 -->
+        <!-- Conversion of fields using the name method. -->
 		<!-- <setting name="mapUnderscoreToCamelCase" value="true"/> -->
 	</settings>
 	

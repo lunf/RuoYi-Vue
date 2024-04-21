@@ -1,6 +1,6 @@
 @echo off
 echo.
-echo [ĞÅÏ¢] ´ò°üWeb¹¤³Ì£¬Éú³ÉdistÎÄ¼ş¡£
+echo [Information] PackageWebProjectsï¼ŒproduceddistDocumentsã€‚
 echo.
 
 %~d0

@@ -3,71 +3,71 @@ import { Message, MessageBox, Notification, Loading } from 'element-ui'
 let loadingInstance;
 
 export default {
-  // 消息提示
+  // News Tips
   msg(content) {
     Message.info(content)
   },
-  // 错误消息
+  // The wrong news.
   msgError(content) {
     Message.error(content)
   },
-  // 成功消息
+  // Success news
   msgSuccess(content) {
     Message.success(content)
   },
-  // 警告消息
+  // warning news.
   msgWarning(content) {
     Message.warning(content)
   },
-  // 弹出提示
+  // The tip.
   alert(content) {
-    MessageBox.alert(content, "系统提示")
+    MessageBox.alert(content, "system advice")
   },
-  // 错误提示
+  // The wrong advice.
   alertError(content) {
-    MessageBox.alert(content, "系统提示", { type: 'error' })
+    MessageBox.alert(content, "system advice", { type: 'error' })
   },
-  // 成功提示
+  // Success Tips
   alertSuccess(content) {
-    MessageBox.alert(content, "系统提示", { type: 'success' })
+    MessageBox.alert(content, "system advice", { type: 'success' })
   },
-  // 警告提示
+  // warning advice.
   alertWarning(content) {
-    MessageBox.alert(content, "系统提示", { type: 'warning' })
+    MessageBox.alert(content, "system advice", { type: 'warning' })
   },
-  // 通知提示
+  // Notification of advice
   notify(content) {
     Notification.info(content)
   },
-  // 错误通知
+  // The wrong notification.
   notifyError(content) {
     Notification.error(content);
   },
-  // 成功通知
+  // Success notification
   notifySuccess(content) {
     Notification.success(content)
   },
-  // 警告通知
+  // warning notification.
   notifyWarning(content) {
     Notification.warning(content)
   },
-  // 确认窗体
+  // Confirm the window.
   confirm(content) {
-    return MessageBox.confirm(content, "系统提示", {
-      confirmButtonText: '确定',
-      cancelButtonText: '取消',
+    return MessageBox.confirm(content, "system advice", {
+      confirmButtonText: 'Certainly',
+      cancelButtonText: 'cancelled',
       type: "warning",
     })
   },
-  // 提交内容
+  // submitted content
   prompt(content) {
-    return MessageBox.prompt(content, "系统提示", {
-      confirmButtonText: '确定',
-      cancelButtonText: '取消',
+    return MessageBox.prompt(content, "system advice", {
+      confirmButtonText: 'Certainly',
+      cancelButtonText: 'cancelled',
       type: "warning",
     })
   },
-  // 打开遮罩层
+  // Open the cover.
   loading(content) {
     loadingInstance = Loading.service({
       lock: true,
@@ -76,7 +76,7 @@ export default {
       background: "rgba(0, 0, 0, 0.7)",
     })
   },
-  // 关闭遮罩层
+  // Close the cover.
   closeLoading() {
     loadingInstance.close();
   }

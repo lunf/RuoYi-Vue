@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="user-info-head" @click="editCropper()"><img v-bind:src="options.img" title="点击上传头像" class="img-circle img-lg" /></div>
+    <div class="user-info-head" @click="editCropper()"><img v-bind:src="options.img" title="Click to upload the image." class="img-circle img-lg" /></div>
     <el-dialog :title="title" :visible.sync="open" width="800px" append-to-body @opened="modalOpened"  @close="closeDialog">
       <el-row>
         <el-col :xs="24" :md="12" :style="{height: '350px'}">
@@ -28,7 +28,7 @@
         <el-col :lg="2" :sm="3" :xs="3">
           <el-upload action="#" :http-request="requestUpload" :show-file-list="false" :before-upload="beforeUpload">
             <el-button size="small">
-              选择
+              The choice
               <i class="el-icon-upload el-icon--right"></i>
             </el-button>
           </el-upload>
@@ -46,7 +46,7 @@
           <el-button icon="el-icon-refresh-right" size="small" @click="rotateRight()"></el-button>
         </el-col>
         <el-col :lg="{span: 2, offset: 6}" :sm="2" :xs="2">
-          <el-button type="primary" size="small" @click="uploadImg()">提 交</el-button>
+          <el-button type="primary" size="small" @click="uploadImg()">by Ti by</el-button>
         </el-col>
       </el-row>
     </el-dialog>
@@ -63,31 +63,31 @@ export default {
   components: { VueCropper },
   data() {
     return {
-      // 是否显示弹出层
+      // Showing the explosion.
       open: false,
-      // 是否显示cropper
+      // Should showcropper
       visible: false,
-      // 弹出层标题
-      title: "修改头像",
+      // The top title.
+      title: "Change the image.",
       options: {
-        img: store.getters.avatar,  //裁剪图片的地址
-        autoCrop: true,             // 是否默认生成截图框
-        autoCropWidth: 200,         // 默认生成截图框宽度
-        autoCropHeight: 200,        // 默认生成截图框高度
-        fixedBox: true,             // 固定截图框大小 不允许改变
-        outputType:"png",           // 默认生成截图为PNG格式
-        filename: 'avatar'          // 文件名称
+        img: store.getters.avatar,  //Cut the image address.
+        autoCrop: true,             // Do you generate a screenshot box?
+        autoCropWidth: 200,         // Default generate screenshots width
+        autoCropHeight: 200,        // Default Generate Screenshots Height
+        fixedBox: true,             // Fixed Screenshot Size Do not allow change.
+        outputType:"png",           // Create a picture forPNGformats
+        filename: 'avatar'          // Name of document
       },
       previews: {},
       resizeHandler: null
     };
   },
   methods: {
-    // 编辑头像
+    // Editing the image.
     editCropper() {
       this.open = true;
     },
-    // 打开弹出层结束时的回调
+    // Turn off at the end of the explosion.
     modalOpened() {
       this.visible = true;
       if (!this.resizeHandler) {
@@ -97,30 +97,30 @@ export default {
       }
       window.addEventListener("resize", this.resizeHandler)
     },
-    // 刷新组件
+    // Updated components
     refresh() {
       this.$refs.cropper.refresh();
     },
-    // 覆盖默认的上传行为
+    // Cover default upload behavior.
     requestUpload() {
     },
-    // 向左旋转
+    // Turn to the left.
     rotateLeft() {
       this.$refs.cropper.rotateLeft();
     },
-    // 向右旋转
+    // Turn to the right.
     rotateRight() {
       this.$refs.cropper.rotateRight();
     },
-    // 图片缩放
+    // Picture is shortened.
     changeScale(num) {
       num = num || 1;
       this.$refs.cropper.changeScale(num);
     },
-    // 上传预处理
+    // The Pre-Treatment
     beforeUpload(file) {
       if (file.type.indexOf("image/") == -1) {
-        this.$modal.msgError("文件格式错误，请上传图片类型,如：JPG，PNG后缀的文件。");
+        this.$modal.msgError("File Format Error，Please upload the image type.,as：JPG，PNGThe following documentation.。");
       } else {
         const reader = new FileReader();
         reader.readAsDataURL(file);
@@ -130,7 +130,7 @@ export default {
         };
       }
     },
-    // 上传图片
+    // uploaded images
     uploadImg() {
       this.$refs.cropper.getCropBlob(data => {
         let formData = new FormData();
@@ -139,16 +139,16 @@ export default {
           this.open = false;
           this.options.img = process.env.VUE_APP_BASE_API + response.imgUrl;
           store.commit('SET_AVATAR', this.options.img);
-          this.$modal.msgSuccess("修改成功");
+          this.$modal.msgSuccess("Changes are Successful");
           this.visible = false;
         });
       });
     },
-    // 实时预览
+    // Real time forecast
     realTime(data) {
       this.previews = data;
     },
-    // 关闭窗口
+    // Close the window.
     closeDialog() {
       this.options.img = store.getters.avatar
       this.visible = false;

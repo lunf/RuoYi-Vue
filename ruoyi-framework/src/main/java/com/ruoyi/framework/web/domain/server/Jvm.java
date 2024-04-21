@@ -5,34 +5,34 @@ import com.ruoyi.common.utils.Arith;
 import com.ruoyi.common.utils.DateUtils;
 
 /**
- * JVM相关信息
+ * JVMRelated Information
  * 
  * @author ruoyi
  */
 public class Jvm
 {
     /**
-     * 当前JVM占用的内存总数(M)
+     * CurrentlyJVMThe total number of memories.(M)
      */
     private double total;
 
     /**
-     * JVM最大可用内存总数(M)
+     * JVMMaximum available memory(M)
      */
     private double max;
 
     /**
-     * JVM空闲内存(M)
+     * JVMThe empty memory(M)
      */
     private double free;
 
     /**
-     * JDK版本
+     * JDKThe version
      */
     private String version;
 
     /**
-     * JDK路径
+     * JDKThe path
      */
     private String home;
 
@@ -77,7 +77,7 @@ public class Jvm
     }
 
     /**
-     * 获取JDK名称
+     * obtainedJDKThe name
      */
     public String getName()
     {
@@ -105,7 +105,7 @@ public class Jvm
     }
 
     /**
-     * JDK启动时间
+     * JDKThe start time.
      */
     public String getStartTime()
     {
@@ -113,7 +113,7 @@ public class Jvm
     }
 
     /**
-     * JDK运行时间
+     * JDKOperating time.
      */
     public String getRunTime()
     {
@@ -121,7 +121,7 @@ public class Jvm
     }
 
     /**
-     * 运行参数
+     * Operating parameters.
      */
     public String getInputArgs()
     {

@@ -7,7 +7,7 @@ import com.ruoyi.common.annotation.Excel.ColumnType;
 import com.ruoyi.common.core.domain.BaseEntity;
 
 /**
- * 系统访问记录表 sys_logininfor
+ * System Access Registry sys_logininfor
  * 
  * @author ruoyi
  */
@@ -16,40 +16,40 @@ public class SysLogininfor extends BaseEntity
     private static final long serialVersionUID = 1L;
 
     /** ID */
-    @Excel(name = "序号", cellType = ColumnType.NUMERIC)
+    @Excel(name = "The number", cellType = ColumnType.NUMERIC)
     private Long infoId;
 
-    /** 用户账号 */
-    @Excel(name = "用户账号")
+    /** User Account */
+    @Excel(name = "User Account")
     private String userName;
 
-    /** 登录状态 0成功 1失败 */
-    @Excel(name = "登录状态", readConverterExp = "0=成功,1=失败")
+    /** Registered state 0Successful 1Failure */
+    @Excel(name = "Registered state", readConverterExp = "0=Successful,1=Failure")
     private String status;
 
-    /** 登录IP地址 */
-    @Excel(name = "登录地址")
+    /** RegisteredIPAddressed */
+    @Excel(name = "Registration Address")
     private String ipaddr;
 
-    /** 登录地点 */
-    @Excel(name = "登录地点")
+    /** place of registration. */
+    @Excel(name = "place of registration.")
     private String loginLocation;
 
-    /** 浏览器类型 */
-    @Excel(name = "浏览器")
+    /** Type of browser. */
+    @Excel(name = "browsers")
     private String browser;
 
-    /** 操作系统 */
-    @Excel(name = "操作系统")
+    /** Operating system */
+    @Excel(name = "Operating system")
     private String os;
 
-    /** 提示消息 */
-    @Excel(name = "提示消息")
+    /** suggested news */
+    @Excel(name = "suggested news")
     private String msg;
 
-    /** 访问时间 */
+    /** Time of Visit */
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    @Excel(name = "访问时间", width = 30, dateFormat = "yyyy-MM-dd HH:mm:ss")
+    @Excel(name = "Time of Visit", width = 30, dateFormat = "yyyy-MM-dd HH:mm:ss")
     private Date loginTime;
 
     public Long getInfoId()

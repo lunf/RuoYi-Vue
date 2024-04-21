@@ -1,6 +1,6 @@
 @echo off
 echo.
-echo [ĞÅÏ¢] ÇåÀí¹¤³ÌtargetÉú³ÉÂ·¾¶¡£
+echo [Information] The cleaning project.targetCreate the path.ã€‚
 echo.
 
 %~d0

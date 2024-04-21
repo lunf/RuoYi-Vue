@@ -9,9 +9,9 @@ import java.lang.annotation.Target;
 import com.ruoyi.common.enums.DataSourceType;
 
 /**
- * 自定义多数据源切换注解
+ * Customized Multi-Data Source Exchange Notes
  *
- * 优先级：先方法，后类，如果方法覆盖了类上的数据源类型，以方法的为准，否则以类上的为准
+ * Priority：The first method，after class，If the method covers the data source type in the class，according to the method.，Otherwise in class.
  *
  * @author ruoyi
  */
@@ -22,7 +22,7 @@ import com.ruoyi.common.enums.DataSourceType;
 public @interface DataSource
 {
     /**
-     * 切换数据源名称
+     * Change the data source name.
      */
     public DataSourceType value() default DataSourceType.MASTER;
 }

@@ -20,17 +20,17 @@
       <i class="el-icon-plus"></i>
     </el-upload>
 
-    <!-- 上传提示 -->
+    <!-- upload the advice. -->
     <div class="el-upload__tip" slot="tip" v-if="showTip">
-      请上传
-      <template v-if="fileSize"> 大小不超过 <b style="color: #f56c6c">{{ fileSize }}MB</b> </template>
-      <template v-if="fileType"> 格式为 <b style="color: #f56c6c">{{ fileType.join("/") }}</b> </template>
-      的文件
+      Please upload
+      <template v-if="fileSize"> The size does not exceed <b style="color: #f56c6c">{{ fileSize }}MB</b> </template>
+      <template v-if="fileType"> Form for <b style="color: #f56c6c">{{ fileType.join("/") }}</b> </template>
+      The documents.
     </div>
 
     <el-dialog
       :visible.sync="dialogVisible"
-      title="预览"
+      title="Preview"
       width="800"
       append-to-body
     >
@@ -48,22 +48,22 @@ import { getToken } from "@/utils/auth";
 export default {
   props: {
     value: [String, Object, Array],
-    // 图片数量限制
+    // Number of images limited
     limit: {
       type: Number,
       default: 5,
     },
-    // 大小限制(MB)
+    // The size limit.(MB)
     fileSize: {
        type: Number,
       default: 5,
     },
-    // 文件类型, 例如['png', 'jpg', 'jpeg']
+    // Type of document, for example['png', 'jpg', 'jpeg']
     fileType: {
       type: Array,
       default: () => ["png", "jpg", "jpeg"],
     },
-    // 是否显示提示
+    // Showing a tip.
     isShowTip: {
       type: Boolean,
       default: true
@@ -77,7 +77,7 @@ export default {
       dialogVisible: false,
       hideUpload: false,
       baseUrl: process.env.VUE_APP_BASE_API,
-      uploadImgUrl: process.env.VUE_APP_BASE_API + "/common/upload", // 上传的图片服务器地址
+      uploadImgUrl: process.env.VUE_APP_BASE_API + "/common/upload", // The image server address uploaded
       headers: {
         Authorization: "Bearer " + getToken(),
       },
@@ -88,9 +88,9 @@ export default {
     value: {
       handler(val) {
         if (val) {
-          // 首先将值转为数组
+          // First, convert the value into groups.
           const list = Array.isArray(val) ? val : this.value.split(',');
-          // 然后将数组转为对象数组
+          // Then convert the group into the object group.
           this.fileList = list.map(item => {
             if (typeof item === "string") {
               if (item.indexOf(this.baseUrl) === -1) {
@@ -111,13 +111,13 @@ export default {
     }
   },
   computed: {
-    // 是否显示提示
+    // Showing a tip.
     showTip() {
       return this.isShowTip && (this.fileType || this.fileSize);
     },
   },
   methods: {
-    // 上传前loading加载
+    // Before the uploadloadingloaded
     handleBeforeUpload(file) {
       let isImg = false;
       if (this.fileType.length) {
@@ -135,24 +135,24 @@ export default {
       }
 
       if (!isImg) {
-        this.$modal.msgError(`文件格式不正确, 请上传${this.fileType.join("/")}图片格式文件!`);
+        this.$modal.msgError(`File format is incorrect., Please upload${this.fileType.join("/")}Photo format file!`);
         return false;
       }
       if (this.fileSize) {
         const isLt = file.size / 1024 / 1024 < this.fileSize;
         if (!isLt) {
-          this.$modal.msgError(`上传头像图片大小不能超过 ${this.fileSize} MB!`);
+          this.$modal.msgError(`The size of the image does not exceed the size. ${this.fileSize} MB!`);
           return false;
         }
       }
-      this.$modal.loading("正在上传图片，请稍候...");
+      this.$modal.loading("The image is uploaded.，Please wait a little....");
       this.number++;
     },
-    // 文件个数超出
+    // The number of documents exceeds
     handleExceed() {
-      this.$modal.msgError(`上传文件数量不能超过 ${this.limit} 个!`);
+      this.$modal.msgError(`The number of files can not exceed. ${this.limit} one!`);
     },
-    // 上传成功回调
+    // Successfully uploaded
     handleUploadSuccess(res, file) {
       if (res.code === 200) {
         this.uploadList.push({ name: res.fileName, url: res.fileName });
@@ -165,7 +165,7 @@ export default {
         this.uploadedSuccessfully();
       }
     },
-    // 删除图片
+    // Remove the picture.
     handleDelete(file) {
       const findex = this.fileList.map(f => f.name).indexOf(file.name);
       if (findex > -1) {
@@ -173,12 +173,12 @@ export default {
         this.$emit("input", this.listToString(this.fileList));
       }
     },
-    // 上传失败
+    // upload failure.
     handleUploadError() {
-      this.$modal.msgError("上传图片失败，请重试");
+      this.$modal.msgError("Photo upload failed.，Please try again.");
       this.$modal.closeLoading();
     },
-    // 上传结束处理
+    // End up processing.
     uploadedSuccessfully() {
       if (this.number > 0 && this.uploadList.length === this.number) {
         this.fileList = this.fileList.concat(this.uploadList);
@@ -188,12 +188,12 @@ export default {
         this.$modal.closeLoading();
       }
     },
-    // 预览
+    // Preview
     handlePictureCardPreview(file) {
       this.dialogImageUrl = file.url;
       this.dialogVisible = true;
     },
-    // 对象转成指定字符串分隔
+    // Convert the object to a specified string separation
     listToString(list, separator) {
       let strs = "";
       separator = separator || ",";
@@ -208,11 +208,11 @@ export default {
 };
 </script>
 <style scoped lang="scss">
-// .el-upload--picture-card 控制加号部分
+// .el-upload--picture-card Control of the number.
 ::v-deep.hide .el-upload--picture-card {
     display: none;
 }
-// 去掉动画效果
+// Remove the animation effect.
 ::v-deep .el-list-enter-active,
 ::v-deep .el-list-leave-active {
     transition: all 0s;

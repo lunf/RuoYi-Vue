@@ -23,53 +23,53 @@ import springfox.documentation.spi.service.contexts.SecurityContext;
 import springfox.documentation.spring.web.plugins.Docket;
 
 /**
- * Swagger2的接口配置
+ * Swagger2The interface configuration.
  * 
  * @author ruoyi
  */
 @Configuration
 public class SwaggerConfig
 {
-    /** 系统基础配置 */
+    /** System Basic Configuration */
     @Autowired
     private RuoYiConfig ruoyiConfig;
 
-    /** 是否开启swagger */
+    /** is opened.swagger */
     @Value("${swagger.enabled}")
     private boolean enabled;
 
-    /** 设置请求的统一前缀 */
+    /** Set up the unified forecast. */
     @Value("${swagger.pathMapping}")
     private String pathMapping;
 
     /**
-     * 创建API
+     * CreatedAPI
      */
     @Bean
     public Docket createRestApi()
     {
         return new Docket(DocumentationType.OAS_30)
-                // 是否启用Swagger
+                // is activated.Swagger
                 .enable(enabled)
-                // 用来创建该API的基本信息，展示在文档的页面中（自定义展示的信息）
+                // used to create it.APIThe Basic Information，Showing on the document page.（Customized displayed information）
                 .apiInfo(apiInfo())
-                // 设置哪些接口暴露给Swagger展示
+                // Which interfaces are exposed toSwaggerShowing
                 .select()
-                // 扫描所有有注解的api，用这种方式更灵活
+                // Scanning all the notes.api，More flexible in this way.
                 .apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class))
-                // 扫描指定包中的swagger注解
+                // Scanning in the specified package.swaggerNotes
                 // .apis(RequestHandlerSelectors.basePackage("com.ruoyi.project.tool.swagger"))
-                // 扫描所有 .apis(RequestHandlerSelectors.any())
+                // Scanning all. .apis(RequestHandlerSelectors.any())
                 .paths(PathSelectors.any())
                 .build()
-                /* 设置安全模式，swagger可以设置访问token */
+                /* Establish a safety model.，swaggerYou can set access.token */
                 .securitySchemes(securitySchemes())
                 .securityContexts(securityContexts())
                 .pathMapping(pathMapping);
     }
 
     /**
-     * 安全模式，这里指定token通过Authorization头请求头传递
+     * The safety model.，indicated here.tokenThroughAuthorizationRequest for transmission.
      */
     private List<SecurityScheme> securitySchemes()
     {
@@ -79,7 +79,7 @@ public class SwaggerConfig
     }
 
     /**
-     * 安全上下文
+     * Safety to the bottom.
      */
     private List<SecurityContext> securityContexts()
     {
@@ -93,7 +93,7 @@ public class SwaggerConfig
     }
 
     /**
-     * 默认的安全上引用
+     * Secure reference.
      */
     private List<SecurityReference> defaultAuth()
     {
@@ -106,20 +106,20 @@ public class SwaggerConfig
     }
 
     /**
-     * 添加摘要信息
+     * Add a summary information.
      */
     private ApiInfo apiInfo()
     {
-        // 用ApiInfoBuilder进行定制
+        // useApiInfoBuilderTo be customized.
         return new ApiInfoBuilder()
-                // 设置标题
-                .title("标题：若依管理系统_接口文档")
-                // 描述
-                .description("描述：用于管理集团旗下公司的人员信息,具体包括XXX,XXX模块...")
-                // 作者信息
+                // Set the title.
+                .title("The title：If the management system_Interface Documents")
+                // described
+                .description("described：Personal information for managing the Group's company.,Specifically includesXXX,XXXThe Module...")
+                // Author Information
                 .contact(new Contact(ruoyiConfig.getName(), null, null))
-                // 版本
-                .version("版本号:" + ruoyiConfig.getVersion())
+                // The version
+                .version("The version number:" + ruoyiConfig.getVersion())
                 .build();
     }
 }

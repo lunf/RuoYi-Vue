@@ -1,5 +1,5 @@
 /**
-* v-clipboard 文字复制剪贴
+* v-clipboard Copy of text.
 * Copyright (c) 2021 ruoyi
 */
 

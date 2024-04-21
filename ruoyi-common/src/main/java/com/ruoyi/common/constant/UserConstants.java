@@ -1,77 +1,77 @@
 package com.ruoyi.common.constant;
 
 /**
- * 用户常量信息
+ * User constant information
  * 
  * @author ruoyi
  */
 public class UserConstants
 {
     /**
-     * 平台内系统用户的唯一标志
+     * The only logo of the system user within the platform
      */
     public static final String SYS_USER = "SYS_USER";
 
-    /** 正常状态 */
+    /** in normal state. */
     public static final String NORMAL = "0";
 
-    /** 异常状态 */
+    /** an abnormal state. */
     public static final String EXCEPTION = "1";
 
-    /** 用户封禁状态 */
+    /** Users are banned. */
     public static final String USER_DISABLE = "1";
 
-    /** 角色封禁状态 */
+    /** Status of prohibition. */
     public static final String ROLE_DISABLE = "1";
 
-    /** 部门正常状态 */
+    /** Normal state of the department. */
     public static final String DEPT_NORMAL = "0";
 
-    /** 部门停用状态 */
+    /** Department stops. */
     public static final String DEPT_DISABLE = "1";
 
-    /** 字典正常状态 */
+    /** The dictionary is normal. */
     public static final String DICT_NORMAL = "0";
 
-    /** 是否为系统默认（是） */
+    /** Is the system default?（is） */
     public static final String YES = "Y";
 
-    /** 是否菜单外链（是） */
+    /** Is the menu out chain?（is） */
     public static final String YES_FRAME = "0";
 
-    /** 是否菜单外链（否） */
+    /** Is the menu out chain?（No） */
     public static final String NO_FRAME = "1";
 
-    /** 菜单类型（目录） */
+    /** Type of Menu（The catalogue） */
     public static final String TYPE_DIR = "M";
 
-    /** 菜单类型（菜单） */
+    /** Type of Menu（The menu） */
     public static final String TYPE_MENU = "C";
 
-    /** 菜单类型（按钮） */
+    /** Type of Menu（The button） */
     public static final String TYPE_BUTTON = "F";
 
-    /** Layout组件标识 */
+    /** LayoutIdentification of components */
     public final static String LAYOUT = "Layout";
     
-    /** ParentView组件标识 */
+    /** ParentViewIdentification of components */
     public final static String PARENT_VIEW = "ParentView";
 
-    /** InnerLink组件标识 */
+    /** InnerLinkIdentification of components */
     public final static String INNER_LINK = "InnerLink";
 
-    /** 校验是否唯一的返回标识 */
+    /** Testing whether the only return mark. */
     public final static boolean UNIQUE = true;
     public final static boolean NOT_UNIQUE = false;
 
     /**
-     * 用户名长度限制
+     * User name length limit
      */
     public static final int USERNAME_MIN_LENGTH = 2;
     public static final int USERNAME_MAX_LENGTH = 20;
 
     /**
-     * 密码长度限制
+     * The length limit.
      */
     public static final int PASSWORD_MIN_LENGTH = 5;
     public static final int PASSWORD_MAX_LENGTH = 20;

@@ -16,7 +16,7 @@ import com.ruoyi.common.constant.Constants;
 import com.ruoyi.framework.interceptor.RepeatSubmitInterceptor;
 
 /**
- * 通用配置
+ * General configuration
  * 
  * @author ruoyi
  */
@@ -29,18 +29,18 @@ public class ResourcesConfig implements WebMvcConfigurer
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry)
     {
-        /** 本地文件上传路径 */
+        /** Local file upload route */
         registry.addResourceHandler(Constants.RESOURCE_PREFIX + "/**")
                 .addResourceLocations("file:" + RuoYiConfig.getProfile() + "/");
 
-        /** swagger配置 */
+        /** swaggerConfiguration */
         registry.addResourceHandler("/swagger-ui/**")
                 .addResourceLocations("classpath:/META-INF/resources/webjars/springfox-swagger-ui/")
                 .setCacheControl(CacheControl.maxAge(5, TimeUnit.HOURS).cachePublic());;
     }
 
     /**
-     * 自定义拦截规则
+     * Customized blocking rules.
      */
     @Override
     public void addInterceptors(InterceptorRegistry registry)
@@ -49,25 +49,25 @@ public class ResourcesConfig implements WebMvcConfigurer
     }
 
     /**
-     * 跨域配置
+     * cross-space configuration
      */
     @Bean
     public CorsFilter corsFilter()
     {
         CorsConfiguration config = new CorsConfiguration();
         config.setAllowCredentials(true);
-        // 设置访问源地址
+        // Set access source address.
         config.addAllowedOriginPattern("*");
-        // 设置访问源请求头
+        // Set the source request head.
         config.addAllowedHeader("*");
-        // 设置访问源请求方法
+        // Set Access Source Request Method
         config.addAllowedMethod("*");
-        // 有效期 1800秒
+        // validity 1800Seconds
         config.setMaxAge(1800L);
-        // 添加映射路径，拦截一切请求
+        // Add the track.，Stop all requests.
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", config);
-        // 返回新的CorsFilter
+        // Return to NewCorsFilter
         return new CorsFilter(source);
     }
 }

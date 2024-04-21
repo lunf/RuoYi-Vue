@@ -14,7 +14,7 @@ import com.ruoyi.common.utils.SecurityUtils;
 import com.ruoyi.framework.security.context.AuthenticationContextHolder;
 
 /**
- * 登录密码方法
+ * Log in code method.
  * 
  * @author ruoyi
  */
@@ -31,10 +31,10 @@ public class SysPasswordService
     private int lockTime;
 
     /**
-     * 登录账户密码错误次数缓存键名
+     * Log in account password error number cache key name
      * 
-     * @param username 用户名
-     * @return 缓存键key
+     * @param username User Name
+     * @return Cache keykey
      */
     private String getCacheKey(String username)
     {

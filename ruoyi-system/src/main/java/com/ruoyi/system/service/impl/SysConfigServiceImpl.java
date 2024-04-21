@@ -18,7 +18,7 @@ import com.ruoyi.system.mapper.SysConfigMapper;
 import com.ruoyi.system.service.ISysConfigService;
 
 /**
- * 参数配置 服务层实现
+ * The parameter configuration Service level achieved
  * 
  * @author ruoyi
  */
@@ -32,7 +32,7 @@ public class SysConfigServiceImpl implements ISysConfigService
     private RedisCache redisCache;
 
     /**
-     * 项目启动时，初始化参数到缓存
+     * When the project starts，Initialized parameters to cache
      */
     @PostConstruct
     public void init()
@@ -41,10 +41,10 @@ public class SysConfigServiceImpl implements ISysConfigService
     }
 
     /**
-     * 查询参数配置信息
+     * Ask for parameter configuration information
      * 
-     * @param configId 参数配置ID
-     * @return 参数配置信息
+     * @param configId The parameter configurationID
+     * @return parameter configuration information
      */
     @Override
     @DataSource(DataSourceType.MASTER)
@@ -56,10 +56,10 @@ public class SysConfigServiceImpl implements ISysConfigService
     }
 
     /**
-     * 根据键名查询参数配置信息
+     * Based on the key name query parameter configuration information
      * 
-     * @param configKey 参数key
-     * @return 参数键值
+     * @param configKey Parameterskey
+     * @return The parameter value.
      */
     @Override
     public String selectConfigByKey(String configKey)
@@ -81,9 +81,9 @@ public class SysConfigServiceImpl implements ISysConfigService
     }
 
     /**
-     * 获取验证码开关
+     * Get the verification code.
      * 
-     * @return true开启，false关闭
+     * @return trueopened，falseclosed
      */
     @Override
     public boolean selectCaptchaEnabled()
@@ -97,10 +97,10 @@ public class SysConfigServiceImpl implements ISysConfigService
     }
 
     /**
-     * 查询参数配置列表
+     * Ask for the parameter configuration list
      * 
-     * @param config 参数配置信息
-     * @return 参数配置集合
+     * @param config parameter configuration information
+     * @return The Parameters Collection
      */
     @Override
     public List<SysConfig> selectConfigList(SysConfig config)
@@ -109,10 +109,10 @@ public class SysConfigServiceImpl implements ISysConfigService
     }
 
     /**
-     * 新增参数配置
+     * Additional parameters
      * 
-     * @param config 参数配置信息
-     * @return 结果
+     * @param config parameter configuration information
+     * @return Results
      */
     @Override
     public int insertConfig(SysConfig config)
@@ -126,10 +126,10 @@ public class SysConfigServiceImpl implements ISysConfigService
     }
 
     /**
-     * 修改参数配置
+     * Modification of parameters
      * 
-     * @param config 参数配置信息
-     * @return 结果
+     * @param config parameter configuration information
+     * @return Results
      */
     @Override
     public int updateConfig(SysConfig config)
@@ -149,9 +149,9 @@ public class SysConfigServiceImpl implements ISysConfigService
     }
 
     /**
-     * 批量删除参数信息
+     * Remove parameter information.
      * 
-     * @param configIds 需要删除的参数ID
+     * @param configIds The parameters need to be removed.ID
      */
     @Override
     public void deleteConfigByIds(Long[] configIds)
@@ -161,7 +161,7 @@ public class SysConfigServiceImpl implements ISysConfigService
             SysConfig config = selectConfigById(configId);
             if (StringUtils.equals(UserConstants.YES, config.getConfigType()))
             {
-                throw new ServiceException(String.format("内置参数【%1$s】不能删除 ", config.getConfigKey()));
+                throw new ServiceException(String.format("The built-in parameters【%1$s】cannot be removed. ", config.getConfigKey()));
             }
             configMapper.deleteConfigById(configId);
             redisCache.deleteObject(getCacheKey(config.getConfigKey()));
@@ -169,7 +169,7 @@ public class SysConfigServiceImpl implements ISysConfigService
     }
 
     /**
-     * 加载参数缓存数据
+     * Loading parameter cache data
      */
     @Override
     public void loadingConfigCache()
@@ -182,7 +182,7 @@ public class SysConfigServiceImpl implements ISysConfigService
     }
 
     /**
-     * 清空参数缓存数据
+     * Empty parameters cache data
      */
     @Override
     public void clearConfigCache()
@@ -192,7 +192,7 @@ public class SysConfigServiceImpl implements ISysConfigService
     }
 
     /**
-     * 重置参数缓存数据
+     * Repair parameter cache data
      */
     @Override
     public void resetConfigCache()
@@ -202,10 +202,10 @@ public class SysConfigServiceImpl implements ISysConfigService
     }
 
     /**
-     * 校验参数键名是否唯一
+     * Is the test parameter key name unique?
      * 
-     * @param config 参数配置信息
-     * @return 结果
+     * @param config parameter configuration information
+     * @return Results
      */
     @Override
     public boolean checkConfigKeyUnique(SysConfig config)
@@ -220,10 +220,10 @@ public class SysConfigServiceImpl implements ISysConfigService
     }
 
     /**
-     * 设置cache key
+     * set upcache key
      * 
-     * @param configKey 参数键
-     * @return 缓存键key
+     * @param configKey The parameter key.
+     * @return Cache keykey
      */
     private String getCacheKey(String configKey)
     {

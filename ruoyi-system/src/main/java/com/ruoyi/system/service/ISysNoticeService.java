@@ -4,57 +4,57 @@ import java.util.List;
 import com.ruoyi.system.domain.SysNotice;
 
 /**
- * 公告 服务层
+ * announcement of service.
  * 
  * @author ruoyi
  */
 public interface ISysNoticeService
 {
     /**
-     * 查询公告信息
+     * Ask for announcement information
      * 
-     * @param noticeId 公告ID
-     * @return 公告信息
+     * @param noticeId announcementID
+     * @return announcement information
      */
     public SysNotice selectNoticeById(Long noticeId);
 
     /**
-     * 查询公告列表
+     * List of inquiries
      * 
-     * @param notice 公告信息
-     * @return 公告集合
+     * @param notice announcement information
+     * @return Advertising collection
      */
     public List<SysNotice> selectNoticeList(SysNotice notice);
 
     /**
-     * 新增公告
+     * Added announcements
      * 
-     * @param notice 公告信息
-     * @return 结果
+     * @param notice announcement information
+     * @return Results
      */
     public int insertNotice(SysNotice notice);
 
     /**
-     * 修改公告
+     * Modified announcement
      * 
-     * @param notice 公告信息
-     * @return 结果
+     * @param notice announcement information
+     * @return Results
      */
     public int updateNotice(SysNotice notice);
 
     /**
-     * 删除公告信息
+     * Delete the announcement information.
      * 
-     * @param noticeId 公告ID
-     * @return 结果
+     * @param noticeId announcementID
+     * @return Results
      */
     public int deleteNoticeById(Long noticeId);
     
     /**
-     * 批量删除公告信息
+     * Remove publication information.
      * 
-     * @param noticeIds 需要删除的公告ID
-     * @return 结果
+     * @param noticeIds Notifications to be deleted.ID
+     * @return Results
      */
     public int deleteNoticeByIds(Long[] noticeIds);
 }

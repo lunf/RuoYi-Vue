@@ -1,7 +1,7 @@
 import request from '@/utils/request'
 import { parseStrEmpty } from "@/utils/ruoyi";
 
-// 查询用户列表
+// Ask for user list
 export function listUser(query) {
   return request({
     url: '/system/user/list',
@@ -10,7 +10,7 @@ export function listUser(query) {
   })
 }
 
-// 查询用户详细
+// Ask the user in detail.
 export function getUser(userId) {
   return request({
     url: '/system/user/' + parseStrEmpty(userId),
@@ -18,7 +18,7 @@ export function getUser(userId) {
   })
 }
 
-// 新增用户
+// Adding New Users
 export function addUser(data) {
   return request({
     url: '/system/user',
@@ -27,7 +27,7 @@ export function addUser(data) {
   })
 }
 
-// 修改用户
+// Modifying Users
 export function updateUser(data) {
   return request({
     url: '/system/user',
@@ -36,7 +36,7 @@ export function updateUser(data) {
   })
 }
 
-// 删除用户
+// Remove Users
 export function delUser(userId) {
   return request({
     url: '/system/user/' + userId,
@@ -44,7 +44,7 @@ export function delUser(userId) {
   })
 }
 
-// 用户密码重置
+// User Password Reset
 export function resetUserPwd(userId, password) {
   const data = {
     userId,
@@ -57,7 +57,7 @@ export function resetUserPwd(userId, password) {
   })
 }
 
-// 用户状态修改
+// Modification of User Status
 export function changeUserStatus(userId, status) {
   const data = {
     userId,
@@ -70,7 +70,7 @@ export function changeUserStatus(userId, status) {
   })
 }
 
-// 查询用户个人信息
+// Ask for user personal information.
 export function getUserProfile() {
   return request({
     url: '/system/user/profile',
@@ -78,7 +78,7 @@ export function getUserProfile() {
   })
 }
 
-// 修改用户个人信息
+// Modifying User Personal Information
 export function updateUserProfile(data) {
   return request({
     url: '/system/user/profile',
@@ -87,7 +87,7 @@ export function updateUserProfile(data) {
   })
 }
 
-// 用户密码重置
+// User Password Reset
 export function updateUserPwd(oldPassword, newPassword) {
   const data = {
     oldPassword,
@@ -100,7 +100,7 @@ export function updateUserPwd(oldPassword, newPassword) {
   })
 }
 
-// 用户头像上传
+// User image uploaded.
 export function uploadAvatar(data) {
   return request({
     url: '/system/user/profile/avatar',
@@ -109,7 +109,7 @@ export function uploadAvatar(data) {
   })
 }
 
-// 查询授权角色
+// Question of authorized roles
 export function getAuthRole(userId) {
   return request({
     url: '/system/user/authRole/' + userId,
@@ -117,7 +117,7 @@ export function getAuthRole(userId) {
   })
 }
 
-// 保存授权角色
+// Conservation of authorized roles
 export function updateAuthRole(data) {
   return request({
     url: '/system/user/authRole',
@@ -126,7 +126,7 @@ export function updateAuthRole(data) {
   })
 }
 
-// 查询部门下拉树结构
+// Department of Investigation The Tree Structure
 export function deptTreeSelect() {
   return request({
     url: '/system/user/deptTree',

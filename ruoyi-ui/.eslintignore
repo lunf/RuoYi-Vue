@@ -1,10 +1,10 @@
-# 忽略build目录下类型为js的文件的语法检查
+# IgnoredbuildUnder the catalogue arejsGrammar inspection of documents.
 build/*.js
-# 忽略src/assets目录下文件的语法检查
+# Ignoredsrc/assetsGrammar checking of the document under the directory
 src/assets
-# 忽略public目录下文件的语法检查
+# IgnoredpublicGrammar checking of the document under the directory
 public
-# 忽略当前目录下为js的文件的语法检查
+# Ignoring the current catalogue.jsGrammar inspection of documents.
 *.js
-# 忽略当前目录下为vue的文件的语法检查
+# Ignoring the current catalogue.vueGrammar inspection of documents.
 *.vue

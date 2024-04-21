@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Tree基类
+ * TreeThe Basic
  * 
  * @author ruoyi
  */
@@ -12,19 +12,19 @@ public class TreeEntity extends BaseEntity
 {
     private static final long serialVersionUID = 1L;
 
-    /** 父菜单名称 */
+    /** Father's Menu Name */
     private String parentName;
 
-    /** 父菜单ID */
+    /** The Dad's MenuID */
     private Long parentId;
 
-    /** 显示顺序 */
+    /** Show the order. */
     private Integer orderNum;
 
-    /** 祖级列表 */
+    /** List of ancestors */
     private String ancestors;
 
-    /** 子部门 */
+    /** Subsection */
     private List<?> children = new ArrayList<>();
 
     public String getParentName()

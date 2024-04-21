@@ -8,7 +8,7 @@ import com.ruoyi.system.mapper.SysNoticeMapper;
 import com.ruoyi.system.service.ISysNoticeService;
 
 /**
- * 公告 服务层实现
+ * announcement Service level achieved
  * 
  * @author ruoyi
  */
@@ -19,10 +19,10 @@ public class SysNoticeServiceImpl implements ISysNoticeService
     private SysNoticeMapper noticeMapper;
 
     /**
-     * 查询公告信息
+     * Ask for announcement information
      * 
-     * @param noticeId 公告ID
-     * @return 公告信息
+     * @param noticeId announcementID
+     * @return announcement information
      */
     @Override
     public SysNotice selectNoticeById(Long noticeId)
@@ -31,10 +31,10 @@ public class SysNoticeServiceImpl implements ISysNoticeService
     }
 
     /**
-     * 查询公告列表
+     * List of inquiries
      * 
-     * @param notice 公告信息
-     * @return 公告集合
+     * @param notice announcement information
+     * @return Advertising collection
      */
     @Override
     public List<SysNotice> selectNoticeList(SysNotice notice)
@@ -43,10 +43,10 @@ public class SysNoticeServiceImpl implements ISysNoticeService
     }
 
     /**
-     * 新增公告
+     * Added announcements
      * 
-     * @param notice 公告信息
-     * @return 结果
+     * @param notice announcement information
+     * @return Results
      */
     @Override
     public int insertNotice(SysNotice notice)
@@ -55,10 +55,10 @@ public class SysNoticeServiceImpl implements ISysNoticeService
     }
 
     /**
-     * 修改公告
+     * Modified announcement
      * 
-     * @param notice 公告信息
-     * @return 结果
+     * @param notice announcement information
+     * @return Results
      */
     @Override
     public int updateNotice(SysNotice notice)
@@ -67,10 +67,10 @@ public class SysNoticeServiceImpl implements ISysNoticeService
     }
 
     /**
-     * 删除公告对象
+     * Remove the advertising object.
      * 
-     * @param noticeId 公告ID
-     * @return 结果
+     * @param noticeId announcementID
+     * @return Results
      */
     @Override
     public int deleteNoticeById(Long noticeId)
@@ -79,10 +79,10 @@ public class SysNoticeServiceImpl implements ISysNoticeService
     }
 
     /**
-     * 批量删除公告信息
+     * Remove publication information.
      * 
-     * @param noticeIds 需要删除的公告ID
-     * @return 结果
+     * @param noticeIds Notifications to be deleted.ID
+     * @return Results
      */
     @Override
     public int deleteNoticeByIds(Long[] noticeIds)

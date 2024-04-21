@@ -19,7 +19,7 @@ import com.ruoyi.common.utils.spring.SpringUtils;
 import com.ruoyi.quartz.domain.SysJob;
 
 /**
- * 定时任务工具类
+ * timely task tools.
  * 
  * @author ruoyi
  *
@@ -27,10 +27,10 @@ import com.ruoyi.quartz.domain.SysJob;
 public class ScheduleUtils
 {
     /**
-     * 得到quartz任务类
+     * GetquartzClass of tasks
      *
-     * @param sysJob 执行计划
-     * @return 具体执行任务类
+     * @param sysJob implementation plan
+     * @return Execution of specific tasks.
      */
     private static Class<? extends Job> getQuartzJobClass(SysJob sysJob)
     {
@@ -39,7 +39,7 @@ public class ScheduleUtils
     }
 
     /**
-     * 构建任务触发对象
+     * Create a task to trigger objects
      */
     public static TriggerKey getTriggerKey(Long jobId, String jobGroup)
     {
@@ -47,7 +47,7 @@ public class ScheduleUtils
     }
 
     /**
-     * 构建任务键对象
+     * Building the task key object.
      */
     public static JobKey getJobKey(Long jobId, String jobGroup)
     {
@@ -55,42 +55,42 @@ public class ScheduleUtils
     }
 
     /**
-     * 创建定时任务
+     * Create timely tasks.
      */
     public static void createScheduleJob(Scheduler scheduler, SysJob job) throws SchedulerException, TaskException
     {
         Class<? extends Job> jobClass = getQuartzJobClass(job);
-        // 构建job信息
+        // BuildingjobInformation
         Long jobId = job.getJobId();
         String jobGroup = job.getJobGroup();
         JobDetail jobDetail = JobBuilder.newJob(jobClass).withIdentity(getJobKey(jobId, jobGroup)).build();
 
-        // 表达式调度构建器
+        // Expression Constructor
         CronScheduleBuilder cronScheduleBuilder = CronScheduleBuilder.cronSchedule(job.getCronExpression());
         cronScheduleBuilder = handleCronScheduleMisfirePolicy(job, cronScheduleBuilder);
 
-        // 按新的cronExpression表达式构建一个新的trigger
+        // according to newcronExpressionCreate a new expression.trigger
         CronTrigger trigger = TriggerBuilder.newTrigger().withIdentity(getTriggerKey(jobId, jobGroup))
                 .withSchedule(cronScheduleBuilder).build();
 
-        // 放入参数，运行时的方法可以获取
+        // Put in the parameters.，The operation method can be obtained.
         jobDetail.getJobDataMap().put(ScheduleConstants.TASK_PROPERTIES, job);
 
-        // 判断是否存在
+        // Determining whether there is
         if (scheduler.checkExists(getJobKey(jobId, jobGroup)))
         {
-            // 防止创建时存在数据问题 先移除，然后在执行创建操作
+            // Avoid data problems when creating. Remove first.，Then perform the operation.
             scheduler.deleteJob(getJobKey(jobId, jobGroup));
         }
 
-        // 判断任务是否过期
+        // Deciding whether the task is over.
         if (StringUtils.isNotNull(CronUtils.getNextExecution(job.getCronExpression())))
         {
-            // 执行调度任务
+            // Implementation of measuring tasks
             scheduler.scheduleJob(jobDetail, trigger);
         }
 
-        // 暂停任务
+        // Suspension of task
         if (job.getStatus().equals(ScheduleConstants.Status.PAUSE.getValue()))
         {
             scheduler.pauseJob(ScheduleUtils.getJobKey(jobId, jobGroup));
@@ -98,7 +98,7 @@ public class ScheduleUtils
     }
 
     /**
-     * 设置定时任务策略
+     * Set a timely task strategy.
      */
     public static CronScheduleBuilder handleCronScheduleMisfirePolicy(SysJob job, CronScheduleBuilder cb)
             throws TaskException
@@ -120,10 +120,10 @@ public class ScheduleUtils
     }
 
     /**
-     * 检查包名是否为白名单配置
+     * Check if the package name is configured to the white list.
      * 
-     * @param invokeTarget 目标字符串
-     * @return 结果
+     * @param invokeTarget Targeted characters
+     * @return Results
      */
     public static boolean whiteList(String invokeTarget)
     {

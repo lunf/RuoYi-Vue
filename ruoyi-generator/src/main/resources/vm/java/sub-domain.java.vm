@@ -9,7 +9,7 @@ import com.ruoyi.common.annotation.Excel;
 import com.ruoyi.common.core.domain.BaseEntity;
 
 /**
- * ${subTable.functionName}对象 ${subTableName}
+ * ${subTable.functionName}Objects ${subTableName}
  * 
  * @author ${author}
  * @date ${datetime}

@@ -30,7 +30,7 @@ import com.ruoyi.system.service.ISysConfigService;
 import com.ruoyi.system.service.ISysUserService;
 
 /**
- * 登录校验方法
+ * Registration Method
  * 
  * @author ruoyi
  */
@@ -53,27 +53,27 @@ public class SysLoginService
     private ISysConfigService configService;
 
     /**
-     * 登录验证
+     * Registration Verification
      * 
-     * @param username 用户名
-     * @param password 密码
-     * @param code 验证码
-     * @param uuid 唯一标识
-     * @return 结果
+     * @param username User Name
+     * @param password The code
+     * @param code verification code
+     * @param uuid The only mark.
+     * @return Results
      */
     public String login(String username, String password, String code, String uuid)
     {
-        // 验证码校验
+        // Verification of the code.
         validateCaptcha(username, code, uuid);
-        // 登录前置校验
+        // Registration of the Pre-Examination
         loginPreCheck(username, password);
-        // 用户验证
+        // User verification
         Authentication authentication = null;
         try
         {
             UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(username, password);
             AuthenticationContextHolder.setContext(authenticationToken);
-            // 该方法会去调用UserDetailsServiceImpl.loadUserByUsername
+            // This method will be called.UserDetailsServiceImpl.loadUserByUsername
             authentication = authenticationManager.authenticate(authenticationToken);
         }
         catch (Exception e)
@@ -96,17 +96,17 @@ public class SysLoginService
         AsyncManager.me().execute(AsyncFactory.recordLogininfor(username, Constants.LOGIN_SUCCESS, MessageUtils.message("user.login.success")));
         LoginUser loginUser = (LoginUser) authentication.getPrincipal();
         recordLoginInfo(loginUser.getUserId());
-        // 生成token
+        // producedtoken
         return tokenService.createToken(loginUser);
     }
 
     /**
-     * 校验验证码
+     * School verification code.
      * 
-     * @param username 用户名
-     * @param code 验证码
-     * @param uuid 唯一标识
-     * @return 结果
+     * @param username User Name
+     * @param code verification code
+     * @param uuid The only mark.
+     * @return Results
      */
     public void validateCaptcha(String username, String code, String uuid)
     {
@@ -130,33 +130,33 @@ public class SysLoginService
     }
 
     /**
-     * 登录前置校验
-     * @param username 用户名
-     * @param password 用户密码
+     * Registration of the Pre-Examination
+     * @param username User Name
+     * @param password User Password
      */
     public void loginPreCheck(String username, String password)
     {
-        // 用户名或密码为空 错误
+        // Username or password is empty. errors
         if (StringUtils.isEmpty(username) || StringUtils.isEmpty(password))
         {
             AsyncManager.me().execute(AsyncFactory.recordLogininfor(username, Constants.LOGIN_FAIL, MessageUtils.message("not.null")));
             throw new UserNotExistsException();
         }
-        // 密码如果不在指定范围内 错误
+        // Password if not within the specified range. errors
         if (password.length() < UserConstants.PASSWORD_MIN_LENGTH
                 || password.length() > UserConstants.PASSWORD_MAX_LENGTH)
         {
             AsyncManager.me().execute(AsyncFactory.recordLogininfor(username, Constants.LOGIN_FAIL, MessageUtils.message("user.password.not.match")));
             throw new UserPasswordNotMatchException();
         }
-        // 用户名不在指定范围内 错误
+        // Username is not within the specified range. errors
         if (username.length() < UserConstants.USERNAME_MIN_LENGTH
                 || username.length() > UserConstants.USERNAME_MAX_LENGTH)
         {
             AsyncManager.me().execute(AsyncFactory.recordLogininfor(username, Constants.LOGIN_FAIL, MessageUtils.message("user.password.not.match")));
             throw new UserPasswordNotMatchException();
         }
-        // IP黑名单校验
+        // IPThe black list exam.
         String blackStr = configService.selectConfigByKey("sys.login.blackIPList");
         if (IpUtils.isMatchedIp(blackStr, IpUtils.getIpAddr()))
         {
@@ -166,9 +166,9 @@ public class SysLoginService
     }
 
     /**
-     * 记录登录信息
+     * Registration of registration information
      *
-     * @param userId 用户ID
+     * @param userId UsersID
      */
     public void recordLoginInfo(Long userId)
     {

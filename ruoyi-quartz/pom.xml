@@ -12,12 +12,12 @@
     <artifactId>ruoyi-quartz</artifactId>
 
     <description>
-        quartz定时任务
+        quartztimely task.
     </description>
 
     <dependencies>
 
-        <!-- 定时任务 -->
+        <!-- timely task. -->
         <dependency>
             <groupId>org.quartz-scheduler</groupId>
             <artifactId>quartz</artifactId>
@@ -29,7 +29,7 @@
             </exclusions>
         </dependency>
 
-        <!-- 通用工具-->
+        <!-- General Tools-->
         <dependency>
             <groupId>com.ruoyi</groupId>
             <artifactId>ruoyi-common</artifactId>

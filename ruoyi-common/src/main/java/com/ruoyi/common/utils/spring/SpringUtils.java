@@ -11,14 +11,14 @@ import org.springframework.stereotype.Component;
 import com.ruoyi.common.utils.StringUtils;
 
 /**
- * spring工具类 方便在非spring管理环境中获取bean
+ * springClass of tools It is convenient.springManaged in the environment.bean
  * 
  * @author ruoyi
  */
 @Component
 public final class SpringUtils implements BeanFactoryPostProcessor, ApplicationContextAware 
 {
-    /** Spring应用上下文环境 */
+    /** SpringApply the environment. */
     private static ConfigurableListableBeanFactory beanFactory;
 
     private static ApplicationContext applicationContext;
@@ -36,10 +36,10 @@ public final class SpringUtils implements BeanFactoryPostProcessor, ApplicationC
     }
 
     /**
-     * 获取对象
+     * obtaining objects.
      *
      * @param name
-     * @return Object 一个以所给名字注册的bean的实例
+     * @return Object Registered by the name given.beanThe example.
      * @throws org.springframework.beans.BeansException
      *
      */
@@ -50,7 +50,7 @@ public final class SpringUtils implements BeanFactoryPostProcessor, ApplicationC
     }
 
     /**
-     * 获取类型为requiredType的对象
+     * Obtain the type.requiredTypeThe object.
      *
      * @param clz
      * @return
@@ -64,7 +64,7 @@ public final class SpringUtils implements BeanFactoryPostProcessor, ApplicationC
     }
 
     /**
-     * 如果BeanFactory包含一个与所给名称匹配的bean定义，则返回true
+     * IfBeanFactoryIncludes one that corresponds to the given name.beanDefinition，then back.true
      *
      * @param name
      * @return boolean
@@ -75,7 +75,7 @@ public final class SpringUtils implements BeanFactoryPostProcessor, ApplicationC
     }
 
     /**
-     * 判断以给定名字注册的bean定义是一个singleton还是一个prototype。 如果与给定名字相应的bean定义没有被找到，将会抛出一个异常（NoSuchBeanDefinitionException）
+     * Judgment for the name.beanThe definition is one.singletonor oneprototype。 If it corresponds to the name.beanThe definition was not found.，He will throw out an unusual.（NoSuchBeanDefinitionException）
      *
      * @param name
      * @return boolean
@@ -89,7 +89,7 @@ public final class SpringUtils implements BeanFactoryPostProcessor, ApplicationC
 
     /**
      * @param name
-     * @return Class 注册对象的类型
+     * @return Class Type of registered objects
      * @throws org.springframework.beans.factory.NoSuchBeanDefinitionException
      *
      */
@@ -99,7 +99,7 @@ public final class SpringUtils implements BeanFactoryPostProcessor, ApplicationC
     }
 
     /**
-     * 如果给定的bean名字在bean定义中有别名，则返回这些别名
+     * If givenbeanThe name isbeanThere is another name in the definition.，Return to these other names.
      *
      * @param name
      * @return
@@ -112,7 +112,7 @@ public final class SpringUtils implements BeanFactoryPostProcessor, ApplicationC
     }
 
     /**
-     * 获取aop代理对象
+     * obtainedaopAgent of objects
      * 
      * @param invoker
      * @return
@@ -124,9 +124,9 @@ public final class SpringUtils implements BeanFactoryPostProcessor, ApplicationC
     }
 
     /**
-     * 获取当前的环境配置，无配置返回null
+     * Accept the current environmental configuration.，No returns.null
      *
-     * @return 当前的环境配置
+     * @return Current environmental configuration
      */
     public static String[] getActiveProfiles()
     {
@@ -134,9 +134,9 @@ public final class SpringUtils implements BeanFactoryPostProcessor, ApplicationC
     }
 
     /**
-     * 获取当前的环境配置，当有多个环境配置时，只获取第一个
+     * Accept the current environmental configuration.，When there are multiple environments.，Only get the first.
      *
-     * @return 当前的环境配置
+     * @return Current environmental configuration
      */
     public static String getActiveProfile()
     {
@@ -145,10 +145,10 @@ public final class SpringUtils implements BeanFactoryPostProcessor, ApplicationC
     }
 
     /**
-     * 获取配置文件中的值
+     * Obtain values in the file.
      *
-     * @param key 配置文件的key
-     * @return 当前的配置文件的值
+     * @param key Configuration of documents.key
+     * @return Value of the current profile file
      *
      */
     public static String getRequiredProperty(String key)

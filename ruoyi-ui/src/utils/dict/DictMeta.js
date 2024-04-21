@@ -2,11 +2,11 @@ import { mergeRecursive } from "@/utils/ruoyi";
 import DictOptions from './DictOptions'
 
 /**
- * @classdesc 字典元数据
- * @property {String} type 类型
- * @property {Function} request 请求
- * @property {String} label 标签字段
- * @property {String} value 值字段
+ * @classdesc Dictionary data
+ * @property {String} type Type of
+ * @property {Function} request requested
+ * @property {String} label Tagged fields
+ * @property {String} value Value Fields
  */
 export default class DictMeta {
   constructor(options) {
@@ -21,7 +21,7 @@ export default class DictMeta {
 
 
 /**
- * 解析字典元数据
+ * Analysis of dictionary data
  * @param {Object} options
  * @returns {DictMeta}
  */

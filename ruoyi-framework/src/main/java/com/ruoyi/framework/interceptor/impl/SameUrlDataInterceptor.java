@@ -17,8 +17,8 @@ import com.ruoyi.common.utils.http.HttpHelper;
 import com.ruoyi.framework.interceptor.RepeatSubmitInterceptor;
 
 /**
- * 判断请求url和数据是否和上一次相同，
- * 如果和上次相同，则是重复提交表单。 有效时间为10秒内。
+ * judging the request.urlData is the same as the last time.，
+ * The same as the last time.，Repeat to submit the form.。 Effective time for10within a second.。
  * 
  * @author ruoyi
  */
@@ -29,7 +29,7 @@ public class SameUrlDataInterceptor extends RepeatSubmitInterceptor
 
     public final String REPEAT_TIME = "repeatTime";
 
-    // 令牌自定义标识
+    // Personalized identification.
     @Value("${token.header}")
     private String header;
 
@@ -47,7 +47,7 @@ public class SameUrlDataInterceptor extends RepeatSubmitInterceptor
             nowParams = HttpHelper.getBodyString(repeatedlyRequest);
         }
 
-        // body参数为空，获取Parameter的数据
+        // bodyParameters are empty.，obtainedParameterThe data
         if (StringUtils.isEmpty(nowParams))
         {
             nowParams = JSON.toJSONString(request.getParameterMap());
@@ -56,13 +56,13 @@ public class SameUrlDataInterceptor extends RepeatSubmitInterceptor
         nowDataMap.put(REPEAT_PARAMS, nowParams);
         nowDataMap.put(REPEAT_TIME, System.currentTimeMillis());
 
-        // 请求地址（作为存放cache的key值）
+        // requested address（as a storage.cacheofkeyValue）
         String url = request.getRequestURI();
 
-        // 唯一值（没有消息头则使用请求地址）
+        // The only value.（No message head uses the request address.）
         String submitKey = StringUtils.trimToEmpty(request.getHeader(header));
 
-        // 唯一标识（指定key + url + 消息头）
+        // The only mark.（designatedkey + url + The news head.）
         String cacheRepeatKey = CacheConstants.REPEAT_SUBMIT_KEY + url + submitKey;
 
         Object sessionObj = redisCache.getCacheObject(cacheRepeatKey);
@@ -85,7 +85,7 @@ public class SameUrlDataInterceptor extends RepeatSubmitInterceptor
     }
 
     /**
-     * 判断参数是否相同
+     * To determine whether the parameters are the same.
      */
     private boolean compareParams(Map<String, Object> nowMap, Map<String, Object> preMap)
     {
@@ -95,7 +95,7 @@ public class SameUrlDataInterceptor extends RepeatSubmitInterceptor
     }
 
     /**
-     * 判断两次间隔时间
+     * Twice the time interval.
      */
     private boolean compareTime(Map<String, Object> nowMap, Map<String, Object> preMap, int interval)
     {

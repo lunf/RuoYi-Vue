@@ -8,19 +8,19 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 /**
- * 程序注解配置
+ * The program notes configuration.
  *
  * @author ruoyi
  */
 @Configuration
-// 表示通过aop框架暴露该代理对象,AopContext能够访问
+// stated passing.aopThe framework reveals the agent's object,AopContextPossible access.
 @EnableAspectJAutoProxy(exposeProxy = true)
-// 指定要扫描的Mapper类的包的路径
+// Designed to scan.MapperRoute of Class Package
 @MapperScan("com.ruoyi.**.mapper")
 public class ApplicationConfig
 {
     /**
-     * 时区配置
+     * The time area.
      */
     @Bean
     public Jackson2ObjectMapperBuilderCustomizer jacksonObjectMapperCustomization()

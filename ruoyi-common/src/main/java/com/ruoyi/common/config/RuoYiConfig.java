@@ -4,7 +4,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
 /**
- * 读取项目相关配置
+ * Read the project related configuration.
  * 
  * @author ruoyi
  */
@@ -12,22 +12,22 @@ import org.springframework.stereotype.Component;
 @ConfigurationProperties(prefix = "ruoyi")
 public class RuoYiConfig
 {
-    /** 项目名称 */
+    /** Name of Project */
     private String name;
 
-    /** 版本 */
+    /** The version */
     private String version;
 
-    /** 版权年份 */
+    /** Copyright Year */
     private String copyrightYear;
 
-    /** 上传路径 */
+    /** The Route */
     private static String profile;
 
-    /** 获取地址开关 */
+    /** Get the address. */
     private static boolean addressEnabled;
 
-    /** 验证码类型 */
+    /** Type of verification code */
     private static String captchaType;
 
     public String getName()
@@ -89,7 +89,7 @@ public class RuoYiConfig
     }
 
     /**
-     * 获取导入上传路径
+     * Get the way to import.
      */
     public static String getImportPath()
     {
@@ -97,7 +97,7 @@ public class RuoYiConfig
     }
 
     /**
-     * 获取头像上传路径
+     * Get the image upload route.
      */
     public static String getAvatarPath()
     {
@@ -105,7 +105,7 @@ public class RuoYiConfig
     }
 
     /**
-     * 获取下载路径
+     * Get the download route.
      */
     public static String getDownloadPath()
     {
@@ -113,7 +113,7 @@ public class RuoYiConfig
     }
 
     /**
-     * 获取上传路径
+     * Get the upload route.
      */
     public static String getUploadPath()
     {

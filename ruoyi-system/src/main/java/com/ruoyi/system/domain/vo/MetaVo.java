@@ -3,29 +3,29 @@ package com.ruoyi.system.domain.vo;
 import com.ruoyi.common.utils.StringUtils;
 
 /**
- * 路由显示信息
+ * Router shows information.
  * 
  * @author ruoyi
  */
 public class MetaVo
 {
     /**
-     * 设置该路由在侧边栏和面包屑中展示的名字
+     * Set the name that the router shows in the side bar and bread shell.
      */
     private String title;
 
     /**
-     * 设置该路由的图标，对应路径src/assets/icons/svg
+     * Set the routing icon.，corresponding path.src/assets/icons/svg
      */
     private String icon;
 
     /**
-     * 设置为true，则不会被 <keep-alive>缓存
+     * Set fortrue，It will not be <keep-alive>cache
      */
     private boolean noCache;
 
     /**
-     * 内链地址（http(s)://开头）
+     * The internal chain address.（http(s)://Beginning）
      */
     private String link;
 

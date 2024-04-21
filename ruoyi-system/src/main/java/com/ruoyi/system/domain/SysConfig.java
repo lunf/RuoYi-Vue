@@ -9,7 +9,7 @@ import com.ruoyi.common.annotation.Excel.ColumnType;
 import com.ruoyi.common.core.domain.BaseEntity;
 
 /**
- * 参数配置表 sys_config
+ * The parameter configuration table. sys_config
  * 
  * @author ruoyi
  */
@@ -17,24 +17,24 @@ public class SysConfig extends BaseEntity
 {
     private static final long serialVersionUID = 1L;
 
-    /** 参数主键 */
-    @Excel(name = "参数主键", cellType = ColumnType.NUMERIC)
+    /** The parameter key. */
+    @Excel(name = "The parameter key.", cellType = ColumnType.NUMERIC)
     private Long configId;
 
-    /** 参数名称 */
-    @Excel(name = "参数名称")
+    /** Name of Parameters */
+    @Excel(name = "Name of Parameters")
     private String configName;
 
-    /** 参数键名 */
-    @Excel(name = "参数键名")
+    /** The parameter name. */
+    @Excel(name = "The parameter name.")
     private String configKey;
 
-    /** 参数键值 */
-    @Excel(name = "参数键值")
+    /** The parameter value. */
+    @Excel(name = "The parameter value.")
     private String configValue;
 
-    /** 系统内置（Y是 N否） */
-    @Excel(name = "系统内置", readConverterExp = "Y=是,N=否")
+    /** The system integrated.（Yis NNo） */
+    @Excel(name = "The system integrated.", readConverterExp = "Y=is,N=No")
     private String configType;
 
     public Long getConfigId()
@@ -47,8 +47,8 @@ public class SysConfig extends BaseEntity
         this.configId = configId;
     }
 
-    @NotBlank(message = "参数名称不能为空")
-    @Size(min = 0, max = 100, message = "参数名称不能超过100个字符")
+    @NotBlank(message = "The parameter name cannot be empty.")
+    @Size(min = 0, max = 100, message = "The parameter name cannot exceed100A character.")
     public String getConfigName()
     {
         return configName;
@@ -59,8 +59,8 @@ public class SysConfig extends BaseEntity
         this.configName = configName;
     }
 
-    @NotBlank(message = "参数键名长度不能为空")
-    @Size(min = 0, max = 100, message = "参数键名长度不能超过100个字符")
+    @NotBlank(message = "The parameter key name length cannot be empty.")
+    @Size(min = 0, max = 100, message = "The parameter key name length cannot exceed100A character.")
     public String getConfigKey()
     {
         return configKey;
@@ -71,8 +71,8 @@ public class SysConfig extends BaseEntity
         this.configKey = configKey;
     }
 
-    @NotBlank(message = "参数键值不能为空")
-    @Size(min = 0, max = 500, message = "参数键值长度不能超过500个字符")
+    @NotBlank(message = "The parameter key value cannot be empty.")
+    @Size(min = 0, max = 500, message = "The length of the parameter key does not exceed.500A character.")
     public String getConfigValue()
     {
         return configValue;

@@ -4,39 +4,39 @@ import java.util.List;
 import com.ruoyi.system.domain.SysLogininfor;
 
 /**
- * 系统访问日志情况信息 数据层
+ * System Access Log Status Information The Data Layer
  * 
  * @author ruoyi
  */
 public interface SysLogininforMapper
 {
     /**
-     * 新增系统登录日志
+     * Add new system logs.
      * 
-     * @param logininfor 访问日志对象
+     * @param logininfor Visit the Log Objects
      */
     public void insertLogininfor(SysLogininfor logininfor);
 
     /**
-     * 查询系统登录日志集合
+     * Search system log collection.
      * 
-     * @param logininfor 访问日志对象
-     * @return 登录记录集合
+     * @param logininfor Visit the Log Objects
+     * @return Registration of records.
      */
     public List<SysLogininfor> selectLogininforList(SysLogininfor logininfor);
 
     /**
-     * 批量删除系统登录日志
+     * Remove the system log.
      * 
-     * @param infoIds 需要删除的登录日志ID
-     * @return 结果
+     * @param infoIds Required logs to be deleted.ID
+     * @return Results
      */
     public int deleteLogininforByIds(Long[] infoIds);
 
     /**
-     * 清空系统登录日志
+     * Registering system logs.
      * 
-     * @return 结果
+     * @return Results
      */
     public int cleanLogininfor();
 }

@@ -8,10 +8,10 @@ const DEFAULT_DICT_OPTIONS = {
 }
 
 /**
- * @classdesc 字典
- * @property {Object} label 标签对象，内部属性名为字典类型名称
- * @property {Object} dict 字段数组，内部属性名为字典类型名称
- * @property {Array.<DictMeta>} _dictMetas 字典元数据数组
+ * @classdesc The dictionary
+ * @property {Object} label Objects of label，Internal Properties Name as Dictionary Type Name
+ * @property {Object} dict Number of fields，Internal Properties Name as Dictionary Type Name
+ * @property {Array.<DictMeta>} _dictMetas The dictionary number of data.
  */
 export default class Dict {
   constructor() {
@@ -43,8 +43,8 @@ export default class Dict {
   }
 
   /**
-   * 重新加载字典
-   * @param {String} type 字典类型
+   * Replacing the dictionary.
+   * @param {String} type Type of dictionary
    */
   reloadDict(type) {
     const dictMeta = this._dictMetas.find(e => e.type === type)
@@ -56,9 +56,9 @@ export default class Dict {
 }
 
 /**
- * 加载字典
- * @param {Dict} dict 字典
- * @param {DictMeta} dictMeta 字典元数据
+ * The dictionary.
+ * @param {Dict} dict The dictionary
+ * @param {DictMeta} dictMeta Dictionary data
  * @returns {Promise}
  */
 function loadDict(dict, dictMeta) {

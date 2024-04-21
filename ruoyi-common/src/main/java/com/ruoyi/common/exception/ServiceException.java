@@ -1,7 +1,7 @@
 package com.ruoyi.common.exception;
 
 /**
- * 业务异常
+ * Unusual business.
  * 
  * @author ruoyi
  */
@@ -10,24 +10,24 @@ public final class ServiceException extends RuntimeException
     private static final long serialVersionUID = 1L;
 
     /**
-     * 错误码
+     * The error code.
      */
     private Integer code;
 
     /**
-     * 错误提示
+     * The wrong advice.
      */
     private String message;
 
     /**
-     * 错误明细，内部调试错误
+     * The mistake is clear.，Internal Drop Error
      *
-     * 和 {@link CommonResult#getDetailMessage()} 一致的设计
+     * and {@link CommonResult#getDetailMessage()} The consistent design.
      */
     private String detailMessage;
 
     /**
-     * 空构造方法，避免反序列化问题
+     * Method of construction.，Avoid Anti-Series Problems
      */
     public ServiceException()
     {
